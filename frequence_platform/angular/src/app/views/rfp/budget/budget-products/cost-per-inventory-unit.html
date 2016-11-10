@@ -1,0 +1,44 @@
+<div class="col s2">
+    <div class="row" style="margin-left:0rem;margin-right:0rem;">
+        <div class="input-field s12" style="width:90%; padding-left:5%; padding-right:5%;">
+            <select class="io_period_dropdown grey-text no_option_product_input initialized"
+                    [(ngModel)]="product.inventory.default" (change)="changeInventory($event)"
+                    materialize="material_select" [materializeSelectOptions]="product.inventory.dropdown_options">
+                <option *ngFor="let dropdown_option of product.inventory.dropdown_options" [value]="dropdown_option.value">{{dropdown_option.text}}</option>
+            </select>
+            <label class="active">{{product.inventory.label}}</label>
+        </div>
+    </div>
+    <div class="row" style="margin-left:0rem;margin-right:0rem;">
+        <div class="input-field s12" style="width:90%; padding-left:5%; padding-right: 5%;">
+            <span class="discrete_dollar_prepend">$</span>
+            <input type="text" class="input_cpm grey-text no_option_product_input" [(ngModel)]="product.inventory.custom" mycurrency>
+            <label for="base_dollars_7" class="active">Base Price</label>
+        </div>
+    </div>
+</div>
+<div class="col s10">
+	<div *ngFor="let option of options; let i = index" class="col s4">
+        <div class="row">
+            <div class="input-field col s6">
+                <select class="io_period_dropdown grey-text" [(ngModel)]="option.config[product.id].data.unit"
+                        materialize="material_select" [materializeSelectOptions]="option.config[product.id].setUpData.unit.dropdown_options">
+                    <option *ngFor="let dropdown_option of option.config[product.id].setUpData.unit.dropdown_options"
+                            [value]="dropdown_option.value">{{dropdown_option.text}}
+                    </option>
+                </select>
+            </div>
+            <div class="col s6" style="margin-top:2rem;">
+                Smart ad imprs per {{option.term}} per rooftop
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <span class="discrete_dollar_prepend">$</span>
+                <input type="text" class="grey-text input_cpm product_input"
+                       [(ngModel)]="option.config[product.id].data.cpm" mycurrency>
+                <label class="active">{{option.config[product.id].setUpData.cpm.label}}</label>
+            </div>
+        </div>
+	</div>
+</div>

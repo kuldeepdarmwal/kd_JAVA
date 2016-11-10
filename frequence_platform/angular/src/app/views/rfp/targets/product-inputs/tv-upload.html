@@ -1,0 +1,20 @@
+<div class="mpq_section_card card scrollspy">
+    <h4 class="card-title grey-text text-darken-1 bold">
+        <i class="material-icons component-error" *ngIf="!validationStatus">error</i>TV Zones
+        <span *ngFor="let productName of productNames; let i = index; let last = last; let first = first" style="font-weight:normal;font-size:1rem;">
+		    <span *ngIf="first" style="display:inline-block; margin-left: 5%;"></span>
+		    {{productName}}<span *ngIf="!last">, </span>
+	    </span>
+    </h4>
+    <div class="card-content">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" [ng-file-select]="uploadOptions" (onUpload)="handleUpload($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+    </div>
+</div>

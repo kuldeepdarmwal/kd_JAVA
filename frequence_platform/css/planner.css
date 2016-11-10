@@ -1,0 +1,28 @@
+.ColorSwatch {
+	width:3px; 
+	height:50px; 
+	float:left;
+}
+
+#GeoTargetingMenuItem {
+	background-color:#5bcae9; 
+}
+
+#MediaTargetingMenuItem {
+	background-color:#f89a42; 
+}
+
+#ReachFrequencyMenuItem {
+	background-color:#7d2d39; 
+}
+
+#CreativeLibraryMenuItem {
+	background-color:#d1b632; 
+}
+
+#SaveLapMenuItem {
+	background-color:#5d9e9b; 
+}
+
+
+

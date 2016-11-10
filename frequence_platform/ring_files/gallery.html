@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        
+        <title>ziceinclude&trade; admin version 1.1 online</title>
+
+        <!-- Link shortcut icon-->
+        <link rel="shortcut icon" type="image/ico" href="images/favicon2.ico"/> 
+
+        <!-- Link css-->
+        <link rel="stylesheet" type="text/css" href="css/zice.style.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="css/icon.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="css/ui-custom.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="css/timepicker.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/colorpicker/css/colorpicker.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/elfinder/css/elfinder.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/datatables/dataTables.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/validationEngine/validationEngine.jquery.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>     
+        <link rel="stylesheet" type="text/css" href="components/jscrollpane/jscrollpane.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/fancybox/jquery.fancybox.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/tipsy/tipsy.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/editor/jquery.cleditor.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/chosen/chosen.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/confirm/jquery.confirm.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/sourcerer/sourcerer.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/fullcalendar/fullcalendar.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>
+        <link rel="stylesheet" type="text/css" href="components/Jcrop/jquery.Jcrop.css?v=<?php echo CACHE_BUSTER_VERSION; ?>"/>   
+		
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="components/flot/excanvas.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script><![endif]-->  
+		
+        <script type="text/javascript" src="js/jquery.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/ui/jquery.ui.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script> 
+        <script type="text/javascript" src="components/ui/jquery.autotab.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/ui/timepicker.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/colorpicker/js/colorpicker.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/checkboxes/iphone.check.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/elfinder/js/elfinder.full.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/datatables/dataTables.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/datatables/ColVis.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/scrolltop/scrolltopcontrol.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/fancybox/jquery.fancybox.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/jscrollpane/mousewheel.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/jscrollpane/mwheelIntent.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/jscrollpane/jscrollpane.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/spinner/ui.spinner.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/tipsy/jquery.tipsy.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/editor/jquery.cleditor.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/chosen/chosen.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/confirm/jquery.confirm.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/validationEngine/jquery.validationEngine.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/validationEngine/jquery.validationEngine-en.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/vticker/jquery.vticker-min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/sourcerer/sourcerer.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/fullcalendar/fullcalendar.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/flot/flot.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/flot/flot.pie.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/flot/flot.resize.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/flot/graphtable.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/uploadify/swfobject.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/uploadify/uploadify.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>        
+        <script type="text/javascript" src="components/checkboxes/customInput.jquery.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/effect/jquery-jrumble.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/filestyle/jquery.filestyle.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/placeholder/jquery.placeholder.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/Jcrop/jquery.Jcrop.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/imgTransform/jquery.transform.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/webcam/webcam.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/rating_star/rating_star.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/dualListBox/dualListBox.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/smartWizard/jquery.smartWizard.min.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/maskedinput/jquery.maskedinput.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="components/highlightText/highlightText.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+		<script type="text/javascript" src="components/elastic/jquery.elastic.source.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>
+        <script type="text/javascript" src="js/zice.custom.js?v=<?php echo CACHE_BUSTER_VERSION; ?>"></script>   
+		 <script type="text/javascript" >
+			   	  $(function() {		
+							$("#albumsLoad").load('gallery/loadAlbum.php');		
+				}); 
+          </script>    
+        </head>        
+        <body class="dashborad">        
+        <div id="alertMessage" class="error"></div>
+		<!-- Header -->
+        <div id="header">
+                <div id="account_info"> 
+                    <img src="images/avatar.png" alt="Online" class="avatar"/>
+					<div class="setting" title="Profile Setting"><b>Welcome,</b> <b class="red">John Doe</b><img src="images/gear.png" class="gear"  alt="Profile Setting" ></div>
+					<div class="logout" title="Disconnect"><b >Logout</b> <img src="images/connect.png" name="connect" class="disconnect" alt="disconnect" ></div> 
+                </div>
+            </div><!-- End Header -->
+			<div id="shadowhead"></div>
+
+              <div id="left_menu">
+                    <ul id="main_menu" class="main_menu">
+                      <li class="limenu" ><a href="dashboard.html"><span class="ico gray shadow home" ></span><b>Dashboard</b></a></li>
+                      <li class="limenu" ><a href="#" ><span class="ico gray shadow window"></span><b>Form elements</b></a>
+                        <ul>
+                          <li ><a href="form.html"> basic form </a></li>
+                          <li ><a href="vform.html"> validation </a></li>
+                          <li ><a href="wizard.html"> wizard </a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="#"><span class="ico gray  dimensions" ></span><b>Sample pages</b></a>
+                        <ul>
+                          <li ><a href="profile.html"> Profile setting </a></li>
+                          <li ><a href="conversation.html"> conversation</a></li>
+                          <li ><a href="imagesEditor.html"> Images Editor </a></li>
+                          <li ><a href="barcode.html"> barcode </a></li>
+                          <li ><a href="messages.html"> messages </a></li>
+                          <li ><a href="grid.html"> Grid System </a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Tables</b> </a></li>
+                      <li class="limenu select" ><a href="gallery.html"><span class="ico gray shadow pictures_folder"></span><b>Gallery </b></a></li>
+                      <li class="limenu" ><a href="#"><span class="ico gray shadow stats_lines"></span><b>Graph and Charts</b> </a>
+                        <ul>
+                          <li><a href="modalchartLive.html" class="pop_box">live chart </a></li>
+                          <li><a href="chart.html">all chart</a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="filemanager.html"><span class="ico gray shadow  file"></span><b>File manager </b></a></li>
+                      <li class="limenu" ><a href="calendar.html"><span class="ico gray shadow calendar"></span><b>Calendar </b></a></li>
+                      <li class="limenu" ><a href="typography.html"><span class="ico gray  shadow paragraph_align_left"></span><b>Typography</b></a></li>
+                      <li class="limenu" ><a href="inelement.html"><span class="ico gray shadow abacus"></span><b>Interface elements </b></a></li>
+                      <li class="limenu" ><a href="map.html"><span class="ico gray shadow  location"></span><b>Map location </b></a></li>
+                      <li class="limenu" ><a href="icon.html"><span class="ico gray  shadow satellite"></span><b>Icon and Button </b></a></li>
+					  <li class="limenu" ><a href="404.html"><span class="ico gray  shadow firewall"></span><b>Error Pages</b></a></li>
+                      <li class="limenu" ><a href="doc.html"><span class="ico gray  notepad"></span><b>Documentation</b></a></li>
+
+                        
+                    </ul>
+              </div>
+
+            
+            <div id="content">
+                <div class="inner">
+					<div class="topcolumn">
+						<div class="logo"></div>
+                            <ul  id="shortcut">
+                                <li> <a href="#" title="Back To home"> <img src="images/icon/shortcut/home.png" alt="home"/><strong>Home</strong> </a> </li>
+                                <li> <a href="#" title="Website Graph"> <img src="images/icon/shortcut/graph.png" alt="graph"/><strong>Graph</strong> </a> </li>
+                                <li> <a href="#" title="Setting" > <img src="images/icon/shortcut/setting.png" alt="setting" /><strong>Setting</strong></a> </li> 
+                                <li> <a href="#" title="Messages"> <img src="images/icon/shortcut/mail.png" alt="messages" /><strong>Message</strong></a><div class="notification" >10</div></li>
+                            </ul>
+					</div>
+                    <div class="clear"></div>           
+
+
+                    <!-- full width -->
+                    <div class="widget" >
+                        <div class="header"><span ><span class="ico gray pictures_folder"></span>GALLERY </span>
+                            <div class="searchBox">
+                            <div class="searchAutocomplete"></div>
+                            <div class="searchText">
+                                <form action="http://www.google.com" method="GET">
+                                    <input  type="text"  nane="s" id="sAtcom"placeholder="Live Search..."/>
+                                </form>
+                            </div>
+                            </div>
+                        <div id="buttom_top">
+                            <ul class="uibutton-group">
+                                <li><a class="uibutton icon add pop_box"   href="modalalbum.php"  >New Album</a></li>
+                                <li><a  class="uibutton disable icon secure pop_box "   id="uploadAlbum">upload Pic to Album</a><div id="uploadDisableBut"></div></li>
+                            </ul>
+                        </div>
+                        
+                        </div><!-- End header -->	
+                        <div class="content"  style="padding:auto 0;">
+                        
+                          <!-- albums Load. -->
+                          <div id="albumsLoad" ></div>
+                          <!-- screen Load messages. -->
+                          <div class="screen-msg"><span class="icon"><img src="images/icon/dialog.png" alt="dialog"/></span>Click album to more any images.</div>
+                          <!-- Images Load. -->
+                          <div id="imageLoad"></div>
+
+                          
+                            <!-- clear fix -->
+							<div class="clear"></div>
+                            
+                        </div><!-- End content -->
+                    </div><!-- End full width -->
+                    
+					<!-- clear fix -->
+					<div class="clear"></div>
+
+                    <div id="footer"> &copy; Copyright 2012 <span class="tip"><a  href="#" title="Zice Admin" >Your Company Name</a> </span> </div>
+
+                </div> <!--// End inner -->
+              </div> <!--// End content --> 
+</body>
+</html>

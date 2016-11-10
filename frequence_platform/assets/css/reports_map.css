@@ -1,0 +1,320 @@
+#zones_map {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+label.zones {
+	float: left;
+	max-width: 68%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-height: 1.5rem;
+	line-height: 1.5rem;
+}
+
+.clear{
+	clear: both;
+}
+
+.map_tools {
+	position:absolute;
+	top:1em;
+	left: 0;
+	margin-left:1em;
+	width:20%;
+	min-width:250px;
+	font-weight:600;
+	z-index: 3;
+}
+
+.map_tools form {
+	margin: 0;
+}
+
+ul.map_tools_options {
+	list-style: none;
+	margin:0;
+	font-weight:600;
+	text-transform:uppercase;
+	overflow-y: auto;
+	max-height: 350px;
+}
+
+.map_tools form h4,
+.map_tools_options .impression_total_value,
+.map_tools_options .airings_total_value
+{
+	text-align: right;
+	float: right;
+	padding-right: 40px;
+}
+
+.map_tools form h3,
+.map_tools form h4
+{
+	margin: 0;
+	padding-left: 25px;
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: 2rem;
+}
+
+.map_tools form h3
+{
+	float: left;
+}
+
+.map_tools form h4
+{
+	font-weight: 100;
+	font-size: 1.5em;
+	margin-right: -10px;
+}
+
+.map_tools_options .impression_total_value,
+.map_tools_options .airings_total_value
+{
+	font-weight: 100;
+	font-size: 1.3em;
+}
+
+.map_tools_options .zones .impression_total_value,
+.map_tools_options .zones .airings_total_value
+{
+	font-size: 1.1em;
+}
+
+.map_tools_options ul,
+.map_tools_options li
+{
+	clear: both;
+}
+.map_tools_options li
+{
+	overflow: hidden;
+	line-height: 2.5rem;
+}
+
+.map_tools_options li.zone_menu_options
+{
+	overflow: hidden;
+	line-height: 1.5rem;
+}
+
+.map_tools_options li label
+{
+	float: left;
+	width: 210px;
+}
+
+.map_tools_options form label
+{
+	margin: 0;
+	padding: 0 30px;
+}
+
+.map_tools_options input[type="checkbox"] {
+	display: none;
+}
+
+.map_tools_options label {
+	display: block;
+	min-height: 2.5rem;
+	line-height: 2.5rem;
+	margin: 0;
+	white-space: nowrap;
+	color: white;
+}
+
+.map_tools_options > li > label.zones {
+	min-height: 1.5rem;
+	line-height: 1.5rem;
+	display: block;
+	margin: 0;
+	white-space: nowrap;
+	color: white;
+}
+
+.map_tools li label:not(.map_choice) {
+	color: #fff;
+	color: rgba(255,255,255,0.5);
+	cursor: default;
+}
+
+.map_tools_options li:hover,
+.map_tools_options > li.zone_menu_options:hover,
+.map_tools_options > li.programmatic_zone_hover {
+	background-color: #323232;
+	background-color: rgba(50,50,50,0.5);
+}
+
+.map_tools_options > li.zone_menu_options{
+	padding-left: 25px;
+}
+
+.map_tools_options label:not(.active) {
+	color: #fff;
+	color: rgba(255,255,255,0.75);
+}
+
+.map_tools li label:before {
+	content: " ";
+	width: 1em;
+	height: 1em;
+	margin-right: 0.5em;
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(/images/reports/active_360.png);
+}
+
+.map_tools li label:not(.active):before {
+	background-image: url(/images/reports/inactive_360.png);
+}
+
+.zone_mapbox_custom_popup div {
+	text-align: center;
+	line-height:1.2em;
+}
+
+.zone_mapbox_custom_popup div p {
+	font-size:0.8em;
+	margin:0;
+}
+
+.report_zoommap {
+	background:#73b5e5;
+	overflow:hidden;
+	/*-webkit-transform:rotate(-60deg);
+	-moz-transform:rotate(-60deg);
+	-ms-transform:rotate(-60deg);
+	-o-transform:rotate(-60deg);
+	transform:rotate(-60deg);*/
+	width:300px;
+	height:300px;
+}
+
+.report_zoommap_overlay {
+	position:absolute;
+	pointer-events:none;
+	overflow:hidden;
+	width:300px;
+	height:300px;
+	z-index:1000;
+}
+
+.report_zoommap_zoomlens {
+	overflow:visible;
+	top:-9999px;
+	left:-9999px;
+}
+/*
+.report_zoommap_rotater {
+	-webkit-transform:rotate(30deg);
+	-moz-transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-o-transform:rotate(30deg);
+	transform:rotate(30deg);
+}
+*/
+.report_zoommap_border {
+	border:2px solid #404040;
+	margin-top: -2px;
+	margin-left: -2px;
+	border-radius:50%;
+	box-shadow:0 0 10px rgba(0,0,0,0.25);
+}
+
+.info_zoommap {
+	background-color: #0D5895;
+	position: absolute;
+	box-sizing: border-box;
+	text-align: center;
+	top: 65px;
+	height: 170px;
+	color: white;
+	font-size: 16px;
+	width: 210px;
+}
+
+.zoommap_info_right{
+	border-radius: 0 15px 15px 0;
+	padding: 15px 10px 0 30px;
+	left: 275px;
+}
+
+.zoommap_info_left{
+	border-radius: 15px 0 0 15px;
+	padding: 15px 30px 0 10px;
+	left: -185px;
+}
+
+.info_zoommap .clickthrough_rate {
+	font-size: 3em;
+	line-height: 0.8em;
+	font-weight: bold;
+}
+
+.info_zoommap .clickthrough_rate_label,
+.info_zoommap .geofence_location_name {
+	font-size: 0.6em;
+	text-transform: uppercase;
+}
+
+.info_zoommap .geofence_location_name {
+	text-overflow: ellipsis;
+	font-weight: bold;
+	width: 100%;
+	line-height: 1.5em;
+	clear: both;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-top: 3.5em;
+}
+
+.info_zoommap .geofence_location_address {
+	font-size: 0.6em;
+	text-transform: none;
+	line-height: 1em;
+}
+
+.info_zoommap .platform_breakdown {
+	border-top: 2px solid white;
+	font-size: 0.9em;
+	padding-top: 0.7em;
+}
+
+.info_zoommap .platform_breakdown_android,
+.info_zoommap .platform_breakdown_ios {
+	float: left;
+	width: 50%;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.info_zoommap .platform_breakdown_android:after,
+.info_zoommap .platform_breakdown_ios:after {
+	padding-left: 0.2em;
+	font-size: 1.5em;
+	font-weight: normal;
+	position: relative;
+	top: 0.1em;
+}
+
+.info_zoommap .platform_breakdown_android:after {
+	font-family: "FontAwesome";
+	content: "\f17b";
+}
+
+.info_zoommap .platform_breakdown_ios:after {
+	font-family: "FontAwesome";
+	content: "\f179";
+}
+
+.heatmap_impression_key_text {
+	display: block;
+	margin: 0;
+}

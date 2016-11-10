@@ -1,0 +1,9 @@
+<new-page-form [insertWeight]="insertWeight" [proposal]="proposal" (onAddPage)="addPage($event)" *ngIf="proposal"></new-page-form>
+<div class="page-container">
+	<a materialize="leanModal" href="#new-page-form" [materializeParams]="[{ in_duration: 200, ready: resizeWindow }]" (click)="setInsertWeight(-1)" class="add-page btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
+	<page *ngFor="#page of pages | orderBy : ['weight']; #i = index; trackBy:pageTrackBy">
+		<page-frame [page]="page" [proposal]="proposal" class="card"></page-frame>
+		<button (click)="removePage(page)" class="remove-page btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
+		<a materialize="leanModal" href="#new-page-form" [materializeParams]="[{ in_duration: 200 }]" (click)="setInsertWeight(i)" class="add-page btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
+	</page>
+</div>

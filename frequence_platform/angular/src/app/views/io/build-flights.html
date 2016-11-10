@@ -1,0 +1,78 @@
+<ul materialize="collapsible" class="collapsible popout collapsible-accordion build-flights-form" data-collapsible="accordion">
+	<li>
+		<div class="collapsible-header build-flights" [class.override_display]="flights?.length === 0 && product.submitted_total">
+			<span class="io_submitted_product_description" *ngIf="product.submitted_total">
+				Original Proposal Info: {{option.option_name}}: {{option.grand_total_dollars | currency:'USD':true:'1.2-2'}} | 
+				Total {{product.definition.last_name}} 
+				<span *ngIf="option.discount != 0">(After {{option.discount}}% Discount)</span>: 
+				{{product.submitted_total | currency:'USD':true:'1.2-2'}} | 
+				{{option.duration}} {{option.term | termTransform:option.duration > 1}}
+			</span>&nbsp;&nbsp;&nbsp;
+			<a>Builder <span class="caret">></span></a>
+		</div>
+		<div class="collapsible-body" [class.override_display]="flights?.length === 0">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s2 align">
+						<span class="input-group-title">Flights <a href="#io_flights_flight_type_modal" materialize="leanModal" [materializeParams]="[{dismissible: true}]"><i class="material-icons">info_outline</i></a></span>
+						<div>
+							<input id="flight_type_broadcast_{{product.id}}" type="radio" value="BROADCAST_MONTHLY" [(ngModel)]="flightType"/>
+							<label [attr.for]="'flight_type_broadcast_'+product.id">Broadcast</label>
+						</div>
+						<div>
+							<input id="flight_type_monthly_{{product.id}}" type="radio" value="MONTH_END" [(ngModel)]="flightType"/>
+							<label [attr.for]="'flight_type_monthly_'+product.id">Monthly</label>
+						</div>
+						<div>
+							<input id="flight_type_in_total_{{product.id}}" type="radio" value="FIXED" [(ngModel)]="flightType"/>
+							<label [attr.for]="'flight_type_in_total_'+product.id">In Total</label>
+						</div>
+					</div>
+					<div class="input-field col s2 align" [style.opacity]="flightType === 'FIXED' ? 0 : 1">
+						<span class="input-group-title">Pace By <a href="#io_flights_pacing_modal" materialize="leanModal" [materializeParams]="[{dismissible: true}]"><i class="material-icons">info_outline</i></a></span>
+						<div>
+							<input id="pacing_type_monthly_{{product.id}}" type="radio" value="MONTHLY" [(ngModel)]="pacingType"/>
+							<label [attr.for]="'pacing_type_monthly_'+product.id">Month</label>
+						</div>
+						<div>
+							<input id="pacing_type_daily_{{product.id}}" type="radio" value="DAILY" [(ngModel)]="pacingType"/>
+							<label [attr.for]="'pacing_type_daily_'+product.id">Day</label>
+						</div>
+					</div>
+					<div class="col s2.5 align" *ngIf="product.budget_allocation !== 'custom' && locations.length > 1">
+					
+						<div class="col row custom-tooltip budgetLabel">                
+						    <a class="col row custom-tooltip-link budgetHead">
+							<span class="input-group-title tooltip-link">Auto Allocate Budget</span>
+						    </a>
+						    <div class="col row  custom-tooltip-body bottom-auto">                
+							<div class="body">
+							    <p>By Population will allocate your total budget proportionally to each location based on its population. Evenly per Location will evenly divide your budget so each location is allocated an equal portion of the budget.</p>
+							</div>
+						    </div>
+						</div>
+						<div>
+							<input id="allocation_per_pop_{{product.id}}" type="radio" value="per_pop" [(ngModel)]="product.budget_allocation"/>
+							<label [attr.for]="'allocation_per_pop_'+product.id">By Population</label>
+						</div>
+						<div>
+							<input id="allocation_even_{{product.id}}" type="radio" value="even" [(ngModel)]="product.budget_allocation"/>
+							<label [attr.for]="'allocation_even_'+product.id">Evenly per Location</label>
+						</div>
+					</div>
+					<div class="input-field col s3">
+						<datepicker #startDateInput [options]="datePickerOptions" [(ngModel)]="startDate" label="Start Date" (select)="setStartDate($event)" class="datepicker"></datepicker><datepicker #endDateInput [options]="datePickerOptions" [(ngModel)]="endDate" label="End Date" [class.disabled]="!startDate" class="datepicker"></datepicker>
+					</div>
+					<div class="input-field col s1 build_total_budget">
+						<input [(ngModel)]="totalBudget" mycurrency type="text" id="io_add_flight_budget_{{product.id}}_{{regionId}}" class="budget-input" />
+						<label class="dollars">$</label>
+						<label class="total-budget-label" [attr.for]="'io_add_flight_budget_'+product.id+'_'+regionId">Total Budget</label>
+					</div>
+					<div class="col s1">
+						<a (click)="buildFlights()" class="waves-effect waves-light btn btn-large io_define_flights_button" [class.disabled]="!startDate || !endDate || !totalBudget || !product.budget_allocation || startDate > endDate">Build</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</li>
+</ul>

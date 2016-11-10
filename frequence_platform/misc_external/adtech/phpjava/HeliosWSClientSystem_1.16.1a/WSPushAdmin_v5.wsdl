@@ -1,0 +1,3499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushAdmin_v5"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="LightPushResult">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.Core.PushManagementCore.LightPushResult"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="responseCode" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfLightPushResult">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.webservices.helios.lowLevel.Core.PushManagementCore.LightPushResult;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="LightPushResult" nillable="true"
+                        type="tns:LightPushResult"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PushServiceException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.Core.PushManagementCore.PushServiceException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOfint">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Integer;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="int"
+                        nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SecurityException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.security.SecurityException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns7="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"
+            xmlns:xns8="http://systinet.com/wsdl/java/lang/"
+            xmlns:xns9="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"/>
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"/>
+            <xsd:element name="gagt">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gagtResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:AdGoalType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gctc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gctcResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:CampaignTypeCategory"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdcResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:DeliveryConfiguration"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdg">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdgResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:DeliveryGoal"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdr">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gdrResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:DateRange"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getCFC">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getCFCResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:CampaignFeatureConfig"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getCFS">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getCFSResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:CampaignFeatureSettings"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getPushQueueEntryPriorityList">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getPushQueueEntryPriorityListResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="WSPushServiceException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getPushQueueEntryPriorityListByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getPushQueueEntryPriorityListByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gfc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gfcResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:FrequencyConfig"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="goc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gocResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:OptimizingConfig"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gpc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gpcResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:PostclickConfig"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gpcb">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gpcbResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:PostclickBeacon"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gprc">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gprcResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:PricingConfig"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gtd">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gtdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:TargetingData"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gtr">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gtrResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:TimeRange"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gts">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gtsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:TargetingSet"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gw">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gwResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns4:Weekdays"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaign">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignById">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignByIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignByIdByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignByIdByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdCampaignByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdMasterCampaignById">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="masterCampaignId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdMasterCampaignByIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdMasterCampaignByIdByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="masterCampaignId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="holdMasterCampaignByIdByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaign">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignAt">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                        <xsd:element name="datum" nillable="true"
+                            type="xsd:dateTime"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignAtResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignAtByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                        <xsd:element name="startAt" type="xsd:int"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignAtByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignById">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAt">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="datum" nillable="true"
+                            type="xsd:dateTime"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAtResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAtByLogin0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="startAt" type="xsd:int"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAtByLoginResponse0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAtByLogin1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdAtByLoginResponse1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdLight">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdLightResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdLightByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByIdLightByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns7:PushQueueEntry"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignsByIdLight">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="campaignIds" nillable="true"
+                            type="xns8:ArrayOflong"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignsByIdLightResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns9:ArrayOfLightPushResult"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignsByIdLightByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="campaignIds" nillable="true"
+                            type="xns8:ArrayOflong"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startCampaignsByIdLightByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns9:ArrayOfLightPushResult"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startMasterCampaignById">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="masterCampaignId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startMasterCampaignByIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startMasterCampaignByIdByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="masterCampaignId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="startMasterCampaignByIdByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaign">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignById">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignByIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignByIdByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="camId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignByIdByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cam" nillable="true"
+                            type="xns4:Campaign"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="stopCampaignByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns7="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"
+            xmlns:xns8="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Core/PushManagementCore/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"/>
+            <xsd:element name="SecurityException" nillable="true"
+                type="xns4:SecurityException"/>
+            <xsd:element name="WSPushServiceException" nillable="true"
+                type="xns5:WSPushServiceException"/>
+            <xsd:element name="HeliosPersistenceException" nillable="true"
+                type="xns6:HeliosPersistenceException"/>
+            <xsd:element name="PushManagementException" nillable="true"
+                type="xns7:PushManagementException"/>
+            <xsd:element name="idoox-java-mapping.java.text.ParseException"
+                nillable="true" type="xsd:anyType"/>
+            <xsd:element name="PushServiceException" nillable="true"
+                type="xns8:PushServiceException"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/default/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/default/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOfboolean">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Z"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="boolean" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ContactData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.UserManagement.ContactData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="email" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fax" nillable="true" type="xsd:string"/>
+                    <xsd:element name="firstName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="lastName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mobile" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="phone" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="UserEntityId">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.UserManagement.UserEntityId"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:xns7="http://systinet.com/wsdl/java/lang/"
+            xmlns:xns8="http://systinet.com/wsdl/default/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/default/"/>
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="AdGoalType">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.AdGoalType"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="optimizerIds" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="stdOptimizerId" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignTypeCategory">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.CampaignTypeCategory"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DeliveryConfiguration">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.DeliveryConfiguration"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="adGoalType" nillable="true"
+                        type="tns:AdGoalType"/>
+                    <xsd:element name="distributedVol" type="xsd:int"/>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="layerId" type="xsd:int"/>
+                    <xsd:element name="resourceName" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DeliveryGoal">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.DeliveryGoal"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="clicks" type="xsd:long"/>
+                    <xsd:element name="desiredImpressions" type="xsd:long"/>
+                    <xsd:element name="distributedVol" type="xsd:int"/>
+                    <xsd:element name="flatFeeLimitationPeriod" type="xsd:int"/>
+                    <xsd:element name="flatFeeLimitationType" type="xsd:int"/>
+                    <xsd:element name="flatFeeLimitationValue" type="xsd:long"/>
+                    <xsd:element name="guaranteedDeliveredImpressions"
+                        type="xsd:long"/>
+                    <xsd:element name="guaranteedImpressions" type="xsd:long"/>
+                    <xsd:element name="hasFlatFeeLimitation"
+                        type="xsd:boolean"/>
+                    <xsd:element name="imsInventory" type="xsd:long"/>
+                    <xsd:element name="limitVol" type="xsd:boolean"/>
+                    <xsd:element name="views" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DateRange">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.DateRange"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="deliveryGoal" nillable="true"
+                        type="tns:DeliveryGoal"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="endDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="imsReservationDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="imsReservationId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="imsReservationPriority" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="pos" type="xsd:int"/>
+                    <xsd:element name="startDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="weekdayList" nillable="true"
+                        type="xns5:Collection"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignFeatureConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.CampaignFeatureConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="changeable" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="featureName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="selected" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="shared" type="xsd:boolean"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignFeatureSettings">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.CampaignFeatureSettings"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="locked" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="shared" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="visible" nillable="true"
+                        type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FrequencyConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.FrequencyConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="cappingType" type="xsd:int"/>
+                    <xsd:element name="distributed" type="xsd:boolean"/>
+                    <xsd:element name="noCookieDelivery" type="xsd:boolean"/>
+                    <xsd:element name="type" type="xsd:int"/>
+                    <xsd:element name="views" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="OptimizingConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.OptimizingConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="ECPM" type="xsd:boolean"/>
+                    <xsd:element name="delayedStop" type="xsd:boolean"/>
+                    <xsd:element name="delayedStopAfterDays" type="xsd:int"/>
+                    <xsd:element name="ecpmMode" type="xsd:int"/>
+                    <xsd:element name="minClickRate" type="xsd:double"/>
+                    <xsd:element name="minNoPlacements" type="xsd:int"/>
+                    <xsd:element name="optimizingOptionList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="placementPerformanceOptimized"
+                        type="xsd:boolean"/>
+                    <xsd:element name="runOverFlexTree" type="xsd:boolean"/>
+                    <xsd:element name="runOverNetwork" type="xsd:boolean"/>
+                    <xsd:element name="runOverPage" type="xsd:boolean"/>
+                    <xsd:element name="runOverPlacementFormula"
+                        type="xsd:boolean"/>
+                    <xsd:element name="runOverWebsite" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PostclickConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.PostclickConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="clickValidityPeriod" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="commission" nillable="true"
+                        type="xsd:float"/>
+                    <xsd:element name="commissionType" type="xsd:int"/>
+                    <xsd:element name="onlyFirst" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="postClickBeaconId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyBeaconTags" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="userTrackBeaconId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="viewValidityPeriod" nillable="true"
+                        type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PostclickBeacon">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.PostclickBeacon"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="clickValidityPeriod" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="commission" nillable="true"
+                        type="xsd:float"/>
+                    <xsd:element name="commissionType" type="xsd:int"/>
+                    <xsd:element name="contact" nillable="true"
+                        type="xns6:ContactData"/>
+                    <xsd:element name="creationId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="onlyFirst" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="paramCaption1" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="paramCaption2" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="paramCaption3" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="paramCaption4" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="paramCaption5" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="type" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PricingConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.PricingConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="clickrate" type="xsd:float"/>
+                    <xsd:element name="cpc" type="xsd:float"/>
+                    <xsd:element name="cpe" type="xsd:float"/>
+                    <xsd:element name="cpm" type="xsd:float"/>
+                    <xsd:element name="cpt" type="xsd:float"/>
+                    <xsd:element name="cpv" type="xsd:float"/>
+                    <xsd:element name="flatfee" type="xsd:float"/>
+                    <xsd:element name="invoiceClicks" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="invoiceImpressions" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="target" type="xsd:float"/>
+                    <xsd:element name="targetType" type="xsd:int"/>
+                    <xsd:element name="viewCountRevenue" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TargetingData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.TargetingData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="boolType" type="xsd:int"/>
+                    <xsd:element name="targetIds" nillable="true"
+                        type="xns7:ArrayOfint"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TimeRange">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.TimeRange"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="endHour" type="xsd:int"/>
+                    <xsd:element name="endMinute" type="xsd:int"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="pos" type="xsd:int"/>
+                    <xsd:element name="startHour" type="xsd:int"/>
+                    <xsd:element name="startMinute" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TargetingSet">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.TargetingSet"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="pos" type="xsd:int"/>
+                    <xsd:element name="targetData" nillable="true"
+                        type="xns5:HashMap"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Weekdays">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.Weekdays"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="daysOfWeek" nillable="true"
+                        type="xns8:ArrayOfboolean"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="pos" type="xsd:int"/>
+                    <xsd:element name="timeRanges" nillable="true"
+                        type="xns5:Collection"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Campaign">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.Campaign"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="absoluteEndDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="absoluteStartDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="adGoalTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="adLocalTargetingSetList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="bannerDeliveryTypeId" type="xsd:int"/>
+                    <xsd:element name="barterWebsiteId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="campaignFeatures" nillable="true"
+                        type="xns5:HashMap"/>
+                    <xsd:element name="campaignTypeCategoryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="campaignTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="categoryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="categoryTreeNodeList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="comment" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="companion" type="xsd:boolean"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="currentDateRangeEndDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="currentDateRangeStartDate"
+                        nillable="true" type="xsd:dateTime"/>
+                    <xsd:element name="customSalesPerson" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="customerId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customerPricingConfigs" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="dateRangeList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="defaultAltText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="defaultLinkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="deliveryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="exclusive" type="xsd:boolean"/>
+                    <xsd:element name="exclusiveType" type="xsd:int"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="frequencyConfig" nillable="true"
+                        type="tns:FrequencyConfig"/>
+                    <xsd:element name="groupDistinct" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isSynchronized" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="isTemplate" type="xsd:boolean"/>
+                    <xsd:element name="keywordIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="keywordNodeList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="lastModifiedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="masterCampaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="natureType" type="xsd:int"/>
+                    <xsd:element name="numberOfBanners" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="observerIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="optimizerTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="optimizingConfig" nillable="true"
+                        type="tns:OptimizingConfig"/>
+                    <xsd:element name="paymentTypeId" type="xsd:int"/>
+                    <xsd:element name="placementDescriptors" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="placementIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="placementPositionIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="placementTypeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="postclickData" nillable="true"
+                        type="tns:PostclickConfig"/>
+                    <xsd:element name="pricingConfig" nillable="true"
+                        type="tns:PricingConfig"/>
+                    <xsd:element name="priority" type="xsd:int"/>
+                    <xsd:element name="priorityLevelOneKeywordIdList"
+                        nillable="true" type="xns5:Collection"/>
+                    <xsd:element name="priorityLevelThreeKeywordIdList"
+                        nillable="true" type="xns5:Collection"/>
+                    <xsd:element name="priorityLevelTwoKeywordIdList"
+                        nillable="true" type="xns5:Collection"/>
+                    <xsd:element name="rateTypeId" type="xsd:int"/>
+                    <xsd:element name="replicateTemplateChanges" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="reservedSizeIds" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="standardReportCreationDate"
+                        nillable="true" type="xsd:dateTime"/>
+                    <xsd:element name="standardReportQueueId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="statusTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="targetingSetList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateIdUsed" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="tilingIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="treeTypeId" type="xsd:int"/>
+                    <xsd:element name="useSizeFilter" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="userPriority" type="xsd:int"/>
+                    <xsd:element name="version" nillable="true" type="xsd:int"/>
+                    <xsd:element name="viewCount" type="xsd:boolean"/>
+                    <xsd:element name="virtual" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AgencyBudgetContractInfo">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.AgencyBudgetContractInfo"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="desiredBudget" type="xsd:float"/>
+                    <xsd:element name="endDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="startDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FraudProtectConfig">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.FraudProtectConfig"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="enableClickFraudLogging"
+                        type="xsd:boolean"/>
+                    <xsd:element name="minClickIntervalInSeconds"
+                        type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ReTargeting">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.ReTargeting"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="reTargetingPhrases" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="validityPeriod" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TraffickingInfo">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.TraffickingInfo"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="primaryTraffickerUserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="secondaryTraffickerUserId"
+                        nillable="true" type="xsd:long"/>
+                    <xsd:element name="traffickingComment" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="traffickingInstructions" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="HeliosPersistenceException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.HeliosPersistenceException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.HeliosException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="errorCause" type="xsd:int"/>
+                    <xsd:element name="errorLevel" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/PushManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:complexType name="PushManagementException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.PushManagement.PushManagementException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="xns5:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="PushQueueEntry">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.PushManagement.PushQueueEntry"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="campaignId" type="xsd:long"/>
+                    <xsd:element name="dateCompleted" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="dateEntered" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="dateModified" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="dateToPush" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="errorId" type="xsd:int"/>
+                    <xsd:element name="errorMsg" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="operation" type="xsd:int"/>
+                    <xsd:element name="prio" type="xsd:int"/>
+                    <xsd:element name="pusherUserId" type="xsd:long"/>
+                    <xsd:element name="retryCount" type="xsd:int"/>
+                    <xsd:element name="state" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="trigger" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="HeliosPersistenceException">
+        <part element="ns0:HeliosPersistenceException"
+            name="HeliosPersistenceException"/>
+    </message>
+    <message name="ParseException">
+        <part element="ns0:idoox-java-mapping.java.text.ParseException"
+            name="idoox-java-mapping.java.text.ParseException"/>
+    </message>
+    <message name="PushManagementException">
+        <part element="ns0:PushManagementException"
+            name="PushManagementException"/>
+    </message>
+    <message name="PushServiceException">
+        <part element="ns0:PushServiceException" name="PushServiceException"/>
+    </message>
+    <message name="SecurityException">
+        <part element="ns0:SecurityException" name="SecurityException"/>
+    </message>
+    <message name="WSPushAdmin_v5_gagt_Request_Soap">
+        <part element="tns:gagt" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gagt_Response_Soap">
+        <part element="tns:gagtResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gctc_Request_Soap">
+        <part element="tns:gctc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gctc_Response_Soap">
+        <part element="tns:gctcResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdc_Request_Soap">
+        <part element="tns:gdc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdc_Response_Soap">
+        <part element="tns:gdcResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdg_Request_Soap">
+        <part element="tns:gdg" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdg_Response_Soap">
+        <part element="tns:gdgResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdr_Request_Soap">
+        <part element="tns:gdr" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gdr_Response_Soap">
+        <part element="tns:gdrResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getCFC_Request_Soap">
+        <part element="tns:getCFC" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getCFC_Response_Soap">
+        <part element="tns:getCFCResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getCFS_Request_Soap">
+        <part element="tns:getCFS" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getCFS_Response_Soap">
+        <part element="tns:getCFSResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getPushQueueEntryPriorityListByLogin_Request_Soap">
+        <part element="tns:getPushQueueEntryPriorityListByLogin"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getPushQueueEntryPriorityListByLogin_Response_Soap">
+        <part element="tns:getPushQueueEntryPriorityListByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getPushQueueEntryPriorityList_Request_Soap">
+        <part element="tns:getPushQueueEntryPriorityList" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_getPushQueueEntryPriorityList_Response_Soap">
+        <part element="tns:getPushQueueEntryPriorityListResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gfc_Request_Soap">
+        <part element="tns:gfc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gfc_Response_Soap">
+        <part element="tns:gfcResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_goc_Request_Soap">
+        <part element="tns:goc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_goc_Response_Soap">
+        <part element="tns:gocResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gpc_Request_Soap">
+        <part element="tns:gpc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gpc_Response_Soap">
+        <part element="tns:gpcResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gpcb_Request_Soap">
+        <part element="tns:gpcb" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gpcb_Response_Soap">
+        <part element="tns:gpcbResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gprc_Request_Soap">
+        <part element="tns:gprc" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gprc_Response_Soap">
+        <part element="tns:gprcResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gtd_Request_Soap">
+        <part element="tns:gtd" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gtd_Response_Soap">
+        <part element="tns:gtdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gtr_Request_Soap">
+        <part element="tns:gtr" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gtr_Response_Soap">
+        <part element="tns:gtrResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gts_Request_Soap">
+        <part element="tns:gts" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gts_Response_Soap">
+        <part element="tns:gtsResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gw_Request_Soap">
+        <part element="tns:gw" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_gw_Response_Soap">
+        <part element="tns:gwResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignByIdByLogin_Request_Soap">
+        <part element="tns:holdCampaignByIdByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignByIdByLogin_Response_Soap">
+        <part element="tns:holdCampaignByIdByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignById_Request_Soap">
+        <part element="tns:holdCampaignById" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignById_Response_Soap">
+        <part element="tns:holdCampaignByIdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignByLogin_Request_Soap">
+        <part element="tns:holdCampaignByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaignByLogin_Response_Soap">
+        <part element="tns:holdCampaignByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaign_Request_Soap">
+        <part element="tns:holdCampaign" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdCampaign_Response_Soap">
+        <part element="tns:holdCampaignResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdMasterCampaignByIdByLogin_Request_Soap">
+        <part element="tns:holdMasterCampaignByIdByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdMasterCampaignByIdByLogin_Response_Soap">
+        <part element="tns:holdMasterCampaignByIdByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdMasterCampaignById_Request_Soap">
+        <part element="tns:holdMasterCampaignById" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_holdMasterCampaignById_Response_Soap">
+        <part element="tns:holdMasterCampaignByIdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignAtByLogin_Request_Soap">
+        <part element="tns:startCampaignAtByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignAtByLogin_Response_Soap">
+        <part element="tns:startCampaignAtByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignAt_Request_Soap">
+        <part element="tns:startCampaignAt" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignAt_Response_Soap">
+        <part element="tns:startCampaignAtResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAtByLogin_0_Request_Soap">
+        <part element="tns:startCampaignByIdAtByLogin0" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAtByLogin_0_Response_Soap">
+        <part element="tns:startCampaignByIdAtByLoginResponse0"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAtByLogin_1_Request_Soap">
+        <part element="tns:startCampaignByIdAtByLogin1" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAtByLogin_1_Response_Soap">
+        <part element="tns:startCampaignByIdAtByLoginResponse1"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAt_Request_Soap">
+        <part element="tns:startCampaignByIdAt" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdAt_Response_Soap">
+        <part element="tns:startCampaignByIdAtResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdLightByLogin_Request_Soap">
+        <part element="tns:startCampaignByIdLightByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdLightByLogin_Response_Soap">
+        <part element="tns:startCampaignByIdLightByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdLight_Request_Soap">
+        <part element="tns:startCampaignByIdLight" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByIdLight_Response_Soap">
+        <part element="tns:startCampaignByIdLightResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignById_Request_Soap">
+        <part element="tns:startCampaignById" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignById_Response_Soap">
+        <part element="tns:startCampaignByIdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByLogin_Request_Soap">
+        <part element="tns:startCampaignByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignByLogin_Response_Soap">
+        <part element="tns:startCampaignByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaign_Request_Soap">
+        <part element="tns:startCampaign" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaign_Response_Soap">
+        <part element="tns:startCampaignResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignsByIdLightByLogin_Request_Soap">
+        <part element="tns:startCampaignsByIdLightByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignsByIdLightByLogin_Response_Soap">
+        <part element="tns:startCampaignsByIdLightByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignsByIdLight_Request_Soap">
+        <part element="tns:startCampaignsByIdLight" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startCampaignsByIdLight_Response_Soap">
+        <part element="tns:startCampaignsByIdLightResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startMasterCampaignByIdByLogin_Request_Soap">
+        <part element="tns:startMasterCampaignByIdByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startMasterCampaignByIdByLogin_Response_Soap">
+        <part element="tns:startMasterCampaignByIdByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startMasterCampaignById_Request_Soap">
+        <part element="tns:startMasterCampaignById" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_startMasterCampaignById_Response_Soap">
+        <part element="tns:startMasterCampaignByIdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignByIdByLogin_Request_Soap">
+        <part element="tns:stopCampaignByIdByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignByIdByLogin_Response_Soap">
+        <part element="tns:stopCampaignByIdByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignById_Request_Soap">
+        <part element="tns:stopCampaignById" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignById_Response_Soap">
+        <part element="tns:stopCampaignByIdResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignByLogin_Request_Soap">
+        <part element="tns:stopCampaignByLogin" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaignByLogin_Response_Soap">
+        <part element="tns:stopCampaignByLoginResponse" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaign_Request_Soap">
+        <part element="tns:stopCampaign" name="parameters"/>
+    </message>
+    <message name="WSPushAdmin_v5_stopCampaign_Response_Soap">
+        <part element="tns:stopCampaignResponse" name="parameters"/>
+    </message>
+    <message name="WSPushServiceException">
+        <part element="ns0:WSPushServiceException"
+            name="WSPushServiceException"/>
+    </message>
+    <portType name="WSPushAdmin_v5">
+        <operation name="gagt">
+            <input message="tns:WSPushAdmin_v5_gagt_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gagt_Response_Soap"/>
+        </operation>
+        <operation name="gctc">
+            <input message="tns:WSPushAdmin_v5_gctc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gctc_Response_Soap"/>
+        </operation>
+        <operation name="gdc">
+            <input message="tns:WSPushAdmin_v5_gdc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gdc_Response_Soap"/>
+        </operation>
+        <operation name="gdg">
+            <input message="tns:WSPushAdmin_v5_gdg_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gdg_Response_Soap"/>
+        </operation>
+        <operation name="gdr">
+            <input message="tns:WSPushAdmin_v5_gdr_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gdr_Response_Soap"/>
+        </operation>
+        <operation name="getCFC">
+            <input message="tns:WSPushAdmin_v5_getCFC_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_getCFC_Response_Soap"/>
+        </operation>
+        <operation name="getCFS">
+            <input message="tns:WSPushAdmin_v5_getCFS_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_getCFS_Response_Soap"/>
+        </operation>
+        <operation name="getPushQueueEntryPriorityList">
+            <input
+            message="tns:WSPushAdmin_v5_getPushQueueEntryPriorityList_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_getPushQueueEntryPriorityList_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getPushQueueEntryPriorityListByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_getPushQueueEntryPriorityListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_getPushQueueEntryPriorityListByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="gfc">
+            <input message="tns:WSPushAdmin_v5_gfc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gfc_Response_Soap"/>
+        </operation>
+        <operation name="goc">
+            <input message="tns:WSPushAdmin_v5_goc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_goc_Response_Soap"/>
+        </operation>
+        <operation name="gpc">
+            <input message="tns:WSPushAdmin_v5_gpc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gpc_Response_Soap"/>
+        </operation>
+        <operation name="gpcb">
+            <input message="tns:WSPushAdmin_v5_gpcb_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gpcb_Response_Soap"/>
+        </operation>
+        <operation name="gprc">
+            <input message="tns:WSPushAdmin_v5_gprc_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gprc_Response_Soap"/>
+        </operation>
+        <operation name="gtd">
+            <input message="tns:WSPushAdmin_v5_gtd_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gtd_Response_Soap"/>
+        </operation>
+        <operation name="gtr">
+            <input message="tns:WSPushAdmin_v5_gtr_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gtr_Response_Soap"/>
+        </operation>
+        <operation name="gts">
+            <input message="tns:WSPushAdmin_v5_gts_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gts_Response_Soap"/>
+        </operation>
+        <operation name="gw">
+            <input message="tns:WSPushAdmin_v5_gw_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_gw_Response_Soap"/>
+        </operation>
+        <operation name="holdCampaign">
+            <input message="tns:WSPushAdmin_v5_holdCampaign_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_holdCampaign_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="holdCampaignById">
+            <input message="tns:WSPushAdmin_v5_holdCampaignById_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_holdCampaignById_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="holdCampaignByIdByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_holdCampaignByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_holdCampaignByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="holdCampaignByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_holdCampaignByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_holdCampaignByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="holdMasterCampaignById">
+            <input
+            message="tns:WSPushAdmin_v5_holdMasterCampaignById_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_holdMasterCampaignById_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="holdMasterCampaignByIdByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_holdMasterCampaignByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_holdMasterCampaignByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="startCampaign">
+            <input message="tns:WSPushAdmin_v5_startCampaign_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_startCampaign_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignAt">
+            <input message="tns:WSPushAdmin_v5_startCampaignAt_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_startCampaignAt_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignAtByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignAtByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignAtByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+            <fault message="tns:ParseException" name="ParseException"/>
+        </operation>
+        <operation name="startCampaignById">
+            <input message="tns:WSPushAdmin_v5_startCampaignById_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignById_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignByIdAt">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignByIdAt_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignByIdAt_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignByIdAtByLogin">
+            <input
+                message="tns:WSPushAdmin_v5_startCampaignByIdAtByLogin_0_Request_Soap"
+                name="startCampaignByIdAtByLogin_0_input"/>
+            <output
+                message="tns:WSPushAdmin_v5_startCampaignByIdAtByLogin_0_Response_Soap"
+                name="startCampaignByIdAtByLogin_0_output"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+            <fault message="tns:ParseException" name="ParseException"/>
+        </operation>
+        <operation name="startCampaignByIdAtByLogin">
+            <input
+                message="tns:WSPushAdmin_v5_startCampaignByIdAtByLogin_1_Request_Soap"
+                name="startCampaignByIdAtByLogin_1_input"/>
+            <output
+                message="tns:WSPushAdmin_v5_startCampaignByIdAtByLogin_1_Response_Soap"
+                name="startCampaignByIdAtByLogin_1_output"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignByIdLight">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignByIdLight_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignByIdLight_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="startCampaignByIdLightByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignByIdLightByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignByIdLightByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="startCampaignByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startCampaignsByIdLight">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignsByIdLight_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignsByIdLight_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:PushServiceException"
+                name="PushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="startCampaignsByIdLightByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_startCampaignsByIdLightByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startCampaignsByIdLightByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:PushServiceException"
+                name="PushServiceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="startMasterCampaignById">
+            <input
+            message="tns:WSPushAdmin_v5_startMasterCampaignById_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startMasterCampaignById_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="startMasterCampaignByIdByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_startMasterCampaignByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_startMasterCampaignByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="stopCampaign">
+            <input message="tns:WSPushAdmin_v5_stopCampaign_Request_Soap"/>
+            <output message="tns:WSPushAdmin_v5_stopCampaign_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="stopCampaignById">
+            <input message="tns:WSPushAdmin_v5_stopCampaignById_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_stopCampaignById_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="stopCampaignByIdByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_stopCampaignByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_stopCampaignByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+        <operation name="stopCampaignByLogin">
+            <input
+            message="tns:WSPushAdmin_v5_stopCampaignByLogin_Request_Soap"/>
+            <output
+            message="tns:WSPushAdmin_v5_stopCampaignByLogin_Response_Soap"/>
+            <fault message="tns:WSPushServiceException"
+                name="WSPushServiceException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:PushManagementException"
+                name="PushManagementException"/>
+        </operation>
+    </portType>
+    <binding name="WSPushAdmin_v5" type="tns:WSPushAdmin_v5">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="gagt">
+            <map:java-operation name="gagt" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQWRHb2FsVHlwZTs="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gagt?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQWRHb2FsVHlwZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gctc">
+            <map:java-operation name="gctc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25UeXBlQ2F0ZWdvcnk7"
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gctc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25UeXBlQ2F0ZWdvcnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gdc">
+            <map:java-operation name="gdc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGVsaXZlcnlDb25maWd1cmF0aW9uOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gdc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGVsaXZlcnlDb25maWd1cmF0aW9uOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gdg">
+            <map:java-operation name="gdg" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGVsaXZlcnlHb2FsOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gdg?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGVsaXZlcnlHb2FsOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gdr">
+            <map:java-operation name="gdr" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGF0ZVJhbmdlOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gdr?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRGF0ZVJhbmdlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getCFC">
+            <map:java-operation name="getCFC" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25GZWF0dXJlQ29uZmlnOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#getCFC?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25GZWF0dXJlQ29uZmlnOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getCFS">
+            <map:java-operation name="getCFS" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25GZWF0dXJlU2V0dGluZ3M7"
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#getCFS?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvQ2FtcGFpZ25GZWF0dXJlU2V0dGluZ3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getPushQueueEntryPriorityList">
+            <map:java-operation name="getPushQueueEntryPriorityList"
+                parameterOrder="" signature="KClMamF2YS91dGlsL0hhc2hNYXA7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#getPushQueueEntryPriorityList?KClMamF2YS91dGlsL0hhc2hNYXA7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPushQueueEntryPriorityListByLogin">
+            <map:java-operation name="getPushQueueEntryPriorityListByLogin"
+                parameterOrder="username password"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS91dGlsL0hhc2hNYXA7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#getPushQueueEntryPriorityListByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS91dGlsL0hhc2hNYXA7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="gfc">
+            <map:java-operation name="gfc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRnJlcXVlbmN5Q29uZmlnOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gfc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvRnJlcXVlbmN5Q29uZmlnOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="goc">
+            <map:java-operation name="goc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvT3B0aW1pemluZ0NvbmZpZzs="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#goc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvT3B0aW1pemluZ0NvbmZpZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gpc">
+            <map:java-operation name="gpc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUG9zdGNsaWNrQ29uZmlnOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gpc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUG9zdGNsaWNrQ29uZmlnOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gpcb">
+            <map:java-operation name="gpcb" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUG9zdGNsaWNrQmVhY29uOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gpcb?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUG9zdGNsaWNrQmVhY29uOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gprc">
+            <map:java-operation name="gprc" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUHJpY2luZ0NvbmZpZzs="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gprc?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvUHJpY2luZ0NvbmZpZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gtd">
+            <map:java-operation name="gtd" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGFyZ2V0aW5nRGF0YTs="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gtd?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGFyZ2V0aW5nRGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gtr">
+            <map:java-operation name="gtr" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGltZVJhbmdlOw=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gtr?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGltZVJhbmdlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gts">
+            <map:java-operation name="gts" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGFyZ2V0aW5nU2V0Ow=="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gts?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvVGFyZ2V0aW5nU2V0Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="gw">
+            <map:java-operation name="gw" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvV2Vla2RheXM7"
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#gw?KClMZGUvYWR0ZWNoL2hlbGlvcy9DYW1wYWlnbk1hbmFnZW1lbnQvV2Vla2RheXM7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="holdCampaign">
+            <map:java-operation name="holdCampaign" parameterOrder="cam"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdCampaign?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="holdCampaignById">
+            <map:java-operation name="holdCampaignById" parameterOrder="camId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspVg==" unwrapped="true"
+                wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdCampaignById?KExqYXZhL2xhbmcvTG9uZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="holdCampaignByIdByLogin">
+            <map:java-operation name="holdCampaignByIdByLogin"
+                parameterOrder="camId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdCampaignByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="holdCampaignByLogin">
+            <map:java-operation name="holdCampaignByLogin"
+                parameterOrder="cam username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdCampaignByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="holdMasterCampaignById">
+            <map:java-operation name="holdMasterCampaignById"
+                parameterOrder="masterCampaignId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdMasterCampaignById?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="holdMasterCampaignByIdByLogin">
+            <map:java-operation name="holdMasterCampaignByIdByLogin"
+                parameterOrder="masterCampaignId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#holdMasterCampaignByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaign">
+            <map:java-operation name="startCampaign" parameterOrder="cam"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaign?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignAt">
+            <map:java-operation name="startCampaignAt"
+                parameterOrder="cam datum"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS91dGlsL0RhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignAt?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS91dGlsL0RhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignAtByLogin">
+            <map:java-operation name="startCampaignAtByLogin"
+                parameterOrder="cam startAt username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault java-type="java.text.ParseException"
+                    name="ParseException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignAtByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+            <fault name="ParseException">
+                <soap:fault name="ParseException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignById">
+            <map:java-operation name="startCampaignById" parameterOrder="camId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByIdAt">
+            <map:java-operation name="startCampaignByIdAt"
+                parameterOrder="camId datum"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0RhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByIdAt?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0RhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByIdAtByLogin">
+            <map:java-operation name="startCampaignByIdAtByLogin"
+                parameterOrder="camId startAt username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault java-type="java.text.ParseException"
+                    name="ParseException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByIdAtByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1B1c2hNYW5hZ2VtZW50L1B1c2hRdWV1ZUVudHJ5Ow=="
+                style="document"/>
+            <input name="startCampaignByIdAtByLogin_0_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="startCampaignByIdAtByLogin_0_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+            <fault name="ParseException">
+                <soap:fault name="ParseException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByIdAtByLogin">
+            <map:java-operation name="startCampaignByIdAtByLogin"
+                parameterOrder="camId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByIdAtByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input name="startCampaignByIdAtByLogin_1_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="startCampaignByIdAtByLogin_1_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByIdLight">
+            <map:java-operation name="startCampaignByIdLight"
+                parameterOrder="camId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByIdLight?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByIdLightByLogin">
+            <map:java-operation name="startCampaignByIdLightByLogin"
+                parameterOrder="camId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByIdLightByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignByLogin">
+            <map:java-operation name="startCampaignByLogin"
+                parameterOrder="cam username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvUHVzaE1hbmFnZW1lbnQvUHVzaFF1ZXVlRW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignsByIdLight">
+            <map:java-operation name="startCampaignsByIdLight"
+                parameterOrder="campaignIds"
+                signature="KFtMamF2YS9sYW5nL0xvbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC9Db3JlL1B1c2hNYW5hZ2VtZW50Q29yZS9MaWdodFB1c2hSZXN1bHQ7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.Core.PushManagementCore.PushServiceException"
+                    name="PushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignsByIdLight?KFtMamF2YS9sYW5nL0xvbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC9Db3JlL1B1c2hNYW5hZ2VtZW50Q29yZS9MaWdodFB1c2hSZXN1bHQ7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="PushServiceException">
+                <soap:fault name="PushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startCampaignsByIdLightByLogin">
+            <map:java-operation name="startCampaignsByIdLightByLogin"
+                parameterOrder="campaignIds username password"
+                signature="KFtMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC9Db3JlL1B1c2hNYW5hZ2VtZW50Q29yZS9MaWdodFB1c2hSZXN1bHQ7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.Core.PushManagementCore.PushServiceException"
+                    name="PushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startCampaignsByIdLightByLogin?KFtMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC9Db3JlL1B1c2hNYW5hZ2VtZW50Q29yZS9MaWdodFB1c2hSZXN1bHQ7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="PushServiceException">
+                <soap:fault name="PushServiceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startMasterCampaignById">
+            <map:java-operation name="startMasterCampaignById"
+                parameterOrder="masterCampaignId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startMasterCampaignById?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="startMasterCampaignByIdByLogin">
+            <map:java-operation name="startMasterCampaignByIdByLogin"
+                parameterOrder="masterCampaignId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#startMasterCampaignByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvdXRpbC9IYXNoTWFwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="stopCampaign">
+            <map:java-operation name="stopCampaign" parameterOrder="cam"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#stopCampaign?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="stopCampaignById">
+            <map:java-operation name="stopCampaignById" parameterOrder="camId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspVg==" unwrapped="true"
+                wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#stopCampaignById?KExqYXZhL2xhbmcvTG9uZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="stopCampaignByIdByLogin">
+            <map:java-operation name="stopCampaignByIdByLogin"
+                parameterOrder="camId username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#stopCampaignByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="stopCampaignByLogin">
+            <map:java-operation name="stopCampaignByLogin"
+                parameterOrder="cam username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.PushManagement_v5.WSPushServiceException"
+                    name="WSPushServiceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.PushManagement.PushManagementException"
+                    name="PushManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/PushManagement_v5/WSPushAdmin_v5#stopCampaignByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0NhbXBhaWduTWFuYWdlbWVudC9DYW1wYWlnbjtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSPushServiceException">
+                <soap:fault name="WSPushServiceException" use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="PushManagementException">
+                <soap:fault name="PushManagementException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSPushAdmin_v5">
+        <port binding="tns:WSPushAdmin_v5" name="WSPushAdmin_v5">
+            <soap:address
+            location="http://ir000369.ad.aol.aoltw.net:6060/WSPushAdmin_v5/"/>
+        </port>
+    </service>
+</definitions>

@@ -1,0 +1,401 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	min-width:630px;
+}
+input, [contenteditable]
+{
+	box-sizing: border-box;
+}
+.file_input_wrapper
+{
+	overflow: hidden;
+	display: block;
+	position: relative;
+	height: 1.5em;
+}
+.file_input_wrapper::before
+{
+	display: inline-block;
+	height: 1.5em;
+	line-height: 1.5em;
+	content: "Upload File";
+	padding: 0 1em;
+	border-radius: 4px; 
+	background-color: white;
+	color: #333;
+	border: 1px solid #323233;
+	box-sizing: border-box;
+}
+.file_input_wrapper.disabled::before
+{
+	background-color: lightgray;
+	color: darkgray;
+}
+.file_input_wrapper:hover::before
+{
+	background-color: #EEE;
+	color: #000;
+}
+.file_input_wrapper input[type=file]
+{
+	position: absolute;
+	left: -999px;
+	top: -999px;
+}
+.uploading-file-status
+{
+	margin-left: 1em;
+}
+input[type=color]
+{
+	width: 40px;
+	padding: 0 1px;
+	/*
+	height: 20px;
+	margin: 0;
+	border: 0;
+	*/
+}
+.clear
+{
+	clear: both;
+}
+.clear:before,
+.clear:after
+{
+	clear: both;
+	display: table;
+	line-height: 0;
+	content: " ";
+}
+.ad_builder
+{
+	font-family: 'Open Sans', sans-serif;
+}
+.ad_builder .left
+{
+	float: left;
+}
+.ad_builder .right
+{
+	float: right;
+}
+
+/* nav */
+.ad_machina_nav
+{
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	background-color: #E4E4E4;
+	font-size: 1.5em;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 30px;
+}
+.editable_demo_title
+{
+	white-space: nowrap;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 80px;
+	right: 180px;
+}
+.ad_machina_nav a
+{
+	color: #313131;
+}
+.ad_machina_nav a:hover
+{
+	color: #0088CC;
+}
+.ad_machina_nav .link-back
+{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+.ad_machina_nav .right
+{
+	font-size: 1rem;
+}
+.ad_machina_nav button
+{
+	background-color: #0A4C8A;
+	border: none;
+	padding: 0 1em;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	line-height: 30px;
+	color: white;
+}
+.ad_machina_nav #save_status
+{
+	display: none; /* not yet implemented */
+}
+
+/* builder */
+.ad_builder_body
+{
+	position: relative;
+}
+
+/* all columns */
+.ad_builder .context-switcher,
+.ad_builder .context-trough,
+.ad_builder .workspace,
+.ad_builder .global-trough
+{
+	height: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+}
+/* context switcher (column 1) */
+.ad_builder .context-switcher
+{
+	float: left;
+	margin-right: 30%; /* room for the trough */
+	width: 80px;
+	background-color: #5C5E60;
+}
+.ad_builder .context-button
+{
+	cursor: pointer;
+	height: 80px;
+	background-color: #5C5E60;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-size: 8px;
+	text-align: center;
+	color: transparent; /* label is in images */
+	position: relative;
+}
+.ad_builder .context-button:hover
+{
+	background-color: #464646;
+}
+.ad_builder .context-button.selected
+{
+	background-color: #323233;
+}
+.ad_builder .context-button[data-context="layout"]
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_layout.png);
+}
+.ad_builder .context-button[data-context="bg"]
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_bg.png);
+}
+.ad_builder .context-button[data-context="cta"]
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_cta.png);
+}
+.ad_builder .context-button[data-context="layout"].disabled
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_layout_over.png);
+}
+.ad_builder .context-button[data-context="bg"].disabled
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_bg_over.png);
+}
+.ad_builder .context-button[data-context="cta"].disabled
+{
+	background-image: url(/assets/img/ad_machina/builder/btn_cta_over.png);
+}
+.ad_builder .context-trough.disabled,
+{
+	display: none;
+}
+.ad_builder .context-button.disabled,
+.ad_builder .context-button.disabled:hover
+{
+	cursor: default;
+	background-color: inherit;
+}
+/* context trough (column 2) */
+.ad_builder .global-trough,
+.ad_builder .context-trough
+{
+	padding: 15px;
+	background-color: #323233;
+	color: white;
+}
+.ad_builder .context-trough
+{
+	position: absolute;
+	width: 400px;
+	max-width: 30%;
+	left: 80px;
+}
+.ad_builder .context-pane
+{
+	display: none;
+}
+.ad_builder .context-pane.selected
+{
+	display: block;
+}
+.ad_builder input[type="checkbox"]
+{
+	margin: -3px 0 0;
+}
+input[type="text"]
+{
+	width: 100%;
+
+	/* make text inputs consistent between older & newer browsers */
+	padding: 0 0.5em;
+	line-height: 16px;
+}
+input[type="text"].with-color
+{
+	width: 250px;
+}
+input[disabled]
+{
+	opacity: 0.5;
+}
+.checkbox-label
+{
+	font-size: 0.7em;
+	text-transform: uppercase;
+	margin: 0 0.5em;
+}
+.context-trough .media-option
+{
+	cursor: pointer;
+	float: left;
+	width: 47.5%;
+	margin: 0 5% 5% 0;
+}
+.context-trough .media-option > img
+{
+	width: 156px; /* temporary: while thumbnails are mixed sizes */
+}
+.context-trough .media-option:hover > img,
+.context-trough .media-option:hover > .media-option-pattern
+{
+	outline: 2px solid rgba(255,255,255,0.5);
+}
+.context-trough .media-option:nth-child(2n+2)
+{
+	margin-right: 0;
+}
+.context-trough .media-option.selected > img,
+.context-trough .media-option.selected > .media-option-pattern
+{
+	outline: 2px solid white;
+}
+.context-trough .media-option-pattern
+{
+	width: 100%;
+	height: 0;
+	padding-bottom: 83%;
+}
+.right > label
+{
+	display: inline;
+}
+/* workspace (column 3) */
+.ad_builder .workspace
+{
+	float: left;
+	padding: 0 30px;
+}
+.ad_builder .ad_preview_wrap
+{
+	float: left;
+	height: 280px; /* 250 ad + 30px controls */
+}
+.ad_builder .ad_preview_wrap .preview
+{
+	overflow: hidden;
+	width: 300px;
+	height: 250px;
+}
+.ad_builder .ad_controls
+{
+	height: 30px;
+	line-height: 30px;
+}
+.ad_builder .ad_zoom_controls
+{
+	display: none; /* this feature may not be implemented */
+}
+#refresh_button
+{
+	cursor: pointer;
+}
+#refresh_button i
+{
+	transition-property: transform, opacity, color;
+	transition-duration: 0.3s;
+}
+#refresh_button:hover i
+{
+	transform: rotateZ(180deg);
+}
+#refresh_button.disabled
+{
+	opacity: 0.5;
+	cursor: default;
+}
+.logo-file img {
+	max-width: 150px;
+	max-height: 30px;
+}
+.logo-file .delete_button
+{
+	cursor: pointer
+}
+.logo-file .delete_button:hover
+{
+	color: red;
+}
+.logo-file .delete_button.disabled
+{
+	display: none;
+}
+
+/* more entries (column 4) */
+.ad_builder .global-trough
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+@media (max-width: 1095px)
+{
+	.ad_builder .global-trough
+	{
+		clear: both;
+		height: auto;
+		padding: 0;
+		position: static;
+		float: none;
+		background-color: #FFFFFF;
+		color: #000000;
+	}
+}
+
+/* counteracting some header silliness */
+@media (max-width: 979px) /* base_ui.css:124 */
+{
+	.navbar-fixed-top { /* base_ui.css:151 */
+		margin-bottom: 0px;
+	}
+}
+@media (min-width: 1366px)
+{
+	body /* base_ui.css:100 */
+	{
+		margin-top: 0!important;
+		padding-top: 74px!important;
+		box-sizing: border-box;
+	}
+}

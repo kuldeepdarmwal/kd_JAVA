@@ -1,0 +1,12 @@
+<div style="display: inline-block;">
+	<div class="product_header_img">
+		<img class="targeted_image" [src]="product.selected ? product.definition.product_enabled_img : product.definition.product_disabled_img" />
+		<img class="targeted_image" />
+	</div>
+	<div class="text-align-center grey-text text-darken-1 product-display-text">
+		<span *ngIf="product.definition.first_name" class="product_first_name">{{product.definition.first_name}}</span>
+		{{product.definition.last_name}}
+	</div>
+	<input type="checkbox" class="filled-in" [(ngModel)]="product.selected" (change)="productToggle()" [disabled]="product.disabled">
+	<label></label>
+</div>

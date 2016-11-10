@@ -1,0 +1,45 @@
+<div class="header-bar">
+    <div class="info-bar" (click)="toGate()">
+        <span class="back-icon"><i class="material-icons">reply</i></span>
+        <span class="info">Opportunity : <span>{{advertiserName}}</span> | </span>
+        <span class="info">{{proposalName}} | </span>
+        <span class="info">Presented on behalf of {{submittedBy}}</span>
+    </div>
+</div>
+<style>
+    .header-bar {
+        position: fixed;
+        height: 50px;
+        width: 100%;
+        z-index: 100;
+        background: #686767;
+        border-bottom: 1px solid rgba(245, 246, 246, 0.2);
+        color: #989a9b;
+    }
+
+    .header-bar .info-bar {
+        padding: 8px 0px;
+        margin-left: 80px;
+        font-size: 18px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .header-bar .info-bar:hover, .header-bar .info-bar:hover .back-icon i{
+        color: #fff;
+    }
+
+    .info-bar .back-icon {
+        position: relative;
+        top: 4px;
+    }
+
+    .info-bar .back-icon img {
+        width: 18px;
+    }
+
+    .info-bar .info {
+        margin: 0px 5px;
+    }
+
+</style>

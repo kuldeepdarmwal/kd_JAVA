@@ -1,0 +1,2295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdmin_v5"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="AttributeOperatorValueExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AttributeOperatorValueExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence>
+                            <xsd:element name="attribute" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="operator" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="value" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="BoolExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.BoolExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="expressions" nillable="true"
+                        type="xns5:Vector"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/KeywordManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns7="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns8="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/KeywordManagement/"/>
+            <xsd:element name="ktn" nillable="true"
+                type="xns4:KeywordTreeNode"/>
+            <xsd:element name="KeywordTreeNode_Response" nillable="true"
+                type="xns4:KeywordTreeNode"/>
+            <xsd:element name="WSKeywordAdminException" nillable="true"
+                type="xns5:WSKeywordAdminException"/>
+            <xsd:element name="username" nillable="true" type="xsd:string"/>
+            <xsd:element name="password" nillable="true" type="xsd:string"/>
+            <xsd:element name="keyid" nillable="true" type="xsd:long"/>
+            <xsd:element name="AttributeOperatorValueExpression_Response"
+                nillable="true" type="xns6:AttributeOperatorValueExpression"/>
+            <xsd:element name="keyId" nillable="true" type="xsd:long"/>
+            <xsd:element name="Key_Response" nillable="true" type="xns4:Key"/>
+            <xsd:element name="keyGroupId" nillable="true" type="xsd:long"/>
+            <xsd:element name="KeyGroup_Response" nillable="true"
+                type="xns4:KeyGroup"/>
+            <xsd:element name="start" nillable="true" type="xsd:long"/>
+            <xsd:element name="end" nillable="true" type="xsd:long"/>
+            <xsd:element name="boolExpr" nillable="true"
+                type="xns6:BoolExpression"/>
+            <xsd:element name="order" nillable="true" type="xns7:Collection"/>
+            <xsd:element name="ArrayOflong_Response" nillable="true"
+                type="xns8:ArrayOflong"/>
+            <xsd:element name="ArrayOfKeyGroup_Response" nillable="true"
+                type="xns4:ArrayOfKeyGroup"/>
+            <xsd:element name="ArrayOfKey_Response" nillable="true"
+                type="xns4:ArrayOfKey"/>
+            <xsd:element name="long_Response" nillable="true" type="xsd:long"/>
+            <xsd:element name="keywordId" nillable="true" type="xsd:long"/>
+            <xsd:element name="string_Response" nillable="true"
+                type="xsd:string"/>
+            <xsd:element name="ids" nillable="true" type="xns8:ArrayOflong"/>
+            <xsd:element name="HashMap_Response" nillable="true"
+                type="xns7:HashMap"/>
+            <xsd:element name="extid" nillable="true" type="xsd:string"/>
+            <xsd:element name="id" nillable="true" type="xsd:long"/>
+            <xsd:element name="col" nillable="true" type="xns7:Collection"/>
+            <xsd:element name="ArrayOfKeywordTreeNode_Response" nillable="true"
+                type="xns4:ArrayOfKeywordTreeNode"/>
+            <xsd:element name="keyword" nillable="true" type="xsd:string"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/KeywordManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/KeywordManagement/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="KeywordTreeNode">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.KeywordManagement.KeywordTreeNode"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="keyword" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="keywordId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="level" nillable="true" type="xsd:int"/>
+                    <xsd:element name="mainNetworkId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="parentId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subNetworkId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="type" nillable="true" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Key">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.KeywordManagement.Key"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="caption" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="keyDefinitionId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maximumValue" type="xsd:int"/>
+                    <xsd:element name="minimumValue" type="xsd:int"/>
+                    <xsd:element name="multiselect" type="xsd:boolean"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="preDefinedValues" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="preValueFunction" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicate" type="xsd:boolean"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="sourceType" type="xsd:int"/>
+                    <xsd:element name="type" type="xsd:int"/>
+                    <xsd:element name="validationPattern" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="KeyGroup">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.KeywordManagement.KeyGroup"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="keys" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="sourceType" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfKeyGroup">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.KeywordManagement.KeyGroup;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="KeyGroup" nillable="true" type="tns:KeyGroup"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfKey">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.KeywordManagement.Key;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Key"
+                        nillable="true" type="tns:Key"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfKeywordTreeNode">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.KeywordManagement.KeywordTreeNode;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="KeywordTreeNode" nillable="true"
+                        type="tns:KeywordTreeNode"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSKeywordAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="WSKeywordAdminException">
+        <part element="ns0:WSKeywordAdminException"
+            name="WSKeywordAdminException"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_createKeywordTreeNodeByLogin_Request_Soap">
+        <part element="ns0:ktn" name="ktn"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_createKeywordTreeNodeByLogin_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_createKeywordTreeNode_Request_Soap">
+        <part element="ns0:ktn" name="ktn"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_createKeywordTreeNode_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_deleteKeywordTreeNodeByLogin_Request_Soap">
+        <part element="ns0:keyid" name="keyid"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message
+    name="WSKeywordAdmin_v5_deleteKeywordTreeNodeByLogin_Response_Soap"/>
+    <message name="WSKeywordAdmin_v5_deleteKeywordTreeNode_Request_Soap">
+        <part element="ns0:keyid" name="keyid"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_deleteKeywordTreeNode_Response_Soap"/>
+    <message name="WSKeywordAdmin_v5_getAOVE_Request_Soap"/>
+    <message name="WSKeywordAdmin_v5_getAOVE_Response_Soap">
+        <part element="ns0:AttributeOperatorValueExpression_Response"
+            name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyByIdByLogin_Request_Soap">
+        <part element="ns0:keyId" name="keyId"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyByIdByLogin_Response_Soap">
+        <part element="ns0:Key_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyById_Request_Soap">
+        <part element="ns0:keyId" name="keyId"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyById_Response_Soap">
+        <part element="ns0:Key_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupById_Request_Soap">
+        <part element="ns0:keyGroupId" name="keyGroupId"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupById_Response_Soap">
+        <part element="ns0:KeyGroup_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyGroupList_Response_Soap">
+        <part element="ns0:ArrayOfKeyGroup_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyIdListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfKey_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListSizeByLogin_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListSizeByLogin_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeyList_Response_Soap">
+        <part element="ns0:ArrayOfKey_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordById_Request_Soap">
+        <part element="ns0:keywordId" name="keywordId"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordById_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordMapByIdList_Request_Soap">
+        <part element="ns0:ids" name="ids"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordMapByIdList_Response_Soap">
+        <part element="ns0:HashMap_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByExtIdByLogin_Request_Soap">
+        <part element="ns0:extid" name="extid"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByExtIdByLogin_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByExtId_Request_Soap">
+        <part element="ns0:extid" name="extid"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByExtId_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByIdByLogin_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeByIdByLogin_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeById_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeIdListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfKeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordTreeNodeList_Response_Soap">
+        <part element="ns0:ArrayOfKeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordsByWebsiteId_Request_Soap">
+        <part element="ns0:id" name="id"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_getKeywordsByWebsiteId_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordByLogin_Request_Soap">
+        <part element="ns0:keyword" name="keyword"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordByLogin_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordDirectByLogin_Request_Soap">
+        <part element="ns0:keyword" name="keyword"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordDirectByLogin_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordDirect_Request_Soap">
+        <part element="ns0:keyword" name="keyword"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeywordDirect_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeyword_Request_Soap">
+        <part element="ns0:keyword" name="keyword"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_registerKeyword_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_updateKeywordTreeNodeByLogin_Request_Soap">
+        <part element="ns0:ktn" name="ktn"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_updateKeywordTreeNodeByLogin_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_updateKeywordTreeNode_Request_Soap">
+        <part element="ns0:ktn" name="ktn"/>
+    </message>
+    <message name="WSKeywordAdmin_v5_updateKeywordTreeNode_Response_Soap">
+        <part element="ns0:KeywordTreeNode_Response" name="response"/>
+    </message>
+    <portType name="WSKeywordAdmin_v5">
+        <operation name="createKeywordTreeNode" parameterOrder="ktn">
+            <input
+            message="tns:WSKeywordAdmin_v5_createKeywordTreeNode_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_createKeywordTreeNode_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="createKeywordTreeNodeByLogin"
+            parameterOrder="ktn username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_createKeywordTreeNodeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_createKeywordTreeNodeByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="deleteKeywordTreeNode" parameterOrder="keyid">
+            <input
+            message="tns:WSKeywordAdmin_v5_deleteKeywordTreeNode_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_deleteKeywordTreeNode_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="deleteKeywordTreeNodeByLogin"
+            parameterOrder="keyid username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_deleteKeywordTreeNodeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_deleteKeywordTreeNodeByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getAOVE" parameterOrder="">
+            <input message="tns:WSKeywordAdmin_v5_getAOVE_Request_Soap"/>
+            <output message="tns:WSKeywordAdmin_v5_getAOVE_Response_Soap"/>
+        </operation>
+        <operation name="getKeyById" parameterOrder="keyId">
+            <input message="tns:WSKeywordAdmin_v5_getKeyById_Request_Soap"/>
+            <output message="tns:WSKeywordAdmin_v5_getKeyById_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyByIdByLogin"
+            parameterOrder="keyId username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyGroupById" parameterOrder="keyGroupId">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyGroupById_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyGroupById_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyGroupIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyGroupIdList_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyGroupIdList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyGroupList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyGroupList_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyGroupList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyIdList"
+            parameterOrder="start end boolExpr order">
+            <input message="tns:WSKeywordAdmin_v5_getKeyIdList_Request_Soap"/>
+            <output message="tns:WSKeywordAdmin_v5_getKeyIdList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyIdListByLogin"
+            parameterOrder="start end boolExpr order username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyIdListByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyList" parameterOrder="start end boolExpr order">
+            <input message="tns:WSKeywordAdmin_v5_getKeyList_Request_Soap"/>
+            <output message="tns:WSKeywordAdmin_v5_getKeyList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyListByLogin"
+            parameterOrder="start end boolExpr order username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyListByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyListSize" parameterOrder="boolExpr">
+            <input message="tns:WSKeywordAdmin_v5_getKeyListSize_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyListSize_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeyListSizeByLogin"
+            parameterOrder="boolExpr username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeyListSizeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeyListSizeByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordById" parameterOrder="keywordId">
+            <input message="tns:WSKeywordAdmin_v5_getKeywordById_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordById_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordMapByIdList" parameterOrder="ids">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordMapByIdList_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordMapByIdList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtId" parameterOrder="extid">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByExtId_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByExtId_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtIdByLogin"
+            parameterOrder="extid username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByExtIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByExtIdByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeById" parameterOrder="id col">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeById_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeById_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeByIdByLogin"
+            parameterOrder="id username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeIdList_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeIdList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeIdListByLogin"
+            parameterOrder="start end username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeIdListByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeList_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeList_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeListByLogin"
+            parameterOrder="start end username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeListByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordTreeNodeListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeListSize_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordTreeNodeListSize_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="getKeywordsByWebsiteId" parameterOrder="id">
+            <input
+            message="tns:WSKeywordAdmin_v5_getKeywordsByWebsiteId_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_getKeywordsByWebsiteId_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="registerKeyword" parameterOrder="keyword">
+            <input
+            message="tns:WSKeywordAdmin_v5_registerKeyword_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_registerKeyword_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="registerKeywordByLogin"
+            parameterOrder="keyword username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_registerKeywordByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_registerKeywordByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="registerKeywordDirect" parameterOrder="keyword">
+            <input
+            message="tns:WSKeywordAdmin_v5_registerKeywordDirect_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_registerKeywordDirect_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="registerKeywordDirectByLogin"
+            parameterOrder="keyword username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_registerKeywordDirectByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_registerKeywordDirectByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="updateKeywordTreeNode" parameterOrder="ktn">
+            <input
+            message="tns:WSKeywordAdmin_v5_updateKeywordTreeNode_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_updateKeywordTreeNode_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+        <operation name="updateKeywordTreeNodeByLogin"
+            parameterOrder="ktn username password">
+            <input
+            message="tns:WSKeywordAdmin_v5_updateKeywordTreeNodeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSKeywordAdmin_v5_updateKeywordTreeNodeByLogin_Response_Soap"/>
+            <fault message="tns:WSKeywordAdminException"
+                name="WSKeywordAdminException"/>
+        </operation>
+    </portType>
+    <binding name="WSKeywordAdmin_v5" type="tns:WSKeywordAdmin_v5">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createKeywordTreeNode">
+            <map:java-operation name="createKeywordTreeNode"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#createKeywordTreeNode?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="ktn" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createKeywordTreeNodeByLogin">
+            <map:java-operation name="createKeywordTreeNodeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#createKeywordTreeNodeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="ktn username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteKeywordTreeNode">
+            <map:java-operation name="deleteKeywordTreeNode"
+                signature="KExqYXZhL2xhbmcvTG9uZzspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#deleteKeywordTreeNode?KExqYXZhL2xhbmcvTG9uZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="keyid" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteKeywordTreeNodeByLogin">
+            <map:java-operation name="deleteKeywordTreeNodeByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#deleteKeywordTreeNodeByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="keyid username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAOVE">
+            <map:java-operation name="getAOVE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getAOVE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getKeyById">
+            <map:java-operation name="getKeyById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="keyId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyByIdByLogin">
+            <map:java-operation name="getKeyByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="keyId username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupById">
+            <map:java-operation name="getKeyGroupById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7"
+                style="document"/>
+            <input>
+                <soap:body parts="keyGroupId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupIdList">
+            <map:java-operation name="getKeyGroupIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupList">
+            <map:java-operation name="getKeyGroupList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyIdList">
+            <map:java-operation name="getKeyIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyIdListByLogin">
+            <map:java-operation name="getKeyIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyList">
+            <map:java-operation name="getKeyList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListByLogin">
+            <map:java-operation name="getKeyListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListSize">
+            <map:java-operation name="getKeyListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListSizeByLogin">
+            <map:java-operation name="getKeyListSizeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListSizeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordById">
+            <map:java-operation name="getKeywordById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordById?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="keywordId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordMapByIdList">
+            <map:java-operation name="getKeywordMapByIdList"
+                signature="KFtMamF2YS9sYW5nL0xvbmc7KUxqYXZhL3V0aWwvSGFzaE1hcDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordMapByIdList?KFtMamF2YS9sYW5nL0xvbmc7KUxqYXZhL3V0aWwvSGFzaE1hcDs="
+                style="document"/>
+            <input>
+                <soap:body parts="ids" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtId">
+            <map:java-operation name="getKeywordTreeNodeByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="extid" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtIdByLogin">
+            <map:java-operation name="getKeywordTreeNodeByExtIdByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByExtIdByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="extid username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeById">
+            <map:java-operation name="getKeywordTreeNodeById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByIdByLogin">
+            <map:java-operation name="getKeywordTreeNodeByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="id username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeIdList">
+            <map:java-operation name="getKeywordTreeNodeIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeIdListByLogin">
+            <map:java-operation name="getKeywordTreeNodeIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeList">
+            <map:java-operation name="getKeywordTreeNodeList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeListByLogin">
+            <map:java-operation name="getKeywordTreeNodeListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeListSize">
+            <map:java-operation name="getKeywordTreeNodeListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordsByWebsiteId">
+            <map:java-operation name="getKeywordsByWebsiteId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordsByWebsiteId?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="id" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeyword">
+            <map:java-operation name="registerKeyword"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeyword?KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="keyword" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordByLogin">
+            <map:java-operation name="registerKeywordByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="keyword username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordDirect">
+            <map:java-operation name="registerKeywordDirect"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordDirect?KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="keyword" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordDirectByLogin">
+            <map:java-operation name="registerKeywordDirectByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordDirectByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="keyword username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateKeywordTreeNode">
+            <map:java-operation name="updateKeywordTreeNode"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#updateKeywordTreeNode?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="ktn" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateKeywordTreeNodeByLogin">
+            <map:java-operation name="updateKeywordTreeNodeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#updateKeywordTreeNodeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="ktn username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <binding name="WSKeywordAdmin_v5_SOAP12" type="tns:WSKeywordAdmin_v5">
+        <soap12:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createKeywordTreeNode">
+            <map:java-operation name="createKeywordTreeNode"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#createKeywordTreeNode?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="ktn" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createKeywordTreeNodeByLogin">
+            <map:java-operation name="createKeywordTreeNodeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#createKeywordTreeNodeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="ktn username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteKeywordTreeNode">
+            <map:java-operation name="deleteKeywordTreeNode"
+                signature="KExqYXZhL2xhbmcvTG9uZzspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#deleteKeywordTreeNode?KExqYXZhL2xhbmcvTG9uZzspVg=="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyid" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteKeywordTreeNodeByLogin">
+            <map:java-operation name="deleteKeywordTreeNodeByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#deleteKeywordTreeNodeByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspVg=="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyid username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAOVE">
+            <map:java-operation name="getAOVE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getAOVE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap12:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getKeyById">
+            <map:java-operation name="getKeyById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyId" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyByIdByLogin">
+            <map:java-operation name="getKeyByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyId username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupById">
+            <map:java-operation name="getKeyGroupById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7"
+                style="document"/>
+            <input>
+                <soap12:body parts="keyGroupId" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupIdList">
+            <map:java-operation name="getKeyGroupIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyGroupList">
+            <map:java-operation name="getKeyGroupList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyGroupList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5R3JvdXA7"
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyIdList">
+            <map:java-operation name="getKeyIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyIdListByLogin">
+            <map:java-operation name="getKeyIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyList">
+            <map:java-operation name="getKeyList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListByLogin">
+            <map:java-operation name="getKeyListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5Ow=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListSize">
+            <map:java-operation name="getKeyListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeyListSizeByLogin">
+            <map:java-operation name="getKeyListSizeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeyListSizeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="boolExpr username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordById">
+            <map:java-operation name="getKeywordById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordById?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="keywordId" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordMapByIdList">
+            <map:java-operation name="getKeywordMapByIdList"
+                signature="KFtMamF2YS9sYW5nL0xvbmc7KUxqYXZhL3V0aWwvSGFzaE1hcDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordMapByIdList?KFtMamF2YS9sYW5nL0xvbmc7KUxqYXZhL3V0aWwvSGFzaE1hcDs="
+                style="document"/>
+            <input>
+                <soap12:body parts="ids" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtId">
+            <map:java-operation name="getKeywordTreeNodeByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap12:body parts="extid" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByExtIdByLogin">
+            <map:java-operation name="getKeywordTreeNodeByExtIdByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByExtIdByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap12:body parts="extid username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeById">
+            <map:java-operation name="getKeywordTreeNodeById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTs="
+                style="document"/>
+            <input>
+                <soap12:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeByIdByLogin">
+            <map:java-operation name="getKeywordTreeNodeByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="id username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeIdList">
+            <map:java-operation name="getKeywordTreeNodeIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeIdListByLogin">
+            <map:java-operation name="getKeywordTreeNodeIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeList">
+            <map:java-operation name="getKeywordTreeNodeList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeListByLogin">
+            <map:java-operation name="getKeywordTreeNodeListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9LZXl3b3JkTWFuYWdlbWVudC9LZXl3b3JkVHJlZU5vZGU7"
+                style="document"/>
+            <input>
+                <soap12:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordTreeNodeListSize">
+            <map:java-operation name="getKeywordTreeNodeListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordTreeNodeListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getKeywordsByWebsiteId">
+            <map:java-operation name="getKeywordsByWebsiteId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#getKeywordsByWebsiteId?KExqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="id" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeyword">
+            <map:java-operation name="registerKeyword"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeyword?KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyword" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordByLogin">
+            <map:java-operation name="registerKeywordByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyword username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordDirect">
+            <map:java-operation name="registerKeywordDirect"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordDirect?KExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyword" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="registerKeywordDirectByLogin">
+            <map:java-operation name="registerKeywordDirectByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#registerKeywordDirectByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL1N0cmluZzs="
+                style="document"/>
+            <input>
+                <soap12:body parts="keyword username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateKeywordTreeNode">
+            <map:java-operation name="updateKeywordTreeNode"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#updateKeywordTreeNode?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="ktn" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateKeywordTreeNodeByLogin">
+            <map:java-operation name="updateKeywordTreeNodeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.KeywordManagement_v5.WSKeywordAdminException"
+                    name="WSKeywordAdminException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/KeywordManagement_v5/WSKeywordAdmin_v5#updateKeywordTreeNodeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0tleXdvcmRNYW5hZ2VtZW50L0tleXdvcmRUcmVlTm9kZTtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvS2V5d29yZE1hbmFnZW1lbnQvS2V5d29yZFRyZWVOb2RlOw=="
+                style="document"/>
+            <input>
+                <soap12:body parts="ktn username password" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSKeywordAdminException">
+                <soap12:fault name="WSKeywordAdminException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSKeywordAdmin_v5">
+        <port binding="tns:WSKeywordAdmin_v5" name="WSKeywordAdmin_v5">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSKeywordAdmin_v5/"/>
+        </port>
+        <port binding="tns:WSKeywordAdmin_v5_SOAP12"
+            name="WSKeywordAdmin_v5_SOAP12">
+            <soap12:address
+            location="http://swd-franz.adtech.de:6060/WSKeywordAdmin_v5/"/>
+        </port>
+    </service>
+</definitions>

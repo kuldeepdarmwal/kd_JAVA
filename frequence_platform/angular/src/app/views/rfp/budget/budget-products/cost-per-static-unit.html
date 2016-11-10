@@ -1,0 +1,20 @@
+<div class="col s2">
+    <div class="input-field" style="width:90%; padding-left:5%; padding-right:5%;">
+        <input type="text" class="grey-text no_option_product_input" [(ngModel)]="product.content.default" mycurrency>
+        <label class="active">{{product.content.label}}</label>
+    </div>
+</div>
+<div class="col s10">
+    <div *ngFor="let option of options; let i = index" class="col s4">
+        <div class="row">
+            <div class="input-field col s6">
+                <span class="discrete_dollar_prepend">$</span>
+                <input type="text" class="grey-text input_cpm product_input"
+                       [(ngModel)]="option.config[product.id].data.price" mycurrency>
+                <label class="active">{{option.config[product.id].setUpData.price.label}}</label>
+            </div>
+
+        </div>
+
+    </div>
+</div>

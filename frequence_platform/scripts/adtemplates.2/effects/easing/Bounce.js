@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Bounce={easeOut:function(a,b,c,d){return(a/=d)<1/2.75?c*(7.5625*a*a)+b:a<2/2.75?c*(7.5625*(a-=1.5/2.75)*a+.75)+b:a<2.5/2.75?c*(7.5625*(a-=2.25/2.75)*a+.9375)+b:c*(7.5625*(a-=2.625/2.75)*a+.984375)+b},easeIn:function(d,c,a,b){return a-Bounce.easeOut(b-d,0,a,b)+c},easeInOut:function(c,d,b,a){return c<a/2?Bounce.easeIn(c*2,0,b,a)*.5+d:Bounce.easeOut(c*2-a,0,b,a)*.5+b*.5+d}}

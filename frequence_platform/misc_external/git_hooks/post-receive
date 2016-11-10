@@ -1,0 +1,23 @@
+#!/bin/sh
+
+while read oldrev newrev refname
+do
+  WEB_PATH=/path/to/web/dir
+
+  if [ "$newrev" != "0000000000000000000000000000000000000000" ]
+  then
+    branch=$(git rev-parse --symbolic --abbrev-ref $refname)
+    GIT_WORK_TREE=$WEB_PATH git checkout -f $branch
+
+    cd $WEB_PATH
+
+    # install dependencies
+    curl -sS https://getcomposer.org/installer | php
+    /usr/bin/php composer.phar install --prefer-dist
+
+    # run tests
+    ./vendor/bin/codecept run --steps
+  fi
+done
+
+exit 0

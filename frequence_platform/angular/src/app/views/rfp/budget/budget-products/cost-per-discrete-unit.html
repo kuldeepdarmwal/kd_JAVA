@@ -1,0 +1,25 @@
+<div class="col s10 offset-s2">
+    <div *ngFor="let option of options; let i = index" class="col s4">
+        <div *ngIf="option.selected">
+            <div class="row">
+                <div class="input-field col s6">
+                    <select class="io_period_dropdown grey-text" [(ngModel)]="option.config[product.id].data.unit"
+                            (change)="changeType($event.target.value, option.optionId, product.id)"
+                            materialize="material_select" [materializeSelectOptions]="option.config[product.id].setUpData.unit.dropdown_options">
+                        <option *ngFor="let dropdown_option of option.config[product.id].setUpData.unit.dropdown_options"
+                                [value]="dropdown_option.value">{{dropdown_option.text}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <span class="discrete_dollar_prepend">$</span>
+                <input type="text" class="grey-text input_cpm product_input"
+                       [(ngModel)]="option.config[product.id].data.cpc" mycurrency>
+                <label class="active">{{option.config[product.id].setUpData.cpc.label}}</label>
+            </div>
+        </div>
+    </div>
+</div>

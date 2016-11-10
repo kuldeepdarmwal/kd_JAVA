@@ -1,0 +1,747 @@
+Name,CITIES API
+Type,Geographic
+Frequency,Daily
+Date range,Last 7 days
+Dates,"Sep 6, 2012-Sep 12, 2012"
+Account,Day,Network,Country/Territory,Campaign,City,Region,Impressions,Clicks,Cost
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Alviso,California,1,0,0.00
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Campbell,California,1268,0,1.70
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Cupertino,California,132,0,0.13
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Los Altos,California,31,0,0.03
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Mountain View,California,229,0,0.23
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Palo Alto,California,463,0,0.58
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Santa Clara,California,339,0,0.36
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Saratoga,California,26,0,0.03
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Stanford,California,33,0,0.04
+City Ventures,2012-09-06,Display Network,United States,CTVN01_150k,Sunnyvale,California,421,0,0.48
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Alviso,California,2,0,0.00
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Campbell,California,1545,0,2.08
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Cupertino,California,171,0,0.16
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Los Altos,California,23,0,0.03
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Mountain View,California,193,0,0.22
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Palo Alto,California,390,0,0.39
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Santa Clara,California,262,0,0.27
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Saratoga,California,30,0,0.04
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Stanford,California,27,0,0.03
+City Ventures,2012-09-07,Display Network,United States,CTVN01_150k,Sunnyvale,California,235,0,0.24
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Alviso,California,1,0,0.00
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Campbell,California,1566,0,2.15
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Cupertino,California,88,0,0.10
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Los Altos,California,43,0,0.05
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Mountain View,California,154,0,0.18
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Palo Alto,California,283,0,0.30
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Santa Clara,California,327,0,0.33
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Saratoga,California,47,0,0.05
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Stanford,California,16,0,0.02
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Sunnyvale,California,284,0,0.29
+City Ventures,2012-09-08,Display Network,United States,CTVN01_150k,Santa Clara,Oregon,1,0,0.00
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Campbell,California,1540,2,2.12
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Cupertino,California,77,0,0.08
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Los Altos,California,87,0,0.10
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Mountain View,California,225,0,0.24
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Palo Alto,California,356,0,0.37
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Santa Clara,California,250,0,0.27
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Saratoga,California,35,0,0.03
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Stanford,California,7,0,0.01
+City Ventures,2012-09-09,Display Network,United States,CTVN01_150k,Sunnyvale,California,232,0,0.26
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Campbell,California,1578,0,2.16
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Cupertino,California,138,1,0.12
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Los Altos,California,48,0,0.06
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Mountain View,California,291,0,0.30
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Palo Alto,California,298,0,0.33
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Santa Clara,California,319,0,0.32
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Saratoga,California,31,0,0.03
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Stanford,California,34,0,0.04
+City Ventures,2012-09-10,Display Network,United States,CTVN01_150k,Sunnyvale,California,305,0,0.32
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Alviso,California,1,0,0.00
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Campbell,California,1245,0,1.66
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Cupertino,California,155,0,0.14
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Los Altos,California,48,0,0.05
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Mountain View,California,408,0,0.43
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Palo Alto,California,370,0,0.37
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Santa Clara,California,438,0,0.44
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Saratoga,California,38,0,0.04
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Stanford,California,65,0,0.06
+City Ventures,2012-09-11,Display Network,United States,CTVN01_150k,Sunnyvale,California,398,0,0.42
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Alameda,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Belmont,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Berkeley,California,4,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Brentwood,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Burlingame,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Campbell,California,2,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Cupertino,California,6,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Daly City,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Dublin,California,5,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Fremont,California,18,0,0.05
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Ft Bragg,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Hayward,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Menlo Park,California,6,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Millbrae,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Milpitas,California,6,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Morgan Hill,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Mountain View,California,31,1,0.08
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Newark,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Oakland,California,3,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Palo Alto,California,17,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Petaluma,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Pleasanton,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Redwood City,California,15,0,0.05
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Anselmo,California,2,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Bruno,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Carlos,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Francisco,California,31,0,0.08
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Jose,California,78,0,0.22
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Mateo,California,8,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,San Ramon,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Santa Clara,California,43,0,0.11
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Sonoma,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,South San Francisco,California,2,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Stanford,California,4,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Sunnyvale,California,56,0,0.16
+Jacob Capital,2012-09-06,Display Network,United States,CTVN01_RTG,Vallejo,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Campbell,California,6,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Gilroy,California,2,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Los Gatos,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Milpitas,California,8,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Morgan Hill,California,10,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Mountain View,California,13,0,0.08
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Novato,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,San Francisco,California,9,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,San Jose,California,20,0,0.06
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,San Leandro,California,5,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Santa Clara,California,6,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,COMMRTG,Sunol,California,3,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Unspecified City,California,4,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Alameda,California,7,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Alamo,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Albany,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Antioch,California,5,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Atherton,California,2,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Belmont,California,8,0,0.05
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Berkeley,California,26,0,0.11
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Brentwood,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Burlingame,California,3,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Campbell,California,4,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Concord,California,29,0,0.13
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Corte Madera,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Cupertino,California,9,0,0.05
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Daly City,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Danville,California,10,0,0.05
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Dublin,California,4,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,El Cerrito,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Emeryville,California,5,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Fairfax,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Fremont,California,16,0,0.09
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Gilroy,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Half Moon Bay,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Hayward,California,7,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Healdsburg,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Hercules,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Kentfield,California,4,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Lafayette,California,4,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Larkspur,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Livermore,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Los Altos,California,9,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Los Gatos,California,5,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Martinez,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Mendocino,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Menlo Park,California,37,0,0.17
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Mill Valley,California,23,0,0.11
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Millbrae,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Milpitas,California,6,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Moraga,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Morgan Hill,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Mountain View,California,43,0,0.21
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Napa,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Newark,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Novato,California,7,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Oakland,California,43,0,0.22
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Oakley,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Pacifica,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Palo Alto,California,121,0,0.57
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Petaluma,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Pinole,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Pittsburg,California,4,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Pleasant Hill,California,6,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Pleasanton,California,8,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Portola Valley,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Redwood City,California,27,0,0.12
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Rohnert Park,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Ross,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Anselmo,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Carlos,California,8,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Francisco,California,188,1,0.93
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Jose,California,62,0,0.32
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Leandro,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Lorenzo,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Mateo,California,27,0,0.16
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Pablo,California,2,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Rafael,California,39,0,0.20
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,San Ramon,California,9,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Santa Clara,California,29,0,0.17
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Santa Rosa,California,10,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Saratoga,California,3,0,0.02
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Sausalito,California,1,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Sonoma,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,South San Francisco,California,9,0,0.04
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Stanford,California,12,0,0.06
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Sunnyvale,California,46,0,0.21
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Sunol,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Union City,California,2,0,0.01
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Vallejo,California,6,0,0.03
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Walnut Creek,California,73,0,0.31
+Jacob Capital,2012-09-06,Display Network,United States,SKSPGDN001,Windsor,California,1,0,0.00
+Jacob Capital,2012-09-06,Display Network,United States,AZSOLARRTG,San Francisco,California,28,0,0.07
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Unspecified City,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Berkeley,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Brentwood,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Campbell,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Cupertino,California,10,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Dublin,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Fremont,California,9,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Los Altos,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Los Gatos,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Menlo Park,California,5,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Milpitas,California,8,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Mountain View,California,27,0,0.08
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Oakland,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Palo Alto,California,11,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Pleasant Hill,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Pleasanton,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Redwood City,California,8,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Anselmo,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Bruno,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Carlos,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Francisco,California,21,1,0.06
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Jose,California,80,0,0.24
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Leandro,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Mateo,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,San Ramon,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Santa Clara,California,34,0,0.09
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Santa Rosa,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Saratoga,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Sonoma,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,South San Francisco,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Stanford,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Sunnyvale,California,64,0,0.18
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Union City,California,2,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,CTVN01_RTG,Vallejo,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Unspecified City,California,5,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Alameda,California,7,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Albany,California,5,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Antioch,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Atherton,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Belmont,California,3,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Benicia,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Berkeley,California,21,1,0.09
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Brentwood,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Burlingame,California,3,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Calistoga,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Campbell,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Concord,California,26,0,0.13
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Corte Madera,California,7,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Cupertino,California,9,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Daly City,California,5,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Danville,California,6,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Dublin,California,4,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Emeryville,California,4,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Fairfax,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Forestville,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Fremont,California,10,0,0.04
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Gilroy,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Half Moon Bay,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Hayward,California,6,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Hercules,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Kentfield,California,7,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Lafayette,California,13,1,0.07
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Larkspur,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Livermore,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Los Altos,California,7,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Los Gatos,California,4,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Marshall,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Menlo Park,California,31,0,0.14
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Mill Valley,California,27,0,0.13
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Millbrae,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Milpitas,California,3,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Moraga,California,6,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Morgan Hill,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Mountain View,California,42,0,0.19
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Napa,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Newark,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Novato,California,7,0,0.04
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Oakland,California,41,0,0.18
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Oakley,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Occidental,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Orinda,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Pacifica,California,2,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Palo Alto,California,103,0,0.50
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Petaluma,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Piedmont,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Pittsburg,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Pleasant Hill,California,7,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Pleasanton,California,7,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Portola Valley,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Redwood City,California,17,0,0.08
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Richmond,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Rohnert Park,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Ross,California,3,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Anselmo,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Bruno,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Carlos,California,9,0,0.04
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Francisco,California,166,0,0.79
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Jose,California,66,0,0.35
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Leandro,California,2,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Lorenzo,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Mateo,California,33,0,0.17
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Pablo,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Rafael,California,39,3,0.17
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,San Ramon,California,8,0,0.04
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Santa Clara,California,20,0,0.09
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Santa Rosa,California,10,0,0.05
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Saratoga,California,3,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Sausalito,California,5,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Sonoma,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,South San Francisco,California,5,0,0.02
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Stanford,California,17,0,0.09
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Stinson Beach,California,1,0,0.01
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Sunnyvale,California,50,1,0.22
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Union City,California,2,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Upper Lake,California,1,0,0.00
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Vallejo,California,5,0,0.03
+Jacob Capital,2012-09-07,Display Network,United States,SKSPGDN001,Walnut Creek,California,60,1,0.30
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Belmont,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Berkeley,California,4,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Campbell,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Cupertino,California,6,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Daly City,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Danville,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Dublin,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Fremont,California,13,0,0.04
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Los Altos,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Menlo Park,California,6,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Milpitas,California,4,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Morgan Hill,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Mountain View,California,12,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Palo Alto,California,6,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Pleasanton,California,5,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Redwood City,California,4,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Anselmo,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Bruno,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Carlos,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Francisco,California,25,0,0.07
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Jose,California,53,0,0.15
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,San Mateo,California,5,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Santa Clara,California,35,0,0.11
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Saratoga,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,CTVN01_RTG,Sunnyvale,California,39,0,0.11
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Unspecified City,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Alameda,California,6,0,0.04
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Alamo,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Albany,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Antioch,California,5,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Atherton,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Belmont,California,7,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Benicia,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Berkeley,California,15,0,0.08
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Brentwood,California,4,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Burlingame,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Campbell,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Castro Valley,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Concord,California,21,0,0.08
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Corte Madera,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Cupertino,California,7,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Daly City,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Danville,California,6,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Dublin,California,3,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,El Cerrito,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Fremont,California,12,0,0.06
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Half Moon Bay,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Hayward,California,5,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Kentfield,California,5,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Lafayette,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Larkspur,California,4,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Livermore,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Los Altos,California,4,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Los Gatos,California,8,0,0.04
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Martinez,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Menlo Park,California,27,0,0.16
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Mill Valley,California,26,0,0.15
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Milpitas,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Moraga,California,6,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Morgan Hill,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Mountain View,California,34,0,0.14
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Napa,California,2,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Novato,California,3,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Oakland,California,32,0,0.15
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Oakley,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Orinda,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Pacifica,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Palo Alto,California,78,0,0.38
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Pittsburg,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Pleasant Hill,California,9,0,0.04
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Pleasanton,California,5,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Portola Valley,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Redwood City,California,11,0,0.05
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Richmond,California,5,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Rohnert Park,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Anselmo,California,4,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Carlos,California,7,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Francisco,California,104,0,0.49
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Jose,California,55,0,0.25
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Leandro,California,3,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Lorenzo,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Mateo,California,20,0,0.10
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Pablo,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Rafael,California,34,0,0.16
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,San Ramon,California,8,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Santa Clara,California,15,0,0.08
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Santa Rosa,California,1,0,0.00
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Saratoga,California,3,0,0.02
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Sausalito,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Sonoma,California,2,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Stanford,California,6,0,0.03
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Sunnyvale,California,29,0,0.15
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Union City,California,1,0,0.01
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Vallejo,California,20,0,0.06
+Jacob Capital,2012-09-08,Display Network,United States,SKSPGDN001,Walnut Creek,California,47,0,0.20
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Albany,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Belmont,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Berkeley,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Brentwood,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Byron,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Campbell,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Cupertino,California,8,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Danville,California,2,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Fremont,California,12,0,0.04
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Half Moon Bay,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Hayward,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Livermore,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Los Altos,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Los Gatos,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Menlo Park,California,5,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Milpitas,California,7,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Morgan Hill,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Mountain View,California,20,0,0.06
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Napa,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Oakland,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Palo Alto,California,12,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Pleasanton,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Redwood City,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,San Carlos,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,San Francisco,California,24,0,0.07
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,San Jose,California,69,0,0.20
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,San Mateo,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,San Ramon,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Santa Clara,California,26,0,0.08
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Santa Rosa,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Saratoga,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,South San Francisco,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Sunnyvale,California,47,0,0.13
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Union City,California,2,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,CTVN01_RTG,Vallejo,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Unspecified City,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Alameda,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Albany,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Antioch,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Atherton,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Belmont,California,5,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Benicia,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Berkeley,California,19,0,0.10
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Brentwood,California,6,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Burlingame,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Campbell,California,8,0,0.04
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Concord,California,25,0,0.09
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Corte Madera,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Cupertino,California,6,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Daly City,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Danville,California,8,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Dublin,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,El Cerrito,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Emeryville,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Fremont,California,27,0,0.13
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Gilroy,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Half Moon Bay,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Hayward,California,13,0,0.06
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Kentfield,California,5,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Lafayette,California,5,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Larkspur,California,4,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Livermore,California,5,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Los Altos,California,9,0,0.06
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Los Gatos,California,5,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Marshall,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Menlo Park,California,34,0,0.16
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Mill Valley,California,21,1,0.10
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Milpitas,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Moraga,California,6,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Morgan Hill,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Mountain View,California,36,0,0.16
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Napa,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Newark,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Novato,California,4,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Oakland,California,31,0,0.14
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Oakley,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Orinda,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Palo Alto,California,83,0,0.42
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Petaluma,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Pinole,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Pittsburg,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Pleasant Hill,California,5,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Pleasanton,California,12,0,0.08
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Redwood City,California,12,0,0.07
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Richmond,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Rohnert Park,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Ross,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Anselmo,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Bruno,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Carlos,California,5,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Francisco,California,139,0,0.65
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Jose,California,55,0,0.27
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Lorenzo,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Mateo,California,19,0,0.11
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Pablo,California,1,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Rafael,California,47,1,0.22
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,San Ramon,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Santa Clara,California,23,0,0.11
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Santa Rosa,California,4,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Saratoga,California,3,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Sausalito,California,2,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,South San Francisco,California,1,0,0.00
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Stanford,California,9,0,0.03
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Sunnyvale,California,33,0,0.18
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Union City,California,2,0,0.02
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Vallejo,California,3,0,0.01
+Jacob Capital,2012-09-09,Display Network,United States,SKSPGDN001,Walnut Creek,California,65,0,0.29
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Albany,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Atherton,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Belmont,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Berkeley,California,4,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Campbell,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Cupertino,California,11,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Daly City,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Dublin,California,2,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Fremont,California,11,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Half Moon Bay,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Hayward,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Los Altos,California,3,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Los Gatos,California,3,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Menlo Park,California,9,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Milpitas,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Mountain View,California,28,0,0.07
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Napa,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Newark,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Oakland,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Palo Alto,California,20,0,0.06
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Pleasanton,California,4,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Redwood City,California,10,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Rohnert Park,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Anselmo,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Bruno,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Carlos,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Francisco,California,33,0,0.09
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Jose,California,78,0,0.21
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Mateo,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,San Ramon,California,2,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Santa Clara,California,47,0,0.14
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Santa Rosa,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Saratoga,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Sonoma,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,South San Francisco,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Stanford,California,3,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Sunnyvale,California,64,0,0.17
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Union City,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,CTVN01_RTG,Walnut Creek,California,2,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Unspecified City,California,7,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Alameda,California,10,0,0.06
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Alamo,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Albany,California,7,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Antioch,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Atherton,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Belmont,California,11,0,0.07
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Benicia,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Berkeley,California,24,0,0.11
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Brentwood,California,8,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Brisbane,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Burlingame,California,8,0,0.05
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Campbell,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Castro Valley,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Concord,California,30,0,0.17
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Corte Madera,California,4,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Cupertino,California,11,0,0.04
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Daly City,California,3,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Danville,California,5,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Dublin,California,6,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Emeryville,California,4,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Fairfax,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Fremont,California,14,0,0.07
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Gilroy,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Half Moon Bay,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Hayward,California,7,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Healdsburg,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Hercules,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Kentfield,California,6,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Lafayette,California,8,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Larkspur,California,6,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Livermore,California,3,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Los Altos,California,10,0,0.05
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Los Gatos,California,5,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Marshall,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Martinez,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Menlo Park,California,57,0,0.25
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Mill Valley,California,28,0,0.12
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Milpitas,California,5,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Moraga,California,4,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Morgan Hill,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Mountain View,California,50,0,0.25
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Napa,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Newark,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Novato,California,8,0,0.04
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Oakland,California,42,0,0.18
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Oakley,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Orinda,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Palo Alto,California,142,0,0.69
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Pittsburg,California,3,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Pleasant Hill,California,7,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Pleasanton,California,8,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Portola Valley,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Redwood City,California,21,0,0.11
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Richmond,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Rohnert Park,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Ross,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Anselmo,California,3,0,0.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Bruno,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Carlos,California,11,0,0.05
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Francisco,California,213,1,1.02
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Jose,California,75,0,0.33
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Leandro,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Lorenzo,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Martin,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Mateo,California,30,0,0.16
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Rafael,California,48,0,0.25
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,San Ramon,California,9,0,0.05
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Santa Clara,California,27,0,0.13
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Santa Rosa,California,8,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Saratoga,California,1,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Sausalito,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Sonoma,California,1,0,0.00
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,South San Francisco,California,9,0,0.04
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Stanford,California,17,0,0.08
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Sunnyvale,California,52,0,0.26
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Union City,California,2,0,0.01
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Vallejo,California,6,0,0.03
+Jacob Capital,2012-09-10,Display Network,United States,SKSPGDN001,Walnut Creek,California,68,0,0.29
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Alameda,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Belmont,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Berkeley,California,5,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Burlingame,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Campbell,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Cupertino,California,12,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Daly City,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Dublin,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Fremont,California,21,0,0.07
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Hayward,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Livermore,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Los Altos,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Los Gatos,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Menlo Park,California,5,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Millbrae,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Milpitas,California,5,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Morgan Hill,California,2,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Mountain View,California,33,1,0.10
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Oakland,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Palo Alto,California,20,0,0.06
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Petaluma,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Pleasant Hill,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Pleasanton,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Redwood City,California,14,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Anselmo,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Carlos,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Francisco,California,28,0,0.07
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Jose,California,61,0,0.18
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Leandro,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Mateo,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,San Ramon,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Santa Clara,California,36,0,0.10
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Saratoga,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Sonoma,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,South San Francisco,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Stanford,California,4,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Sunnyvale,California,66,1,0.18
+Jacob Capital,2012-09-11,Display Network,United States,CTVN01_RTG,Walnut Creek,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Unspecified City,California,7,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Alameda,California,6,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Alamo,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Albany,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Antioch,California,6,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Belmont,California,13,0,0.06
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Benicia,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Berkeley,California,27,1,0.14
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Brentwood,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Brisbane,California,4,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Burlingame,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Campbell,California,4,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Clayton,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Concord,California,17,0,0.08
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Corte Madera,California,7,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Cupertino,California,8,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Daly City,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Danville,California,8,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Dublin,California,2,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,El Cerrito,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Emeryville,California,5,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Fremont,California,22,0,0.13
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Gilroy,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Half Moon Bay,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Hayward,California,6,0,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Healdsburg,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Hercules,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Kentfield,California,8,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Lafayette,California,8,0,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Larkspur,California,3,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Livermore,California,6,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Los Altos,California,6,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Los Gatos,California,9,1,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Martinez,California,2,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Menlo Park,California,46,0,0.21
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Mill Valley,California,27,0,0.13
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Milpitas,California,4,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Moraga,California,6,1,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Morgan Hill,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Mountain View,California,44,0,0.20
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Napa,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Newark,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Novato,California,6,0,0.03
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Oakland,California,42,0,0.22
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Orinda,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Pacifica,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Palo Alto,California,128,1,0.59
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Petaluma,California,1,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Piedmont,California,2,0,0.00
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Pittsburg,California,4,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Pleasant Hill,California,11,0,0.06
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Pleasanton,California,12,0,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Portola Valley,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Redwood City,California,24,0,0.11
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Richmond,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Rohnert Park,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Ross,California,4,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Anselmo,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Carlos,California,15,0,0.06
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Francisco,California,222,1,1.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Jose,California,91,0,0.43
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Leandro,California,5,0,0.04
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Lorenzo,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Mateo,California,35,1,0.18
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Pablo,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Rafael,California,49,0,0.23
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,San Ramon,California,11,0,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Santa Clara,California,15,0,0.09
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Santa Rosa,California,8,0,0.05
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Saratoga,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Sonoma,California,2,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,South San Francisco,California,3,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Stanford,California,16,0,0.10
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Sunnyvale,California,42,0,0.22
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Union City,California,1,0,0.01
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Vallejo,California,4,0,0.02
+Jacob Capital,2012-09-11,Display Network,United States,SKSPGDN001,Walnut Creek,California,67,0,0.32
+Total, --, --, --, --, --, --,25722,24,56.00

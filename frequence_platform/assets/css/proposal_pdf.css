@@ -1,0 +1,60 @@
+html,body {
+	height:100%;
+	width:100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow-y: hidden;
+	counter-reset: page;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page {
+	width: 1240px;
+	height: 1754px;
+	page-break-after: always;
+	counter-increment: page;
+	overflow: hidden;
+}
+.page-number::before {
+	content: counter(page);
+}
+.landscape .page {
+	width: 1754px;
+	height: 1240px;
+}
+
+img.editable {
+	cursor: pointer;
+	cursor: hand;
+}
+img.editable:hover {
+	opacity: 0.75;
+}
+img.editable::after {
+	content: '';
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	background: url('./icon-edit.png');
+}
+
+@media screen {
+	body {
+	}
+	.page {
+		background: white;
+		box-sizing: border-box;
+	}
+	.landscape .page {
+		width: 1754px;
+		height: 1240px;
+	}
+	.page-number::before {
+		content: 'X';
+	}
+}
+@media print {
+}

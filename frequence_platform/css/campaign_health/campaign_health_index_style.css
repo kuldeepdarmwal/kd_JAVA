@@ -1,0 +1,263 @@
+body
+{
+	margin: 0 auto;
+	padding: 0 20px;
+	font-family: 'Oxygen', sans-serif;
+        
+	font-size: 12px;
+	color: #555;
+}
+table
+{
+	width: 100%;
+        border: 0;
+	padding: 0;
+	margin: 0 0 20px 0;
+	border-collapse: collapse;
+        font-size: 13px;
+}
+th
+{
+	padding: 5px; /* NOTE: th padding must be set explicitly in order to support IE */
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 2em;
+        color: #fff;
+}
+.amount
+{
+	text-align: right;
+	padding-right: 10px;
+}
+tbody td
+{
+	padding: 5px 5px 20px 5px;
+	line-height: 18px;
+	border-top: 1px solid #E0E0E0;
+}
+/*tbody tr:nth-child(2n)
+{
+	background-color: #F7F7F7;
+	opacity: 0.8;
+}*/
+tbody tr:hover
+{
+	background-color: #EEEEEE;
+}
+.stock th
+{
+	background-color: rgb(54, 117, 45);
+	background-color: rgba(54, 117, 45, 0.8);
+	
+/*        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36752D), color-stop(1, #275420) );
+        background:-moz-linear-gradient( center top, #36752D 5%, #275420 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36752D', endColorstr='#275420');
+        background-color:#36752D; */
+        
+        
+        text-transform: none;
+	text-align: center;
+	padding: 10px;
+        
+}
+
+th.no_sort
+{
+	background-color: rgb(54, 117, 45);
+	background-color: rgba(54, 117, 45, 0.8);
+        background-image: none !important;
+        font-family:'Lato', sans-serif;
+}
+
+
+.dead th
+{
+	background-color: rgba(85,98,112, 0.8);
+	text-transform: none;
+	text-align: center;
+	padding: 10px;
+}
+
+.stock th, .stock td, .dead th, .dead td
+{
+	text-align: center;
+	padding: 2px 5px;
+}
+.stock td:first-child, .stock th:first-child
+{
+	text-align: left;
+	font-weight: normal;
+}
+
+
+body.fixed_header
+{
+	padding: 60px 20px;
+}
+
+body.fixed_header .header
+{
+	position: fixed;
+	top: 0;
+	background: #080808;
+	color: #FFC234;
+	width: 100%;
+	z-index: 1000;
+	margin: 0 -20px;
+	padding: 0 20px;
+}
+
+.content{
+    display:none;
+}
+.hidden{
+    display:none;
+}
+
+
+
+
+
+
+table.tablesorter thead tr .header
+{
+	background-image: url(/images/campaign_health/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	padding-right: 20px;
+	cursor: pointer;
+        font-weight: bold;
+        font-family:'Lato', sans-serif;
+}
+table.tablesorter thead tr .headerSortUp
+{
+	background-image: url(/images/campaign_health/asc.gif) ;
+}
+table.tablesorter thead tr .headerSortDown
+{
+	background-image: url(/images/campaign_health/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp
+{
+	color: #000;
+}
+
+
+
+
+
+.clickable_icon
+{
+    float:left;
+    padding: 10px;
+}
+
+.red_alert
+{
+    background-color: rgba(255,0,0,0.15);
+    color: black;
+    font-weight: 900;
+    border:1px solid red;
+    border-collapse: separate;
+    
+}
+
+.blue_alert
+{
+    background-color: rgba(0,0,255,0.1);
+    color: black;
+    font-weight: 900;
+    border:1px solid blue;
+    border-collapse: separate;
+    
+}
+
+img.resize{
+    height:16px; /* you can use % */
+    width: auto;
+}
+
+
+
+
+
+.tooltip {
+        border-bottom: 1px dotted #000000; color: #000000; outline: none;
+        cursor: pointer; text-decoration: none;
+        position: relative;
+}
+.tooltip span {
+        margin-left: -999em;
+        position: absolute;
+}
+.tooltip:hover span {
+        border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+        font-family: Calibri, Tahoma, Geneva, sans-serif;
+        position: absolute; left: 1em; top: 2em; z-index: 99;
+        margin-left: 0; width: 270px;
+}
+.tooltip:hover img {
+        border: 0; margin: -10px 0 0 -55px;
+        float: left; position: absolute;
+}
+.tooltip:hover em {
+        font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
+        display: block; padding: 0.2em 0 0.6em 0;
+}
+.classic { padding: 0.8em 1em; }
+.custom { padding: 0.5em 0.8em 0.8em 2em; }
+* html a:hover { background: transparent; }
+.classic {background: #FFFFAA; border: 1px solid #FFAD33; }
+.critical { background: #FFCCAA; border: 1px solid #FF3334;	}
+.help { background: #9FDAEE; border: 1px solid #2BB0D7;	}
+.info { background: rgba(0,0,0,0.75); border: 1px solid #2BB0D7; color: white; font-weight: bold;	}
+.warning { background: #FFFFAA; border: 1px solid #FFAD33; }
+
+.clickable_icon{
+    cursor: pointer;
+}
+
+
+
+
+.the_body{
+    position: relative;
+}
+
+
+.the_image {
+	position: fixed;
+        right: 0%;
+        top: 0%;
+	z-index: 9999;
+        visibility: hidden;
+        width: 20%;
+        height: 20px;
+}
+
+
+#circle {
+    position: absolute;
+    right:200px;
+    text-align:center;
+    margin: auto;
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    background: rgba(237, 117, 35, 0.90);
+    border: 2px solid white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.filterable th{
+    background-color: rgba(16,127,201);
+	background-color: rgba(16,127,201, 0.8);
+	text-transform: none;
+	text-align: center;
+	padding: 10px;
+}
+
+.highlighted { background: yellow; }

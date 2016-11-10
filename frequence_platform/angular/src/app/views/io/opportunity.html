@@ -1,0 +1,54 @@
+<div id="mpq_advertiser_info_section" class="mpq_section_card card scrollspy">
+    <h4 class="card-title grey-text text-darken-1">Opportunity Details</h4>
+    <div class="card-content">
+        <div class="row">
+            <div class="input-field col s6" style="height:61px;">
+                <input type="text" id="account_executive_select" name="opportunity owner"
+                       #oppOwner
+                       class="grey-text text-darken-1" length="255" mySelect2 [propertiesObj]="accountExecObj" >
+                <label id="rfp_account_executive_select_label" for="account_executive_select">Opportunity Owner</label>
+            </div>
+        </div>
+        <div id="verified_advertiser_container" class="row">
+            <div class="input-field col s6">
+                <input type="text" id="mpq_org_name" name="advertiser name" mySelect2 [propertiesObj]="advertiserObj"
+                       #advertiser class="grey-text text-darken-1" length="255">
+                <label for="mpq_org_name" class="mpq_org_name_label">Advertiser Name </label>
+            </div>
+        </div>
+        <div id="unverified_advertiser_container" class="row" *ngIf="enableUnVerifiedAdvertiser">
+            <div class="input-field col s6">
+                <input placeholder="" id="unverified_advertiser" name="unverified_advertiser_name"
+                       type="text" length="255" (blur)="createUnverifiedAdvertiser()" [(ngModel)]="unVerifiedAdvertiser"/>
+                <label for="unverified_advertiser" class="active">Unverified Advertiser Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="mpq_website_name" class="grey-text text-darken-1" length="255"
+                       [(ngModel)]="_opportunityObj.advertiserWebsite">
+                <label for="mpq_website_name" class="active">Advertiser Website</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="mpq_order_name" class="grey-text text-darken-1" length="255" [(ngModel)]="_opportunityObj.orderName">
+                <label for="mpq_order_name" class="active">Order Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="mpq_order_id" class="grey-text text-darken-1" length="255" [(ngModel)]="_opportunityObj.orderId">
+                <label for="mpq_order_id" class="active">Order ID</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6" style="height:61px;">
+                <input type="text" id="industry_select" name="advertiser industry" #advInd
+                       mySelect2 [propertiesObj]="advertiserIndObj"
+                       class="grey-text text-darken-1" length="255">
+            </div>
+        </div>
+        <div id="unique_display_id_header_text">ID: {{uniqueDisplayId}} </div>
+    </div>
+</div>

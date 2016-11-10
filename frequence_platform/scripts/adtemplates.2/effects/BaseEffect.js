@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var BaseEffect=Class.extend({offset:0,duration:0,easing:function(d,a,b,c){return b*d/c+a},init:function(b,a){this.name=b;MySprite.prototype.setParams.call(this,a)},updateFrames:function(){},_posLast:-1,updatePosition:function(a){if(a<0)a=0;else if(a>1)a=1;if(a==this._posLast)return false;this.setPosition(a);return true},setPosition:function(a){this._posLast=a},reset:function(){this._posLast=NaN},setParam:MySprite.prototype.setParam})

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="de.adtech.helios.malware.FlashScanner"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/helios/malware/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/malware/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/business/banner/flashplugin/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/business/banner/flashplugin/"/>
+            <xsd:element name="swfFile" nillable="true"
+                type="xsd:base64Binary"/>
+            <xsd:element name="filename" nillable="true" type="xsd:string"/>
+            <xsd:element name="SWFInformation_Response" nillable="true"
+                type="xns4:SWFInformation"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/business/banner/flashplugin/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/business/banner/flashplugin/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SWFInformation">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.business.banner.flashplugin.SWFInformation"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="actionscriptSource" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="compressed" type="xsd:boolean"/>
+                    <xsd:element name="corrupt" type="xsd:boolean"/>
+                    <xsd:element name="height" type="xsd:long"/>
+                    <xsd:element name="malware" type="xsd:boolean"/>
+                    <xsd:element name="usesVideo" type="xsd:boolean"/>
+                    <xsd:element name="version" type="xsd:long"/>
+                    <xsd:element name="width" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="FlashScanner_scanFlashFile_Request_Soap">
+        <part element="ns0:swfFile" name="swfFile"/>
+        <part element="ns0:filename" name="filename"/>
+    </message>
+    <message name="FlashScanner_scanFlashFile_Response_Soap">
+        <part element="ns0:SWFInformation_Response" name="response"/>
+    </message>
+    <portType name="FlashScanner">
+        <operation name="scanFlashFile" parameterOrder="swfFile filename">
+            <input message="tns:FlashScanner_scanFlashFile_Request_Soap"/>
+            <output message="tns:FlashScanner_scanFlashFile_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+    </portType>
+    <binding name="FlashScanner" type="tns:FlashScanner">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="scanFlashFile">
+            <map:java-operation name="scanFlashFile"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL2J1c2luZXNzL2Jhbm5lci9mbGFzaHBsdWdpbi9TV0ZJbmZvcm1hdGlvbjs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/malware/FlashScanner#scanFlashFile?KFtCTGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL2J1c2luZXNzL2Jhbm5lci9mbGFzaHBsdWdpbi9TV0ZJbmZvcm1hdGlvbjs="
+                style="document"/>
+            <input>
+                <soap:body parts="swfFile filename" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="FlashScanner">
+        <port binding="tns:FlashScanner" name="FlashScanner">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/FlashScanner/"/>
+        </port>
+    </service>
+</definitions>

@@ -1,0 +1,47 @@
+<div class="collapsible-header">
+	<div class="row">
+		<div class="col s2 targeted_image_col text-bold grey-text">
+			<div class="img_title_section_container">
+			<img *ngIf="product.definition.product_enabled_img" class="targeted_image" src="{{product.definition.product_enabled_img}}">
+			<div class="audience_img_title_section">
+				<span *ngIf="product.definition.first_name" class="product_first_name">{{product.definition.first_name}}</span>
+				{{product.definition.last_name}}
+			</div>
+		</div>
+		</div>
+		<div class="col s10">
+			<div class="row">
+				<div *ngFor="let option of options; let i = index" class="col s4">
+                <span *ngIf="option.selected" class="grey-text product_subtotal product_budget_calc
+                          product_budget_geo_dependent product_impressions_dollar_budget">{{option.config[product.id].data.total() | currency:'USD':'$'}}</span>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="collapsible-body">
+	<div [ngSwitch]="product.product_type" class="row">
+		<template ngSwitchWhen="cost_per_unit">
+			<cost-per-unit [product]="product" [options]="options" [locations]="locations" [has_geofencing]="has_geofencing" [userData]="userData"
+						   (change-impressions-type)="changeImpressionsType.emit($event)"></cost-per-unit>
+		</template>
+        <template ngSwitchWhen="cost_per_tv_package">
+			<cost-per-tv [product]="product" [options]="options" (network-changed) = "networkChanged.emit($event)"></cost-per-tv>
+		</template>
+        <template ngSwitchWhen="cost_per_discrete_unit">
+			<cost-per-discrete-unit [product]="product" [options]="options"></cost-per-discrete-unit>
+		</template>
+        <template ngSwitchWhen="cost_per_inventory_unit">
+            <cost-per-inventory-unit [product]="product" [options]="options"></cost-per-inventory-unit>
+        </template>
+        <template ngSwitchWhen="cost_per_static_unit">
+            <cost-per-static-unit [product]="product" [options]="options"></cost-per-static-unit>
+        </template>
+		<template ngSwitchWhen="cost_per_sem_unit">
+			<cost-per-sem-unit [product]="product" [options]="options"></cost-per-sem-unit>
+		</template>
+		<template ngSwitchWhen="input_box">
+			<input-box [product]="product" [options]="options"></input-box>
+		</template>
+	</div>
+</div>

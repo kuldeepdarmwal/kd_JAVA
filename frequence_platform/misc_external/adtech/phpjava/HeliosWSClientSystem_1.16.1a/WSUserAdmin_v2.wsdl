@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdmin_v2"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"/>
+            <xsd:complexType name="UserEntity">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.wrapped.UserEntity"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="clientLanguange" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="contact" nillable="true"
+                        type="xns5:ContactData"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="lastLogin" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="loginName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="reportLanguage" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="status" nillable="true"
+                        type="xns5:UserEntityStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfUserEntity">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.webservices.helios.lowLevel.wrapped.UserEntity;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="UserEntity" nillable="true"
+                        type="tns:UserEntity"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSUserAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ContactData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.UserManagement.ContactData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="email" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fax" nillable="true" type="xsd:string"/>
+                    <xsd:element name="firstName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="lastName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mobile" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="phone" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfContactData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.UserManagement.ContactData;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="ContactData" nillable="true"
+                        type="tns:ContactData"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="UserEntityStatus">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.UserManagement.UserEntityStatus"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns10="http://systinet.com/wsdl/java/lang/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/"
+            xmlns:xns7="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns8="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns9="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/UserManagement/"/>
+            <xsd:element name="cd" nillable="true" type="xns4:ContactData"/>
+            <xsd:element name="ContactData_Response" nillable="true"
+                type="xns4:ContactData"/>
+            <xsd:element name="SecurityException" nillable="true"
+                type="xns5:SecurityException"/>
+            <xsd:element name="WSUserAdminException" nillable="true"
+                type="xns6:WSUserAdminException"/>
+            <xsd:element name="username" nillable="true" type="xsd:string"/>
+            <xsd:element name="password" nillable="true" type="xsd:string"/>
+            <xsd:element name="ANDExpression_Response" nillable="true"
+                type="xns7:ANDExpression"/>
+            <xsd:element name="AttributeOperatorValueExpression_Response"
+                nillable="true" type="xns7:AttributeOperatorValueExpression"/>
+            <xsd:element name="id" nillable="true" type="xsd:long"/>
+            <xsd:element name="start" nillable="true" type="xsd:long"/>
+            <xsd:element name="end" nillable="true" type="xsd:long"/>
+            <xsd:element name="boolExpr" nillable="true"
+                type="xns7:BoolExpression"/>
+            <xsd:element name="order" nillable="true" type="xns8:Collection"/>
+            <xsd:element name="ArrayOfContactData_Response" nillable="true"
+                type="xns4:ArrayOfContactData"/>
+            <xsd:element name="long_Response" nillable="true" type="xsd:long"/>
+            <xsd:element name="QueryOrderParameter_Response" nillable="true"
+                type="xns7:QueryOrderParameter"/>
+            <xsd:element name="extId" nillable="true" type="xsd:string"/>
+            <xsd:element name="UserEntity_Response" nillable="true"
+                type="xns9:UserEntity"/>
+            <xsd:element name="HeliosException" nillable="true"
+                type="xns7:HeliosException"/>
+            <xsd:element name="login" nillable="true" type="xsd:string"/>
+            <xsd:element name="ArrayOflong_Response" nillable="true"
+                type="xns10:ArrayOflong"/>
+            <xsd:element name="ArrayOfUserEntity_Response" nillable="true"
+                type="xns9:ArrayOfUserEntity"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="ANDExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.ANDExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="BoolExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.BoolExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="expressions" nillable="true"
+                        type="xns5:Vector"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AttributeOperatorValueExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AttributeOperatorValueExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence>
+                            <xsd:element name="attribute" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="operator" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="value" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="QueryOrderParameter">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.QueryOrderParameter"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="order" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="propertyName" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.HeliosException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="errorCause" type="xsd:int"/>
+                    <xsd:element name="errorLevel" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SecurityException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.security.SecurityException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="HeliosException">
+        <part element="ns0:HeliosException" name="HeliosException"/>
+    </message>
+    <message name="SecurityException">
+        <part element="ns0:SecurityException" name="SecurityException"/>
+    </message>
+    <message name="WSUserAdminException">
+        <part element="ns0:WSUserAdminException" name="WSUserAdminException"/>
+    </message>
+    <message name="WSUserAdmin_v2_createContactDataByLogin_Request_Soap">
+        <part element="ns0:cd" name="cd"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_createContactDataByLogin_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_createContactData_Request_Soap">
+        <part element="ns0:cd" name="cd"/>
+    </message>
+    <message name="WSUserAdmin_v2_createContactData_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getAE_Request_Soap"/>
+    <message name="WSUserAdmin_v2_getAE_Response_Soap">
+        <part element="ns0:ANDExpression_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getAOVE_Request_Soap"/>
+    <message name="WSUserAdmin_v2_getAOVE_Response_Soap">
+        <part element="ns0:AttributeOperatorValueExpression_Response"
+            name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataByIdByLogin_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataByIdByLogin_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataById_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSUserAdmin_v2_getContactDataList_Response_Soap">
+        <part element="ns0:ArrayOfContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getQOP_Request_Soap"/>
+    <message name="WSUserAdmin_v2_getQOP_Response_Soap">
+        <part element="ns0:QueryOrderParameter_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByExtIdByLogin_Request_Soap">
+        <part element="ns0:extId" name="extId"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByExtIdByLogin_Response_Soap">
+        <part element="ns0:UserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByExtId_Request_Soap">
+        <part element="ns0:extId" name="extId"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByExtId_Response_Soap">
+        <part element="ns0:UserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByIdByLogin_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByIdByLogin_Response_Soap">
+        <part element="ns0:UserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityById_Response_Soap">
+        <part element="ns0:UserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByLogin_Request_Soap">
+        <part element="ns0:login" name="login"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityByLogin_Response_Soap">
+        <part element="ns0:UserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityIdListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityListByLogin_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfUserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSUserAdmin_v2_getUserEntityList_Response_Soap">
+        <part element="ns0:ArrayOfUserEntity_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_updateContactDataByLogin_Request_Soap">
+        <part element="ns0:cd" name="cd"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSUserAdmin_v2_updateContactDataByLogin_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <message name="WSUserAdmin_v2_updateContactData_Request_Soap">
+        <part element="ns0:cd" name="cd"/>
+    </message>
+    <message name="WSUserAdmin_v2_updateContactData_Response_Soap">
+        <part element="ns0:ContactData_Response" name="response"/>
+    </message>
+    <portType name="WSUserAdmin_v2">
+        <operation name="createContactData" parameterOrder="cd">
+            <input message="tns:WSUserAdmin_v2_createContactData_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_createContactData_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="createContactDataByLogin"
+            parameterOrder="cd username password">
+            <input
+            message="tns:WSUserAdmin_v2_createContactDataByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_createContactDataByLogin_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getAE" parameterOrder="">
+            <input message="tns:WSUserAdmin_v2_getAE_Request_Soap"/>
+            <output message="tns:WSUserAdmin_v2_getAE_Response_Soap"/>
+        </operation>
+        <operation name="getAOVE" parameterOrder="">
+            <input message="tns:WSUserAdmin_v2_getAOVE_Request_Soap"/>
+            <output message="tns:WSUserAdmin_v2_getAOVE_Response_Soap"/>
+        </operation>
+        <operation name="getContactDataById" parameterOrder="id">
+            <input
+            message="tns:WSUserAdmin_v2_getContactDataById_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getContactDataById_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getContactDataByIdByLogin"
+            parameterOrder="id username password">
+            <input
+            message="tns:WSUserAdmin_v2_getContactDataByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getContactDataByIdByLogin_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getContactDataList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSUserAdmin_v2_getContactDataList_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getContactDataList_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getContactDataListByLogin"
+            parameterOrder="start end username password">
+            <input
+            message="tns:WSUserAdmin_v2_getContactDataListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getContactDataListByLogin_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getContactDataListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSUserAdmin_v2_getContactDataListSize_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getContactDataListSize_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getQOP" parameterOrder="">
+            <input message="tns:WSUserAdmin_v2_getQOP_Request_Soap"/>
+            <output message="tns:WSUserAdmin_v2_getQOP_Response_Soap"/>
+        </operation>
+        <operation name="getUserEntityByExtId" parameterOrder="extId">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityByExtId_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityByExtId_Response_Soap"/>
+            <fault message="tns:HeliosException" name="HeliosException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getUserEntityByExtIdByLogin"
+            parameterOrder="extId username password">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityByExtIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityByExtIdByLogin_Response_Soap"/>
+            <fault message="tns:HeliosException" name="HeliosException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getUserEntityById" parameterOrder="id">
+            <input message="tns:WSUserAdmin_v2_getUserEntityById_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityById_Response_Soap"/>
+            <fault message="tns:HeliosException" name="HeliosException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getUserEntityByIdByLogin"
+            parameterOrder="id username password">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityByIdByLogin_Response_Soap"/>
+            <fault message="tns:HeliosException" name="HeliosException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getUserEntityByLogin" parameterOrder="login">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityByLogin_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="getUserEntityIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityIdList_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityIdList_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getUserEntityIdListByLogin"
+            parameterOrder="start end username password">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityIdListByLogin_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getUserEntityList"
+            parameterOrder="start end boolExpr order">
+            <input message="tns:WSUserAdmin_v2_getUserEntityList_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityList_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getUserEntityListByLogin"
+            parameterOrder="start end username password">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityListByLogin_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getUserEntityListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSUserAdmin_v2_getUserEntityListSize_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_getUserEntityListSize_Response_Soap"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateContactData" parameterOrder="cd">
+            <input message="tns:WSUserAdmin_v2_updateContactData_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_updateContactData_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+        <operation name="updateContactDataByLogin"
+            parameterOrder="cd username password">
+            <input
+            message="tns:WSUserAdmin_v2_updateContactDataByLogin_Request_Soap"/>
+            <output
+            message="tns:WSUserAdmin_v2_updateContactDataByLogin_Response_Soap"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:WSUserAdminException"
+                name="WSUserAdminException"/>
+        </operation>
+    </portType>
+    <binding name="WSUserAdmin_v2" type="tns:WSUserAdmin_v2">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createContactData">
+            <map:java-operation name="createContactData"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#createContactData?KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="cd" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createContactDataByLogin">
+            <map:java-operation name="createContactDataByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#createContactDataByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="cd username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAE">
+            <map:java-operation name="getAE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BTkRFeHByZXNzaW9uOw=="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getAE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BTkRFeHByZXNzaW9uOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAOVE">
+            <map:java-operation name="getAOVE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getAOVE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getContactDataById">
+            <map:java-operation name="getContactDataById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getContactDataById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7"
+                style="document"/>
+            <input>
+                <soap:body parts="id" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContactDataByIdByLogin">
+            <map:java-operation name="getContactDataByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getContactDataByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7"
+                style="document"/>
+            <input>
+                <soap:body parts="id username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContactDataList">
+            <map:java-operation name="getContactDataList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getContactDataList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvVXNlck1hbmFnZW1lbnQvQ29udGFjdERhdGE7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContactDataListByLogin">
+            <map:java-operation name="getContactDataListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getContactDataListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContactDataListSize">
+            <map:java-operation name="getContactDataListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getContactDataListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getQOP">
+            <map:java-operation name="getQOP"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9RdWVyeU9yZGVyUGFyYW1ldGVyOw=="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getQOP?KClMZGUvYWR0ZWNoL2hlbGlvcy9RdWVyeU9yZGVyUGFyYW1ldGVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getUserEntityByExtId">
+            <map:java-operation name="getUserEntityByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7">
+                <map:fault java-type="de.adtech.helios.HeliosException"
+                    name="HeliosException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="extId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosException">
+                <soap:fault name="HeliosException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityByExtIdByLogin">
+            <map:java-operation name="getUserEntityByExtIdByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7">
+                <map:fault java-type="de.adtech.helios.HeliosException"
+                    name="HeliosException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityByExtIdByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="extId username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosException">
+                <soap:fault name="HeliosException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityById">
+            <map:java-operation name="getUserEntityById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow==">
+                <map:fault java-type="de.adtech.helios.HeliosException"
+                    name="HeliosException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="id" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosException">
+                <soap:fault name="HeliosException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityByIdByLogin">
+            <map:java-operation name="getUserEntityByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow==">
+                <map:fault java-type="de.adtech.helios.HeliosException"
+                    name="HeliosException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="id username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosException">
+                <soap:fault name="HeliosException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityByLogin">
+            <map:java-operation name="getUserEntityByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityByLogin?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="login" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityIdList">
+            <map:java-operation name="getUserEntityIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityIdListByLogin">
+            <map:java-operation name="getUserEntityIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityList">
+            <map:java-operation name="getUserEntityList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9Vc2VyRW50aXR5Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityListByLogin">
+            <map:java-operation name="getUserEntityListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KVtMZGUvYWR0ZWNoL3dlYnNlcnZpY2VzL2hlbGlvcy9sb3dMZXZlbC93cmFwcGVkL1VzZXJFbnRpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getUserEntityListSize">
+            <map:java-operation name="getUserEntityListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#getUserEntityListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateContactData">
+            <map:java-operation name="updateContactData"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#updateContactData?KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="cd" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateContactDataByLogin">
+            <map:java-operation name="updateContactDataByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.UserManagement_v2.WSUserAdminException"
+                    name="WSUserAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/UserManagement_v2/WSUserAdmin_v2#updateContactDataByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1VzZXJNYW5hZ2VtZW50L0NvbnRhY3REYXRhO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9Vc2VyTWFuYWdlbWVudC9Db250YWN0RGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="cd username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSUserAdminException">
+                <soap:fault name="WSUserAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSUserAdmin_v2">
+        <port binding="tns:WSUserAdmin_v2" name="WSUserAdmin_v2">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSUserAdmin_v2/"/>
+        </port>
+    </service>
+</definitions>

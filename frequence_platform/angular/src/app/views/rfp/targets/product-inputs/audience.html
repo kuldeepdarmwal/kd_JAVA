@@ -1,0 +1,45 @@
+<div class="mpq_section_card card scrollspy" id="mpq_audience_info_section">
+    <h4 class="card-title grey-text text-darken-1 bold">
+        Audience
+        <span *ngFor="let productName of productNames; let i = index; let last = last; let first = first"
+              style="font-weight:normal;font-size:1rem;">
+		    <span *ngIf="first" style="display:inline-block; margin-left: 5%;"></span>
+		    {{productName}}<span *ngIf="!last">, </span>
+	    </span>
+    </h4>
+    <div class="card-content">
+
+        <div class="row rfp_political_display" id="political_segments" style="margin-bottom: 30px;" *ngIf="isPolitical">
+            <div *ngFor="let political of politicalData; let i = index">
+                <div class="row">
+                    <div class="col s1">&nbsp;</div>
+                    <div class="grey-text text-darken-1 col s2" style="font-weight:bold;">{{political.title}}</div>
+                </div>
+                <div class="row">
+                    <div class="col s1">&nbsp;</div>
+                    <div *ngFor="let value of political.values; let j = index">
+                        <!--{{value.name}} - {{value.selected}}-->
+                        <div class="col s2">
+                            <input type="checkbox" class="filled-in" [attr.id]="value.id"
+                                   [checked]="value.selected" [(ngModel)]="value.selected">
+                            <label [attr.for]="value.id">{{value.name}}</label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="row" id="demographic_inputs">
+            <div *ngFor="let demo of demographics" class="col s2">
+                <div class="grey-text text-darken-1" style="font-weight:bold;">{{demo.section_title}}</div>
+                <div *ngFor="let checkbox of demo.demographic_elements">
+                    <input type="checkbox" class="filled-in" name="demo_checkbox" [attr.id]="checkbox.id_core_name"
+                           [checked]="checkbox.is_checked" [(ngModel)]="checkbox.is_checked"/>
+                    <label [attr.for]="checkbox.id_core_name">{{checkbox.visible_name}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

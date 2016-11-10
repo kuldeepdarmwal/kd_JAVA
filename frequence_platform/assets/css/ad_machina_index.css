@@ -1,0 +1,121 @@
+/*********************
+ * SPEC AD TOOL INDEX
+ *********************/
+
+.sample_ad_manager.container
+{
+	width: 100%;
+	padding: 0 2em;
+	box-sizing: border-box;
+}
+#spec_ad_table
+{
+	width: 100%;
+	border-bottom-color: #ddd;
+}
+#spec_ad_table a:hover
+{
+	text-decoration: none;
+}
+/* ( align "Search:" label with input */
+#spec_ad_table_filter
+{
+	margin-bottom: 10px;
+}
+#spec_ad_table_filter input
+{
+	margin-bottom: 0;
+}
+/* ) align "Search:" label with input */
+#spec_ad_table th
+{
+	background-color: #f9f9f9;
+	color: #0088cc;
+	text-transform: uppercase;
+	border-bottom-color: #ddd;
+}
+#spec_ad_table th .popover
+{
+	color: #333;
+	text-transform: initial;
+	font-weight: initial;
+}
+#spec_ad_table th .popover-title
+{
+	display: none;
+}
+#spec_ad_table td
+{
+	vertical-align: middle;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#spec_ad_table .sub_row
+{
+	height: 1.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#spec_ad_table .ui_icon
+{
+	color: grey;
+}
+#spec_ad_table .ui_icon:hover
+{
+	color: #0088CC;
+}
+#spec_ad_table .center_justify
+{
+	text-align: center;
+}
+#spec_ad_table .right_justify
+{
+	text-align: right;
+}
+#spec_ad_table .url_actions .ui_icon
+{
+	cursor: pointer;
+	margin: 0 0.5em;
+}
+#spec_ad_table .creation_link
+{
+	font-size: 2em;
+	color: #FED672;
+}
+#spec_ad_table .creation_link.recommended
+{
+	color: #77DC39;
+}
+#spec_ad_table .needs_digital
+{
+	color: #FA7100;
+	text-transform: uppercase;
+}
+#spec_ad_table .needs_digital.recommended
+{
+	color: #77DC39;
+}
+
+.emails-button
+{
+	color: grey;
+	cursor: pointer;
+}
+.emails-button:hover
+{
+	color: #0088CC;
+	text-decoration: none;
+}
+.emails-button.disabled,
+.emails-button.disabled:hover,
+.emails-button.disabled:focus
+{
+	outline: none;
+	color: #DDD;
+}
+
+.btn-link:hover
+{
+	text-decoration: none;
+}

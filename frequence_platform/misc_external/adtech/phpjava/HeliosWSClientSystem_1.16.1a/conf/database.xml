@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a Systinet Server configuration file that defines the used database. -->
+<config name="database">
+
+    <!-- You can modify the setting in the database element; see the documentation. -->
+    <database>
+
+        <!-- Connection settings. Element type is a link to databaseMappings section. -->
+        <driverProperty>
+            <type>hsql</type>
+            <hostname>localhost</hostname>
+            <port>9001</port>
+            <dbName>store/hsqldb/db_persistence</dbName>
+            <userName>sa</userName>
+        </driverProperty>
+
+        <!-- Example Oracle10 compliant configuration (assumes Oracle 10g JDBC driver in classpath):
+        <driverProperty>
+            <type>oracle10</type>
+            <hostname>10.0.0.251</hostname>
+            <port>1521</port>
+            <dbName>database.name</dbName>
+            <userName>ssjdbuser</userName>
+            <userPassword>ssjdbuserpassword</userPassword>
+        </driverProperty>
+        -->
+        <!-- Example PostgreSQL configuration (assumes PostgreSQL JDBC driver in classpath):
+        <driverProperty>
+            <type>postgresql</type>
+            <hostname>dbserver</hostname>
+            <port>5432</port>
+            <dbName>ssjdb</dbName>
+            <userName>ssjdbuser</userName>
+            <userPassword>ssjdbuserpassword</userPassword>
+        </driverProperty>
+        -->
+        <!-- Example MS SQL Server configuration (assumes MS SQL Server JDBC driver in classpath):
+        <driverProperty>
+            <type>mssql</type>
+            <hostname>dbserver</hostname>
+            <port>1433</port>
+            <dbName>ssjdb</dbName>
+            <userName>ssjdbuser</userName>
+            <userPassword>ssjdbuserpassword</userPassword>
+        </driverProperty>
+        -->
+
+        <!-- connectionPool configuration for the database -->
+        <connectionPool>
+            <defaultPoolSize>2</defaultPoolSize>
+            <maxPoolSize>5</maxPoolSize>	<!-- Check that your database allows this number of connections. -->
+            <poolCleaningInterval>15</poolCleaningInterval>
+            <preparedStatementCacheSize>300</preparedStatementCacheSize>	<!-- maxPoolSize * 10 if DBMS allows -->
+        </connectionPool>
+
+    </database>
+
+    <!-- Definition of database profiles and its specialities -->
+    <databaseMappings name="databaseMappings">
+
+        <!-- HSQLDB configuration; http://hsqldb.sourceforge.net/; Systinet Server default -->
+        <databaseMapping type="hsql">
+            <interfaceMapping className="com.systinet.uddi.database.hsql.Driver" 
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.uddi.database.hsql.Shutdown"
+                              interfaceName="com.systinet.uddi.database.Shutdown"/>
+            <interfaceMapping className="com.systinet.persistence.hsql.HsqlSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- IBM DB2 -->
+        <databaseMapping type="db2">
+            <interfaceMapping className="com.systinet.uddi.database.db2.Driver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.persistence.db2.Db2SchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- Microsoft SQL Server -->
+        <databaseMapping type="mssql">
+            <interfaceMapping className="com.systinet.uddi.database.mssql.Driver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.persistence.mssql.MssqlSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- MySQL; www.mysql.com -->
+        <databaseMapping type="mysql">
+            <interfaceMapping className="com.systinet.uddi.database.mysql.MySqlDriver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.persistence.mysql.MySqlSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- Oracle - use oracle10 with JDBC driver 10
+        <databaseMapping type="oracle">
+            <interfaceMapping className="com.systinet.uddi.database.oracle.Driver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.uddi.database.oracle.FetchLongText"
+                              interfaceName="com.systinet.uddi.database.FetchLongText"/>
+            <interfaceMapping className="com.systinet.persistence.oracle.OracleSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+        -->
+
+        <!-- Oracle with a newer JDBC driver (only driver differs from oracle profile)
+	     JDBC 10.1.0 driver works with RDBMS 10.1.0, 9.2.0, 9.0.1 and 8.1.7 --> 
+        <databaseMapping type="oracle10">
+            <interfaceMapping className="com.systinet.uddi.database.oracle.Oracle10gDriver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.uddi.database.oracle.FetchLongText"
+                              interfaceName="com.systinet.uddi.database.FetchLongText"/>
+            <interfaceMapping className="com.systinet.persistence.oracle.OracleSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- PostgreSQL; http://www.postgresql.org/ -->
+        <databaseMapping type="postgresql">
+            <interfaceMapping className="com.systinet.uddi.database.postgresql.Driver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.postgresql.Quoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.persistence.postgresql.PostgresqlSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+        <!-- Sybase -->
+        <databaseMapping type="sybase">
+            <interfaceMapping className="com.systinet.uddi.database.sybase.Driver"
+                              interfaceName="com.systinet.uddi.database.Driver"/>
+            <interfaceMapping className="com.systinet.uddi.database.DefaultQuoter"
+                              interfaceName="com.systinet.uddi.database.Quoter"/>
+            <interfaceMapping className="com.systinet.persistence.sybase.SybaseSchemaHelper"
+                              interfaceName="com.systinet.persistence.DatabaseSchemaHelper" />
+        </databaseMapping>
+
+
+    </databaseMappings>
+
+</config>

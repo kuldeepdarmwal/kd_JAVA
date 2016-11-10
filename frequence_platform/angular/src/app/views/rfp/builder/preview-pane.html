@@ -1,0 +1,18 @@
+<div class="pull-left preview-pane-container"  (window:resize)="resizePreviewWindow()">
+    <div class="" style="
+    position: absolute;
+    top: 37px;
+    left: 30px;
+    font-size: 46px;
+    color: #d8dad9;
+    font-weight: normal;
+">
+        {{templateIndex}}
+    </div>
+    <div class="preview-pane">
+        <div id="preview-html"  style="width: 100%; overflow: hidden">
+            <div [innerHTML]="templateHTML" #previewHTML></div>
+        </div>
+    </div>
+    <footer (save-builder)="save.emit($event)" (back)="back.emit()" (next)="next.emit()" (download)="download.emit()" [isInBuilder]=true [enable-download]="enableDownload"></footer>
+</div>

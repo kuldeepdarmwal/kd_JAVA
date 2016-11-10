@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+.coupon_wrap {width:475px;margin:auto;border:3px dashed #000;}
+.coupon_top {height:156px;position:relative;}
+.coupon_icon {width:146px;height:146px;top:8px;left:8px;position:absolute;}
+.coupon_title {padding-top:10px;position:absolute;right:8px;top:8px;width:310px;font-size:30px;font-family: 'Amaranth', sans-serif;color:#ffd200;text-align:center;background:#894a9c;height:136px;text-align:}
+.coupon_description {margin:0px 8px 0px 8px;background:#682f79;color:#fff;font-family: 'Amaranth', sans-serif;font-size:20px;text-align:center;padding:5px 0px;}
+.percent_off {margin:0px 8px 0px 8px;background:#5a236b;color:#fff;font-family: 'Amaranth', sans-serif;font-size:20px;text-align:center;padding:5px 0px;margin-top:2px;}
+.buttons_share,.buttons_email {margin:5px 8px 20px 8px;}
+.buttons_left {width:170px;height:80px;float:left;}
+.buttons_right {width:247px;height:80px;float:right;}
+.button_title {font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#333;margin-bottom:3px;}
+#email {border:1px solid #d6d6d6;font-color:894a9c;padding:3px;}
+#submit {background-color:#682f79;color:#ffcc00;border:1px solid #c08dd0;padding:3px;}
+.coupon_code {font-family: 'Amaranth', sans-serif;font-size:24px;text-align:center;color:#777;}
+.share_again {margin-top:10px;}

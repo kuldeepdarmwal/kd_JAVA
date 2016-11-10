@@ -1,0 +1,266 @@
+
+.RfCampaignSettings {
+	font-family:'Oxygen', sans-serif;
+	font-size:12px;
+}
+
+.RfSettingsRow {
+	font-family:'Oxygen', sans-serif;
+	width:100%;
+	min-width:200px;
+	text-align:left;
+	padding:2px;
+	clear:both;
+
+}
+
+.RfSelectorTitle {
+	width:20%;
+	color: #414142;
+	font-family: 'BebasNeue', sans-serif;
+	font-size:14px;
+	text-align:right;
+	float:left;
+	padding-right:4px;
+}
+
+.RfSlider {
+	width:250px;
+}
+
+#RfCampaignFocusRow {
+	position: relative;
+}
+
+#RfSliderReach {
+	font-family: 'Oxygen', sans-serif;
+	font-size:12px;
+	position:absolute;
+	left:10px;
+	color: #414142;
+	padding-bottom:8px;
+}
+
+#RfSliderReach_rf {
+	font-family: 'Oxygen', sans-serif;
+	font-size:10px;
+	text-transform: uppercase;
+	position:absolute;
+	left:120px;
+	color: #414142;
+	margin-bottom:8px;
+}
+
+#RfSliderFrequency {
+	font-family: 'Oxygen', sans-serif;
+	font-size:12px;
+	position:absolute;
+	left:310px;
+	color: #414142;
+	padding-bottom:8px;
+}
+
+
+#RfSliderFrequency_rf {
+	font-family: 'Oxygen', sans-serif;
+	font-size:10px;
+	text-transform: uppercase;
+	position:absolute;
+	left:355px;
+	color: #414142;
+	margin-bottom:8px;
+}
+
+#RfCampaignFocusSlider {
+	position:absolute; 
+	left: 160px; 
+	width: 150px; 
+}
+
+#RfPopulationText {
+	position:relative;
+	width:100%;
+	height:70px;
+	font-family:'BebasNeue', sans-serif;
+}
+
+#RfCampaignFocusValueRow {
+	position:relative;
+}
+
+#RfCampaignFocusValue {
+	position:absolute;
+	left: 224px;
+}
+
+.RfDemoPopulationText {
+	position:absolute;
+	right:40px;
+}
+
+.RfGeoPopulationText {
+	position:absolute;
+	right:200px;
+}
+
+#RfDemoPopulationValue {
+	color:#7D2D39;
+}
+
+#RfDemoPopulationTitle {
+	color:#423b3b;
+}
+
+#RfGeoPopulationValue {
+	color:#7D2D39;
+}
+
+#RfGeoPopulationTitle {
+	color:#423b3b;
+}
+
+#RfBodyTable {
+	font-size:12px;
+}
+
+#RfTargetedRegionText {
+	position:absolute;
+	left: 0px;
+	width: 40%;
+	font-family:'BebasNeue', sans-serif;
+	color:#423b3b;
+	font-size:18px;
+	overflow:auto;
+	max-height:62px;
+}
+
+#RfPriceEstimate {
+	position: relative;
+	width: 100%;
+
+	color: #423b3b;
+	font-size:16px;
+}
+
+#RfPriceEstimateTitle {
+	position: relative;
+}
+
+#RfPriceEstimateValue {
+	position: relative;
+}
+
+.RfPriceEstimateRow {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	clear: both;
+}
+
+.RfPriceEstimateRowName {
+	width:20%;
+	float: left;
+	text-align: right;
+	font-family:'BebasNeue', sans-serif;
+	font-size:18px;
+	padding-right:10px;
+}
+
+.RfPriceEstimateRowValue {
+	float: left;
+	font-family:'Oxygen', sans-serif;
+}
+
+#RfPriceEstimateDiscountLink {
+}
+
+#RfPriceEstimateDiscountPercent {
+}
+
+#RfPriceEstimateDiscountAmount {
+	color: red;
+}
+
+#RfPriceEstimateDiscountRate {
+}
+
+#RfPriceEstimateEnterCodeRow{
+	display: none;
+}
+
+#RfPriceEstimateDiscountPercentRow {
+	display: none;
+}
+
+#RfPriceEstimateDiscountRateRow {
+	display: none;
+}
+
+#RfPriceEstimateCodeName {
+}
+
+#RfCampaignSettingsDivider {
+	width: 100%;
+	border-bottom:1px solid black;
+	margin: 10px;
+	margin-left: 0px;
+}
+
+#RfMediaComparisonDiv {
+	position: relative;
+	width: 100%;
+	color: #423b3b;
+	font-size:16px;
+}
+
+#RfMediaComparisonTitle {
+}
+
+#RfMediaComparisonDataVisuals {
+	display:none;
+}
+
+.RfMediaComparisonRow {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	clear: both;
+}
+
+.RfMediaComparisonRowName {
+	width:20%;
+	float: left;
+	text-align: right;
+	font-family:'BebasNeue', sans-serif;
+	font-size:18px;
+	padding-right:10px;
+}
+
+.RfMediaComparisonRowValue {
+	float: left;
+	font-family:'Oxygen', sans-serif;
+}
+
+.RfMediaComparisonValue {
+	font-family:'BebasNeue', sans-serif;
+	font-size:24px;
+	color:#45ada8;
+}
+
+
+#RfMediaComparisonValueExplanation {
+	font-size:10px;
+}
+
+#column1:hover {
+	background-color:black !important;
+}
+
+#RfPriceEstimateButton {
+	margin-bottom:5px;
+}
+
+#RfPriceEstimateButtonValue {
+	text-align:left;
+}
+

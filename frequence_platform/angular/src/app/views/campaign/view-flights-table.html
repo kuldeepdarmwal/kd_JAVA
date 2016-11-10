@@ -1,0 +1,60 @@
+<div id="view_flights_table_modal" class="modal">
+    <div class="content-model">      
+        <div class="header">
+            <h5 class="card-title grey-text text-darken-1 bold">Flight Details</h5>
+        </div>
+        <div class="body">
+            <div class="row">
+                <form class="col s12">
+                    <table class="bordered highlight centered">
+                        <thead>
+                            <tr>
+                                <th data-field="">Date</th>
+                                <th data-field="" *ngIf="enableBudgetCol">Total Budget</th>
+                                <th data-field="" *ngIf="enableooImpressionsCol">O&O Impressions</th>
+                                <th data-field="" *ngIf="enableooBudgetCol">O&O Budget</th>
+                                <th data-field="" *ngIf="enableAudienceExtImpressionsCol && !enableGeofencingImpressionsCol && !isPrerollCampaign">Display Impressions</th>
+				                <th data-field="" *ngIf="enableAudienceExtImpressionsCol && enableGeofencingImpressionsCol && !isPrerollCampaign">Display Impressions (Est)</th>
+                                <th data-field="" *ngIf="enableAudienceExtImpressionsCol && !enableGeofencingImpressionsCol && isPrerollCampaign">Preroll Impressions</th>
+                                <th data-field="" *ngIf="enableAudienceExtImpressionsCol && enableGeofencingImpressionsCol && isPrerollCampaign">Preroll Impressions (Est)</th>
+                                <th data-field="" *ngIf="enableGeofencingImpressionsCol">Geofencing Impressions (Est)</th>
+				                <th data-field="" *ngIf="enableAudienceExtBudgetCol && enableooImpressionsCol">Audience Ext Budget</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of flightTable;" [class.active-row]="reportDate >= item.startDate && reportDate < item.endDate">
+                                <td>
+                                    <span>{{item.startDate}} - {{item.endDate}}</span>
+                                </td>
+                                                <td *ngIf="enableBudgetCol">
+                                    <span *ngIf="item.totalBudget > 0">{{item.totalBudget | currency:'USD':'$':'1.2-2'}}</span>
+                                    <span *ngIf="item.totalBudget == 0">-</span>
+                                </td>
+                                                <td *ngIf="enableooImpressionsCol">
+                                    <span>{{item.ooimpressions | number_format}}</span>
+                                </td>
+                                                <td *ngIf="enableooBudgetCol">
+                                    <span *ngIf="item.oobudget > 0">{{item.oobudget | currency:'USD':'$':'1.2-2'}}</span>
+                                    <span *ngIf="item.oobudget == 0">-</span>
+                                </td>
+                                                <td *ngIf="enableAudienceExtImpressionsCol">
+                                    <span>{{item.audienceimpressions | number_format }}</span>
+                                </td>
+                                                <td *ngIf="enableGeofencingImpressionsCol">
+                                    <span>{{item.geofencingimpressions | number_format }}</span>
+                                </td>
+                                <td *ngIf="enableAudienceExtBudgetCol && enableooImpressionsCol">
+                                            <span *ngIf="item.audienceExtensionBudget > 0">{{item.audienceExtensionBudget | currency:'USD':'$':'1.2-2'}}</span>
+                                    <span *ngIf="item.audienceExtensionBudget == 0">-</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" data-dismiss="modal" class="btn" (click)="closeModal()">Close</button>
+        </div>
+    </div>
+</div>

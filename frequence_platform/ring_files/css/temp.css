@@ -1,0 +1,238 @@
+/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS */
+/*------------------------------------*\
+	NAV
+\*------------------------------------*/
+#nav{
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:10px;
+	height: 30px;
+	/* Clear floats */
+	width:131px;
+	/* Bring the nav above everything else--uncomment if needed.
+	position:relative;
+	z-index:5;
+	*/		
+	font-size: 16px;
+	font-family: Oxygen, sans-serif; 
+	text-decoration:none;
+	
+	display:block;
+	
+}
+#nav li{
+	float:left;
+	position:relative;
+	
+}
+
+
+#nav a{
+	margin-left: 6px;
+	margin-top: 4px;
+	width:120px;
+	height:27px;
+	display:block;
+	padding:5px;
+	font-size: 13px;
+	color: #fbfbfb;
+	border-radius: 2px;
+	background-color:#423b3b;
+	padding-bottom: 0px;
+	
+}
+span#span {
+	height:auto;
+	width:auto;
+	margin-left: 4px;
+}
+
+img#arrow {
+	margin-top:8px;
+	margin-right:4px;
+	width:auto;
+	float:right;
+}
+
+#nav a:hover{
+	
+	color:#423b3b;
+	border-radius: 2px;
+	
+	background:#9ea2a0;
+}
+
+#sublist li {
+	padding-left: 0px;
+	/*text-align: center;*/
+	margin-left: 4px;
+	float:left;
+	
+}
+
+#sublist a{
+	width: 116px;
+	height: 25px;
+	margin: 0px;
+	
+}
+
+#sublist span {
+}
+
+
+
+/*--- DROPDOWN ---*/
+#nav ul{
+	margin-left: 6px;
+	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:#423b3b; /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	list-style:none;
+	position:absolute;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+#nav ul li{
+	padding-top:0px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	float:none;
+}
+#nav ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+
+}
+
+/* Display the dropdown on hover */
+
+
+#nav li:hover ul{ 
+	left:0; 
+	border-radius:0px;
+	
+}
+
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+/*	background:#6b0c36;*/
+
+
+}
+#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration:none;
+	border-radius:0px;
+}
+#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	
+	
+	width: 112px;
+	height: 22px;
+	margin-bottom:3px;
+	
+	color:#423b3b;
+	border-radius: 1px;
+	
+	background:#9ea2a0;
+	
+}
+
+
+
+div#pop-up {
+  display: none;
+  position: absolute;
+  height:200px;
+  left: 1093px;
+  top: 44px;
+  width: 280px;
+  padding: 10px;
+  background: #fbfbfb;
+  border-radius: 7px;
+  font-size: 90%;
+  z-index:10000;
+}
+
+div#user-pop-up {
+	position:fixed;
+	height:auto;
+	top: -100px;
+	right:10px;
+	width: 120px;
+	padding: 6px;
+	background: #fbfbfb;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 10px;
+	z-index:10000000;
+}
+
+iframe.iframe {
+	margin:0px;
+	padding:0px;
+	position:inline;
+	height:32px;
+	width:32px;
+}
+
+div#partners {
+	display: none;
+}
+
+div#proposals {
+	display: none;
+}
+
+div#lap {
+	display: none;
+}
+
+div#tickets {
+	display: none;
+}
+
+div#campaigns {
+	display: none;
+}
+
+div#admin {
+	display: none;
+}
+div#smb{
+    display: none;
+}
+div#adops {
+	display: none;
+}
+div#techops {
+	display: none;
+}
+div#marketing {
+	display: none;
+}
+
+div#smb {
+	display: none;
+}
+
+div#ntdlogo {
+	position:absolute;
+	top:18px;
+	left:9px;
+}
+
+div#businessname {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 26px;
+	position: absolute;
+	top: 10px;
+	left: 430px;
+}
+
+img#previousarrow {
+	margin-right:5px;
+}
+
+img#nextarrow {
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	margin-left:5px;
+
+}

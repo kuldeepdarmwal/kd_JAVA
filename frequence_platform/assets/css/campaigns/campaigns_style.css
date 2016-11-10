@@ -1,0 +1,465 @@
+input[type=search]{
+    font-size: 14px;
+}
+.campaigns-list {
+    margin-top: 80px;
+    padding: 0 5px;;
+}
+.campaigns-list a {
+    text-decoration: none;
+}
+.campaigns-list .sub-header {
+    padding: 0;
+}
+.campaigns-list .sub-header h3 {
+    margin: 0;
+    font-size: 24px;
+}
+.campaigns-list .sub-header h3 a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.campaigns-list #campaigns-list {
+    margin: 0 5px;
+}
+.campaigns-list #campaigns-list th {
+    margin: 0;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 5px;
+    text-align: center;
+    position: relative;
+}
+.campaigns-list #campaigns-list th a {
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+.campaigns-list #campaigns-list .s_status {
+    
+}
+.campaigns-list #campaigns-list .s_status div {
+    display: inline-block;
+    cursor: pointer;
+}
+.campaigns-list #campaigns-list .s_status .c_status {    
+    width: 90px;
+    padding: 2px 6px;
+    display: block;
+    position: inherit;
+}
+.campaigns-list #campaigns-list td {
+    margin: 0;
+    font-size: 11px;
+    padding: 0 5px;
+    word-wrap: break-word;
+}
+.campaigns-list #campaigns-list th:first-child,
+.campaigns-list #campaigns-list td:first-child,
+.campaigns-list #campaigns-list th:nth-child(1),
+.campaigns-list #campaigns-list td:nth-child(1) {
+    width: 60px; 
+    min-width: 60px; 
+}
+.campaigns-list #campaigns-list td:first-child.first a {
+    margin: 8px 0 0 0;
+    text-decoration: none;
+}
+.campaigns-list #campaigns-list td:first-child.first a i {
+    color: #ef9103;
+    font-size: 18px;
+    margin: 7px 0 0 3px;
+    display: inline-block;
+}
+.campaigns-list #campaigns-list th:nth-child(2),
+.campaigns-list #campaigns-list .c_name {
+    text-align: left;
+    min-width: 150px;
+    margin: 0;
+    padding: 7px;
+}
+.campaigns-list #campaigns-list .c_name {
+    text-align: left;
+    margin: 0;
+    padding: 3px;
+    font-size: 12px;
+    max-width: 66px;
+}
+.campaigns-list #campaigns-list .c_name .sec1 {
+    width: 37px;
+    float: right;
+    margin: 0 0 3px 5px;
+}
+.campaigns-list #campaigns-list .c_name .sec1 ul {
+    width: 200px!important;
+}
+.campaigns-list #campaigns-list .c_name .sec1 .dropdown-content li {
+    min-height: 30px;
+}
+.campaigns-list #campaigns-list .c_name .sec1 .dropdown-content li a {
+    padding: 5px;
+    font-size: 14px;
+}
+.campaigns-list #campaigns-list .c_name b {
+    word-wrap: break-word;
+    font-family: 'Roboto';
+    font-size: 11px;
+}
+.campaigns-list #campaigns-list .date {
+    min-width: 73px;
+}
+.campaigns-list #campaigns-list .c_name b a {
+   word-break: break-all;
+}
+.campaigns-list #campaigns-list .favorite i {
+    color: #ef9103!important;
+}
+.campaigns-list #campaigns-list .unfavorite i {
+    color: #ccc!important;
+}
+.campaigns-list #campaigns-list .c_name p.p_name {
+    font-weight: 300; 
+    margin: 0;
+    color: #000;
+    font-size: 9px;
+    font-family: 'Roboto';
+}
+.campaigns-list #campaigns-list .c_name a.a_name {
+    font-weight: bold; 
+    margin: 0;
+    color: #000;
+    font-size: 11px;
+    font-family: 'Roboto';
+}
+.campaigns-list #campaigns-list .c_name p.campaign_name {
+    font-weight: normal; 
+    margin: 0;
+    color: #000;
+    font-size: 11px;
+    font-family: 'Roboto';
+}
+.campaigns-list #campaigns-list .s_yellow {
+    background-color: #ef9103;
+}
+.campaigns-list #campaigns-list .s_red {
+    background-color: #ca0032;
+}
+.campaigns-list #campaigns-list .s_blue {
+    background-color: #00609c;
+}
+.campaigns-list #campaigns-list .s_gray {
+    background-color: rgba(202,202,202,0.30);
+}
+.campaigns-list #campaigns-list .s_gray_dark {
+    background-color: #656565;
+}
+.campaigns-list #campaigns-list .s_gray_light {
+    background-color: #ccc;
+}
+.campaigns-list #campaigns-list .s_gray_yellow {
+    background-color: #fe6c00;
+}
+.campaigns-list #campaigns-list .s_green {
+    background-color: #009800;
+}
+.campaigns-list #campaigns-list .oti {    
+    position: inherit;
+}
+.campaigns-list #campaigns-list .c_oti {
+    color: #fff;
+    position:relative;
+    right:0px;
+}
+.campaigns-list #campaigns-list .less_oti {
+    color: #ab544f;
+    font-weight: bold;
+}
+.campaigns-list #campaigns-list .material-icons.gear-icon {
+    color: #999;
+    font-size: 18px; 
+}
+.campaigns-list #campaigns-list .material-icons.gear-icon:hover {
+    color: #039be5;
+}
+.campaigns-list #campaigns-list .pagination{
+    background-color: #fff;
+}
+.campaigns-list #campaigns-list .pagination li {
+    font-size: 1.2rem;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    line-height: 30px;
+}
+.campaigns-list #campaigns-list .pagination li.active {
+    background-color: #A9A9A9;
+}
+.campaigns-list #campaigns-list tr .star-sort i {
+    color: #ef9103;
+    font-size: 18px;
+}
+.campaigns-list .campaigns-list-mode {
+    text-align: right;
+    margin-top: 10px;
+}
+.campaigns-list .campaigns-list-mode label {
+    font-size: 12px;
+}
+.campaigns-list #campaigns-list th .glyphicon {
+    color: #3f3fa9;
+}
+#campaigns-list .dropdown-menu {
+    display: none;
+}
+#campaigns-list .open > .dropdown-menu {
+    display: block;
+}
+#campaigns-list .open > .dropdown-menu li a {
+    width: 100%;
+    padding: 3px 5px;
+    display: block;
+    font-size: 12px;
+    color: #000;
+}
+#campaigns-list .open > .dropdown-menu li a:hover {
+    background-color: #48d0c4;
+    background-image: none;
+    color: #fff;
+}
+#campaigns-list .dropdown-menu {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 9;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.campaigns-list #campaigns-list .pagination{
+    background-color: #fff;
+    height: 30px;
+    display: inline-block;
+    width: auto;
+    box-shadow: none;
+    
+}
+.campaigns-list #campaigns-list .pagination.pull-right {
+    display: none;
+}
+.campaigns-list #campaigns-list .pagination li {
+    font-size: 1.2rem;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    line-height: 30px;
+}
+.campaigns-list #campaigns-list .oti_red {color: red;}
+#campaigns-list .c_name .icon-cog {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #666;
+    text-decoration: none;
+}
+.campaigns-list #campaigns-list .pagination li a {
+    color: #000;
+    font-size: 14px;
+}
+
+.campaigns-list #campaigns-list .pagination li.active a:hover,
+.campaigns-list #campaigns-list .pagination li.active a {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+    color: #fff;
+}
+.campaigns-list #campaigns-list .product-header th {
+    border-bottom: 0;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 15px 0 0 8px;
+}
+.campaigns-list .search-box input {
+    font-size: 14px;
+    margin: 0;
+}
+.campaigns-list table .this_flight {
+    display: none;
+}
+.content-model{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.content-model .header {
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.content-model .header h4 {
+   font-size: 24px;
+}
+.content-model .body {
+    padding: 20px;
+    min-height: 240px;
+    max-height: 460px;
+    overflow-y: auto;
+}
+.content-model .body ul li {
+    font-size: 18px;
+}
+.content-model .body ul li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.content-model .footer {
+    padding: 2px 10px 20px;
+    border-top: 1px solid #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.content-model .footer button{
+    float: right;
+}
+.campaigns-list table#campaigns-list.bordered>thead>tr{
+    border: 0;
+}
+.campaigns-list table#campaigns-list thead {
+    border-bottom: 2px solid #999;
+}
+.campaigns-list table#campaigns-list .campaign-name-tooltip {
+    color: #ef9103;
+    font-size: 18px;
+    cursor: pointer;
+}
+.campaigns-list table#campaigns-list td.this_flight span,
+.campaigns-list table#campaigns-list td.all_time span {
+    width: 60px;
+}
+#view_creative_modal h4 {
+    font-size: 18px;
+}
+.campaigns-list #campaigns-list .c_name .sec1 .campaign-alert {
+    position: relative;
+    float: left;
+}
+#lean-overlay{
+    position: fixed;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    will-change: opacity;
+    z-index: 1002;
+    display: block;
+    opacity: 0.5;    
+}
+.modal-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0 30px!important;
+    border: 0;
+}
+.modal-footer a {
+    text-decoration: none;
+}
+.modal{
+    margin-top:3%;
+    padding: 0 15px;
+}
+.modal h5 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+}
+.campaigns-list #campaigns-list span.badge {
+    padding: 3px 6px;
+}
+.campaigns-list #campaigns-list .badge.orange {
+    background-color: #b94a48!important;
+    color: #fff;
+}
+.campaigns-list #campaigns-list [type="checkbox"]+label{
+    padding-left: 19px;
+    margin: 8px 0 0 0;
+    vertical-align: top;
+}
+.campaigns-list #campaigns-list [type="checkbox"]+label:before {
+    width: 11px;
+    height: 11px;
+}
+.campaigns-list #campaigns-list [type="checkbox"]:checked+label:before {
+    width: 7px;
+    height: 12px;
+}
+.campaigns-list #campaigns-list .header_chk {
+    text-align: left;
+    padding-left: 10px;
+}
+.bulk_download_content_div .tooltip-wrapper {
+    width: 30px;
+}
+.custom-tooltip-body:after {
+    z-index: -1;
+    position: absolute;
+    top: 98.1%;
+    margin-left: -25%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 10px #5d5a5a;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+#view_flights_table_modal{
+    width: 90%;
+}
+#view_flights_table_modal .content-model .body {
+    padding: 0;
+}
+#view_create_helpdesk_ticket_modal .content-model .body textArea {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-top: 15px;
+}
+.campaigns-list #campaigns-list .impression {
+    display: block;
+    margin-bottom: 5px;
+    width: auto!important;
+    font-weight: bold;
+}
+.active-row {
+    font-weight: bold;
+}
+.campaigns-list .pagination>li>a
+{
+    margin-left:0px !important;
+}
+
+#view_create_helpdesk_ticket_modal.modal{
+    max-height:505px;
+    height:505px;
+}
+
+#view_create_helpdesk_ticket_modal .body{
+    height: 350px;
+    overflow: hidden;
+}

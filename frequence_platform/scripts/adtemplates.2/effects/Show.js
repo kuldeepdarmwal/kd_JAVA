@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Show=Animation.extend({setPosition:function(a){this._super(a);this.targetFrame&&this.targetFrame.setVisible(a>0)},reset:function(){this.updatePosition(1);this._super()}})

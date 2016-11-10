@@ -1,0 +1,30 @@
+<div class="col s10 offset-s2">
+	<div *ngFor="let option of options; let i = index" class="col s4">
+		<div *ngIf="option.selected">
+			<div class="row">
+				<div class="input-field col s6">
+					<select class="io_period_dropdown grey-text" [(ngModel)]="option.config[product.id].data.unit"
+							 (ngModelChange)="changeNetwork(option.optionId, product.id, $event)"
+                            materialize="material_select" [materializeSelectOptions]="option.config[product.id].setUpData.unit.dropdown_options">
+						<option *ngFor="let dropdown_option of option.config[product.id].setUpData.unit.dropdown_options"
+								[value]="dropdown_option.value">{{dropdown_option.text}}
+						</option>
+					</select>
+				</div>
+			</div>
+			<div class="row" id="custom_tv_package_0" style="" *ngIf="option.config[product.id].data.customEnabled">
+				<div class="input-field col s4" style="margin-left: 0.75rem;">
+					<input id="custom_tv_package_0_spots" name="custom_tv_package_0_spots" type="text"
+						   class="grey-text product_input custom_spots_input" [(ngModel)]="option.config[product.id].data.spots" mycurrency>
+					<label for="custom_tv_package_0_spots" class="active">Spots</label>
+				</div>
+				<div class="input-field col s4">
+					<span class="discrete_dollar_prepend">$</span>
+					<input id="custom_tv_package_0_price" name="custom_tv_package_0_price" type="text"
+						   class="grey-text product_input custom_price_input" [(ngModel)]="option.config[product.id].data.price" mycurrency>
+					<label for="custom_tv_package_0_price" class="active">Price</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

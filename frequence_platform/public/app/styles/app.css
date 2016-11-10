@@ -1,0 +1,60 @@
+page {
+	display: block;
+	margin: 15px 0;
+	position: relative;
+}
+
+page page-frame {
+	display: table;
+	font-size: 0;
+	line-height: 0;
+	border-radius: 0px!important;
+	pointer-events: none;
+}
+
+page.selected page-frame:before {
+    content: 'done';
+    height: 100%;
+    width: 100%;
+    margin-top: -60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.15);
+    font-family: 'Material Icons';
+    font-size: 140px;
+    text-align: center;
+    text-indent: 0.25em;
+    color: #06B906;
+    line-height: 2.5em;
+}
+
+.btn {
+	background-image: none;
+}
+
+iframe {
+	width: 1754px;
+	max-width: 100%;
+	height: 1240px;
+	border: none;
+}
+
+.add-page {
+	margin: 20px auto 40px;
+	display: block;
+}
+
+.remove-page {
+	position: absolute;
+	top: -2.5%;
+	right: -2.5%;
+}
+
+#new-page-form page {
+	display: inline-block;
+	width: 48%;
+	margin: 1%;
+	cursor: pointer;
+	overflow: hidden;
+}

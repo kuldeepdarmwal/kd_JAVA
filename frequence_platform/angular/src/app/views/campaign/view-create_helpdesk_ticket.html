@@ -1,0 +1,28 @@
+<div id="view_create_helpdesk_ticket_modal" class="modal">
+    <div class="content-model">         
+        <form class="col s12" (submit)="createTicket()">
+            <div class="row">
+                <div class="header">
+                    <h5 class="card-title grey-text text-darken-1 bold">Create New Ticket</h5>
+                </div>
+                 <div class="body">
+                    <div class="input-field col s12">
+                        <input id="subject" type="text" [(ngModel)]="subject" class="validate" required="" aria-required="true">
+                        <label for="subject">Subject Line</label>
+                    </div>
+                     
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" [(ngModel)]="description" class="materialize-textarea validate" required="" aria-required="true" style="height:192px"></textarea>
+                        <label class="type-msg-text" for="description">Type your message here...</label>
+                    </div>
+                 </div>
+                <div class="footer">
+                    <div class="input-field col s12">
+                        <button type="button" data-dismiss="modal" class="btn" (click)="closeModal()">Close</button>
+                        <button class="btn waves-effect waves-light" [disabled]="!subject || !description" type="submit" name="action" style="margin-right: 20px;">Create Ticket</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

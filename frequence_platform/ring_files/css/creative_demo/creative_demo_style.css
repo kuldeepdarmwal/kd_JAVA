@@ -1,0 +1,84 @@
+@charset "utf-8";
+img {border:none;}
+.preloader { background:url(css/i/loader3.gif) center center no-repeat; display:inline-block; }
+.wrapper {min-height: 100%;height: auto !important;	height: 100%;margin: 0 auto -30px; }
+.footer, .push {height: 30px;}
+.footer {background-color:#fff;font-family:Arial, Helvetica, sans-serif;font-size:13px; border-top:1px solid #d6d6d6; }
+.head {height:120px;background:url(images/head_bg.png)}
+.head960 {width:960px;margin:0 auto;}
+.headleft {width:307px;float:left;height:120px;}
+.headright {width:600px;float:right;height:58px;padding-right:20px;font-family: 'Lato', sans-serif;font-size:14px;color:#666;text-align:right;padding-top:30px;}
+.companytitle {font-weight:300}
+.head960 a {color:#666;}
+.adholder {width:200px;height:126px;float:left;margin:2px 2px 0px 0px;border:0px solid #666;padding:0px;}
+.clear {clear:both;}
+.adtitle {padding-left:4px;padding-top:4px;height:22px;border-bottom:0px solid #97989A;width:196px;font-family:'Oxygen', Arial, Helvetica, sans-serif;font-size:12px; color:#97989A;font-family: Oxygen, sans-serif;background-color:#fff;font-weight:bold;text-transform:uppercase;} 
+.adimage {height:100px;width:200px;overflow:hidden;position:relative;}
+.faded  {display:none;}
+span.rollover {
+	opacity: 1;
+
+	background:url(../../../images/thumbs/hover.png);
+	cursor: pointer;
+	height: 100px;
+	width: 200px;
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+}
+
+span.rollover:hover {
+	opacity:0.99;
+	
+
+}
+.banner_holder {width:960px;height:700px;background:url(images/ADS_BG.png);position:relative;margin:0 auto;}
+.ad336 {
+	width:336px;
+	height:280px;
+	position:absolute;
+	top:160px;
+	left:212px;
+}
+.ad728 {
+	width:728px;
+	height:90px;
+	position:absolute;
+	top:20px;
+	left:212px;
+}
+.ad300 {
+	width:300px;
+	height:250px;
+	position:absolute;
+	top:160px;
+	left:580px;
+}
+.ad160 {
+	width:160px;
+	height:600px;
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+.placement{
+	width:340px;
+	height:89px;
+	position:absolute;
+	top:495px;
+	left:391px;
+}
+a {color:#777;text-decoration:underline;}
+.footer p {display:block;padding-top:5px;}
+.invisible {}
+ul.ourHolder {
+}
+ul.ourHolder li.item {
+	list-style: none;
+	float: left;
+	overflow: hidden;
+}
+ul.ourHolder li.item h3 {}
+/*- -*/
+
+

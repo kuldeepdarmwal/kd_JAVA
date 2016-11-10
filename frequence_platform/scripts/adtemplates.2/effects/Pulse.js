@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Pulse=Animation.extend({scalePercent:20,pulsePoint:.3,setPosition:function(e){this._super(e);var b=this.targetFrame;if(!b)return;var c=b.getContentRectangle();if(!c)return;var a,d;if(e<this.pulsePoint){d=this.easing;a=d(e,0,1,this.pulsePoint)}else{d=this.easing2||this.easing;a=d(e-this.pulsePoint,1,-1,1-this.pulsePoint)}a*=this.scalePercent/100;b.setPanX(-(c.x+c.width/2)*a);b.setPanY(-(c.y+c.height/2)*a);b.setScaleX(1+a);b.setScaleY(1+a)}})

@@ -1,0 +1,106 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Selectable - Serialize</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+ 
+  <style>
+     #feedback { font-size: 1.4em; }
+     #selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  </style>
+  <script>
+  $(function() {
+	  $( "#selectable" ).selectable({
+	      stop: function() {
+		      var result = $( "#select-result" ).empty();
+		      $( ".ui-selected", this ).each(function() {
+			      var index = $( "#selectable li" ).index( this );
+			      result.append( " #" + ( index + 1 ) );
+			  });
+		  }
+	      });
+      });
+  </script>
+</head>
+<body>
+ 
+<p id="feedback">
+<span>Selected:</span> <span id="select-result">none</span>.
+</p>
+
+<div style = "width:800px;height:400px;overflow:auto"> 
+<ol id="selectable">
+  <li class="ui-widget-content">Item 1</li>
+  <li class="ui-widget-content">Item 2</li>
+  <li class="ui-widget-content">Item 3</li>
+  <li class="ui-widget-content">Item 4</li>
+  <li class="ui-widget-content">Item 5</li>
+  <li class="ui-widget-content">Item 6</li>
+<?php
+    $base_sites = array();
+$one_month_ago = date("Y-m-d", strtotime('-1 month'));
+$db = mysql_connect('10.179.2.54', 'vlproduser', 'L0cal1s1n!');
+mysql_select_db('vantagelocal_prod');
+    $active_campaign_query = "SELECT c.Name as Name, a.Name as Business, c.LandingPage as Page, c.id as id FROM Campaigns c LEFT JOIN Advertisers a ON (c.business_id = a.id) WHERE c.igno\
+re_for_healthcheck = 0 AND c.id IN (SELECT campaign_id FROM tags WHERE is_prop = 1 and isActive = 1) GROUP BY c.id ORDER BY a.Name ASC";
+$response = mysql_query($active_campaign_query);
+
+while($row = mysql_fetch_assoc($response))
+{
+    echo $row['id'];
+    $get_base_site_query = "SELECT b.Base_Site as base_url, SUM(b.Impressions) FROM (AdGroups a JOIN SiteRecords b ON (a.ID = b.AdGroupID)) JOIN Campaigns c ON (a.campaign_id = c.id) WHE\
+RE b.Base_Site !='youtube.com' AND b.Base_Site != 'facebook.com' And b.Base_Site != 'All other sites' AND  c.id = ".$row['id']." AND b.Date > '".$one_month_ago."' GROUP BY base_url ORDER\
+ BY SUM(b.Impressions) DESC LIMIT 20";
+    echo $get_base_site_query."\n";
+    $sites_response = mysql_query($get_base_site_query);
+    while($site = mysql_fetch_assoc($sites_response))
+    {
+	array_push($base_sites, $site['base_url']);
+    }
+}
+$data = array();
+$base_sites = array_count_values($base_sites);
+print_r($base_sites);
+foreach ($base_sites as $site => $count)
+{
+    $get_last_run_date_query = "SELECT start_time FROM ad_verify_web_crawl_records WHERE base_url = '".$site."' ORDER BY start_time DESC LIMIT 1";
+
+    $last_run_date_result = mysql_query($get_last_run_date_query);
+    if(mysql_num_rows($last_run_date_result) > 0)
+    {
+	$date_row = mysql_fetch_assoc($last_run_date_result);
+	$last_run_date = $date_row['start_time'];
+    }
+ else
+ {
+     $last_run_date = "NEVER";
+ }
+    $data[$site] = array($count, $last_run_date);
+    //array_push($data, array($site, $count, $last_run_date));                                                                                                                                
+}
+
+//$data = array_unique($data);                                                                                                                                                             
+ksort($data);
+print_r($data);
+
+
+
+
+
+
+
+
+
+</ol>
+</div 
+ 
+</body>
+</html>

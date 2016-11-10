@@ -1,0 +1,189 @@
+.campaigns-list {
+    
+}
+.campaigns-list .sub-header {
+    padding: 0;
+}
+.campaigns-list .sub-header>div {
+    margin-bottom: 0;
+}
+.campaigns-list .sub-header h3 {
+    margin: 0;
+    font-size: 24px;
+}
+.campaigns-list #campaigns-list {
+    margin: 0;
+}
+.campaigns-list #campaigns-list th {
+    margin: 0;
+    font-size: 14px;
+    border-bottom: 2px solid #000;
+    padding: 15px 5px;
+}
+.campaigns-list #campaigns-list th a {
+    color: #000;
+    text-decoration: none;
+}
+.campaigns-list #campaigns-list td {
+    margin: 0;
+    font-size: 12px;
+    padding: 0 5px;
+}
+.campaigns-list #campaigns-list th,
+.campaigns-list #campaigns-list td {
+    min-width: 100px;
+}
+.campaigns-list #campaigns-list th:first-child,
+.campaigns-list #campaigns-list td:first-child {
+    width: 20px; 
+    min-width: 20px; 
+}
+.campaigns-list #campaigns-list td:first-child a i {
+    color: #ef9103;
+    font-size: 18px;
+    margin: 10px;
+}
+.campaigns-list #campaigns-list th:nth-child(2),
+.campaigns-list #campaigns-list .c_name {
+    text-align: left;
+    min-width: 170px;
+    margin: 0;
+    padding: 7px;
+}
+.campaigns-list #campaigns-list .c_name {
+    position : relative;
+    text-align: left;
+    margin: 0;
+    padding: 7px;
+    font-size: 12px;
+}
+.campaigns-list #campaigns-list .c_name p {
+    font-weight: 500;
+    margin: 5px 0;
+    color: #000;
+}
+.campaigns-list #campaigns-list .c_status {
+     padding: 3px;
+     color: #fff;
+     font-weight: bold;
+     width: 80px;
+     display: block;
+     text-align: center;
+}
+.campaigns-list #campaigns-list .s_yellow {
+    background-color: #ef9103;
+}
+.campaigns-list #campaigns-list .s_gray {
+    background-color: #ccc;
+}
+.campaigns-list #campaigns-list .c_oti {
+    padding: 5px;
+    color: #fff;
+}
+.campaigns-list #campaigns-list [type="checkbox"]:not(:checked),
+.campaigns-list #campaigns-list [type="checkbox"]:checked {
+    left: 0;
+    margin: 0 0 0 5px;
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+.campaigns-list #campaigns-list .material-icons {
+    color: #fff;
+}
+.campaigns-list #campaigns-list .material-icons.active {
+    color: yellow;
+}
+.campaigns-list #campaigns-list .pagination{
+    background-color: #fff;
+}
+.campaigns-list #campaigns-list .pagination li {
+    font-size: 1.2rem;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    line-height: 30px;
+}
+.campaigns-list .campaigns-list-mode {
+    text-align: right;
+    margin-top: 10px;
+}
+#campaigns-list .dropdown-menu {
+    display: none;
+}
+
+#campaigns-list .open > .dropdown-menu {
+    display: block;
+}
+#campaigns-list .open > .dropdown-menu li {
+    
+}
+#campaigns-list .open > .dropdown-menu li a {
+    width: 100%;
+    padding: 3px 5px;
+    display: block;
+    font-size: 12px;
+    color: #000;
+}
+#campaigns-list .open > .dropdown-menu li a:hover {
+    background-color: #48d0c4;
+    color: #fff;
+}
+#campaigns-list .dropdown-menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 9;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.campaigns-list #campaigns-list .pagination{
+    background-color: #fff;
+    height: 30px;
+    display: inline-block;
+    width: auto;
+    box-shadow: none;
+    
+}
+.campaigns-list #campaigns-list .pagination li {
+    font-size: 1.2rem;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    line-height: 30px;
+}
+#campaigns-list .c_name .icon-cog {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #666;
+}
+.campaigns-list #campaigns-list .pagination li a {
+    color: #000;
+}
+
+.campaigns-list #campaigns-list .pagination li.active a:hover,
+.campaigns-list #campaigns-list .pagination li.active a {
+    background-color: #F44336;
+    border-color: #F44336;
+    color: #fff;
+}
+.campaigns-list #campaigns-list .product-header th {
+    border-bottom: 1px solid #999;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}

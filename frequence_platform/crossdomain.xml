@@ -1,0 +1,12 @@
+<cross-domain-policy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://www.adobe.com/xml/schemas/PolicyFile.xsd">
+<allow-access-from domain="*.vantagelocaldev.com"/>
+<allow-access-from domain="*.vantagelocalstage.com"/>
+<allow-access-from domain="*.vantagelocal.com"/>
+<allow-access-from domain="*.brandcdn.com"/>
+<allow-access-from domain="*.medialocal.com"/>
+<allow-access-from domain="http://ad.vantagelocal.com"/>
+<allow-access-from domain="https://7629e0040b7aa73eaefb-2105a7941d639194e8ba5253efec10c9.ssl.cf1.rackcdn.com"/>
+<allow-access-from domain="http://18d3866b5f693f1f11b6-b73241aae133d24e20527933c2ff6c10.r36.cf1.rackcdn.com"/>
+<allow-access-from domain="https://0267a94cab6d385b9024-b73241aae133d24e20527933c2ff6c10.ssl.cf1.rackcdn.com"/>
+</cross-domain-policy>  

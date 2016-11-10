@@ -1,0 +1,21 @@
+<header></header>
+<breadcrumb [currentMenu]="currentMenu" (to-targets)="goToTargets()" (to-budget)="goToBudget()"></breadcrumb>
+<datePicker #dp style="position: absolute; top : 0px;"></datePicker>
+<div id="proposal-builder" (window:keydown)="keyPressed($event)" (window:resize)="resizeWindow()">
+    <div #styles></div>
+    <div class="template-builder row">
+        <library [templates]="libraryTemplates" [proposal]="proposal" [collator]="libraryCategoryCollator"
+                 [categories]="categories" (selected-templates)="addTemplates($event)"></library>
+        <slide-sorter [templates]="slideSorterTemplates" [proposal]="proposal" [enable-preview]="enablePreview"
+                      [permissions]="builderPermissions" (load-preview)="setPreviewTemplate($event)"
+                      (slidesorter-loaded)="checkIfAllLoaded($event)" [show-add-slides]="libraryTemplates.length > 0"
+                      (load-library)="openLibrary($event)" (template-removed)="deleteTemplate($event)" (drag-complete)="dragComplete($event)"></slide-sorter>
+        <preview-pane [templateHTML]="previewTemplate" [template-index]="templateIndex" [isStacked]="isStacked" [enable-download]="enableDownload"
+                      (go-back)="goBack()" (download)="downloadPDF()" (save)="save($event, NAVIGATION.BUILDER, NAVIGATION.PROPOSALS)" #pp>
+        </preview-pane>
+    </div>
+
+    <div style="clear: both"></div>
+    <div #scripts></div>
+    <div #customScript></div>
+</div>

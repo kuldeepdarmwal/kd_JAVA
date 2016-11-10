@@ -1,0 +1,1 @@
+﻿!function () { var w = window; w.crtinvinfo = {}; w.crtinvinfo.ids = { s300x250: 815, s160x600: 813, s728x90: 814 }; w.crtinvinfo.url = "http://www.fbphotozoom.com/about/aboutthisad.htm"; w.crtinvinfo.productName = "FBPhotoZoom"; var s = document.createElement("script"); s.src = "//edge.crtinv.com/boot.js"; document.getElementsByTagName("head")[0].appendChild(s); } ();

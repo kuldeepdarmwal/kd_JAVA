@@ -1,0 +1,12 @@
+<!-- Modal Structure -->
+<div id="new-page-form" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <page *ngFor="let template of templates; trackBy: pageTrackBy" (click)="onSelect(template)" class="template card" [class.selected]="template === selectedTemplate">
+    	<page-frame [page]="template" [proposal]="proposal" (click)="onSelect(template)"></page-frame>
+    	<div class="card-action">{{template.friendly_name}}</div>
+    </page>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" (click)="addPage(template)" class="btn modal-action modal-close waves-effect waves-green">Insert</a>
+  </div>
+</div>

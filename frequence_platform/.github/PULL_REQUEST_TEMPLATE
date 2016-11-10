@@ -1,0 +1,21 @@
+**Features**:
+ - Feature goes here
+
+**Feature Owners**:
+- [ ] Dave
+- [ ] Tom
+- [ ] Matt
+
+**Affected User Groups**: (Examples: Sales, Spectrum Account Planners, Creative Team)
+**User Friendly Summary**: (Message we communicate to the user summarizing what it does and how it affects them.  This will be given to them verbatim.)
+**User Friendly Instructions**: (Detail what has changed for the user and how they will use it. Include screenshots and step by step instructions if appropriate.  This will be given to them verbatim.)
+
+**Tests**: https://docs.google.com/spreadsheets/d/1bfJWnkcuxihqGenIgEUykDmI6_TJklA7UUzRejFqoQk/edit
+
+**External Changes**: N/A
+
+**Environment**: http://frequence.review-01.brandcdndev.com
+**Database**: brandcdn_dev
+
+closes #1234
+closes #1235

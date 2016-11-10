@@ -1,0 +1,227 @@
+#all_ios_header_section
+{
+	min-height: 70px;
+}
+
+#pv_io_link_button
+{
+	float: right;
+}
+#pv_io_link_button:hover {
+    color: #0099ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#all_ios_rfp_link_button
+{
+	float: right;
+}
+
+#all_ios_body_container
+{
+	min-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+}
+
+#all_ios_table thead th
+{
+	background-color: #f9f9f9;
+	color: #0088cc;
+	border-bottom-color: #ddd;
+}
+
+#all_ios_table_length select
+{
+	width: auto;
+}
+
+#all_ios_table .all_ios_action_container, #all_ios_table .all_ios_creation_time_container
+{
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	width: auto;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#all_ios_table .all_ios_elastic_column
+{
+	width: 20%;
+        text-align: left;
+        padding-left: 12px;
+}
+
+#all_ios_table .all_ios_auto_column
+{
+	width: auto;
+        text-align:left;
+        padding-left: 12px;
+}
+
+#all_ios_table .all_ios_flag_column
+{
+	width: auto;
+        text-align:center;
+}
+
+#all_ios_table .all_ios_status_column
+{
+	width: 60px;
+        text-align:center;
+}
+
+#all_ios_table .all_ios_flag_column img
+{
+	max-height:19px;
+	max-width:19px;
+}
+
+#all_ios_table .all_ios_status
+{
+	border-radius:5px;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        color:#ffffff;
+        width:75px;
+        height:20px;
+        text-align:center;
+        padding:1px;
+        font-size:12px;
+}
+
+#all_ios_table
+{
+	min-width: 1050px;
+	border-bottom-color: #ddd;
+}
+
+#all_ios_existing_io_form
+{
+	display: none;
+}
+
+.all_ios_preview_modal_button
+{
+	position:absolute;
+	right: 0px;
+}
+
+.all_ios_modal_column_container
+{
+	position: relative;
+	min-height: 35px;
+}
+
+#all_ios_preview_modal
+{
+	width: 60%;
+	left: 20%;
+	margin-left: 0px;
+	min-width: 400px;
+}
+
+#all_ios_message_box
+{
+	width: 50%;
+	left: 25%;
+	position: absolute;
+	display: none;
+}
+
+@media (max-width: 1000px)
+{
+	#all_ios_preview_modal
+	{
+		width: 95%;
+		left: 2.5%;
+	}
+
+	#all_ios_message_box
+	{
+		width: 500px;
+		left: 250px;
+	}
+}
+
+.tooltip-inner
+{
+	white-space: pre;
+	max-width: none;
+}
+
+div.all_ios_action_container a.btn, div.all_ios_modal_column_container button.btn
+{
+	color: grey;
+	text-decoration: none;
+}
+
+div.all_ios_action_container a.btn.disabled
+{
+	color: #ddd;
+	background-color: transparent;
+}
+
+div.all_ios_action_container a.btn:not(.disabled):hover, div.all_ios_modal_column_container button.btn:hover
+{
+	color: #0088cc;
+	text-decoration: none;
+}
+
+#all_ios_io_link_button
+{
+	color: #0088cc;
+}
+
+#all_ios_io_link_button:hover
+{
+	color: #0099ff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#all_ios_table .all_ios_column_padding
+{
+	padding-left: 27px;
+	text-align: left;
+}
+
+#all_ios_io_modal > .modal-body
+{
+	background-color: #f5f5f5;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	max-height:500px;
+}
+
+#all_ios_io_modal_loading_img
+{
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#all_ios_io_modal_table
+{
+	width: auto;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.all_ios_io_modal_left_column
+{
+	width: auto;
+	white-space: nowrap;
+	padding: 8px 20px;
+}
+
+.all_ios_io_modal_budget_column
+{
+	padding: 8px 20px;
+	white-space: nowrap;
+}

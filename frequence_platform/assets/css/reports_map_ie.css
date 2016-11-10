@@ -1,0 +1,9 @@
+.map_tools li label:before {
+	width: 16px;
+	height: 16px;
+	background-image: url(/images/reports/inactive_16x16_360.png);
+}
+
+.map_tools li label.active:before {
+	background-image: url(/images/reports/active_16x16_360.png);
+}

@@ -1,0 +1,32 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "2.8.*",
+        "codeception/codeception": "2.0.11",
+        "jakoch/phantomjs-installer": "2.1.1",
+        "site5/phantoman": "1.0.6",
+        "firebase/php-jwt": "1.0.0",
+    	"rackspace/php-opencloud": "1.12.2",
+        "knplabs/knp-snappy": "0.3.*",
+        "mustache/mustache": "dev-master",
+        "phayes/geophp": "^1.2",
+        "googleads/googleads-php-lib": "^9.1",
+	"phpunit/phpunit": "3.7.*"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "vendor/bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    },
+    "autoload": {
+    	"classmap": [
+    	    "vendor/googleads/googleads-php-lib/src/Google/Api/Ads/Dfp/Util/v201605"
+    	]
+    }
+}

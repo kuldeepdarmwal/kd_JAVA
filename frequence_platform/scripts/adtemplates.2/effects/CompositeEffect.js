@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var CompositeEffect=BaseEffect.extend({init:function(c,b,a){this._super(c,b);this._mapEffects={};while(a&&a.length)this.addEffect(a.pop())},addEffect:function(a){this._mapEffects[a.name]=a;return a},removeEffect:function(a){delete this._mapEffects[a]},updateFrames:function(a){this._super(a);for(var b in this._mapEffects)this._mapEffects[b].updateFrames(a)}})

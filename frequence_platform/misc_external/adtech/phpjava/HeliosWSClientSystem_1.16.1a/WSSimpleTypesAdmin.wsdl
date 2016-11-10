@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.lowLevel.SimpleTypesManagement.WSSimpleTypesAdmin"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSSimpleTypesAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.lowLevel.SimpleTypesManagement.WSSimpleTypesAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SecurityException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.security.SecurityException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"/>
+            <xsd:element name="type" nillable="true" type="xsd:string"/>
+            <xsd:element name="ArrayOfSimpleTypeDef_Response" nillable="true"
+                type="xns4:ArrayOfSimpleTypeDef"/>
+            <xsd:element name="SecurityException" nillable="true"
+                type="xns5:SecurityException"/>
+            <xsd:element name="WSSimpleTypesAdminException" nillable="true"
+                type="xns6:WSSimpleTypesAdminException"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/wrapped/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SimpleTypeDef">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.wrapped.SimpleTypeDef"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfSimpleTypeDef">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.webservices.helios.lowLevel.wrapped.SimpleTypeDef;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="SimpleTypeDef" nillable="true"
+                        type="tns:SimpleTypeDef"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="SecurityException">
+        <part element="ns0:SecurityException" name="SecurityException"/>
+    </message>
+    <message name="WSSimpleTypesAdminException">
+        <part element="ns0:WSSimpleTypesAdminException"
+            name="WSSimpleTypesAdminException"/>
+    </message>
+    <message name="WSSimpleTypesAdmin_getOnlineTargetingOptions_Request_Soap">
+        <part element="ns0:type" name="type"/>
+    </message>
+    <message name="WSSimpleTypesAdmin_getOnlineTargetingOptions_Response_Soap">
+        <part element="ns0:ArrayOfSimpleTypeDef_Response" name="response"/>
+    </message>
+    <portType name="WSSimpleTypesAdmin">
+        <operation name="getOnlineTargetingOptions" parameterOrder="type">
+            <input
+            message="tns:WSSimpleTypesAdmin_getOnlineTargetingOptions_Request_Soap"/>
+            <output
+            message="tns:WSSimpleTypesAdmin_getOnlineTargetingOptions_Response_Soap"/>
+            <fault message="tns:WSSimpleTypesAdminException"
+                name="WSSimpleTypesAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+    </portType>
+    <binding name="WSSimpleTypesAdmin" type="tns:WSSimpleTypesAdmin">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getOnlineTargetingOptions">
+            <map:java-operation name="getOnlineTargetingOptions"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9TaW1wbGVUeXBlRGVmOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.lowLevel.SimpleTypesManagement.WSSimpleTypesAdminException"
+                    name="WSSimpleTypesAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/lowLevel/SimpleTypesManagement/WSSimpleTypesAdmin#getOnlineTargetingOptions?KExqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvd3JhcHBlZC9TaW1wbGVUeXBlRGVmOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="type" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSSimpleTypesAdminException">
+                <soap:fault name="WSSimpleTypesAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSSimpleTypesAdmin">
+        <port binding="tns:WSSimpleTypesAdmin" name="WSSimpleTypesAdmin">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSSimpleTypesAdmin/"/>
+        </port>
+    </service>
+</definitions>

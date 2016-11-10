@@ -1,0 +1,119 @@
+<table *ngIf="flights?.length > 0" class="io_flights_table highlight" [class.geofence-enabled]="hasGeofencing && geofencingEnabled">
+	<tr class="cpm" [class.edit-cpm] = "editable">
+		<td>
+		    CPM:
+		</td>
+		<td></td>
+		<td *ngIf="hasOwnedAndOperated">
+			<label class="dollars" *ngIf="editable && submitAllowed">$</label>
+			<input 
+				*ngIf="editable && submitAllowed"
+				[(ngModel)]="cpms.ownedAndOperated"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable || !submitAllowed" class="input-value">{{ product.cpms.ownedAndOperated | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td *ngIf="hasOwnedAndOperated"></td>
+		<td>
+			<label class="dollars" *ngIf="editable && submitAllowed">$</label>
+			<input 
+				*ngIf="editable && submitAllowed"
+				[(ngModel)]="cpms.audienceExtension"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable || !submitAllowed" class="input-value">{{ product.cpms.audienceExtension | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td *ngIf="hasGeofencing && geofencingEnabled">
+			<label class="dollars" *ngIf="editable && submitAllowed">$</label>
+			<input 
+				*ngIf="editable && submitAllowed"
+				[(ngModel)]="cpms.geofencing"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable || !submitAllowed" class="input-value">{{ product.cpms.geofencing | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td>
+			<a *ngIf="editable && submitAllowed" (click)="saveCPMs()">Save</a>
+			<a *ngIf="editable && submitAllowed" (click)="cancelCPMs()">Cancel</a>
+		</td>
+		<td [attr.colspan]="hasOwnedAndOperated ? 2 : 1" style="text-align:right">
+			<div *ngIf="!readonly" class="switch">
+				<label>
+					View
+				<input [(ngModel)]="editable" (change)="switchEditable()" type="checkbox">
+				<span class="lever"></span>
+					Edit
+				</label>
+			</div>
+		</td>
+	</tr>
+	<tr class="titles">
+		<td>Date Range</td>
+		<td>Total Budget</td>
+		<td *ngIf="hasOwnedAndOperated">
+			<span style="position: relative;">
+			O&amp;O <br />
+			Impressions
+			<a *ngIf="!readonly && hasOwnedAndOperatedDFP" class="reforecast-btn tooltipped" (click)="reforecastFlights(product.id, null)" materialize="tooltip" data-position="top" data-tooltip="Reforecast O&amp;O Impressions"><i class="refresh material-icons">refresh</i></a>
+			</span>
+		</td>
+		<td *ngIf="hasOwnedAndOperated">O&amp;O<br />Budget</td>
+		<td class="geo_enabled_style">{{product.definition.last_name}}<br />Impressions <span class="show_label_for_gf">(Est)</span></td>
+		<td class="geo_enabled_style" *ngIf="hasGeofencing && geofencingEnabled">Geofence<br />Impressions (Est)</td>
+		<td *ngIf="hasOwnedAndOperated">Audience Ext. <br />Budget</td>
+		<td style="text-align:right"><a *ngIf="editable" (click)="deleteAllFlights()" class="delete-all-flights">Delete All</a></td>
+	</tr>
+	<tr 
+		*ngFor="let flight of flights | orderBy : ['startDate']" 
+		class="single-flight" 
+		[flight]="flight" 
+		[hasOwnedAndOperated]="hasOwnedAndOperated"
+		[hasOwnedAndOperatedDFP]="hasOwnedAndOperatedDFP" 
+		[hasGeofencing]="hasGeofencing"
+		[geofencingEnabled]="geofencingEnabled"
+		[editable]="editable"
+		[submitAllowed]="submitAllowed"
+		(edit-flight)="editFlightEmitter.emit($event)"
+		(update-flight)="updateFlightEmitter.emit($event)"
+		(delete-flight)="deleteFlight($event)"></tr>
+	<tr class="add-flight" [style.display]="editable ? 'table-row' : 'none'" [class.add-new-budget] = "editable">
+		<td style="width: 24%;">
+			<datepicker #startDateInput [options]="datePickerOptions" label="Start Date" (select)="setStartDate($event)" class="datepicker input-field"></datepicker>
+			<datepicker #endDateInput [options]="datePickerOptions" label="End Date" (select)="checkDates($event)"  [class.disabled]="!startDate" class="datepicker input-field"></datepicker>
+		</td>
+		<td>
+			<label class="dollars" *ngIf="editable">$</label>
+			<input [(ngModel)]= "totalBudgetInputNew" #totalBudgetInput type="text" mycurrency class="total-budget" />
+		</td>
+		<!-- <td [attr.colspan]="1 + (hasOwnedAndOperated ? 2 : 0) + (hasGeofencing && geofencingEnabled ? 1 : 0)"></td> -->
+		<td>
+			<a class="btn active" (click)="addFlight($event)" style="padding: 0 1rem;float:left;">Add</a>
+		</td>
+	</tr>
+	<tr class="totals">
+		<td>
+			Totals:
+		</td>
+		<td>
+			{{ flights | sum:'totalBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'ownedAndOperatedImpressions' | number_format }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'ownedAndOperatedBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td class="geo_enabled_style">
+			{{ flights | sum:'audienceExtensionImpressions' | number_format }}
+		</td>
+		<td class="geo_enabled_style" *ngIf="hasGeofencing && geofencingEnabled">
+			{{ flights | sum:'geofencingImpressions' | number_format }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'audienceExtensionBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td style="text-align: right;">
+			<a href="#mpq_flight_info_section" class="btn hide" (click)="closeProduct($event, product.id)" *ngIf="product.flights?.length > 0" style="padding: 0 1rem;">Next</a>
+		</td>
+	</tr>
+</table>

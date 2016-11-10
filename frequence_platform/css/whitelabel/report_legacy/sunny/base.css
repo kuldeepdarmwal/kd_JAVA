@@ -1,0 +1,367 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	width:100%;
+	height:100%;
+	border:0px black solid;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+
+input, button, select, textarea, optgroup, option {
+}
+
+.full_page {
+	width:100%;
+	min-height:100%;
+}
+
+.center_page {
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	height:100%;
+}
+
+/* broad sections */
+
+.header_section {
+	height:90px;
+	position:relative;
+}
+
+.controller_section {
+	height:90px;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+	background-color:#5bcae9;
+}
+
+.summary_section {
+	height:64px;
+	margin-top:20px;
+	margin-bottom:20px;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+	background-color:#eaeaea;
+}
+
+.graphs_section {
+	height:291px;
+}
+
+.tables_section {
+	min-height:350px;
+}
+
+.footer_section {
+	min-height:30px;
+}
+
+/*** sub sections ***/
+
+/* header sub section */
+
+.report_v2_logo {
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.report_v2_user_controls {
+	padding-top:10px;
+	padding-right:10px;
+	text-align:right;
+}
+
+/* controller sub section */
+
+.report_v2_advertiser_selection {
+	padding-left:10px;
+	padding-top:20px;
+	float:left;
+	min-width:150px;
+	background-color: #fff;
+}
+
+.report_v2_advertiser_title {
+}
+
+#report_v2_advertiser_dropdown {
+}
+
+.target_dropdown {
+	min-width:180px;
+	height:40px;
+}
+
+#report_v2_advertiser_options {
+	min-width:240px;
+}
+
+.report_v2_campaign_selection {
+	padding-left:10px;
+	padding-top:20px;
+	float:left;
+	min-width:150px;
+}
+
+.report_v2_campaign_title {
+}
+
+#report_v2_campaign_dropdown {
+}
+
+#report_v2_campaign_options {
+	min-width:240px;
+}
+
+.report_v2_date_selection {
+	padding-right:10px;
+	padding-top:20px;
+	float:right;
+	min-width:120px;
+}
+
+.report_v2_date_title {
+}
+
+.report_v2_date_dropdown {
+}
+
+#report_v2_start_date_input {
+	min-width:110px;
+	width:8em;
+}
+
+.report_v2_datepicker_input {
+}
+
+#report_v2_end_date_input {
+	min-width:110px;
+	width:8em;
+}
+
+/* summary sub section */
+#summary_table_data {
+	height:64px;
+	width:450px;
+	float:left;
+}
+
+.summary_table {
+	width:100%;
+	/*max-height:330px;*/
+	border-collapse:collapse;
+}
+
+.summary_table td {
+	border:0px solid black;
+}
+
+.summary_table_header {
+	width:100%;
+	height:38px;
+}
+
+.summary_table_header td {
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.summary_table_row {
+	width:100%;
+	height:26px;
+}
+
+.summary_table_row td {
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.summary_table_totals_column {
+	background-color:#97989a;
+}
+
+.summary_download_csv_button {
+	margin:12px;
+	float:right;
+	width:44px;
+	height:32px;
+}
+
+/* graph sub section */
+
+/* table sub section */
+.table_controls {
+	width:100%;
+}
+
+.report_v2_table_download_csv_button {
+	margin:4px;
+	margin-left:12px;
+	margin-right:12px;
+	float:right;
+	width:44px;
+	height:32px;
+
+	position:relative;
+	top:62px;
+}
+
+#table_data {
+	min-height:320px;
+}
+
+#table_data_radio {
+	float:left;
+	margin:10px;
+}
+
+.campaign_table {
+	width:100%;
+	border-collapse:collapse;
+}
+
+.campaign_table {
+	text-align:center;
+}
+
+.campaign_table_header {
+	width:100%;
+	height:30px;
+	background-color:#eaeaea;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+
+.campaign_table_header td {
+	padding:10px;
+}
+
+.campaign_table_row td {
+	padding:3px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.campaign_table_even_row {
+	width:100%;
+	background-color:#ffffff;
+	color:#000000;
+}
+
+.campaign_table_odd_row {
+	width:100%;
+	background-color:#eaeaea;
+	color:#414142;
+}
+
+.campaign_table_column_0 {
+	min-width:10em;
+	text-align:left;
+}
+
+.campaign_table_column_1 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_2 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_3 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_4 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_5 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_6 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_7 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_8 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_9 {
+	min-width:1em;
+}
+
+/* footer subsection */
+.copyright_position {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding:10px;
+}
+
+/* fonts */
+
+html {
+	font-family:'Georgia,serif';
+	font-size:1em;
+}
+
+input, button, select, textarea, optgroup, option, .target_dropdown, .report_v2_datepicker_input {
+	font-family:'Courier,sans-serif';
+}
+
+input, button, select, textarea, optgroup, option {
+	font-size:0.85em;
+}
+	
+input, button, select, textarea, optgroup, option, .target_dropdown {
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.controller_option_title {
+	font-size:0.85em;
+}
+
+.summary_table_header, .campaign_table_header {
+	font-weight:bold;
+	font-family:'Verdana,Geneva,sans-serif';
+	font-size:1em;
+}
+
+.campaign_table_row td {
+	font-size:0.9em;
+}
+
+.copyright_position {
+	font-size:0.8em;
+}
+
+
+

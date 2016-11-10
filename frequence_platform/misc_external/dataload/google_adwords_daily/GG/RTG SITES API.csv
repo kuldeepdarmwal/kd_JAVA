@@ -1,0 +1,49 @@
+Name,RTG SITES API
+Type,Automatic placement (domain)
+Frequency,Daily
+Date range,Last 14 days
+Dates,"Aug 30, 2012-Sep 12, 2012"
+Account,Day,Network,Domain,Campaign,Client name,Impressions,Clicks,Cost
+Jacob Capital,2012-09-07,Display Network,ebay.com,CTVN01_RTG,Jacob Capital,9,1,0.02
+Jacob Capital,2012-09-01,Display Network,design-milk.com,SKSPGDN001,Jacob Capital,2,1,0.02
+Jacob Capital,2012-09-04,Display Network,vitals.com,SKSPGDN001,Jacob Capital,2,1,0.01
+Jacob Capital,2012-09-11,Display Network,trulia.com,CTVN01_RTG,Jacob Capital,8,1,0.02
+Jacob Capital,2012-09-04,Display Network,ucreatewithkids.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-04,Display Network,thesaurus.com,SKSPGDN001,Jacob Capital,5,1,0.03
+Jacob Capital,2012-08-31,Display Network,washingtontimes.com,SKSPGDN001,Jacob Capital,1,1,0.01
+Jacob Capital,2012-08-30,Display Network,latimes.com,SKSPGDN001,Jacob Capital,7,1,0.04
+Jacob Capital,2012-09-10,Display Network,formspring.me,SKSPGDN001,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-06,Display Network,myfitnesspal.com,SKSPGDN001,Jacob Capital,6,1,0.03
+Jacob Capital,2012-09-01,Display Network,onemint.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-03,Display Network,inautonews.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-05,Display Network,hackaday.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-07,Display Network,answers.com,SKSPGDN001,Jacob Capital,15,1,0.07
+Jacob Capital,2012-09-05,Display Network,ehow.com,SKSPGDN001,Jacob Capital,5,1,0.03
+Jacob Capital,2012-09-04,Display Network,broadwayworld.com,SKSPGDN001,Jacob Capital,1,1,0.01
+Jacob Capital,2012-09-04,Display Network,womensjoblist.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-04,Display Network,anonymous.google,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-05,Display Network,anonymous.google,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-06,Display Network,realtor.com,CTVN01_RTG,Jacob Capital,7,1,0.02
+Jacob Capital,2012-09-11,Display Network,hsacontributionlimits.com,SKSPGDN001,Jacob Capital,1,1,0.01
+Jacob Capital,2012-09-11,Display Network,slickdeals.net,CTVN01_RTG,Jacob Capital,18,1,0.06
+Jacob Capital,2012-09-04,Display Network,claycord.com,SKSPGDN001,Jacob Capital,9,1,0.03
+Jacob Capital,2012-08-30,Display Network,nytimes.com,SKSPGDN001,Jacob Capital,21,1,0.12
+Jacob Capital,2012-09-11,Display Network,nytimes.com,SKSPGDN001,Jacob Capital,12,2,0.04
+Jacob Capital,2012-08-31,Display Network,woot.com,CTVN01_RTG,Jacob Capital,2,1,0.01
+Jacob Capital,2012-09-11,Display Network,realself.com,SKSPGDN001,Jacob Capital,4,1,0.03
+Jacob Capital,2012-09-04,Display Network,about.com,SKSPGDN001,Jacob Capital,14,1,0.05
+Jacob Capital,2012-09-07,Display Network,about.com,SKSPGDN001,Jacob Capital,16,1,0.10
+Jacob Capital,2012-09-01,Display Network,weather.com,CTVN01_RTG,Jacob Capital,9,1,0.03
+Jacob Capital,2012-09-03,Display Network,blogspot.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-09-07,Display Network,realclearpolitics.com,SKSPGDN001,Jacob Capital,3,1,0.02
+Jacob Capital,2012-09-07,Display Network,foxnews.com,SKSPGDN001,Jacob Capital,5,1,0.02
+Jacob Capital,2012-09-11,Display Network,foxnews.com,SKSPGDN001,Jacob Capital,11,1,0.05
+Jacob Capital,2012-09-07,Display Network,foxbusiness.com,SKSPGDN001,Jacob Capital,2,2,0.01
+Jacob Capital,2012-09-01,Display Network,dnaindia.com,CTVN01_RTG,Jacob Capital,1,1,0.00
+Jacob Capital,2012-08-30,Display Network,youtube.com,CTVN01_RTG,Jacob Capital,12,1,0.04
+Jacob Capital,2012-09-07,Display Network,youtube.com,SKSPGDN001,Jacob Capital,33,1,0.19
+Jacob Capital,2012-09-09,Display Network,youtube.com,SKSPGDN001,Jacob Capital,30,1,0.16
+Jacob Capital,2012-09-11,Display Network,youtube.com,SKSPGDN001,Jacob Capital,34,1,0.19
+Jacob Capital,2012-09-09,Display Network,earthlink.net,SKSPGDN001,Jacob Capital,3,1,0.02
+Jacob Capital,2012-09-05,Display Network,mydailymoment.com,SKSPGDN001,Jacob Capital,2,1,0.01
+Total, --, --, --, --, --,319,44,1.52

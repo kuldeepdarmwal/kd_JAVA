@@ -1,0 +1,63 @@
+<div>
+    <div class="rfp-footer">
+        <div>
+            <div class="col buttons" *ngIf="!isInBuilder" style="width: 100%">
+                <div class="col action-btn">
+                    <a class="waves-effect waves-light btn btn-primary" (click)="next.emit()" >Next</a>
+                </div>
+                <!--<div class="col action-btn">-->
+                    <!--<a class="waves-effect waves-light btn" (click)="save.emit()">Save</a>-->
+                <!--</div>-->
+                <div class="col action-btn">
+                    <a class="waves-effect waves-light back-btn" (click)="back.emit()">< Back</a>
+                </div>
+                <div class="clearBoth"></div>
+            </div >
+            <div class="col s7 buttons" *ngIf="isInBuilder"  style="margin-right: 10%;">
+                <div class="col action-btn">
+                    <a class="waves-effect waves-light btn btn-primary" [ngClass]="{'disable-download' : !enableDownload}" (click)="download.emit(false)"><i class="material-icons">file_download</i></a>
+                </div>
+                <div class="col action-btn">
+                    <a class="waves-effect waves-light btn btn-primary" (click)="saveBuilder.emit(true)">Save & Exit</a>
+                </div>
+                <div class="col action-btn">
+                    <a class="waves-effect waves-light back-btn" (click)="back.emit()">< Back</a>
+                </div>
+                <div class="clearBoth"></div>
+            </div >
+            <div class="clearBoth"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .rfp-footer{
+        /*position: fixed;*/
+        bottom: 0px;
+        left: 0;
+        width: 90%;
+        z-index: 99;
+        font-size: 15px;
+        line-height: 3em;
+        margin: 0 auto;
+        /*box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4)!important;*/
+    }
+
+    .rfp-footer .buttons{
+        float: right;
+        padding: 0;
+    }
+
+    .rfp-footer .buttons .action-btn{
+        float: right;
+        padding: 0;
+        margin-left: 1.5%;
+    }
+
+    .rfp-footer .buttons .back-btn{
+        color: #CDCDCD;
+        font-size: 24px;
+        margin-right: 10px;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+</style>

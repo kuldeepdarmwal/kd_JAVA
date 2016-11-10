@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html, body
+{
+	font-family: 'Open Sans', sans-serif;
+	/*height: 100%;
+	min-height: 100%;*/
+	background-color: #E5E5E5;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+
+.headline
+{
+	line-height: 40px;
+	padding: 28px 0.5em;
+	/* making a height of 96px */
+	font-size: 40px;
+	color: white;
+	font-weight: 300;
+	margin: 74px 0 0; /* clear fixed-position header */
+	font-weight: 100;
+	background-color: #36a18d;
+}
+/* element is commented out
+.full-ad .advertiser_name
+{
+	margin: 0 0 0.5em;
+	font-weight: 600;
+	white-space: nowrap;
+}
+*/
+
+.full-ad
+{
+	background-color: white;
+	padding: 3em;
+}
+.full-ad .claim
+{
+	margin-bottom: 1em;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.5em;
+}
+
+.assertions
+{
+	background-color: #E5E5E5;
+	text-transform: uppercase;
+	padding: 1em 10%;
+	font-size: 50px;
+	overflow: hidden;
+}
+.assertion
+{
+	clear: both;
+	padding-top: 0.1pt; /* just to capture h3 margin-top */
+	width: 95%;
+}
+.assertion h3
+{
+	margin-top: 1em;
+}
+.recall-graph
+{
+	float: left;
+	width: 35%;
+	margin-left: 10%;
+}
+.assertion
+{
+	color: #8F8F8F;
+	font-weight: 300;
+	font-size: 1em;
+	line-height: 1em;
+}
+.assertion small
+{
+	margin-top: -0.5em;
+	display: block;
+	color: black;
+	font-weight: 300;
+	font-size: 1rem;
+}
+.recall-graph .bar
+{
+	font-size: 0.8em;
+	color: white;
+	font-weight: 600;
+	text-align: center;
+}
+.recall-graph .bar sup
+{
+	font-size: 65%;
+	top: -0.37em;
+}
+.recall-graph.bar-small .bar
+{
+	background-color: #064564;
+	height: 2em;
+	line-height: 2em;
+	margin-top: 1.5em;
+}
+.recall-graph.bar-tall .bar
+{
+	background-color: #36a18d;
+	height: 3.5em;
+	line-height: 3em;
+}
+.recall-graph .bar-label
+{
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1.0em;
+	font-weight: 400;
+	color: black;
+	margin-top: 0.5em;
+}
+
+
+/* in-device preview */
+
+iframe
+{
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+/*.container
+{
+	position: relative;
+	height: 100%;
+	max-width: 1600px;
+}*/
+
+.contextual-preview
+{
+	overflow: hidden;
+	background-image: url(/assets/img/ad_machina/preview/approval_device_bg.jpg);
+	text-align: left;
+	height: 380px;
+	position: relative;
+	background-size: cover;
+	background-position: top left;
+}
+.preview-container
+{
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -350px !important;
+	width: 699px !important;
+	height: 358px;
+	background-image: url(/assets/img/ad_machina/preview/approval_device_preview.png);
+	background-repeat: no-repeat;
+}
+.preview-container h3
+{
+	font-size: 1.3em;
+	color: white;
+	font-weight: 400;
+	margin: 0 50px 0 65px;
+	text-shadow: 0 0.2em 1em black
+}
+.error-container
+{
+	margin: 24px auto 0;
+	max-width: 1150px;
+	padding: 20px;
+	text-align: center;
+}
+.error-container h2
+{
+	font-weight: normal;
+	font-size: 3em;
+	margin: 20px 0;
+	color: gray;
+}
+.preview-ad
+{
+	position: absolute !important; /* TODO: update ad_platform to not override absolute with relative */
+	-ms-transform-origin: top left;
+	transform-origin: 0 0 0;
+}
+.laptop .preview-ad
+{
+	left: 306px;
+	top: 119px;
+	-ms-transform: scaleX(0.57) scaleY(0.57);
+	transform: scaleX(0.57) scaleY(0.57);
+}
+.tablet .preview-ad
+{
+	left: 180px;
+	top: 154px;
+	-ms-transform: scaleX(0.29) scaleY(0.29);
+	transform: scaleX(0.29) scaleY(0.29);
+}
+.phone .preview-ad
+{
+	left: 508px;
+	top: 230px;
+	-ms-transform: scaleX(0.375) scaleY(0.375);
+	transform: scaleX(0.375) scaleY(0.375);
+}
+
+.sample-description
+{
+	float: right;
+}
+
+.main-content
+{
+	position: relative;
+	min-height: 300px;
+}
+.main-content .left
+{
+	float: none;
+	width: 100%;
+	padding-right: 410px;
+	box-sizing: border-box;
+}
+
+.main-content .right
+{
+	width: 350px;
+	height: 270px;
+	position: absolute;
+	right: 4%;
+	margin: 0
+}
+
+#refresh_button:hover
+{
+	transform: rotateZ(180deg);
+}
+#refresh_button.disabled
+{
+	color: black;
+	cursor: default;
+}
+
+@media (min-width:1024px) and (max-width:1229px)
+{
+	.preview-container
+	{
+		-ms-transform-origin: bottom center;
+		-ms-transform: scaleX(0.80) scaleY(0.80);
+		transform-origin: bottom center;
+		transform: scaleX(0.80) scaleY(0.80);
+	}
+}
+@media (max-width:610px)
+{
+	.preview-container
+	{
+		-ms-transform-origin: bottom center;
+		-ms-transform: scaleX(0.57) scaleY(0.57);
+		transform-origin: bottom center;
+		transform: scaleX(0.57) scaleY(0.57);
+	}
+}
+@media (max-width:610px)
+{
+	.contextual-preview
+	{
+		height: 230px;
+	}
+}
+@media (min-width:728px)
+{
+	.assertion
+	{
+		text-align: left;
+	}
+}
+@media (min-width:1024px)
+{
+	/* any columns */
+	html, body 
+	{
+		text-align: left;
+	}
+	.headline,
+	.full-ad,
+	.assertion
+	{
+		padding-left: 60px;
+		padding-right: 60px;
+		text-align: left;
+	}
+
+	/* side-by-side graph & assertion */
+	.assertions
+	{
+		padding: 60px 1px;
+	}
+	.assertion
+	{
+		float: left;
+		width: 50%;
+	}
+	.assertions .recall-graph
+	{
+		float: left;
+		width: 15%;
+		margin-left: 2.5%;
+	}
+
+}
+@media (min-width:1024px)
+{
+	.full-ad-row > div
+	{
+		box-sizing: border-box;
+		width: 50%;
+		float: left;
+		height: 420px;
+	}
+}
+@media (min-width:1366px)
+{
+	/* adjust for fixed header above this size */
+	body
+	{
+		margin-top: 74px !important;
+		height: auto !important;
+	}
+}

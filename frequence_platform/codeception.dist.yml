@@ -1,0 +1,36 @@
+# Distribution file for codeception testing
+# Save this file as codeception.yml, then fill in your local configuration values
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        PhpBrowser:
+            url: http://lvh.me/
+        REST:
+            url: http://secure.lvh.me/api/ # you'll need to specify the full URL here, like `secure.sandbox.brandcdn.com`
+        DbHelper:
+            dsn: 'mysql:host=db.vantagelocaldev.com;dbname=vantagelocal_dev'
+            user: 'devuser'
+            password: 'devpassw0rd'
+            cleanup: false # DO NOT CHANGE THESE TWO VALUES!
+            populate: false # IF YOU DO, YOUR DATA IS FORFEIT
+        WebDriver:
+            url: 'http://vantagelocal.dev' # Fill with your local URL
+            browser: phantomjs
+            window_size: maximize
+            capabilities:
+                phantomjs.cli.args: ['--ignore-ssl-errors=true']
+extensions:
+    enabled:
+        - Codeception\Extension\Phantoman
+    config:
+        Codeception\Extension\Phantoman:
+            path: 'vendor/bin/phantomjs'

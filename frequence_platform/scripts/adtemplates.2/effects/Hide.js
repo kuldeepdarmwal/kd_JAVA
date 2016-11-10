@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Hide=Animation.extend({setPosition:function(a){this._super(a);this.targetFrame&&this.targetFrame.setVisible(a<1)},reset:function(){this.updatePosition(0);this._super()}})

@@ -1,0 +1,41 @@
+<div #libModal class="library-pane">
+    <div class="lib-header">
+        <span class="title">Select the slides you would like to add to your proposal from the libraries below</span>
+    </div>
+    <div class="lib-container">
+        <div>
+            <ul materialize="collapsible" class="collapsible" data-collapsible="accordion"
+                id="budget_content_collection" style="box-shadow: none;">
+                <li class="" *ngFor="let category of categories" style="width: 100%; box-shadow: none; border: 1px solid #ccc;">
+                    <div class="collapsible-header" [ngClass]="{'active': category.name == 'Default'}" style="height: 3rem; padding: 0 5px;">{{category.name}}<i class="material-icons" style="float: right">keyboard_arrow_down</i></div>
+                    <div class="collapsible-body" style="width:100%; padding: 5px 5px 0 5px;">
+                        <div class="template-panel slide"
+                             *ngFor="let template of getTemplatesByCategoryId(category.id); let rowIndex = index" data-id="library{{template.id}}"
+                             (click)="selectTemplate(template.id)">
+                            <div class="slide-selected-container" *ngIf="template.selected">&nbsp;
+                                <div class="selected"><i style="font-size: 10em" class="material-icons md-light md-48">done</i>
+                                </div>
+                                <div class="background">&nbsp;</div>
+                                <div class="clearBoth"></div>
+                            </div>
+                            <div style="overflow: hidden;">
+                                <new-page [template]="template" [proposal]="proposal" [isLibrary]="true">
+                                </new-page>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearBoth"></div>
+                </li>
+            </ul>
+            <div class="clearBoth"></div>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+    <div class="lib-footer">
+        <div class="buttons-menu">
+            <button (click)="addSlides()" class="btn btn-primary add-btn">Add</button>
+            <button (click)="closeModal()" class="btn btn-primary">Close</button>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+</div>

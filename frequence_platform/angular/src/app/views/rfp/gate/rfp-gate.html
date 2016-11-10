@@ -1,0 +1,85 @@
+<div class="col s4 rfp-gate-form">
+  <h4>Proposal Builder</h4>
+  <p>Enter opportunity details below. Your proposal template information is on the right.</p>
+  <form (ngSubmit)="onSubmit()" #rfp="ngForm" [ngFormModel]="gateForm">
+    <div id="mpq_advertiser_info_section">
+      <div class="card-content">
+        <div class="row">
+          <div class="input-field col s12" style="height:61px;">
+            <input type="text" id="account_executive_select" name="opportunity owner"
+                   ngControl="owner_id" #accountExec
+                   class="grey-text text-darken-1" length="255" mySelect2 [propertiesObj]="accountExecObj">
+            <label for="mpq_org_name" class="active">Opportunity Owner</label>
+            <div class="rfp-gate-form-error">
+              <div [hidden]="gateForm.controls.owner_id.untouched || gateForm.controls.owner_id.valid">
+                <small>Please fill in the Opportunity Owner's Name.</small>
+              </div>
+            </div>
+            <span class="character-counter"
+                  style="float: right; font-size: 12px; height: 1px;"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="mpq_org_name" name="advertiser name"
+                   class="grey-text text-darken-1" length="255"
+                   ngControl="advertiser_name">
+            <label for="mpq_org_name" class="active">Advertiser Name (appears on proposal)</label>
+            <div class="rfp-gate-form-error">
+              <div [hidden]="gateForm.controls.advertiser_name.untouched || gateForm.controls.advertiser_name.valid">
+                <small>Please fill in the Advertiser's Name.</small>
+              </div>
+            </div>
+            <span class="character-counter"
+                  style="float: right; font-size: 12px; height: 1px;"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="mpq_proposal_name" name="proposal name" ngControl="proposal_name"
+                   class="grey-text text-darken-1" length="255">
+            <label for="mpq_proposal_name" class="active">Proposal Name</label>
+            <div class="rfp-gate-form-error">
+              <div [hidden]="gateForm.controls.proposal_name.untouched || gateForm.controls.proposal_name.valid">
+                <small>Please fill in the Proposal Name.</small>
+              </div>
+            </div>
+            <span class="character-counter"
+                  style="float: right; font-size: 12px; height: 1px;"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <datepicker #presentationDate [options]="datePickerOptions" label="" (select)="setStartDate($event)"
+                        ngControl="presentation_date" class="datepicker input-field"
+                        id="mpq_presentation_date"></datepicker>
+            <label for="mpq_presentation_date" class="active">Presentation Date</label>
+            <div class="rfp-gate-form-error">
+              <div
+                [hidden]="gateForm.controls.presentation_date.untouched || gateForm.controls.presentation_date.valid">
+                <small>Please fill in the Presentation Date.</small>
+              </div>
+            </div>
+            <span class="character-counter"
+                  style="float: right; font-size: 12px; height: 1px;"></span></div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12" style="height:61px;">
+            <input type="text" id="industry_select" name="advertiser industry" #advInd
+                   ngControl="industry_id" mySelect2 [propertiesObj]="advertiserIndObj"
+                   class="grey-text text-darken-1" length="255">
+            <div class="rfp-gate-form-error">
+              <div [hidden]="gateForm.controls.industry_id.untouched || gateForm.controls.industry_id.valid">
+                <small>Please fill in the Advertiser's Industry.</small>
+              </div>
+            </div>
+            <span class="character-counter"
+                  style="float: right; font-size: 12px; height: 1px;"></span></div>
+        </div>
+        <input type="hidden" ngControl="strategy_id" name="strategyId"/>
+        <button type="submit" id="rfp_gate_submit" [disabled]="!rfp.valid" class="btn btn-primary">Continue
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

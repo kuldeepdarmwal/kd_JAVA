@@ -1,0 +1,15 @@
+<div id="mpq_body_container" class="container" style="margin:auto !important;">
+	<flights
+        [cpms]="campaign_flights.cpms"
+        [campaign_flights]="campaign_flights"
+		[hasOwnedAndOperated]="hasOwnedAndOperated"
+		[hasOwnedAndOperatedDFP]="hasOwnedAndOperatedDFP"
+		[hasGeofencing]="hasGeofencing"
+        (edit-cpm)="editCPM($event)"
+		(add-flight)="addFlight($event)"
+        (edit-flight)="editFlight($event)"
+        (update-flight)="updateFlight($event)"
+        (delete-flight)="deleteFlight($event)"
+        (delete-all-flights)="deleteAllFlights($event)"
+        (reforecast-flights)="reforecastFlights($event)"></flights>
+</div>

@@ -1,0 +1,8 @@
+<div id="rfp-gate-form" class="rfp-gate-container" (window:resize)="resizeWindow()">
+    <div class="row">
+        <rfp-gate-form [form-data]="rfpFormData" [rfp-form]="rfpForm" [gate-form]="gateForm"
+                       (adv-selected) = "accountExecSelected($event)" (ind-selected) = "advertiserIndSelected($event)"
+                       (date-selected) = "presentationDateSelected($event)" (submit-gate)= "submitGate($event)"></rfp-gate-form>
+        <rfp-strategy [strategies] = "strategies" (select-strategy)="strategySelected($event)"></rfp-strategy>
+    </div>
+</div>

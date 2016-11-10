@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Strong={easeIn:function(a,b,c,d){return c*(a/=d)*a*a*a*a+b},easeOut:function(a,b,c,d){return c*((a=a/d-1)*a*a*a*a+1)+b},easeInOut:function(a,b,c,d){return(a/=d/2)<1?c/2*a*a*a*a*a+b:c/2*((a-=2)*a*a*a*a+2)+b}},Quintic=Strong

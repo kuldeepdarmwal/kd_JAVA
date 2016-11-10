@@ -1,0 +1,18 @@
+<ul id="io_right_nav" class="side-nav fixed table-of-contents" style="">
+    <li *ngFor="let section of sections">
+        <a *ngIf="!section.ignore && showSection(section)" href="#{{section.link}}" (click)="preventDefaultClick($event)">
+            <span class="io_nav_text">{{section.title}}</span>
+            <i *ngIf="status[section.id]" class="material-icons io_icon_done">verified_user</i>
+            <i *ngIf="!status[section.id]" class="material-icons io_icon_not_started">warning</i>
+        </a>
+    </li>
+    <li class="io_save_button_container" (click)="save.emit()">
+        <a id="io_save_button" class="waves-effect waves-light btn">Save</a>
+    </li>
+    <li *ngIf="validated && submitAllowed" class="io_submit_button_container" (click)="submit.emit()">
+        <a id="io_submit_button" class="waves-effect waves-light btn">Submit</a>
+    </li>
+    <li *ngIf="validated && !submitAllowed" class="io_submit_for_review_button_container" (click)="submitReview.emit()">
+        <a id="io_submit_for_review_button" class="waves-effect waves-light btn">Submit For Review</a>
+    </li>
+</ul>

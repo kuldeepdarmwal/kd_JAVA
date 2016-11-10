@@ -1,0 +1,124 @@
+<div id="mpq_body_container" class="container">
+    <opportunity
+            [opportunity]="_opportunityObj"
+            (opp-selected)="opportunityOwnerSelected($event)"
+            (adv-selected)="advertiserSelected($event)"
+            (ind-selected)="advertiserIndustrySelected($event)"></opportunity>
+    <product-selection
+            [products]="products"
+            (toggle-product)="toggleProduct($event)"></product-selection>
+    <geographies
+        [locations]="locations"
+        [has-geofencing]="hasGeoFencing"
+        [geofencing]="geofencingDefaults"
+        [mpq-id]="mpqId"
+        (select-location)="selectLocation($event)"
+        (update-custom-regions)="updateCustomRegions($event)"
+        (load-regions)="loadRegions($event)"
+        (add-location)="addLocation()"
+        (remove-location)="removeLocation($event)"
+        (upload-bulk-locations)="uploadBulkLocations($event)"
+        (save-geofences)="saveGeofences($event)"></geographies>
+	<audience 
+        [demographics]="demographics" 
+        [audience-interests]="audienceInterests" 
+        (audience-interests-selected)="audienceInterestsSelected($event)"></audience>
+    <tracking 
+        [tracking]="tracking" 
+        [advertiser]="_opportunityObj.advertiser" 
+        (tracking-tag-selected)="trackingTagSelected($event)"></tracking>
+	<flights  
+        [cpms]="cpms"
+        [products]="products" 
+        [option]="option"
+        [locations]="locations"
+        [custom-region-orderids]="customRegionOrderIds"
+        [hasGeofencing]="hasGeofences"
+        [validation]="validationStatus"
+        [submitAllowed]="submitAllowed"
+        (build-flights)="buildFlights($event)"
+        (edit-cpm)="editCPM($event)"
+        (edit-flight)="editFlight($event)"
+        (update-flight)="updateFlight($event)"
+        (add-flight)="addFlight($event)"
+        (delete-flight)="deleteFlight($event)"
+        (delete-all-flights)="deleteAllFlights($event)"
+        (reforecast-flights)="reforecastFlights($event)"></flights>
+    <creatives 
+        [products]="products" 
+        [locations]="locations"
+        [validation]="validationStatus"
+        [userId]="userId"
+        (update-creatives)="updateCreatives($event)"
+        (new-creative-request)="newCreativeRequest($event)"></creatives>
+    <notes [notes]="_notesObj"></notes>
+    <status 
+        [status]="validationStatus" 
+        [validated]="validated"
+        [submitAllowed]="submitAllowed"
+        [hasOandOEnable]="ioDataModel.hasDFPProducts"
+        (save)="saveIO()" 
+        (submit)="submitIO()"
+        (submit-review)="reviewIO()"></status>
+
+</div>
+
+<div id="io_confirm_timeseries_delete_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Reminder</h4>
+        <p>Doing this will reset the flights and creatives below - be sure to re-enter them after making your geo changes.</p>
+    </div>
+    <div class="modal-footer">
+        <a id="io_single_creative_cancel" class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a (click)="confirmTimeseriesDelete.next(true)" id="io_single_creative_save" class="waves-effect waves-green btn-flat">OK</a>
+    </div>
+</div>
+<div id="dfp_advertisers_modal" class="modal" style="margin-top:3%;padding-top:50px;">
+    <div class="modal-content">
+        <div class="input-field col s6">
+            <input type="text" id="account_executive_select" name="opportunity owner"
+                   #dfpadvertiser
+                   class="grey-text text-darken-1" length="255" mySelect2 [propertiesObj]="dfpAdvertisersObj" >
+            <label id="rfp_account_executive_select_label" for="account_executive_select">DFP Advertisers</label>
+        </div>
+        <div class="input-field col s6" *ngIf="enableNewDfpAdvertiser">
+            <input placeholder="" id="new_dfp_advertiser" name="new_dfp_advertiser_name"
+                   type="text" length="255" (blur)="createDfpAdvertiser()" [(ngModel)]="newDfpAdvertiser"/>
+            <label for="new_dfp_advertiser" class="active">DFP Advertiser Name</label>
+        </div>
+
+        <table>
+            <thead>
+            <tr class="titles">
+                <th>Order Name</th>
+                <th>Impressions</th>
+                <th>Budget</th>
+                <th>Start Date</th>
+                <th>Locations</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of dfpOrderSummaryObj">
+                <td>{{item.order_name}}</td>
+                <td>{{item.impressions}}</td>
+                <td>{{item.budget| currency:'USD':true:'1.2-2'}}</td>
+                <td>{{item.start_date}}</td>
+                <td>{{item.geo_location}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a id="io_dfp_advertisers_cancel" class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a (click)="submitDFP()" id="io_dfp_advertisers_save" class="waves-effect waves-green btn-flat">Submit</a>
+    </div>
+</div>
+<div id="dfp_error_show_modal" class="modal" style="margin-top:3%;padding-top:50px;">
+        <div class="modal-content">                
+               Please Submit IO Again in sometime
+        </div>
+        <div class="modal-footer">
+                <a id="io_dfp_advertisers_cancel" class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+                <a (click)="submitDFP()" id="io_dfp_advertisers_save" class="waves-effect waves-green btn-flat">Resubmit</a>
+        </div>
+</div>

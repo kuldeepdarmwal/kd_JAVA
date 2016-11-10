@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="de.adtech.helios.AdConverter_v9.WSAdConverter_v9"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/"/>
+            <xsd:element name="WSAdConverterException" nillable="true"
+                type="xns4:WSAdConverterException"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="Banner">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.Banner"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="artTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="assetTypeId" type="xsd:int"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="bitrate" nillable="true" type="xsd:int"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="codecContainer" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="createdBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customBannerDataId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="data" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="displayRegionId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="downloadUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extType" type="xsd:int"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="framerate" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="jcrTempIdentifier" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="lastModifiedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastModifiedBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maturityLevelId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="mediaTypeId" type="xsd:int"/>
+                    <xsd:element name="mimeTypeForJCR" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mimeTypeId" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalBitrate" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalData" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="originalHeight" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalVideoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalWidth" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="researchTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeCategoryId" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="videoCodec" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="videoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="videoTypeId" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="BannerData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.BannerData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="artTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="assetTypeId" type="xsd:int"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="binaryBannerId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="bitrate" nillable="true" type="xsd:int"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="codecContainer" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="createdBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customBannerDataId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="displayRegionId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extType" type="xsd:int"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="framerate" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="lastModifiedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastModifiedBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maturityLevelId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="mediaTypeId" type="xsd:int"/>
+                    <xsd:element name="mimeTypeId" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalBitrate" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalHeight" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalVideoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalWidth" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="researchTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeCategoryId" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="videoCodec" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="videoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="videoTypeId" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="BinaryBanner">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.BinaryBanner"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="data" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalData" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="FlashBannerSettings">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdConverter_v9.FlashBannerSettings"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="altImageHeight" type="xsd:int"/>
+                    <xsd:element name="altImageLinkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="altImageWidth" type="xsd:int"/>
+                    <xsd:element name="clickTagVariables" nillable="true"
+                        type="xns5:Map"/>
+                    <xsd:element name="compress" type="xsd:boolean"/>
+                    <xsd:element name="counterUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="createLayer" type="xsd:boolean"/>
+                    <xsd:element name="expandBottom" type="xsd:int"/>
+                    <xsd:element name="expandDirection" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="expandLeft" type="xsd:int"/>
+                    <xsd:element name="expandRight" type="xsd:int"/>
+                    <xsd:element name="expandTop" type="xsd:int"/>
+                    <xsd:element name="expandable" type="xsd:boolean"/>
+                    <xsd:element name="expandedHeight" type="xsd:int"/>
+                    <xsd:element name="expandedWidth" type="xsd:int"/>
+                    <xsd:element name="flashFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="flashHeight" type="xsd:int"/>
+                    <xsd:element name="flashWidth" type="xsd:int"/>
+                    <xsd:element name="imageFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="layerCloseAfter" type="xsd:int"/>
+                    <xsd:element name="layerPosX" type="xsd:int"/>
+                    <xsd:element name="layerPosY" type="xsd:int"/>
+                    <xsd:element name="manualLayerResize" type="xsd:boolean"/>
+                    <xsd:element name="transparent" type="xsd:boolean"/>
+                    <xsd:element name="wmode" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="zindex" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="createFlashWithFallbackImage0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="zipStream" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="zipFileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="flashSettings" nillable="true"
+                            type="tns:FlashBannerSettings"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageResponse0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="WSAdConverterException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdConverter_v9.WSAdConverterException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="createFlashWithFallbackImage1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="zipStream" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="fileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="COUNTER_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="CREATE_LAYER" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="LAYER_POS_X" type="xsd:int"/>
+                        <xsd:element name="LAYER_POS_Y" type="xsd:int"/>
+                        <xsd:element name="ZINDEX" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="LAYER_CLOSE_AFTER" type="xsd:int"/>
+                        <xsd:element name="EXPANDABLE" type="xsd:boolean"/>
+                        <xsd:element name="ManualLayerRezise"
+                            type="xsd:boolean"/>
+                        <xsd:element name="EXPAND_DIRECTION" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_LEFT" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_RIGHT" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_TOP" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_BOTTOM" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPANDED_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="EXPANDED_WIDTH" type="xsd:int"/>
+                        <xsd:element name="FLASH_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="FLASH_WIDTH" type="xsd:int"/>
+                        <xsd:element name="FLASH_FILENAME" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="WINDOW_MODE" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_FILENAME" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_LINK_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="ALT_IMAGE_WIDTH" type="xsd:int"/>
+                        <xsd:element name="ALT_IMAGE_CREATE_LAYER"
+                            type="xsd:boolean"/>
+                        <xsd:element name="TRANSPARENT" type="xsd:boolean"/>
+                        <xsd:element name="ALT_IMAGE_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="COMPRESS" type="xsd:boolean"/>
+                        <xsd:element name="ClickTAG" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG1" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG2" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG3" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG4" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG5" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG6" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG7" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG8" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG9" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageResponse1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageByLogin0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="zipStream" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="zipFileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="flashSettings" nillable="true"
+                            type="tns:FlashBannerSettings"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageByLoginResponse0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageByLogin1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="zipStream" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="fileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="COUNTER_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="CREATE_LAYER" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="LAYER_POS_X" type="xsd:int"/>
+                        <xsd:element name="LAYER_POS_Y" type="xsd:int"/>
+                        <xsd:element name="ZINDEX" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="LAYER_CLOSE_AFTER" type="xsd:int"/>
+                        <xsd:element name="EXPANDABLE" type="xsd:boolean"/>
+                        <xsd:element name="ManualLayerRezise"
+                            type="xsd:boolean"/>
+                        <xsd:element name="EXPAND_DIRECTION" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_LEFT" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_RIGHT" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_TOP" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPAND_BOTTOM" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="EXPANDED_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="EXPANDED_WIDTH" type="xsd:int"/>
+                        <xsd:element name="FLASH_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="FLASH_WIDTH" type="xsd:int"/>
+                        <xsd:element name="FLASH_FILENAME" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="WINDOW_MODE" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_FILENAME" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_LINK_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ALT_IMAGE_HEIGHT" type="xsd:int"/>
+                        <xsd:element name="ALT_IMAGE_WIDTH" type="xsd:int"/>
+                        <xsd:element name="ALT_IMAGE_CREATE_LAYER"
+                            type="xsd:boolean"/>
+                        <xsd:element name="TRANSPARENT" type="xsd:boolean"/>
+                        <xsd:element name="ALT_IMAGE_URL" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="COMPRESS" type="xsd:boolean"/>
+                        <xsd:element name="ClickTAG" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG1" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG2" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG3" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG4" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG5" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG6" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG7" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG8" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="ClickTAG9" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createFlashWithFallbackImageByLoginResponse1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createSimpleFlashBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="swfFile" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="fileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="parameters" nillable="true"
+                            type="xns5:HashMap"/>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createSimpleFlashBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createSimpleFlashBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="swfFile" nillable="true"
+                            type="xsd:base64Binary"/>
+                        <xsd:element name="fileName" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="parameters" nillable="true"
+                            type="xns5:HashMap"/>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createSimpleFlashBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createTextualBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="bannerText" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createTextualBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createTextualBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="bannerText" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createTextualBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createThirdPartyBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="thirdPartyTagScript" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createThirdPartyBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createThirdPartyBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="thirdPartyTagScript" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createThirdPartyBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="createThirdPartyBannerWithTagValidation">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="thirdPartyTagScript" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="ThirdPartyResult">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdConverter_v9.ThirdPartyResult"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="applicationErrorCodes" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="data" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="ok" type="xsd:boolean"/>
+                    <xsd:element name="originalData" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="thirdPartyTag" type="xsd:boolean"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="createThirdPartyBannerWithTagValidationResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="tns:ThirdPartyResult"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getBI">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="ApplicationErrorCode">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdConverter_v9.ApplicationErrorCode"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="errorCode" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="errorMessage" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getBIResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="tns:ApplicationErrorCode"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeBannerFromXMLTemplate">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="XMLBannerTempId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="variableMap" nillable="true"
+                            type="xns5:HashMap"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeBannerFromXMLTemplateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeBannerFromXMLTemplateByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="XMLBannerTempId" nillable="true"
+                            type="xsd:long"/>
+                        <xsd:element name="variableMap" nillable="true"
+                            type="xns5:HashMap"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeBannerFromXMLTemplateByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeHTMLBannerFromImageBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeHTMLBannerFromImageBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeHTMLBannerFromImageBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeHTMLBannerFromImageBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeLAYERBannerFromHtmlBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="width" type="xsd:int"/>
+                        <xsd:element name="height" type="xsd:int"/>
+                        <xsd:element name="x" type="xsd:int"/>
+                        <xsd:element name="y" type="xsd:int"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeLAYERBannerFromHtmlBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeLAYERBannerFromHtmlBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="width" type="xsd:int"/>
+                        <xsd:element name="height" type="xsd:int"/>
+                        <xsd:element name="x" type="xsd:int"/>
+                        <xsd:element name="y" type="xsd:int"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeLAYERBannerFromHtmlBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makePOPUPBannerFromHtmlBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="width" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="height" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="posTop" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="posLeft" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="title" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="type" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="winReuse" type="xsd:boolean"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makePOPUPBannerFromHtmlBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makePOPUPBannerFromHtmlBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="source" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="width" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="height" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="posTop" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="posLeft" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="title" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="type" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="winReuse" type="xsd:boolean"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makePOPUPBannerFromHtmlBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeRichMediaBanner">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="bann" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeRichMediaBannerResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeRichMediaBannerByLogin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="bann" nillable="true"
+                            type="xns6:Banner"/>
+                        <xsd:element name="username" nillable="true"
+                            type="xsd:string"/>
+                        <xsd:element name="password" nillable="true"
+                            type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="makeRichMediaBannerByLoginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="xns6:Banner"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="WSAdConverterException">
+        <part element="ns0:WSAdConverterException"
+            name="WSAdConverterException"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImageByLogin_0_Request_Soap">
+        <part element="tns:createFlashWithFallbackImageByLogin0"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImageByLogin_0_Response_Soap">
+        <part element="tns:createFlashWithFallbackImageByLoginResponse0"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImageByLogin_1_Request_Soap">
+        <part element="tns:createFlashWithFallbackImageByLogin1"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImageByLogin_1_Response_Soap">
+        <part element="tns:createFlashWithFallbackImageByLoginResponse1"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImage_0_Request_Soap">
+        <part element="tns:createFlashWithFallbackImage0" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImage_0_Response_Soap">
+        <part element="tns:createFlashWithFallbackImageResponse0"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImage_1_Request_Soap">
+        <part element="tns:createFlashWithFallbackImage1" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createFlashWithFallbackImage_1_Response_Soap">
+        <part element="tns:createFlashWithFallbackImageResponse1"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createSimpleFlashBannerByLogin_Request_Soap">
+        <part element="tns:createSimpleFlashBannerByLogin" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createSimpleFlashBannerByLogin_Response_Soap">
+        <part element="tns:createSimpleFlashBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createSimpleFlashBanner_Request_Soap">
+        <part element="tns:createSimpleFlashBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createSimpleFlashBanner_Response_Soap">
+        <part element="tns:createSimpleFlashBannerResponse" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createTextualBannerByLogin_Request_Soap">
+        <part element="tns:createTextualBannerByLogin" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createTextualBannerByLogin_Response_Soap">
+        <part element="tns:createTextualBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createTextualBanner_Request_Soap">
+        <part element="tns:createTextualBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createTextualBanner_Response_Soap">
+        <part element="tns:createTextualBannerResponse" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBannerByLogin_Request_Soap">
+        <part element="tns:createThirdPartyBannerByLogin" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBannerByLogin_Response_Soap">
+        <part element="tns:createThirdPartyBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBannerWithTagValidation_Request_Soap">
+        <part element="tns:createThirdPartyBannerWithTagValidation"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBannerWithTagValidation_Response_Soap">
+        <part element="tns:createThirdPartyBannerWithTagValidationResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBanner_Request_Soap">
+        <part element="tns:createThirdPartyBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_createThirdPartyBanner_Response_Soap">
+        <part element="tns:createThirdPartyBannerResponse" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_getBI_Request_Soap">
+        <part element="tns:getBI" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_getBI_Response_Soap">
+        <part element="tns:getBIResponse" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeBannerFromXMLTemplateByLogin_Request_Soap">
+        <part element="tns:makeBannerFromXMLTemplateByLogin" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeBannerFromXMLTemplateByLogin_Response_Soap">
+        <part element="tns:makeBannerFromXMLTemplateByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeBannerFromXMLTemplate_Request_Soap">
+        <part element="tns:makeBannerFromXMLTemplate" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeBannerFromXMLTemplate_Response_Soap">
+        <part element="tns:makeBannerFromXMLTemplateResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeHTMLBannerFromImageBannerByLogin_Request_Soap">
+        <part element="tns:makeHTMLBannerFromImageBannerByLogin"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeHTMLBannerFromImageBannerByLogin_Response_Soap">
+        <part element="tns:makeHTMLBannerFromImageBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeHTMLBannerFromImageBanner_Request_Soap">
+        <part element="tns:makeHTMLBannerFromImageBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeHTMLBannerFromImageBanner_Response_Soap">
+        <part element="tns:makeHTMLBannerFromImageBannerResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeLAYERBannerFromHtmlBannerByLogin_Request_Soap">
+        <part element="tns:makeLAYERBannerFromHtmlBannerByLogin"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeLAYERBannerFromHtmlBannerByLogin_Response_Soap">
+        <part element="tns:makeLAYERBannerFromHtmlBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeLAYERBannerFromHtmlBanner_Request_Soap">
+        <part element="tns:makeLAYERBannerFromHtmlBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeLAYERBannerFromHtmlBanner_Response_Soap">
+        <part element="tns:makeLAYERBannerFromHtmlBannerResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makePOPUPBannerFromHtmlBannerByLogin_Request_Soap">
+        <part element="tns:makePOPUPBannerFromHtmlBannerByLogin"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makePOPUPBannerFromHtmlBannerByLogin_Response_Soap">
+        <part element="tns:makePOPUPBannerFromHtmlBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makePOPUPBannerFromHtmlBanner_Request_Soap">
+        <part element="tns:makePOPUPBannerFromHtmlBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makePOPUPBannerFromHtmlBanner_Response_Soap">
+        <part element="tns:makePOPUPBannerFromHtmlBannerResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeRichMediaBannerByLogin_Request_Soap">
+        <part element="tns:makeRichMediaBannerByLogin" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeRichMediaBannerByLogin_Response_Soap">
+        <part element="tns:makeRichMediaBannerByLoginResponse"
+            name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeRichMediaBanner_Request_Soap">
+        <part element="tns:makeRichMediaBanner" name="parameters"/>
+    </message>
+    <message name="WSAdConverter_v9_makeRichMediaBanner_Response_Soap">
+        <part element="tns:makeRichMediaBannerResponse" name="parameters"/>
+    </message>
+    <portType name="WSAdConverter_v9">
+        <operation name="createFlashWithFallbackImage">
+            <input
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImage_0_Request_Soap"
+                name="createFlashWithFallbackImage_0_input"/>
+            <output
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImage_0_Response_Soap"
+                name="createFlashWithFallbackImage_0_output"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createFlashWithFallbackImage">
+            <input
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImage_1_Request_Soap"
+                name="createFlashWithFallbackImage_1_input"/>
+            <output
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImage_1_Response_Soap"
+                name="createFlashWithFallbackImage_1_output"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createFlashWithFallbackImageByLogin">
+            <input
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImageByLogin_0_Request_Soap"
+                name="createFlashWithFallbackImageByLogin_0_input"/>
+            <output
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImageByLogin_0_Response_Soap"
+                name="createFlashWithFallbackImageByLogin_0_output"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createFlashWithFallbackImageByLogin">
+            <input
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImageByLogin_1_Request_Soap"
+                name="createFlashWithFallbackImageByLogin_1_input"/>
+            <output
+                message="tns:WSAdConverter_v9_createFlashWithFallbackImageByLogin_1_Response_Soap"
+                name="createFlashWithFallbackImageByLogin_1_output"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createSimpleFlashBanner">
+            <input
+            message="tns:WSAdConverter_v9_createSimpleFlashBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createSimpleFlashBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createSimpleFlashBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_createSimpleFlashBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createSimpleFlashBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createTextualBanner">
+            <input
+            message="tns:WSAdConverter_v9_createTextualBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createTextualBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createTextualBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_createTextualBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createTextualBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createThirdPartyBanner">
+            <input
+            message="tns:WSAdConverter_v9_createThirdPartyBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createThirdPartyBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createThirdPartyBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_createThirdPartyBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createThirdPartyBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="createThirdPartyBannerWithTagValidation">
+            <input
+            message="tns:WSAdConverter_v9_createThirdPartyBannerWithTagValidation_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_createThirdPartyBannerWithTagValidation_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="getBI">
+            <input message="tns:WSAdConverter_v9_getBI_Request_Soap"/>
+            <output message="tns:WSAdConverter_v9_getBI_Response_Soap"/>
+        </operation>
+        <operation name="makeBannerFromXMLTemplate">
+            <input
+            message="tns:WSAdConverter_v9_makeBannerFromXMLTemplate_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeBannerFromXMLTemplate_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeBannerFromXMLTemplateByLogin">
+            <input
+            message="tns:WSAdConverter_v9_makeBannerFromXMLTemplateByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeBannerFromXMLTemplateByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeHTMLBannerFromImageBanner">
+            <input
+            message="tns:WSAdConverter_v9_makeHTMLBannerFromImageBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeHTMLBannerFromImageBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeHTMLBannerFromImageBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_makeHTMLBannerFromImageBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeHTMLBannerFromImageBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeLAYERBannerFromHtmlBanner">
+            <input
+            message="tns:WSAdConverter_v9_makeLAYERBannerFromHtmlBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeLAYERBannerFromHtmlBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeLAYERBannerFromHtmlBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_makeLAYERBannerFromHtmlBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeLAYERBannerFromHtmlBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makePOPUPBannerFromHtmlBanner">
+            <input
+            message="tns:WSAdConverter_v9_makePOPUPBannerFromHtmlBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makePOPUPBannerFromHtmlBanner_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makePOPUPBannerFromHtmlBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_makePOPUPBannerFromHtmlBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makePOPUPBannerFromHtmlBannerByLogin_Response_Soap"/>
+            <fault message="tns:WSAdConverterException"
+                name="WSAdConverterException"/>
+        </operation>
+        <operation name="makeRichMediaBanner">
+            <input
+            message="tns:WSAdConverter_v9_makeRichMediaBanner_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeRichMediaBanner_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="makeRichMediaBannerByLogin">
+            <input
+            message="tns:WSAdConverter_v9_makeRichMediaBannerByLogin_Request_Soap"/>
+            <output
+            message="tns:WSAdConverter_v9_makeRichMediaBannerByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+    </portType>
+    <binding name="WSAdConverter_v9" type="tns:WSAdConverter_v9">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createFlashWithFallbackImage">
+            <map:java-operation name="createFlashWithFallbackImage"
+                parameterOrder="zipStream zipFileName flashSettings"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGRlL2FkdGVjaC9oZWxpb3MvQWRDb252ZXJ0ZXJfdjkvRmxhc2hCYW5uZXJTZXR0aW5nczspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createFlashWithFallbackImage?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGRlL2FkdGVjaC9oZWxpb3MvQWRDb252ZXJ0ZXJfdjkvRmxhc2hCYW5uZXJTZXR0aW5nczspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input name="createFlashWithFallbackImage_0_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="createFlashWithFallbackImage_0_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createFlashWithFallbackImage">
+            <map:java-operation name="createFlashWithFallbackImage"
+                parameterOrder="zipStream fileName COUNTER_URL CREATE_LAYER LAYER_POS_X LAYER_POS_Y ZINDEX LAYER_CLOSE_AFTER EXPANDABLE ManualLayerRezise EXPAND_DIRECTION EXPAND_LEFT EXPAND_RIGHT EXPAND_TOP EXPAND_BOTTOM EXPANDED_HEIGHT EXPANDED_WIDTH FLASH_HEIGHT FLASH_WIDTH FLASH_FILENAME WINDOW_MODE ALT_IMAGE_FILENAME ALT_IMAGE_LINK_URL ALT_IMAGE_HEIGHT ALT_IMAGE_WIDTH ALT_IMAGE_CREATE_LAYER TRANSPARENT ALT_IMAGE_URL COMPRESS ClickTAG ClickTAG1 ClickTAG2 ClickTAG3 ClickTAG4 ClickTAG5 ClickTAG6 ClickTAG7 ClickTAG8 ClickTAG9"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlMamF2YS9sYW5nL1N0cmluZztJWlpMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztJSUlJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlaWkxqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createFlashWithFallbackImage?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlMamF2YS9sYW5nL1N0cmluZztJWlpMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztJSUlJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlaWkxqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input name="createFlashWithFallbackImage_1_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="createFlashWithFallbackImage_1_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createFlashWithFallbackImageByLogin">
+            <map:java-operation name="createFlashWithFallbackImageByLogin"
+                parameterOrder="zipStream zipFileName flashSettings username password"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGRlL2FkdGVjaC9oZWxpb3MvQWRDb252ZXJ0ZXJfdjkvRmxhc2hCYW5uZXJTZXR0aW5ncztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createFlashWithFallbackImageByLogin?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGRlL2FkdGVjaC9oZWxpb3MvQWRDb252ZXJ0ZXJfdjkvRmxhc2hCYW5uZXJTZXR0aW5ncztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input name="createFlashWithFallbackImageByLogin_0_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="createFlashWithFallbackImageByLogin_0_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createFlashWithFallbackImageByLogin">
+            <map:java-operation name="createFlashWithFallbackImageByLogin"
+                parameterOrder="zipStream fileName COUNTER_URL CREATE_LAYER LAYER_POS_X LAYER_POS_Y ZINDEX LAYER_CLOSE_AFTER EXPANDABLE ManualLayerRezise EXPAND_DIRECTION EXPAND_LEFT EXPAND_RIGHT EXPAND_TOP EXPAND_BOTTOM EXPANDED_HEIGHT EXPANDED_WIDTH FLASH_HEIGHT FLASH_WIDTH FLASH_FILENAME WINDOW_MODE ALT_IMAGE_FILENAME ALT_IMAGE_LINK_URL ALT_IMAGE_HEIGHT ALT_IMAGE_WIDTH ALT_IMAGE_CREATE_LAYER TRANSPARENT ALT_IMAGE_URL COMPRESS ClickTAG ClickTAG1 ClickTAG2 ClickTAG3 ClickTAG4 ClickTAG5 ClickTAG6 ClickTAG7 ClickTAG8 ClickTAG9 username password"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlMamF2YS9sYW5nL1N0cmluZztJWlpMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztJSUlJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlaWkxqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createFlashWithFallbackImageByLogin?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlMamF2YS9sYW5nL1N0cmluZztJWlpMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztJSUlJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7SUlaWkxqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input name="createFlashWithFallbackImageByLogin_1_input">
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output name="createFlashWithFallbackImageByLogin_1_output">
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createSimpleFlashBanner">
+            <map:java-operation name="createSimpleFlashBanner"
+                parameterOrder="swfFile fileName parameters source"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvdXRpbC9IYXNoTWFwO0xkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createSimpleFlashBanner?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvdXRpbC9IYXNoTWFwO0xkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createSimpleFlashBannerByLogin">
+            <map:java-operation name="createSimpleFlashBannerByLogin"
+                parameterOrder="swfFile fileName parameters source username password"
+                signature="KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvdXRpbC9IYXNoTWFwO0xkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createSimpleFlashBannerByLogin?KFtCTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvdXRpbC9IYXNoTWFwO0xkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTextualBanner">
+            <map:java-operation name="createTextualBanner"
+                parameterOrder="bannerText"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createTextualBanner?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTextualBannerByLogin">
+            <map:java-operation name="createTextualBannerByLogin"
+                parameterOrder="bannerText username password"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createTextualBannerByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createThirdPartyBanner">
+            <map:java-operation name="createThirdPartyBanner"
+                parameterOrder="thirdPartyTagScript"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createThirdPartyBanner?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createThirdPartyBannerByLogin">
+            <map:java-operation name="createThirdPartyBannerByLogin"
+                parameterOrder="thirdPartyTagScript username password"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createThirdPartyBannerByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createThirdPartyBannerWithTagValidation">
+            <map:java-operation name="createThirdPartyBannerWithTagValidation"
+                parameterOrder="thirdPartyTagScript"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9BZENvbnZlcnRlcl92OS9UaGlyZFBhcnR5UmVzdWx0Ow=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#createThirdPartyBannerWithTagValidation?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9BZENvbnZlcnRlcl92OS9UaGlyZFBhcnR5UmVzdWx0Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getBI">
+            <map:java-operation name="getBI" parameterOrder=""
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BZENvbnZlcnRlcl92OS9BcHBsaWNhdGlvbkVycm9yQ29kZTs="
+                unwrapped="true" wsiAttachments="true"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#getBI?KClMZGUvYWR0ZWNoL2hlbGlvcy9BZENvbnZlcnRlcl92OS9BcHBsaWNhdGlvbkVycm9yQ29kZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+        </operation>
+        <operation name="makeBannerFromXMLTemplate">
+            <map:java-operation name="makeBannerFromXMLTemplate"
+                parameterOrder="XMLBannerTempId variableMap"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0hhc2hNYXA7KUxkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeBannerFromXMLTemplate?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0hhc2hNYXA7KUxkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeBannerFromXMLTemplateByLogin">
+            <map:java-operation name="makeBannerFromXMLTemplateByLogin"
+                parameterOrder="XMLBannerTempId variableMap username password"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0hhc2hNYXA7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOw=="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeBannerFromXMLTemplateByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0hhc2hNYXA7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeHTMLBannerFromImageBanner">
+            <map:java-operation name="makeHTMLBannerFromImageBanner"
+                parameterOrder="source"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeHTMLBannerFromImageBanner?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeHTMLBannerFromImageBannerByLogin">
+            <map:java-operation name="makeHTMLBannerFromImageBannerByLogin"
+                parameterOrder="source username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeHTMLBannerFromImageBannerByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeLAYERBannerFromHtmlBanner">
+            <map:java-operation name="makeLAYERBannerFromHtmlBanner"
+                parameterOrder="source width height x y"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0lJSUkpTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeLAYERBannerFromHtmlBanner?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0lJSUkpTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeLAYERBannerFromHtmlBannerByLogin">
+            <map:java-operation name="makeLAYERBannerFromHtmlBannerByLogin"
+                parameterOrder="source width height x y username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0lJSUlMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeLAYERBannerFromHtmlBannerByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0lJSUlMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makePOPUPBannerFromHtmlBanner">
+            <map:java-operation name="makePOPUPBannerFromHtmlBanner"
+                parameterOrder="source width height posTop posLeft title type winReuse"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO1opTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makePOPUPBannerFromHtmlBanner?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO1opTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makePOPUPBannerFromHtmlBannerByLogin">
+            <map:java-operation name="makePOPUPBannerFromHtmlBannerByLogin"
+                parameterOrder="source width height posTop posLeft title type winReuse username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                unwrapped="true" wsiAttachments="true">
+                <map:fault
+                    java-type="de.adtech.helios.AdConverter_v9.WSAdConverterException"
+                    name="WSAdConverterException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makePOPUPBannerFromHtmlBannerByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO1pMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvQmFubmVyTWFuYWdlbWVudC9CYW5uZXI7"
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="WSAdConverterException">
+                <soap:fault name="WSAdConverterException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeRichMediaBanner">
+            <map:java-operation name="makeRichMediaBanner" parameterOrder="bann"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeRichMediaBanner?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="makeRichMediaBannerByLogin">
+            <map:java-operation name="makeRichMediaBannerByLogin"
+                parameterOrder="bann username password"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                unwrapped="true" wsiAttachments="true">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/helios/AdConverter_v9/WSAdConverter_v9#makeRichMediaBannerByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9CYW5uZXJNYW5hZ2VtZW50L0Jhbm5lcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSAdConverter_v9">
+        <port binding="tns:WSAdConverter_v9" name="WSAdConverter_v9">
+            <soap:address
+            location="http://ir000369.ad.aol.aoltw.net:6060/WSAdConverter_v9/"/>
+        </port>
+    </service>
+</definitions>

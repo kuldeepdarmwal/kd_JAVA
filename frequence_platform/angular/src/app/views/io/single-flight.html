@@ -1,0 +1,34 @@
+<td>
+	{{flight.startDate}} - {{flight.endDate}}
+</td>
+<td>
+
+	<span *ngIf="!editable">${{flight.totalBudget | number_format }}</span>
+	<label class="dollars" *ngIf="editable">$</label>
+	<input *ngIf="editable" [(ngModel)]="flight.totalBudget" #totalBudgetInput mycurrency (blur)="editFlightBudget()" type="text" />
+</td>
+<td *ngIf="hasOwnedAndOperatedDFP && !flightComplete" [attr.colspan]="2 + (hasOwnedAndOperated ? 2 : 0) + (hasGeofencing && geofencingEnabled ? 1 : 0)" class="reforecast-laser">
+	<div class="progress">
+		<div class="indeterminate"></div>
+	</div>
+</td>
+<td *ngIf="hasOwnedAndOperated && flightComplete">
+	<span *ngIf="!editable || !submitAllowed">{{flight.ownedAndOperatedImpressions | number_format}}</span>
+	<input *ngIf="editable && submitAllowed" [(ngModel)]="flight.ownedAndOperatedImpressions" #ooImpressionsInput (change)="editOOImpressions()" mycurrency type="text" />
+	<i *ngIf="hasOwnedAndOperatedDFP" class="flight-status" [class.valid]="flightStatus"></i>
+</td>
+<td *ngIf="hasOwnedAndOperated && flightComplete">
+	{{flight.ownedAndOperatedBudget | currency:'USD':true:'1.2-2'}}
+</td>
+<td class="geo_enabled_style" *ngIf="flightComplete">
+	{{flight.audienceExtensionImpressions | number_format}}
+</td>
+<td class="geo_enabled_style" *ngIf="hasGeofencing && geofencingEnabled && flightComplete">
+	{{flight.geofencingImpressions | number_format}}
+</td>
+<td *ngIf="hasOwnedAndOperated && flightComplete">
+	{{flight.audienceExtensionBudget | currency:'USD':true:'1.2-2'}}
+</td>
+<td style="text-align:right">
+	<a *ngIf="editable" #deleteFlightButton (click)="deleteFlight()" class="red io-flight-delete tooltipped" materialize="tooltip" data-position="left" data-delay="500" data-tooltip="Remove Flight"><i class="close material-icons">close</i></a>
+</td>

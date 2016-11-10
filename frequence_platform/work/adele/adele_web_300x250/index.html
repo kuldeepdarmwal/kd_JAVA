@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>adele_web - 300x250</title>
+    <meta name="viewport" content="width='300', height='250'" />
+    <link type="text/css" rel="stylesheet" href="http://4delite.com/styles/template.css" />
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/MySprite.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/FrameContainer.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AnimationTemplateBase.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateContainerFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateCopyFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateImageFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/Timeline.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/BaseEffect.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/easing/None.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/Animation.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/Show.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/MyTween.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/FadeIn.js"></script>
+    <script type="text/javascript">function onLoad(){
+	var t = new AnimationTemplateBase(document.body,{bannerWidth:300,bannerHeight:250,clickUrl:null,trackingUrl:null},[new AdTemplateFrame('background',{backgroundColor:0xffffffff,zIndex:-1}),new AdTemplateFrame('border',{borderColor:0xff000000,borderThickness:1,zIndex:1001}),new AdTemplateCopyFrame('user_copy0',{bottomMargin:32,color:0xffffffff,copy:MySprite.loadImage("user_copy0.copy.png", 291, 26),leftMargin:2,size:26,zIndex:3}),new AdTemplateCopyFrame('user_copy1',{bottomMargin:47,color:0xffffffff,copy:MySprite.loadImage("user_copy1.copy.png", 192, 48),size:20,zIndex:6}),new AdTemplateImageFrame('user_image0',{content:MySprite.loadImage("user_image0.content.jpg",336,280),zIndex:1}),new AdTemplateImageFrame('user_image1',{content:MySprite.loadImage("user_image1.content.jpg",336,280),zIndex:2}),new AdTemplateImageFrame('user_image2',{content:MySprite.loadImage("user_image2.content.jpg",336,280),zIndex:4}),new AdTemplateImageFrame('user_image3',{content:MySprite.loadImage("user_image3.content.jpg",336,280),zIndex:5}),new AdTemplateImageFrame('user_image4',{content:MySprite.loadImage("user_image4.content.jpg",336,280),zIndex:7}),new AdTemplateImageFrame('user_image6',{content:MySprite.loadImage("user_image6.content.png",336,280),imageXOffset:5,imageYOffset:-199,zIndex:9})],[new Timeline('main',{},[new FadeIn('user_effect0',{duration:1,offset:1,target:'user_image1',type:'FadeIn'}),new FadeIn('user_effect1',{duration:1,offset:2,target:'user_copy0',type:'FadeIn'}),new FadeIn('user_effect2',{duration:1,offset:4.5,target:'user_image2',type:'FadeIn'}),new FadeIn('user_effect3',{duration:1,offset:6,target:'user_image3',type:'FadeIn'}),new FadeIn('user_effect4',{duration:1,offset:7,target:'user_copy1',type:'FadeIn'}),new FadeIn('user_effect5',{duration:1,offset:9,target:'user_image4',type:'FadeIn'}),new FadeIn('user_effect6',{duration:0.5,offset:10,target:'user_image5',type:'FadeIn'}),new FadeIn('user_effect7',{duration:0.5,offset:10.5,target:'user_image6',type:'FadeIn'})])]);
+	t.processFrames ();
+	t.startSequence ();
+}
+</script>
+  </head>
+  <body onload="onLoad()"></body>
+</html>

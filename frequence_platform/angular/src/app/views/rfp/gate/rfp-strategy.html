@@ -1,0 +1,23 @@
+<div class="col s7 offset-s1">
+    <span class="select-notice" style="display: none;">Select your proposal template.</span>
+    <div id="strategies">
+        <div *ngFor="let strategy of strategies; let i = index" (click)="selectStrategy.emit(strategy.strategyId)">
+
+            <div class="strategy card" [ngClass]="{selected: strategy.selected, single : strategies.length == 1}" data-strategy-id="">
+                <div class="title">
+                    <i class="strategy_checked icon-ok"></i>
+                    <h4>{{strategy.strategyName}}</h4>
+                </div>
+                <img class="preview col s4" src="{{strategy.previewImage}}" />
+                <p class="description col s4">{{strategy.description}}</p>
+                <ul class="products col s4">
+                    <li *ngFor="let product of strategy.products"><img src="{{product.definition.proposal_icon}}" /></li>
+                </ul>
+            </div>
+
+        </div>
+        <div style="clear: both"></div>
+
+
+    </div>
+</div>

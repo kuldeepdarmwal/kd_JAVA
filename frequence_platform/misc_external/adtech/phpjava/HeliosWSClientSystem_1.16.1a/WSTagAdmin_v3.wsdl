@@ -1,0 +1,2011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdmin_v3"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/TagManagement/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/TagManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/javax/jdo/spi/"/>
+            <xsd:complexType name="TagFeatureSet">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.TagManagement.TagFeatureSet"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="entityId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="entityType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="tagFeatureId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="value" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TagFeatures">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.TagManagement.TagFeatures"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="defaultValue" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="derived" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="placeholder" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TagTemplate">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.TagManagement.TagTemplate"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="html" nillable="true" type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="tagTypeId" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TypeOfTag">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.TagManagement.TypeOfTag"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="xns5:PersistenceCapable">
+                        <xsd:sequence>
+                            <xsd:element name="deleted" nillable="true"
+                                type="xsd:boolean"/>
+                            <xsd:element name="description" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="extId" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="id" nillable="true"
+                                type="xsd:long"/>
+                            <xsd:element name="name" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="purpose" nillable="true"
+                                type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTagFeatureSet">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.TagManagement.TagFeatureSet;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="TagFeatureSet" nillable="true"
+                        type="tns:TagFeatureSet"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTagFeatures">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.TagManagement.TagFeatures;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="TagFeatures" nillable="true"
+                        type="tns:TagFeatures"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTagTemplate">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.TagManagement.TagTemplate;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="TagTemplate" nillable="true"
+                        type="tns:TagTemplate"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTypeOfTag">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.TagManagement.TypeOfTag;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="TypeOfTag" nillable="true" type="tns:TypeOfTag"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType abstract="true" name="PersistenceCapable">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="javax.jdo.spi.PersistenceCapable"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence/>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SecurityException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.security.SecurityException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSTagAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/TagManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/"
+            xmlns:xns7="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns8="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/TagManagement/"/>
+            <xsd:element name="tfs" nillable="true" type="xns4:TagFeatureSet"/>
+            <xsd:element name="TagFeatureSet_Response" nillable="true"
+                type="xns4:TagFeatureSet"/>
+            <xsd:element name="SecurityException" nillable="true"
+                type="xns5:SecurityException"/>
+            <xsd:element name="WSTagAdminException" nillable="true"
+                type="xns6:WSTagAdminException"/>
+            <xsd:element name="username" nillable="true" type="xsd:string"/>
+            <xsd:element name="password" nillable="true" type="xsd:string"/>
+            <xsd:element name="tf" nillable="true" type="xns4:TagFeatures"/>
+            <xsd:element name="TagFeatures_Response" nillable="true"
+                type="xns4:TagFeatures"/>
+            <xsd:element name="tt" nillable="true" type="xns4:TagTemplate"/>
+            <xsd:element name="TagTemplate_Response" nillable="true"
+                type="xns4:TagTemplate"/>
+            <xsd:element name="tt_1" nillable="true" type="xns4:TypeOfTag"/>
+            <xsd:element name="TypeOfTag_Response" nillable="true"
+                type="xns4:TypeOfTag"/>
+            <xsd:element name="templateID" nillable="true" type="xsd:long"/>
+            <xsd:element name="agencyCampaignId" nillable="true"
+                type="xsd:long"/>
+            <xsd:element name="agencyFlightIds" nillable="true"
+                type="xns7:Collection"/>
+            <xsd:element name="Collection_Response" nillable="true"
+                type="xns7:Collection"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+            <xsd:element name="templateId" nillable="true" type="xsd:long"/>
+            <xsd:element name="beaconId" nillable="true" type="xsd:long"/>
+            <xsd:element name="string_Response" nillable="true"
+                type="xsd:string"/>
+            <xsd:element name="plcId" nillable="true" type="xsd:long"/>
+            <xsd:element name="campId" nillable="true" type="xsd:long"/>
+            <xsd:element name="bannerId" nillable="true" type="xsd:long"/>
+            <xsd:element name="entityId" nillable="true" type="xsd:long"/>
+            <xsd:element name="entityType" nillable="true" type="xsd:string"/>
+            <xsd:element name="ArrayOfTagFeatureSet_Response" nillable="true"
+                type="xns4:ArrayOfTagFeatureSet"/>
+            <xsd:element name="tagFeatureId" nillable="true" type="xsd:long"/>
+            <xsd:element name="extId" nillable="true" type="xsd:string"/>
+            <xsd:element name="tfid" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOfTagFeatures_Response" nillable="true"
+                type="xns4:ArrayOfTagFeatures"/>
+            <xsd:element name="ttid" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOflong_Response" nillable="true"
+                type="xns8:ArrayOflong"/>
+            <xsd:element name="ArrayOfTagTemplate_Response" nillable="true"
+                type="xns4:ArrayOfTagTemplate"/>
+            <xsd:element name="tagTypeId" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOfTypeOfTag_Response" nillable="true"
+                type="xns4:ArrayOfTypeOfTag"/>
+            <xsd:element name="tt_2" nillable="true" type="xns4:TypeOfTag"/>
+        </xsd:schema>
+    </types>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="SecurityException">
+        <part element="ns0:SecurityException" name="SecurityException"/>
+    </message>
+    <message name="WSTagAdminException">
+        <part element="ns0:WSTagAdminException" name="WSTagAdminException"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatureSetByLogin_Request_Soap">
+        <part element="ns0:tfs" name="tfs"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatureSetByLogin_Response_Soap">
+        <part element="ns0:TagFeatureSet_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatureSet_Request_Soap">
+        <part element="ns0:tfs" name="tfs"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatureSet_Response_Soap">
+        <part element="ns0:TagFeatureSet_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeaturesByLogin_Request_Soap">
+        <part element="ns0:tf" name="tf"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeaturesByLogin_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatures_Request_Soap">
+        <part element="ns0:tf" name="tf"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagFeatures_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagTemplateByLogin_Request_Soap">
+        <part element="ns0:tt" name="tt"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagTemplateByLogin_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagTemplate_Request_Soap">
+        <part element="ns0:tt" name="tt"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagTemplate_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagType_Request_Soap">
+        <part element="ns0:tt_1" name="tt"/>
+    </message>
+    <message name="WSTagAdmin_v3_createTagType_Response_Soap">
+        <part element="ns0:TypeOfTag_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_deleteTagFeatureSet_Request_Soap">
+        <part element="ns0:tfs" name="tfs"/>
+    </message>
+    <message name="WSTagAdmin_v3_deleteTagFeatureSet_Response_Soap"/>
+    <message name="WSTagAdmin_v3_deleteTagFeatures_Request_Soap">
+        <part element="ns0:tf" name="tf"/>
+    </message>
+    <message name="WSTagAdmin_v3_deleteTagFeatures_Response_Soap"/>
+    <message name="WSTagAdmin_v3_deleteTagTemplate_Request_Soap">
+        <part element="ns0:tt" name="tt"/>
+    </message>
+    <message name="WSTagAdmin_v3_deleteTagTemplate_Response_Soap"/>
+    <message name="WSTagAdmin_v3_getAgencyTags_Request_Soap">
+        <part element="ns0:templateID" name="templateID"/>
+        <part element="ns0:agencyCampaignId" name="agencyCampaignId"/>
+        <part element="ns0:agencyFlightIds" name="agencyFlightIds"/>
+    </message>
+    <message name="WSTagAdmin_v3_getAgencyTags_Response_Soap">
+        <part element="ns0:Collection_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getBeaconTagByTemplate_Request_Soap">
+        <part element="ns0:templateId" name="templateId"/>
+        <part element="ns0:beaconId" name="beaconId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getBeaconTagByTemplate_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplateByLogin_Request_Soap">
+        <part element="ns0:templateId" name="templateId"/>
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:campId" name="campId"/>
+        <part element="ns0:bannerId" name="bannerId"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplateByLogin_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplate_RDCLICK_Request_Soap">
+        <part element="ns0:templateId" name="templateId"/>
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:campId" name="campId"/>
+        <part element="ns0:bannerId" name="bannerId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplate_RDCLICK_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplate_Request_Soap">
+        <part element="ns0:templateId" name="templateId"/>
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:campId" name="campId"/>
+        <part element="ns0:bannerId" name="bannerId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagByTemplate_Response_Soap">
+        <part element="ns0:string_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeatureSetListByEntity_Request_Soap">
+        <part element="ns0:entityId" name="entityId"/>
+        <part element="ns0:entityType" name="entityType"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeatureSetListByEntity_Response_Soap">
+        <part element="ns0:ArrayOfTagFeatureSet_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeatureSetListByTagFeatureId_Request_Soap">
+        <part element="ns0:tagFeatureId" name="tagFeatureId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeatureSetListByTagFeatureId_Response_Soap">
+        <part element="ns0:ArrayOfTagFeatureSet_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesByExtId_Request_Soap">
+        <part element="ns0:extId" name="extId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesByExtId_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesByIdByLogin_Request_Soap">
+        <part element="ns0:tfid" name="tfid"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesByIdByLogin_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesById_Request_Soap">
+        <part element="ns0:tfid" name="tfid"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesById_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesListByLogin_Request_Soap">
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfTagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagFeaturesList_Request_Soap"/>
+    <message name="WSTagAdmin_v3_getTagFeaturesList_Response_Soap">
+        <part element="ns0:ArrayOfTagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateByExtId_Request_Soap">
+        <part element="ns0:extId" name="extId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateByExtId_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateByIdByLogin_Request_Soap">
+        <part element="ns0:ttid" name="ttid"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateByIdByLogin_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateById_Request_Soap">
+        <part element="ns0:ttid" name="ttid"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateById_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateIdListByLogin_Request_Soap">
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateIdList_Request_Soap"/>
+    <message name="WSTagAdmin_v3_getTagTemplateIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateListByLogin_Request_Soap">
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfTagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTemplateList_Request_Soap"/>
+    <message name="WSTagAdmin_v3_getTagTemplateList_Response_Soap">
+        <part element="ns0:ArrayOfTagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTypeByExtId_Request_Soap">
+        <part element="ns0:extId" name="extId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTypeByExtId_Response_Soap">
+        <part element="ns0:TypeOfTag_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTypeById_Request_Soap">
+        <part element="ns0:tagTypeId" name="tagTypeId"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTypeById_Response_Soap">
+        <part element="ns0:TypeOfTag_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_getTagTypeList_Request_Soap"/>
+    <message name="WSTagAdmin_v3_getTagTypeList_Response_Soap">
+        <part element="ns0:ArrayOfTypeOfTag_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeatureSet_Request_Soap">
+        <part element="ns0:tfs" name="tfs"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeatureSet_Response_Soap">
+        <part element="ns0:TagFeatureSet_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeaturesByLogin_Request_Soap">
+        <part element="ns0:tf" name="tf"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeaturesByLogin_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeatures_Request_Soap">
+        <part element="ns0:tf" name="tf"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagFeatures_Response_Soap">
+        <part element="ns0:TagFeatures_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagTemplateByLogin_Request_Soap">
+        <part element="ns0:tt" name="tt"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagTemplateByLogin_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagTemplate_Request_Soap">
+        <part element="ns0:tt" name="tt"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagTemplate_Response_Soap">
+        <part element="ns0:TagTemplate_Response" name="response"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagType_Request_Soap">
+        <part element="ns0:tt_2" name="tt"/>
+    </message>
+    <message name="WSTagAdmin_v3_updateTagType_Response_Soap">
+        <part element="ns0:TypeOfTag_Response" name="response"/>
+    </message>
+    <portType name="WSTagAdmin_v3">
+        <operation name="createTagFeatureSet" parameterOrder="tfs">
+            <input
+            message="tns:WSTagAdmin_v3_createTagFeatureSet_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagFeatureSet_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagFeatureSetByLogin"
+            parameterOrder="tfs username password">
+            <input
+            message="tns:WSTagAdmin_v3_createTagFeatureSetByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagFeatureSetByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagFeatures" parameterOrder="tf">
+            <input message="tns:WSTagAdmin_v3_createTagFeatures_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagFeatures_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagFeaturesByLogin"
+            parameterOrder="tf username password">
+            <input
+            message="tns:WSTagAdmin_v3_createTagFeaturesByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagFeaturesByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagTemplate" parameterOrder="tt">
+            <input message="tns:WSTagAdmin_v3_createTagTemplate_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagTemplate_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagTemplateByLogin"
+            parameterOrder="tt username password">
+            <input
+            message="tns:WSTagAdmin_v3_createTagTemplateByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_createTagTemplateByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="createTagType" parameterOrder="tt">
+            <input message="tns:WSTagAdmin_v3_createTagType_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_createTagType_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="deleteTagFeatureSet" parameterOrder="tfs">
+            <input
+            message="tns:WSTagAdmin_v3_deleteTagFeatureSet_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_deleteTagFeatureSet_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="deleteTagFeatures" parameterOrder="tf">
+            <input message="tns:WSTagAdmin_v3_deleteTagFeatures_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_deleteTagFeatures_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="deleteTagTemplate" parameterOrder="tt">
+            <input message="tns:WSTagAdmin_v3_deleteTagTemplate_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_deleteTagTemplate_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getAgencyTags"
+            parameterOrder="templateID agencyCampaignId agencyFlightIds">
+            <input message="tns:WSTagAdmin_v3_getAgencyTags_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_getAgencyTags_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getBeaconTagByTemplate"
+            parameterOrder="templateId beaconId">
+            <input
+            message="tns:WSTagAdmin_v3_getBeaconTagByTemplate_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getBeaconTagByTemplate_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagByTemplate"
+            parameterOrder="templateId plcId campId bannerId">
+            <input message="tns:WSTagAdmin_v3_getTagByTemplate_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_getTagByTemplate_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagByTemplateByLogin"
+            parameterOrder="templateId plcId campId bannerId username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagByTemplateByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagByTemplateByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagByTemplate_RDCLICK"
+            parameterOrder="templateId plcId campId bannerId">
+            <input
+            message="tns:WSTagAdmin_v3_getTagByTemplate_RDCLICK_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagByTemplate_RDCLICK_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeatureSetListByEntity"
+            parameterOrder="entityId entityType">
+            <input
+            message="tns:WSTagAdmin_v3_getTagFeatureSetListByEntity_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeatureSetListByEntity_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeatureSetListByTagFeatureId"
+            parameterOrder="tagFeatureId">
+            <input
+            message="tns:WSTagAdmin_v3_getTagFeatureSetListByTagFeatureId_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeatureSetListByTagFeatureId_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeaturesByExtId" parameterOrder="extId">
+            <input
+            message="tns:WSTagAdmin_v3_getTagFeaturesByExtId_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeaturesByExtId_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeaturesById" parameterOrder="tfid">
+            <input message="tns:WSTagAdmin_v3_getTagFeaturesById_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeaturesById_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeaturesByIdByLogin"
+            parameterOrder="tfid username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagFeaturesByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeaturesByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagFeaturesList" parameterOrder="">
+            <input message="tns:WSTagAdmin_v3_getTagFeaturesList_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeaturesList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getTagFeaturesListByLogin"
+            parameterOrder="username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagFeaturesListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagFeaturesListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getTagTemplateByExtId" parameterOrder="extId">
+            <input
+            message="tns:WSTagAdmin_v3_getTagTemplateByExtId_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateByExtId_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateById" parameterOrder="ttid">
+            <input message="tns:WSTagAdmin_v3_getTagTemplateById_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateById_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateByIdByLogin"
+            parameterOrder="ttid username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagTemplateByIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateByIdByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateIdList" parameterOrder="">
+            <input
+            message="tns:WSTagAdmin_v3_getTagTemplateIdList_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateIdList_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateIdListByLogin"
+            parameterOrder="username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagTemplateIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateIdListByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateList" parameterOrder="">
+            <input message="tns:WSTagAdmin_v3_getTagTemplateList_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateList_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTemplateListByLogin"
+            parameterOrder="username password">
+            <input
+            message="tns:WSTagAdmin_v3_getTagTemplateListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTemplateListByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTypeByExtId" parameterOrder="extId">
+            <input message="tns:WSTagAdmin_v3_getTagTypeByExtId_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_getTagTypeByExtId_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTypeById" parameterOrder="tagTypeId">
+            <input message="tns:WSTagAdmin_v3_getTagTypeById_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_getTagTypeById_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="getTagTypeList" parameterOrder="">
+            <input message="tns:WSTagAdmin_v3_getTagTypeList_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_getTagTypeList_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagFeatureSet" parameterOrder="tfs">
+            <input
+            message="tns:WSTagAdmin_v3_updateTagFeatureSet_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_updateTagFeatureSet_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagFeatures" parameterOrder="tf">
+            <input message="tns:WSTagAdmin_v3_updateTagFeatures_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_updateTagFeatures_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagFeaturesByLogin"
+            parameterOrder="tf username password">
+            <input
+            message="tns:WSTagAdmin_v3_updateTagFeaturesByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_updateTagFeaturesByLogin_Response_Soap"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagTemplate" parameterOrder="tt">
+            <input message="tns:WSTagAdmin_v3_updateTagTemplate_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_updateTagTemplate_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagTemplateByLogin"
+            parameterOrder="tt username password">
+            <input
+            message="tns:WSTagAdmin_v3_updateTagTemplateByLogin_Request_Soap"/>
+            <output
+            message="tns:WSTagAdmin_v3_updateTagTemplateByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+        <operation name="updateTagType" parameterOrder="tt">
+            <input message="tns:WSTagAdmin_v3_updateTagType_Request_Soap"/>
+            <output message="tns:WSTagAdmin_v3_updateTagType_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:WSTagAdminException"
+                name="WSTagAdminException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+        </operation>
+    </portType>
+    <binding name="WSTagAdmin_v3" type="tns:WSTagAdmin_v3">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createTagFeatureSet">
+            <map:java-operation name="createTagFeatureSet"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagFeatureSet?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="tfs" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagFeatureSetByLogin">
+            <map:java-operation name="createTagFeatureSetByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagFeatureSetByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDtMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="tfs username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagFeatures">
+            <map:java-operation name="createTagFeatures"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagFeatures?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7"
+                style="document"/>
+            <input>
+                <soap:body parts="tf" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagFeaturesByLogin">
+            <map:java-operation name="createTagFeaturesByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagFeaturesByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7"
+                style="document"/>
+            <input>
+                <soap:body parts="tf username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagTemplate">
+            <map:java-operation name="createTagTemplate"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagTemplate?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="tt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagTemplateByLogin">
+            <map:java-operation name="createTagTemplateByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagTemplateByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="tt username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createTagType">
+            <map:java-operation name="createTagType"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVHlwZU9mVGFnOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#createTagType?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVHlwZU9mVGFnOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="tt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteTagFeatureSet">
+            <map:java-operation name="deleteTagFeatureSet"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#deleteTagFeatureSet?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="tfs" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteTagFeatures">
+            <map:java-operation name="deleteTagFeatures"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KVY=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#deleteTagFeatures?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KVY="
+                style="document"/>
+            <input>
+                <soap:body parts="tf" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteTagTemplate">
+            <map:java-operation name="deleteTagTemplate"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KVY=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#deleteTagTemplate?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KVY="
+                style="document"/>
+            <input>
+                <soap:body parts="tt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAgencyTags">
+            <map:java-operation name="getAgencyTags"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uOylMamF2YS91dGlsL0NvbGxlY3Rpb247">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getAgencyTags?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uOylMamF2YS91dGlsL0NvbGxlY3Rpb247"
+                style="document"/>
+            <input>
+                <soap:body parts="templateID agencyCampaignId agencyFlightIds"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getBeaconTagByTemplate">
+            <map:java-operation name="getBeaconTagByTemplate"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7KUxqYXZhL2xhbmcvU3RyaW5nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getBeaconTagByTemplate?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7KUxqYXZhL2xhbmcvU3RyaW5nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="templateId beaconId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagByTemplate">
+            <map:java-operation name="getTagByTemplate"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagByTemplate?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="templateId plcId campId bannerId"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagByTemplateByLogin">
+            <map:java-operation name="getTagByTemplateByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagByTemplateByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="templateId plcId campId bannerId username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagByTemplate_RDCLICK">
+            <map:java-operation name="getTagByTemplate_RDCLICK"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagByTemplate_RDCLICK?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvbGFuZy9Mb25nO0xqYXZhL2xhbmcvTG9uZzspTGphdmEvbGFuZy9TdHJpbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="templateId plcId campId bannerId"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeatureSetListByEntity">
+            <map:java-operation name="getTagFeatureSetListByEntity"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZzspW0xkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeatureSetListByEntity?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZzspW0xkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDs="
+                style="document"/>
+            <input>
+                <soap:body parts="entityId entityType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeatureSetListByTagFeatureId">
+            <map:java-operation name="getTagFeatureSetListByTagFeatureId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeatureSetListByTagFeatureId?KExqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDs="
+                style="document"/>
+            <input>
+                <soap:body parts="tagFeatureId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeaturesByExtId">
+            <map:java-operation name="getTagFeaturesByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1RhZ0ZlYXR1cmVzOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeaturesByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1RhZ0ZlYXR1cmVzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="extId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeaturesById">
+            <map:java-operation name="getTagFeaturesById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeaturesById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs="
+                style="document"/>
+            <input>
+                <soap:body parts="tfid" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeaturesByIdByLogin">
+            <map:java-operation name="getTagFeaturesByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeaturesByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs="
+                style="document"/>
+            <input>
+                <soap:body parts="tfid username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeaturesList">
+            <map:java-operation name="getTagFeaturesList"
+                signature="KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeaturesList?KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagFeaturesListByLogin">
+            <map:java-operation name="getTagFeaturesListByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagFeaturesListByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlczs="
+                style="document"/>
+            <input>
+                <soap:body parts="username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateByExtId">
+            <map:java-operation name="getTagTemplateByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1RhZ1RlbXBsYXRlOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1RhZ1RlbXBsYXRlOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="extId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateById">
+            <map:java-operation name="getTagTemplateById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="ttid" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateByIdByLogin">
+            <map:java-operation name="getTagTemplateByIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateByIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="ttid username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateIdList">
+            <map:java-operation name="getTagTemplateIdList"
+                signature="KClbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateIdList?KClbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateIdListByLogin">
+            <map:java-operation name="getTagTemplateIdListByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateIdListByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateList">
+            <map:java-operation name="getTagTemplateList"
+                signature="KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateList?KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTemplateListByLogin">
+            <map:java-operation name="getTagTemplateListByLogin"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTemplateListByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdUZW1wbGF0ZTs="
+                style="document"/>
+            <input>
+                <soap:body parts="username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTypeByExtId">
+            <map:java-operation name="getTagTypeByExtId"
+                signature="KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTypeByExtId?KExqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="extId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTypeById">
+            <map:java-operation name="getTagTypeById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UeXBlT2ZUYWc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTypeById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UeXBlT2ZUYWc7"
+                style="document"/>
+            <input>
+                <soap:body parts="tagTypeId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTagTypeList">
+            <map:java-operation name="getTagTypeList"
+                signature="KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UeXBlT2ZUYWc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#getTagTypeList?KClbTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UeXBlT2ZUYWc7"
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagFeatureSet">
+            <map:java-operation name="updateTagFeatureSet"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagFeatureSet?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZVNldDspTGRlL2FkdGVjaC9oZWxpb3MvVGFnTWFuYWdlbWVudC9UYWdGZWF0dXJlU2V0Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="tfs" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagFeatures">
+            <map:java-operation name="updateTagFeatures"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagFeatures?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7"
+                style="document"/>
+            <input>
+                <soap:body parts="tf" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagFeaturesByLogin">
+            <map:java-operation name="updateTagFeaturesByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagFeaturesByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnRmVhdHVyZXM7"
+                style="document"/>
+            <input>
+                <soap:body parts="tf username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagTemplate">
+            <map:java-operation name="updateTagTemplate"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagTemplate?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="tt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagTemplateByLogin">
+            <map:java-operation name="updateTagTemplateByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagTemplateByLogin?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVGFnVGVtcGxhdGU7"
+                style="document"/>
+            <input>
+                <soap:body parts="tt username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateTagType">
+            <map:java-operation name="updateTagType"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVHlwZU9mVGFnOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.TagManagement_v3.WSTagAdminException"
+                    name="WSTagAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/TagManagement_v3/WSTagAdmin_v3#updateTagType?KExkZS9hZHRlY2gvaGVsaW9zL1RhZ01hbmFnZW1lbnQvVHlwZU9mVGFnOylMZGUvYWR0ZWNoL2hlbGlvcy9UYWdNYW5hZ2VtZW50L1R5cGVPZlRhZzs="
+                style="document"/>
+            <input>
+                <soap:body parts="tt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="WSTagAdminException">
+                <soap:fault name="WSTagAdminException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSTagAdmin_v3">
+        <port binding="tns:WSTagAdmin_v3" name="WSTagAdmin_v3">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSTagAdmin_v3/"/>
+        </port>
+    </service>
+</definitions>

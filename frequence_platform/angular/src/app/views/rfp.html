@@ -1,0 +1,73 @@
+<div id="mpq_body_container" class="container">
+    <div id="advertiser_info_section">
+        <div class="pull-left">
+            <div (click)="navigateToGate()" style="color: #005580; display: inline-block; cursor: pointer">
+                <i class="icon-arrow-left"></i>
+            </div>
+            {{_advertiserName}} : {{_proposalName}}
+        </div>
+        <div class="pull-right">
+            <span>Presented on behalf of {{_opportunityOwnerName}}</span>
+            <input type="checkbox" id="cc_owner" class="filled-in" [(ngModel)]="cc_owner">
+            <label for="cc_owner" style="display: inline-block">Email Opportunity Owner?</label>
+        </div>
+    </div>
+
+	<product-selection
+        [display-products]="products" 
+        (toggle-product)="toggleProduct($event)"></product-selection>
+    <tv-upload
+        *ngIf="productConfig.showTvUploadComponent"
+        [product-names]="productNamesMap.tv_upload"
+        [tv-scx-data]="tvScxData"
+        (upload-strata-file)="uploadStrataFile($event)"
+        (remove-scx-data)="removeScxData()"></tv-upload>
+    <tvzones 
+         *ngIf="productConfig.showTvComponent" 
+        [product-names]="productNamesMap.tvzones" 
+        [tv-zones]="tvZones" (zone-added)="updateZones($event)"></tvzones>
+    <search-engine-marketing
+        *ngIf="productConfig.showSEMComponent"
+        [product-names]="productNamesMap.keywords"
+        [search-marketing]="keywords" ></search-engine-marketing>
+    <geographies
+        *ngIf="productConfig.showGeoComponent" 
+        [product-names]="productNamesMap.geos" 
+        [locations]="locations"
+        [has-geofencing]="productConfig.showGeofencingComponent"
+        [geofencing]="geofencing_defaults"
+        (select-location)="selectLocation($event)"
+        (update-custom-regions)="updateCustomRegions($event)"
+        (load-regions)="loadRegions($event)"
+        (add-location)="addLocation()" 
+        (remove-location)="removeLocation($event)"
+        (upload-bulk-locations)="uploadBulkLocations($event)"
+        (save-geofences)="saveGeofences($event)"></geographies>
+    <audience 
+        *ngIf="productConfig.showAudienceComponent" 
+        [product-names]="productNamesMap.audience" 
+        [demographics]="demographics" 
+        [audience-interests]="audienceInterests"
+        [is-political] = "productConfig.showPoliticalComponent"
+        [political]="politicalData"
+        (update-audience-interests)="updateAudienceInterests($event)"></audience>
+    <rooftops 
+        *ngIf="productConfig.showRoofTopsComponent" 
+        [product-names]="productNamesMap.rooftops" 
+        [rooftops]="rooftops" 
+        (update-rooftops)="updateRooftops($event)"></rooftops>
+    <budget
+        [userData]="userData"
+        [term-dropdown]="termDropDown"
+        [duration-dropdown]="durationDropDown"
+        [display-products]="displayProducts"
+        [discount-products]="discountProducts" 
+        [options]="displayOptions"
+        [locations]="locations"
+        [has_geofencing]="productConfig.showGeofencingComponent"
+        (add-option)="addOption($event)"
+        (remove-option)="removeOption($event)"
+        (change-impressions-type)="changeImpressionsType($event)"
+        (network-changed)="networkChanged()"
+        (submit-rfp)="submitProposal($event)"></budget>
+</div>

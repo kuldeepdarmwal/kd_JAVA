@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<definitions name='de.adtech.webservices.helios.lowLevel.ReportAccessSettingsService.WSReportAccessSettingsService' targetNamespace='http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/ReportAccessSettingsService/' 
+    xmlns='http://schemas.xmlsoap.org/wsdl/' 
+    xmlns:tns='http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/ReportAccessSettingsService/' 
+    xmlns:ns0='http://systinet.com/xsd/SchemaTypes/' 
+    xmlns:map='http://systinet.com/mapping/' 
+    xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'>
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/ReportManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/ReportManagement/"/>
+            <xsd:element name="AGGREGATION_TIMERANGE" nillable="true"
+                type="xsd:string"/>
+            <xsd:element name="datasource" nillable="true" type="xsd:string"/>
+            <xsd:element name="ReportAccessSettings_Response" nillable="true"
+                type="xns4:ReportAccessSettings"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+            <xsd:element name="username" nillable="true" type="xsd:string"/>
+            <xsd:element name="password" nillable="true" type="xsd:string"/>
+        </xsd:schema>
+
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/ReportManagement/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/ReportManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ReportAccessSettings">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.ReportManagement.ReportAccessSettings"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="aggregationTimeRange" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="consumerStatus" type="xsd:int"/>
+                    <xsd:element name="dataSource" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="dataSourceSubType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="lastOptimizerRun" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastStatisticsUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastSubscriptionGenerate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="mainNetworkId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maxEndDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="minStartDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="status" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subNetworkId" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+
+    </types>
+    <message name='Exception'>
+        <part name='idoox-java-mapping.java.lang.Exception' element='ns0:idoox-java-mapping.java.lang.Exception'/>
+    </message>
+    <message name='WSReportAccessSettingsService_getReportAccessSettingsByLogin_Request_Soap'>
+        <part name='AGGREGATION_TIMERANGE' element='ns0:AGGREGATION_TIMERANGE'/>
+        <part name='datasource' element='ns0:datasource'/>
+        <part name='username' element='ns0:username'/>
+        <part name='password' element='ns0:password'/>
+    </message>
+    <message name='WSReportAccessSettingsService_getReportAccessSettingsByLogin_Response_Soap'>
+        <part name='response' element='ns0:ReportAccessSettings_Response'/>
+    </message>
+    <message name='WSReportAccessSettingsService_getReportAccessSettings_Request_Soap'>
+        <part name='AGGREGATION_TIMERANGE' element='ns0:AGGREGATION_TIMERANGE'/>
+        <part name='datasource' element='ns0:datasource'/>
+    </message>
+    <message name='WSReportAccessSettingsService_getReportAccessSettings_Response_Soap'>
+        <part name='response' element='ns0:ReportAccessSettings_Response'/>
+    </message>
+    <portType name='WSReportAccessSettingsService'>
+        <operation name='getReportAccessSettings' parameterOrder='AGGREGATION_TIMERANGE datasource'>
+            <input message='tns:WSReportAccessSettingsService_getReportAccessSettings_Request_Soap'/>
+            <output message='tns:WSReportAccessSettingsService_getReportAccessSettings_Response_Soap'/>
+            <fault name='Exception' message='tns:Exception'/>
+        </operation>
+        <operation name='getReportAccessSettingsByLogin' parameterOrder='AGGREGATION_TIMERANGE datasource username password'>
+            <input message='tns:WSReportAccessSettingsService_getReportAccessSettingsByLogin_Request_Soap'/>
+            <output message='tns:WSReportAccessSettingsService_getReportAccessSettingsByLogin_Response_Soap'/>
+            <fault name='Exception' message='tns:Exception'/>
+        </operation>
+    </portType>
+    <binding name='WSReportAccessSettingsService' type='tns:WSReportAccessSettingsService'>
+        <soap:binding transport='http://schemas.xmlsoap.org/soap/http' style='document'/>
+        <operation name='getReportAccessSettings'>
+            <map:java-operation name='getReportAccessSettings' signature='KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9SZXBvcnRNYW5hZ2VtZW50L1JlcG9ydEFjY2Vzc1NldHRpbmdzOw=='>
+                <map:fault name='Exception' java-type='java.lang.Exception'/>
+            </map:java-operation>
+            <soap:operation soapAction='http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/ReportAccessSettingsService/WSReportAccessSettingsService#getReportAccessSettings?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9SZXBvcnRNYW5hZ2VtZW50L1JlcG9ydEFjY2Vzc1NldHRpbmdzOw==' style='document'/>
+            <input>
+                <soap:body parts='AGGREGATION_TIMERANGE datasource' use='literal'/>
+            </input>
+            <output>
+                <soap:body parts='response' use='literal'/>
+            </output>
+            <fault name='Exception'>
+                <soap:fault name='Exception' use='literal'/>
+            </fault>
+        </operation>
+        <operation name='getReportAccessSettingsByLogin'>
+            <map:java-operation name='getReportAccessSettingsByLogin' signature='KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9SZXBvcnRNYW5hZ2VtZW50L1JlcG9ydEFjY2Vzc1NldHRpbmdzOw=='>
+                <map:fault name='Exception' java-type='java.lang.Exception'/>
+            </map:java-operation>
+            <soap:operation soapAction='http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/ReportAccessSettingsService/WSReportAccessSettingsService#getReportAccessSettingsByLogin?KExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMZGUvYWR0ZWNoL2hlbGlvcy9SZXBvcnRNYW5hZ2VtZW50L1JlcG9ydEFjY2Vzc1NldHRpbmdzOw==' style='document'/>
+            <input>
+                <soap:body parts='AGGREGATION_TIMERANGE datasource username password' use='literal'/>
+            </input>
+            <output>
+                <soap:body parts='response' use='literal'/>
+            </output>
+            <fault name='Exception'>
+                <soap:fault name='Exception' use='literal'/>
+            </fault>
+        </operation>
+    </binding>
+    <service name='WSReportAccessSettingsService'>
+        <port name='WSReportAccessSettingsService' binding='tns:WSReportAccessSettingsService'>
+            <soap:address location='http://swd-franz.adtech.de:6060/WSReportAccessSettingsService/'/>
+        </port>
+    </service>
+</definitions>

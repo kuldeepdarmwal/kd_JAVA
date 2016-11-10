@@ -1,0 +1,15 @@
+<div class="input-field col s2">
+	<input id="product_display_input_10" class="product_display_input" *ngIf="product.definition.after_discount"
+		   data-original-value="Setup Fee" data-product-id="10" type="text" value="Setup Fee" [(ngModel)]="product.definition.last_name">
+	<label style="left: 1.75rem;" for="produt_display_input_10" class="active">{{product.definition.name_editable_label}} </label>
+</div>
+<div class="col s10">
+	<div *ngFor="let option of options; let i = index" class="col s4">
+		<div class="row">
+			<div class="col s6 input-field">
+				<span class="discrete_dollar_prepend">$</span>
+				<input type="text" class="input_box_product grey-text product_input after_discount" [(ngModel)]="option.config[product.id].data.unit" mycurrency>
+			</div>
+		</div>
+	</div>
+</div>

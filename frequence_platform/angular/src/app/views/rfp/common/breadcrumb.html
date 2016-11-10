@@ -1,0 +1,24 @@
+<div id="aside-wrap">
+    <div class="">
+        <div class="nav-bar flat">
+            <div class="nav-bar-item" [ngClass]="getClass(NAVIGATION.TARGETS)" (click)="navigateToTargets()">
+                <div class="done-check"><i class="material-icons">done</i></div>
+                <a>1</a>
+                <span>Target</span>
+            </div>
+            <div class="nav-bar-item" [ngClass]="getClass(NAVIGATION.BUDGET)" (click)="navigateToBudget()">
+                <div class="done-check"><i class="material-icons">done</i></div>
+                <a>2</a>
+                <span>Budget</span>
+            </div>
+            <div class="nav-bar-item" [ngClass]="getClass(NAVIGATION.BUILDER)" (click)="navigateToBuilder()">
+                <div class="done-check"><i class="material-icons">done</i></div>
+                <a>3</a>
+                  <span *ngIf=enablePreview>Preview</span>
+                  <span *ngIf=!enablePreview>Preview</span>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div style="clear: both"></div>
+</div>

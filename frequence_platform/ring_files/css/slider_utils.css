@@ -1,0 +1,18 @@
+#cl_view_all_sizes {
+	z-index:1; 
+	width:300px;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+	margin-top:24px;
+}
+
+#cl_view_all_sizes a {
+	width:200px;
+	margin-right:auto;
+	margin-left:auto;
+	font-family:'Oxygen', sans-serif;
+	font-size:12px;
+	color:#414142;
+	text-decoration:underline;
+}

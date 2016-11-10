@@ -1,0 +1,1346 @@
+{
+	"menus":[
+		{
+			"title": "GENERAL",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "showRichMenuAlways",
+							"form_id": "flashvars.showRichMenuAlways",
+							"tooltip_copy": "showRichMenuAlways"
+						},
+						{
+							"type": "text",
+							"title": "closeButtonPadding",
+							"form_id": "flashvars.closeButtonPadding",
+							"tooltip_copy": "closeButtonPadding"
+						},
+						{
+							"type": "text",
+							"title": "isHoverToClick",
+							"form_id": "flashvars.isHoverToClick",
+							"tooltip_copy": "isHoverToClick"
+						},
+						{
+							"type": "text",
+							"title": "isReplay",
+							"form_id": "flashvars.isReplay",
+							"tooltip_copy": "isReplay"
+						},
+						{
+							"type": "text",
+							"title": "isGrandpaImageAlways",
+							"form_id": "flashvars.isGrandpaImageAlways",
+							"tooltip_copy": "isGrandpaImageAlways"
+						},
+						{
+							"type": "text",
+							"title": "hoverName",
+							"form_id": "flashvars.hoverName",
+							"tooltip_copy": "hoverName"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "VIDEO",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "videoURL",
+							"form_id": "flashvars.videoURL",
+							"tooltip_copy": "videoURL"
+						},
+						{
+							"type": "text",
+							"title": "isAutoLoadVideo",
+							"form_id": "flashvars.isAutoLoadVideo",
+							"tooltip_copy": "isAutoLoadVideo"
+						},
+						{
+							"type": "text",
+							"title": "autoPlay",
+							"form_id": "flashvars.autoPlay",
+							"tooltip_copy": "autoPlay"
+						},
+						{
+							"type": "text",
+							"title": "isPlayMuted",
+							"form_id": "flashvars.isPlayMuted",
+							"tooltip_copy": "isPlayMuted"
+						},
+						{
+							"type": "text",
+							"title": "numAutoPlaySeconds",
+							"form_id": "flashvars.numAutoPlaySeconds",
+							"tooltip_copy": "numAutoPlaySeconds"
+						},
+						{
+							"type": "text",
+							"title": "scaleToFillFullscreenBG",
+							"form_id": "flashvars.scaleToFillFullscreenBG",
+							"tooltip_copy": "scaleToFillFullscreenBG"
+						},
+						{
+							"type": "text",
+							"title": "fullscreenImageURL",
+							"form_id": "flashvars.fullscreenImageURL",
+							"tooltip_copy": "fullscreenImageURL"
+						},
+						{
+							"type": "text",
+							"title": "fullscreenImageURLSSL",
+							"form_id": "flashvars.fullscreenImageURLSSL",
+							"tooltip_copy": "fullscreenImageURLSSL"
+						},
+						{
+							"type": "text",
+							"title": "playButtonImageURL",
+							"form_id": "flashvars.playButtonImageURL",
+							"tooltip_copy": "playButtonImageURL"
+						},
+						{
+							"type": "text",
+							"title": "playButtonImageURLSSL",
+							"form_id": "flashvars.playButtonImageURLSSL",
+							"tooltip_copy": "playButtonImageURLSSL"
+						},
+						{
+							"type": "text",
+							"title": "mobilePlayButtonImageURL",
+							"form_id": "flashvars.mobilePlayButtonImageURL",
+							"tooltip_copy": "mobilePlayButtonImageURL"
+						},
+						{
+							"type": "text",
+							"title": "mobilePlayButtonImageURLSSL",
+							"form_id": "flashvars.mobilePlayButtonImageURLSSL",
+							"tooltip_copy": "mobilePlayButtonImageURLSSL"
+						}
+					]
+				},
+				{
+					"title": "Play Button Positions",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "playButton300_x",
+							"form_id": "flashvars.playButton300_x",
+							"tooltip_copy": "playButton300_x"
+						},
+						{
+							"type": "text",
+							"title": "playButton300_y",
+							"form_id": "flashvars.playButton300_y",
+							"tooltip_copy": "playButton300_y"
+						},
+						{
+							"type": "text",
+							"title": "playButton320_x",
+							"form_id": "flashvars.playButton320_x",
+							"tooltip_copy": "playButton320_x"
+						},
+						{
+							"type": "text",
+							"title": "playButton320_y",
+							"form_id": "flashvars.playButton320_y",
+							"tooltip_copy": "playButton320_y"
+						},
+						{
+							"type": "text",
+							"title": "playButton336_x",
+							"form_id": "flashvars.playButton336_x",
+							"tooltip_copy": "playButton336_x"
+						},
+						{
+							"type": "text",
+							"title": "playButton336_y",
+							"form_id": "flashvars.playButton336_y",
+							"tooltip_copy": "playButton336_y"
+						},
+						{
+							"type": "text",
+							"title": "playButton728_x",
+							"form_id": "flashvars.playButton728_x",
+							"tooltip_copy": "playButton728_x"
+						},
+						{
+							"type": "text",
+							"title": "playButton728_y",
+							"form_id": "flashvars.playButton728_y",
+							"tooltip_copy": "playButton728_y"
+						},
+						{
+							"type": "text",
+							"title": "playButton160_x",
+							"form_id": "flashvars.playButton160_x",
+							"tooltip_copy": "playButton160_x"
+						},
+						{
+							"type": "text",
+							"title": "playButton160_y",
+							"form_id": "flashvars.playButton160_y",
+							"tooltip_copy": "playButton160_y"
+						}
+					]
+				},
+				{
+					"title": "Video Position",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "videoWidth300",
+							"form_id": "flashvars.videoWidth300",
+							"tooltip_copy": "videoWidth300"
+						},
+						{
+							"type": "text",
+							"title": "videoHeight300",
+							"form_id": "flashvars.videoHeight300",
+							"tooltip_copy": "videoHeight300"
+						},
+						{
+							"type": "text",
+							"title": "videoWidth336",
+							"form_id": "flashvars.videoWidth336",
+							"tooltip_copy": "videoWidth336"
+						},
+						{
+							"type": "text",
+							"title": "videoHeight336",
+							"form_id": "flashvars.videoHeight336",
+							"tooltip_copy": "videoHeight336"
+						},
+						{
+							"type": "text",
+							"title": "videoWidth728",
+							"form_id": "flashvars.videoWidth728",
+							"tooltip_copy": "videoWidth728"
+						},
+						{
+							"type": "text",
+							"title": "videoHeight728",
+							"form_id": "flashvars.videoHeight728",
+							"tooltip_copy": "videoHeight728"
+						},
+						{
+							"type": "text",
+							"title": "videoWidth160",
+							"form_id": "flashvars.videoWidth160",
+							"tooltip_copy": "videoWidth160"
+						},
+						{
+							"type": "text",
+							"title": "videoHeight160",
+							"form_id": "flashvars.videoHeight160",
+							"tooltip_copy": "videoHeight160"
+						}
+					]
+				},
+				{
+					"title": "Fullscreen",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "fullscreenBackgroundColor",
+							"form_id": "flashvars.fullscreenBackgroundColor",
+							"tooltip_copy": "fullscreenBackgroundColor"
+						},
+						{
+							"type": "text",
+							"title": "forceFullscreenVideoWidth",
+							"form_id": "flashvars.forceFullscreenVideoWidth",
+							"tooltip_copy": "forceFullscreenVideoWidth"
+						},
+						{
+							"type": "text",
+							"title": "forceFullscreenVideoHeight",
+							"form_id": "flashvars.forceFullscreenVideoHeight",
+							"tooltip_copy": "forceFullscreenVideoHeight"
+						}
+					]
+				},
+				{
+					"title": "Player Colors",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "timelineDownloadColor",
+							"form_id": "flashvars.timelineDownloadColor",
+							"tooltip_copy": "timelineDownloadColor"
+						},
+						{
+							"type": "text",
+							"title": "timelineBackgroundColor",
+							"form_id": "flashvars.timelineBackgroundColor",
+							"tooltip_copy": "timelineBackgroundColor"
+						},
+						{
+							"type": "text",
+							"title": "controlsColor",
+							"form_id": "flashvars.controlsColor",
+							"tooltip_copy": "controlsColor"
+						},
+						{
+							"type": "text",
+							"title": "controlsHighlightColor",
+							"form_id": "flashvars.controlsHighlightColor",
+							"tooltip_copy": "controlsHighlightColor"
+						},
+						{
+							"type": "text",
+							"title": "playerBackgroundColor",
+							"form_id": "flashvars.playerBackgroundColor",
+							"tooltip_copy": "playerBackgroundColor"
+						}
+					]
+				},
+				{
+					"title": "Show Video Controls",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "useTimeline",
+							"form_id": "flashvars.useTimeline",
+							"tooltip_copy": "useTimeline"
+						},
+						{
+							"type": "text",
+							"title": "useTimeDisplay",
+							"form_id": "flashvars.useTimeDisplay",
+							"tooltip_copy": "useTimeDisplay"
+						},
+						{
+							"type": "text",
+							"title": "useSpeaker",
+							"form_id": "flashvars.useSpeaker",
+							"tooltip_copy": "useSpeaker"
+						},
+						{
+							"type": "text",
+							"title": "useVolLevel",
+							"form_id": "flashvars.useVolLevel",
+							"tooltip_copy": "useVolLevel"
+						},
+						{
+							"type": "text",
+							"title": "useFullScreen",
+							"form_id": "flashvars.useFullScreen",
+							"tooltip_copy": "useFullScreen"
+						},
+						{
+							"type": "text",
+							"title": "useInfoButton",
+							"form_id": "flashvars.useInfoButton",
+							"tooltip_copy": "useInfoButton"
+						},
+						{
+							"type": "text",
+							"title": "useQualityMenu",
+							"form_id": "flashvars.useQualityMenu",
+							"tooltip_copy": "useQualityMenu"
+						},
+						{
+							"type": "text",
+							"title": "useTimeTooltip",
+							"form_id": "flashvars.useTimeTooltip",
+							"tooltip_copy": "useTimeTooltip"
+						},
+						{
+							"type": "text",
+							"title": "usePlayPause",
+							"form_id": "flashvars.usePlayPause",
+							"tooltip_copy": "usePlayPause"
+						}
+					]
+				},
+				{
+					"title": "Custom Video",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "previewImg",
+							"form_id": "flashvars.previewImg",
+							"tooltip_copy": "previewImg"
+						},
+						{
+							"type": "text",
+							"title": "initialVol",
+							"form_id": "flashvars.initialVol",
+							"tooltip_copy": "initialVol"
+						},
+						{
+							"type": "text",
+							"title": "playPauseOverVideo",
+							"form_id": "flashvars.playPauseOverVideo",
+							"tooltip_copy": "playPauseOverVideo"
+						},
+						{
+							"type": "text",
+							"title": "bufferTime",
+							"form_id": "flashvars.bufferTime",
+							"tooltip_copy": "bufferTime"
+						},
+						{
+							"type": "text",
+							"title": "belowVideo",
+							"form_id": "flashvars.belowVideo",
+							"tooltip_copy": "belowVideo"
+						},
+						{
+							"type": "text",
+							"title": "use3Dstyle",
+							"form_id": "flashvars.use3Dstyle",
+							"tooltip_copy": "use3Dstyle"
+						},
+						{
+							"type": "text",
+							"title": "playerBackgroundAlpha",
+							"form_id": "flashvars.playerBackgroundAlpha",
+							"tooltip_copy": "playerBackgroundAlpha"
+						},
+						{
+							"type": "text",
+							"title": "useBackgroundGradient",
+							"form_id": "flashvars.useBackgroundGradient",
+							"tooltip_copy": "useBackgroundGradient"
+						},
+						{
+							"type": "text",
+							"title": "normalTextColor",
+							"form_id": "flashvars.normalTextColor",
+							"tooltip_copy": "normalTextColor"
+						},
+						{
+							"type": "text",
+							"title": "highlightTextColor",
+							"form_id": "flashvars.highlightTextColor",
+							"tooltip_copy": "highlightTextColor"
+						},
+						{
+							"type": "text",
+							"title": "popupBackgroundColor",
+							"form_id": "flashvars.popupBackgroundColor",
+							"tooltip_copy": "popupBackgroundColor"
+						},
+						{
+							"type": "text",
+							"title": "popupBackgroundAlpha",
+							"form_id": "flashvars.popupBackgroundAlpha",
+							"tooltip_copy": "popupBackgroundAlpha"
+						},
+						{
+							"type": "text",
+							"title": "controlsSeparation",
+							"form_id": "flashvars.controlsSeparation",
+							"tooltip_copy": "controlsSeparation"
+						},
+						{
+							"type": "text",
+							"title": "controlsBarHeight",
+							"form_id": "flashvars.controlsBarHeight",
+							"tooltip_copy": "controlsBarHeight"
+						},
+						{
+							"type": "text",
+							"title": "controlsScale",
+							"form_id": "flashvars.controlsScale",
+							"tooltip_copy": "controlsScale"
+						},
+						{
+							"type": "text",
+							"title": "textControlsScale",
+							"form_id": "flashvars.textControlsScale",
+							"tooltip_copy": "textControlsScale"
+						},
+						{
+							"type": "text",
+							"title": "timeTooltipScale",
+							"form_id": "flashvars.timeTooltipScale",
+							"tooltip_copy": "timeTooltipScale"
+						},
+						{
+							"type": "text",
+							"title": "useControlsGradient",
+							"form_id": "flashvars.useControlsGradient",
+							"tooltip_copy": "useControlsGradient"
+						},
+						{
+							"type": "text",
+							"title": "useLoadingRing",
+							"form_id": "flashvars.useLoadingRing",
+							"tooltip_copy": "useLoadingRing"
+						},
+						{
+							"type": "text",
+							"title": "timelineDownloadAlpha",
+							"form_id": "flashvars.timelineDownloadAlpha",
+							"tooltip_copy": "timelineDownloadAlpha"
+						},
+						{
+							"type": "text",
+							"title": "timelineBackgroundAlpha",
+							"form_id": "flashvars.timelineBackgroundAlpha",
+							"tooltip_copy": "timelineBackgroundAlpha"
+						},
+						{
+							"type": "text",
+							"title": "volBarColor",
+							"form_id": "flashvars.volBarColor",
+							"tooltip_copy": "volBarColor"
+						},
+						{
+							"type": "text",
+							"title": "volBarAlpha",
+							"form_id": "flashvars.volBarAlpha",
+							"tooltip_copy": "volBarAlpha"
+						},
+						{
+							"type": "text",
+							"title": "volBackgroundColor",
+							"form_id": "flashvars.volBackgroundColor",
+							"tooltip_copy": "volBackgroundColor"
+						},
+						{
+							"type": "text",
+							"title": "volBackgroundAlpha",
+							"form_id": "flashvars.volBackgroundAlpha",
+							"tooltip_copy": "volBackgroundAlpha"
+						},
+						{
+							"type": "text",
+							"title": "timeTooltipColor",
+							"form_id": "flashvars.timeTooltipColor",
+							"tooltip_copy": "timeTooltipColor"
+						},
+						{
+							"type": "text",
+							"title": "timeTooltipTextColor",
+							"form_id": "flashvars.timeTooltipTextColor",
+							"tooltip_copy": "timeTooltipTextColor"
+						},
+						{
+							"type": "text",
+							"title": "tooltipShadow",
+							"form_id": "flashvars.tooltipShadow",
+							"tooltip_copy": "tooltipShadow"
+						},
+						{
+							"type": "text",
+							"title": "logoPath",
+							"form_id": "flashvars.logoPath",
+							"tooltip_copy": "logoPath"
+						},
+						{
+							"type": "text",
+							"title": "logoURL",
+							"form_id": "flashvars.logoURL",
+							"tooltip_copy": "logoURL"
+						},
+						{
+							"type": "text",
+							"title": "logoWindow",
+							"form_id": "flashvars.logoWindow",
+							"tooltip_copy": "logoWindow"
+						},
+						{
+							"type": "text",
+							"title": "logoPosition",
+							"form_id": "flashvars.logoPosition",
+							"tooltip_copy": "logoPosition"
+						},
+						{
+							"type": "text",
+							"title": "logoXmargin",
+							"form_id": "flashvars.logoXmargin",
+							"tooltip_copy": "logoXmargin"
+						},
+						{
+							"type": "text",
+							"title": "logoYmargin",
+							"form_id": "flashvars.logoYmargin",
+							"tooltip_copy": "logoYmargin"
+						},
+						{
+							"type": "text",
+							"title": "descTextColor",
+							"form_id": "flashvars.descTextColor",
+							"tooltip_copy": "descTextColor"
+						},
+						{
+							"type": "text",
+							"title": "descTextSize",
+							"form_id": "flashvars.descTextSize",
+							"tooltip_copy": "descTextSize"
+						},
+						{
+							"type": "text",
+							"title": "descBackgroundColor",
+							"form_id": "flashvars.descBackgroundColor",
+							"tooltip_copy": "descBackgroundColor"
+						},
+						{
+							"type": "text",
+							"title": "descBackgroundAlpha",
+							"form_id": "flashvars.descBackgroundAlpha",
+							"tooltip_copy": "descBackgroundAlpha"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "MAP",
+			"sub_menus": [
+				{
+					"title": "Load Settings",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "isRichMediaMap",
+							"form_id": "flashvars.isRichMediaMap",
+							"tooltip_copy": "isRichMediaMap"
+						},
+						{
+							"type": "text",
+							"title": "mapButtonImageURL",
+							"form_id": "flashvars.mapButtonImageURL",
+							"tooltip_copy": "mapButtonImageURL"
+						},
+						{
+							"type": "text",
+							"title": "mapButtonImageURLSSL",
+							"form_id": "flashvars.mapButtonImageURLSSL",
+							"tooltip_copy": "mapButtonImageURLSSL"
+						},
+						{
+							"type": "text",
+							"title": "isAutoLoadMap",
+							"form_id": "flashvars.isAutoLoadMap",
+							"tooltip_copy": "isAutoLoadMap"
+						},
+						{
+							"type": "text",
+							"title": "isAutoLoadMap",
+							"form_id": "flashvars.isAutoLoadMap",
+							"tooltip_copy": "isAutoLoadMap"
+						},
+						{
+							"type": "text",
+							"title": "markerTitles",
+							"form_id": "flashvars.markerTitles",
+							"tooltip_copy": "markerTitles"
+						},
+						{
+							"type": "text",
+							"title": "mapPinLatitudes",
+							"form_id": "flashvars.mapPinLatitudes",
+							"tooltip_copy": "mapPinLatitudes"
+						},
+						{
+							"type": "text",
+							"title": "mapPinLongitudes",
+							"form_id": "flashvars.mapPinLongitudes",
+							"tooltip_copy": "mapPinLongitudes"
+						},
+						{
+							"type": "text",
+							"title": "mapPinDescriptions",
+							"form_id": "flashvars.mapPinDescriptions",
+							"tooltip_copy": "mapPinDescriptions"
+						},
+						{
+							"type": "text",
+							"title": "mapDefaultZoomLevel",
+							"form_id": "flashvars.mapDefaultZoomLevel",
+							"tooltip_copy": "mapDefaultZoomLevel"
+						}
+					]
+				},
+				{
+					"title": "Load Map Button Position",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "mapButton300_x",
+							"form_id": "flashvars.mapButton300_x",
+							"tooltip_copy": "mapButton300_x"
+						},
+						{
+							"type": "text",
+							"title": "mapButton300_y",
+							"form_id": "flashvars.mapButton300_y",
+							"tooltip_copy": "mapButton300_y"
+						},
+						{
+							"type": "text",
+							"title": "mapButton336_x",
+							"form_id": "flashvars.mapButton336_x",
+							"tooltip_copy": "mapButton336_x"
+						},
+						{
+							"type": "text",
+							"title": "mapButton336_y",
+							"form_id": "flashvars.mapButton336_y",
+							"tooltip_copy": "mapButton336_y"
+						},
+						{
+							"type": "text",
+							"title": "mapButton728_x",
+							"form_id": "flashvars.mapButton728_x",
+							"tooltip_copy": "mapButton728_x"
+						},
+						{
+							"type": "text",
+							"title": "mapButton728_y",
+							"form_id": "flashvars.mapButton728_y",
+							"tooltip_copy": "mapButton728_y"
+						},
+						{
+							"type": "text",
+							"title": "mapButton160_x",
+							"form_id": "flashvars.mapButton160_x",
+							"tooltip_copy": "mapButton160_x"
+						},
+						{
+							"type": "text",
+							"title": "mapButton160_y",
+							"form_id": "flashvars.mapButton160_y",
+							"tooltip_copy": "mapButton160_y"
+						}
+					]
+				},
+				{
+					"title": "Map Position",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "map300_x",
+							"form_id": "flashvars.map300_x",
+							"tooltip_copy": "map300_x"
+						},
+						{
+							"type": "text",
+							"title": "map300_y",
+							"form_id": "flashvars.map300_y",
+							"tooltip_copy": "map300_y"
+						},
+						{
+							"type": "text",
+							"title": "map336_x",
+							"form_id": "flashvars.map336_x",
+							"tooltip_copy": "map336_x"
+						},
+						{
+							"type": "text",
+							"title": "map336_y",
+							"form_id": "flashvars.map336_y",
+							"tooltip_copy": "map336_y"
+						},
+						{
+							"type": "text",
+							"title": "map728_x",
+							"form_id": "flashvars.map728_x",
+							"tooltip_copy": "map728_x"
+						},
+						{
+							"type": "text",
+							"title": "map728_y",
+							"form_id": "flashvars.map728_y",
+							"tooltip_copy": "map728_y"
+						},
+						{
+							"type": "text",
+							"title": "map160_x",
+							"form_id": "flashvars.map160_x",
+							"tooltip_copy": "map160_x"
+						},
+						{
+							"type": "text",
+							"title": "map160_y",
+							"form_id": "flashvars.map160_y",
+							"tooltip_copy": "map160_y"
+						}
+					]
+				},
+				{
+					"title": "Map Size",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "mapWidth300",
+							"form_id": "flashvars.mapWidth300",
+							"tooltip_copy": "mapWidth300"
+						},
+						{
+							"type": "text",
+							"title": "mapHeight300",
+							"form_id": "flashvars.mapHeight300",
+							"tooltip_copy": "mapHeight300"
+						},
+						{
+							"type": "text",
+							"title": "mapWidth336",
+							"form_id": "flashvars.mapWidth336",
+							"tooltip_copy": "mapWidth336"
+						},
+						{
+							"type": "text",
+							"title": "mapHeight336",
+							"form_id": "flashvars.mapHeight336",
+							"tooltip_copy": "mapHeight336"
+						},
+						{
+							"type": "text",
+							"title": "mapWidth728",
+							"form_id": "flashvars.mapWidth728",
+							"tooltip_copy": "mapWidth728"
+						},
+						{
+							"type": "text",
+							"title": "mapHeight728",
+							"form_id": "flashvars.mapHeight728",
+							"tooltip_copy": "mapHeight728"
+						},
+						{
+							"type": "text",
+							"title": "mapWidth160",
+							"form_id": "flashvars.mapWidth160",
+							"tooltip_copy": "mapWidth160"
+						},
+						{
+							"type": "text",
+							"title": "mapHeight160",
+							"form_id": "flashvars.mapHeight160",
+							"tooltip_copy": "mapHeight160"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "SOCIAL",
+			"sub_menus": [
+				{
+					"title": "Settings",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "useShareButtons",
+							"form_id": "flashvars.useShareButtons",
+							"tooltip_copy": "useShareButtons"
+						},
+						{
+							"type": "text",
+							"title": "urlToShare",
+							"form_id": "flashvars.urlToShare",
+							"tooltip_copy": "urlToShare"
+						},
+						{
+							"type": "text",
+							"title": "shareTitle",
+							"form_id": "flashvars.shareTitle",
+							"tooltip_copy": "shareTitle"
+						},
+						{
+							"type": "text",
+							"title": "shareNotes",
+							"form_id": "flashvars.shareNotes",
+							"tooltip_copy": "shareNotes"
+						},
+						{
+							"type": "text",
+							"title": "twitterText",
+							"form_id": "flashvars.twitterText",
+							"tooltip_copy": "twitterText"
+						},
+						{
+							"type": "text",
+							"title": "shareLabels",
+							"form_id": "flashvars.shareLabels",
+							"tooltip_copy": "shareLabels"
+						},
+						{
+							"type": "text",
+							"title": "shareSource",
+							"form_id": "flashvars.shareSource",
+							"tooltip_copy": "shareSource"
+						},
+						{
+							"type": "text",
+							"title": "mailSubject",
+							"form_id": "flashvars.mailSubject",
+							"tooltip_copy": "mailSubject"
+						},
+						{
+							"type": "text",
+							"title": "mailBody",
+							"form_id": "flashvars.mailBody",
+							"tooltip_copy": "mailBody"
+						},
+						{
+							"type": "text",
+							"title": "isSocialAtStart",
+							"form_id": "flashvars.isSocialAtStart",
+							"tooltip_copy": "isSocialAtStart"
+						},
+						{
+							"type": "text",
+							"title": "socialVideoOnly",
+							"form_id": "flashvars.socialVideoOnly",
+							"tooltip_copy": "socialVideoOnly"
+						},
+						{
+							"type": "text",
+							"title": "hideSocialOnChildLoad",
+							"form_id": "flashvars.hideSocialOnChildLoad",
+							"tooltip_copy": "hideSocialOnChildLoad"
+						}
+					]
+				},
+				{
+					"title": "Social Buttons Position",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "social300_x",
+							"form_id": "flashvars.social300_x",
+							"tooltip_copy": "social300_x"
+						},
+						{
+							"type": "text",
+							"title": "social300_y",
+							"form_id": "flashvars.social300_y",
+							"tooltip_copy": "social300_y"
+						},
+						{
+							"type": "text",
+							"title": "social336_x",
+							"form_id": "flashvars.social336_x",
+							"tooltip_copy": "social336_x"
+						},
+						{
+							"type": "text",
+							"title": "social336_y",
+							"form_id": "flashvars.social336_y",
+							"tooltip_copy": "social336_y"
+						},
+						{
+							"type": "text",
+							"title": "social728_x",
+							"form_id": "flashvars.social728_x",
+							"tooltip_copy": "social728_x"
+						},
+						{
+							"type": "text",
+							"title": "social728_y",
+							"form_id": "flashvars.social728_y",
+							"tooltip_copy": "social728_y"
+						},
+						{
+							"type": "text",
+							"title": "social160_x",
+							"form_id": "flashvars.social160_x",
+							"tooltip_copy": "social160_x"
+						},
+						{
+							"type": "text",
+							"title": "social160_y",
+							"form_id": "flashvars.social160_y",
+							"tooltip_copy": "social160_y"
+						},
+						{
+							"type": "text",
+							"title": "socialAddress",
+							"form_id": "flashvars.socialAddress",
+							"tooltip_copy": "socialAddress"
+						},
+						{
+							"type": "text",
+							"title": "socialAddressSSL",
+							"form_id": "flashvars.socialAddressSSL",
+							"tooltip_copy": "socialAddressSSL"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "SECOND CLICK BUTTON",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "secondClickURL",
+							"form_id": "flashvars.secondClickURL",
+							"tooltip_copy": "secondClickURL"
+						},
+						{
+							"type": "text",
+							"title": "isSecondClickAlways",
+							"form_id": "flashvars.isSecondClickAlways",
+							"tooltip_copy": "isSecondClickAlways"
+						},
+						{
+							"type": "text",
+							"title": "secondClick300_x",
+							"form_id": "flashvars.secondClick300_x",
+							"tooltip_copy": "secondClick300_x"
+						},
+						{
+							"type": "text",
+							"title": "secondClick300_y",
+							"form_id": "flashvars.secondClick300_y",
+							"tooltip_copy": "secondClick300_y"
+						},
+						{
+							"type": "text",
+							"title": "secondClick336_x",
+							"form_id": "flashvars.secondClick336_x",
+							"tooltip_copy": "secondClick336_x"
+						},
+						{
+							"type": "text",
+							"title": "secondClick336_y",
+							"form_id": "flashvars.secondClick336_y",
+							"tooltip_copy": "secondClick336_y"
+						},
+						{
+							"type": "text",
+							"title": "secondClick728_x",
+							"form_id": "flashvars.secondClick728_x",
+							"tooltip_copy": "secondClick728_x"
+						},
+						{
+							"type": "text",
+							"title": "secondClick728_y",
+							"form_id": "flashvars.secondClick728_y",
+							"tooltip_copy": "secondClick728_y"
+						},
+						{
+							"type": "text",
+							"title": "secondClick160_x",
+							"form_id": "flashvars.secondClick160_x",
+							"tooltip_copy": "secondClick160_x"
+						},
+						{
+							"type": "text",
+							"title": "secondClick160_y",
+							"form_id": "flashvars.secondClick160_y",
+							"tooltip_copy": "secondClick160_y"
+						},
+						{
+							"type": "text",
+							"title": "secondClickAddress",
+							"form_id": "flashvars.secondClickAddress",
+							"tooltip_copy": "secondClickAddress"
+						},
+						{
+							"type": "text",
+							"title": "secondClickAddressSSL",
+							"form_id": "flashvars.secondClickAddressSSL",
+							"tooltip_copy": "secondClickAddressSSL"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "CUSTOM",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "isKillASMBLclickTag",
+							"form_id": "flashvars.isKillASMBLclickTag",
+							"tooltip_copy": "isKillASMBLclickTag"
+						},
+						{
+							"type": "text",
+							"title": "isKillGrandpaClickTag",
+							"form_id": "flashvars.isKillGrandpaClickTag",
+							"tooltip_copy": "isKillGrandpaClickTag"
+						},
+						{
+							"type": "text",
+							"title": "animationClip",
+							"form_id": "flashvars.animationClip",
+							"tooltip_copy": "animationClip"
+						},
+						{
+							"type": "text",
+							"title": "parentClickTagPath",
+							"form_id": "flashvars.parentClickTagPath",
+							"tooltip_copy": "parentClickTagPath"
+						},
+						{
+							"type": "text",
+							"title": "hoverFolder",
+							"form_id": "flashvars.hoverFolder",
+							"tooltip_copy": "hoverFolder"
+						},
+						{
+							"type": "text",
+							"title": "hoverFolderSSL",
+							"form_id": "flashvars.hoverFolderSSL",
+							"tooltip_copy": "hoverFolderSSL"
+						},
+						{
+							"type": "text",
+							"title": "videoChildAddress",
+							"form_id": "flashvars.videoChildAddress",
+							"tooltip_copy": "videoChildAddress"
+						},
+						{
+							"type": "text",
+							"title": "videoChildAddressSSL",
+							"form_id": "flashvars.videoChildAddressSSL",
+							"tooltip_copy": "videoChildAddressSSL"
+						},
+						{
+							"type": "text",
+							"title": "mapChildAddress",
+							"form_id": "flashvars.mapChildAddress",
+							"tooltip_copy": "mapChildAddress"
+						},
+						{
+							"type": "text",
+							"title": "mapChildAddressSSL",
+							"form_id": "flashvars.mapChildAddressSSL",
+							"tooltip_copy": "mapChildAddressSSL"
+						},
+						{
+							"type": "text",
+							"title": "emailChildAddress",
+							"form_id": "flashvars.emailChildAddress",
+							"tooltip_copy": "emailChildAddress"
+						},
+						{
+							"type": "text",
+							"title": "emailChildAddressSSL",
+							"form_id": "flashvars.emailChildAddressSSL",
+							"tooltip_copy": "emailChildAddressSSL"
+						},
+						{
+							"type": "text",
+							"title": "trackingPixelAddressSSL",
+							"form_id": "flashvars.trackingPixelAddressSSL",
+							"tooltip_copy": "trackingPixelAddressSSL"
+						},
+						{
+							"type": "text",
+							"title": "trackingPixelAddress",
+							"form_id": "flashvars.trackingPixelAddress",
+							"tooltip_copy": "trackingPixelAddress"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "EMAIL (do not use)",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "isRichMediaEmail",
+							"form_id": "flashvars.isRichMediaEmail",
+							"tooltip_copy": "isRichMediaEmail"
+						},
+						{
+							"type": "text",
+							"title": "emailButtonImageURL",
+							"form_id": "flashvars.emailButtonImageURL",
+							"tooltip_copy": "emailButtonImageURL"
+						},
+						{
+							"type": "text",
+							"title": "emailButtonImageURLSSL",
+							"form_id": "flashvars.emailButtonImageURLSSL",
+							"tooltip_copy": "emailButtonImageURLSSL"
+						},
+						{
+							"type": "text",
+							"title": "isAutoLoadEmail",
+							"form_id": "flashvars.isAutoLoadEmail",
+							"tooltip_copy": "isAutoLoadEmail"
+						},
+						{
+							"type": "text",
+							"title": "emailButton300_x",
+							"form_id": "flashvars.emailButton300_x",
+							"tooltip_copy": "emailButton300_x"
+						},
+						{
+							"type": "text",
+							"title": "emailButton300_y",
+							"form_id": "flashvars.emailButton300_y",
+							"tooltip_copy": "emailButton300_y"
+						},
+						{
+							"type": "text",
+							"title": "emailButton336_x",
+							"form_id": "flashvars.emailButton336_x",
+							"tooltip_copy": "emailButton336_x"
+						},
+						{
+							"type": "text",
+							"title": "emailButton336_y",
+							"form_id": "flashvars.emailButton336_y",
+							"tooltip_copy": "emailButton336_y"
+						},
+						{
+							"type": "text",
+							"title": "emailButton728_x",
+							"form_id": "flashvars.emailButton728_x",
+							"tooltip_copy": "emailButton728_x"
+						},
+						{
+							"type": "text",
+							"title": "emailButton728_y",
+							"form_id": "flashvars.emailButton728_y",
+							"tooltip_copy": "emailButton728_y"
+						},
+						{
+							"type": "text",
+							"title": "emailButton160_x",
+							"form_id": "flashvars.emailButton160_x",
+							"tooltip_copy": "emailButton160_x"
+						},
+						{
+							"type": "text",
+							"title": "emailButton160_y",
+							"form_id": "flashvars.emailButton160_y",
+							"tooltip_copy": "emailButton160_y"
+						},
+						{
+							"type": "text",
+							"title": "email300_x",
+							"form_id": "flashvars.email300_x",
+							"tooltip_copy": "email300_x"
+						},
+						{
+							"type": "text",
+							"title": "email300_y",
+							"form_id": "flashvars.email300_y",
+							"tooltip_copy": "email300_y"
+						},
+						{
+							"type": "text",
+							"title": "email336_x",
+							"form_id": "flashvars.email336_x",
+							"tooltip_copy": "email336_x"
+						},
+						{
+							"type": "text",
+							"title": "email336_y",
+							"form_id": "flashvars.email336_y",
+							"tooltip_copy": "email336_y"
+						},
+						{
+							"type": "text",
+							"title": "email728_x",
+							"form_id": "flashvars.email728_x",
+							"tooltip_copy": "email728_x"
+						},
+						{
+							"type": "text",
+							"title": "email728_y",
+							"form_id": "flashvars.email728_y",
+							"tooltip_copy": "email728_y"
+						},
+						{
+							"type": "text",
+							"title": "email160_x",
+							"form_id": "flashvars.email160_x",
+							"tooltip_copy": "email160_x"
+						},
+						{
+							"type": "text",
+							"title": "email160_y",
+							"form_id": "flashvars.email160_y",
+							"tooltip_copy": "email160_y"
+						},
+						{
+							"type": "text",
+							"title": "emailWidth300",
+							"form_id": "flashvars.emailWidth300",
+							"tooltip_copy": "emailWidth300"
+						},
+						{
+							"type": "text",
+							"title": "emailHeight300",
+							"form_id": "flashvars.emailHeight300",
+							"tooltip_copy": "emailHeight300"
+						},
+						{
+							"type": "text",
+							"title": "emailWidth336",
+							"form_id": "flashvars.emailWidth336",
+							"tooltip_copy": "emailWidth336"
+						},
+						{
+							"type": "text",
+							"title": "emailHeight336",
+							"form_id": "flashvars.emailHeight336",
+							"tooltip_copy": "emailHeight336"
+						},
+						{
+							"type": "text",
+							"title": "emailWidth728",
+							"form_id": "flashvars.emailWidth728",
+							"tooltip_copy": "emailWidth728"
+						},
+						{
+							"type": "text",
+							"title": "emailHeight728",
+							"form_id": "flashvars.emailHeight728",
+							"tooltip_copy": "emailHeight728"
+						},
+						{
+							"type": "text",
+							"title": "emailWidth160",
+							"form_id": "flashvars.emailWidth160",
+							"tooltip_copy": "emailWidth160"
+						},
+						{
+							"type": "text",
+							"title": "emailHeight160",
+							"form_id": "flashvars.emailHeight160",
+							"tooltip_copy": "emailHeight160"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "VERSION",
+			"sub_menus": [
+				{
+					"title": "",
+					"ui_fields": [
+						{
+							"type": "text",
+							"title": "xmlVersion",
+							"form_id": "flashvars.xmlVersion",
+							"tooltip_copy": "xmlVersion"
+						}
+					]
+				}
+			]
+		}
+	]
+}

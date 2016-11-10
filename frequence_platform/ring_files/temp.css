@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul.temp_menu ul{display:none}
+ul.temp_menu li:hover>ul{display:block}
+ul.temp_menu ul{position: absolute;left:-1px;top:98%;}
+ul.temp_menu ul ul{position: absolute;left:98%;top:-2px;}
+ul.temp_menu,ul.temp_menu ul {
+	width:150px;
+	margin:0px;
+	list-style:none;
+	padding:5px 5px 5px 5px;
+	background-color:#c3c7c5;
+	background-repeat:repeat;
+	border-color:#AAAAAA;
+	border-width:1px;
+	border-style:solid;
+}
+ul.temp_menu table {border-collapse:collapse}ul.temp_menu {
+	display:block;
+	zoom:1;
+	float: left;
+}
+ul.temp_menu ul{
+	
+}
+ul.temp_menu li{
+	display:block;
+	margin:0px 0px 0px 2px;
+	font-size:0px;
+}
+ul.temp_menu a:active, ul.temp_menu a:focus {
+outline-style:none;
+}
+ul.temp_menu a, ul.temp_menu li.dis a:hover, ul.temp_menu li.sep a:hover {
+	
+	display:block;
+	vertical-align:middle;
+	background-color:#c3c7c5;
+	border-width:0px;
+	border-color:#6655ff;
+	border-style:solid;
+	text-align:left;
+	text-decoration:none;
+	padding:6px;
+	_padding-left:0;
+	font:bold 12px Arial;
+	color: #444444;
+	text-decoration:none;
+	cursor:default;
+}
+ul.temp_menu span{
+	overflow:hidden;
+}
+ul.temp_menu li {
+	float:left;
+}
+ul.temp_menu ul li {
+	float:none;
+}
+ul.temp_menu ul a {
+	text-align:left;
+	white-space:nowrap;
+}
+ul.temp_menu li.sep{
+	text-align:center;
+	padding:0px;
+	line-height:0;
+	height:100%;
+}
+ul.temp_menu li.sep span{
+	float:none;	padding-right:0;
+	width:5;
+	height:16;
+	display:inline-block;
+	background-color:#AAAAAA;	background-image:none;}
+ul.temp_menu ul li.sep span{
+	width:80%;
+	height:3;
+}
+ul.temp_menu li:hover{
+	position:relative;
+}
+ul.temp_menu li:hover>a{
+	background-color:#594f4f;
+	border-color:#665500;
+	border-style:solid;
+	font:bold 12px Arial;
+	color: #ffffff;
+	text-decoration:none;
+}
+ul.temp_menu li a:hover{
+	position:relative;
+	background-color:#594f4f;
+	border-color:#665500;
+	border-style:solid;
+	font:bold 12px Arial;
+	color: #ffffff;
+	text-decoration:none;
+}
+ul.temp_menu li.dis a {
+	color: #AAAAAA !important;
+}
+ul.temp_menu img {border: none;float:left;_float:none;margin-right:4px;width:16px;
+height:16px;
+}
+ul.temp_menu ul img {width:16px;
+height:16px;
+}
+ul.temp_menu img.over{display:none}
+ul.temp_menu li.dis a:hover img.over{display:none !important}
+ul.temp_menu li.dis a:hover img.def {display:inline !important}
+ul.temp_menu li:hover > a img.def  {display:none}
+ul.temp_menu li:hover > a img.over {display:inline}
+ul.temp_menu a:hover img.over,ul.temp_menu a:hover ul img.def,ul.temp_menu a:hover a:hover img.over{display:inline}
+ul.temp_menu a:hover img.def,ul.temp_menu a:hover ul img.over,ul.temp_menu a:hover a:hover img.def{display:none}
+ul.temp_menu a:hover ul{display:block}
+ul.temp_menu span{
+	display:block;
+	background-image:url(./images/arrv_anim_1.gif);
+	background-position:right center;
+	background-repeat: no-repeat;
+   padding-right:11px;}
+ul.temp_menu li:hover>a>span{	background-image:url(./images/arrv_anim_1o.gif);
+}
+ul.temp_menu a:hover span{	_background-image:url(./images/arrv_anim_1o.gif)}
+ul.temp_menu ul span,ul.temp_menu a:hover table span{background-image:url(./images/arr_double_1.gif)}
+ul.temp_menu ul li:hover > a span{	background-image:url(./images/arr_double_1o.gif);}
+ul.temp_menu table a:hover span{background-image:url(./images/arr_double_1o.gif)}

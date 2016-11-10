@@ -1,0 +1,50 @@
+#all_advertisers_header_section
+{
+	min-height: 70px;
+}
+
+#all_advertisers_body_container
+{
+	min-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+}
+
+#all_advertisers_table thead th
+{
+	background-color: #f9f9f9;
+	color: #0088cc;
+	border-bottom-color: #ddd;
+}
+
+#all_advertisers_table .all_advertisers_elastic_column
+{
+	width: 25%;
+    text-align: left;
+    padding-left: 12px;
+}
+
+#all_advertisers_table .all_advertisers_auto_column
+{
+	width: auto;
+    text-align:left;
+    padding-left: 12px;
+}
+
+#all_advertisers_table .all_advertisers_flag_column
+{
+	width: auto;
+    text-align:center;
+}
+
+#all_advertisers_table
+{
+	min-width: 1050px;
+	border-bottom-color: #ddd;
+}
+
+#all_advertisers_table .all_advertisers_flag_column a
+{
+	text-decoration: none;
+}

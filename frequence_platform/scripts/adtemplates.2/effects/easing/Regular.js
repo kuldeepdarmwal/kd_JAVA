@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Regular={easeIn:function(a,b,c,d){return c*(a/=d)*a+b},easeOut:function(a,b,c,d){return-c*(a/=d)*(a-2)+b},easeInOut:function(a,b,c,d){return(a/=d/2)<1?c/2*a*a+b:-c/2*(--a*(a-2)-1)+b}},Quadratic=Regular

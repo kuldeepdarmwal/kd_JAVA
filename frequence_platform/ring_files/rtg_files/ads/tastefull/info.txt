@@ -1,0 +1,3 @@
+name:tastefull_v3
+title:Taste-Full Events
+tags:restaurant,wedding

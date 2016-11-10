@@ -1,0 +1,46 @@
+<div class="mpq_section_card card scrollspy tv_scx_upload">
+    <h4 class="card-title grey-text text-darken-1 bold">
+        <i class="material-icons component-error" *ngIf="!validationStatus">error</i>TV Schedule Upload
+        <span *ngFor="let productName of productNames; let i = index; let last = last; let first = first" style="font-weight:normal;font-size:1rem;">
+		    <span *ngIf="first" style="display:inline-block; margin-left: 5%;"></span>
+		    {{productName}}<span *ngIf="!last">, </span>
+	    </span>
+    </h4>
+    <div class="card-content">
+      <span class="select_networks" *ngIf="tvScxData"> Please select up to {{maxNetworks}} networks for display purposes. ({{selectedNetworksCount()}} networks selected)</span>
+      <div *ngIf="tvScxData === false" class="row" id="scxDropUpload" [ng-file-drop]="uploadOptions" (onUpload)="handleUpload($event)">
+        <div class="file-field input-field col s6" style="margin-left: 10px;">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" [ng-file-select]="uploadOptions" (onUpload)="handleUpload($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Please upload your TV Schedule file (.scx) or drag and drop here">
+          </div>
+        </div>
+        <div class="col s4 error" *ngIf="error">{{error}}</div>
+      </div>
+      <div *ngIf="tvScxData">
+        <button (click)="removeScxData.emit()" class="btn upload_new_file">Upload New File</button>
+        <div class="row budget">
+          <div class="data"><span class="value">{{tvScxData.budget.dollars | currency:USD:true}}</span>Cost</div>
+          <div class="data"><span class="value">{{tvScxData.budget.spots | number}}</span>Spots</div>
+          <div class="data"><span class="value">{{tvScxData.geos.length}}</span>Zones</div>
+        </div>
+        <div class="row networks">
+          <div *ngFor="let network of tvScxData.networks; let i = index" (click)="toggleNetwork(i)" class="network z-depth-1" [ngClass]="{selected: network.selected, disabled: selectedNetworksCount() >= maxNetworks && !network.selected}">
+            <span class="name">{{network.name}}</span>
+            <img [src]="network.logo"/>
+            <div class="network_selected">
+              <input type="checkbox" [ngModel]="network.selected" id="network_{{network.name}}"/>
+              <label [attr.for]="'network_'+network.name"></label>
+            </div>
+            <div class="budget">
+              <span class="data"><span class="value">{{network.spots | number}}</span> spots</span>
+              <span class="data"><span class="value">{{network.zones.length}}</span> zones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

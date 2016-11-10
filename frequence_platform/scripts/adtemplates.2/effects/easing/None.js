@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var None={easeNone:function(d,a,b,c){return b*d/c+a},easeIn:function(d,a,b,c){return b*d/c+a},easeOut:function(d,a,b,c){return b*d/c+a},easeInOut:function(d,a,b,c){return b*d/c+a}},Linear=None

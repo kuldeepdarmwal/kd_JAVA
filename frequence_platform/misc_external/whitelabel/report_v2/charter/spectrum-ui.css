@@ -1,0 +1,258 @@
+.navbar-inner {
+	background: #006ca3;
+	position: relative;
+	filter: none; /* fix for IE8 */
+	height:auto;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border: none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)!important;
+}
+.navbar .nav > li {
+	height: 74px;
+	padding: 17px 0;
+}
+.navbar .nav > li > a,
+.navbar .nav > li > a:visited {
+	color: #fafafa;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	display: inline-block;
+	height: auto;
+	padding: 10px!important;
+}
+.navbar a.brand {
+	padding: 0;
+	margin: 22px 20px 0;
+	height: 52px;
+}
+img#vl_header_partner_img_element {
+	max-height: 30px;
+	max-width: 300px;
+}
+.navbar .nav > li {
+	margin: 0 2px;
+	height: auto;
+}
+.navbar .nav > li.active > a,
+.navbar .nav > li.active > a:hover,
+.navbar .nav > li > a:hover {
+	color: #333;
+	background-color: #fafafa;
+	box-shadow: none;
+	border-radius: 3px;
+}
+a.pull_nav_toggle {
+	display: inline-block;
+	height: 36px;
+	width: 36px;
+	background-image: url('./hamburger_menu.png');
+	background-repeat: no-repeat;
+}
+.pull_nav {
+	position:fixed;
+	right:-300px;
+	top:73px;
+	width:300px;
+	height:100%;
+	background: #FAFAFA;
+	z-index: -1;
+	box-shadow: -1px 0px 5px rgba(0,0,0,0.1);
+}
+.pull_nav .mobile_main_nav {
+	display: none;
+}
+.pull_nav ul {
+	margin: 20px 0 0;
+}
+.pull_nav li {
+	list-style: none inside;
+}
+.pull_nav li a {
+	color: inherit;
+	display: block;
+	padding: 5px 30px;
+	width:100%;
+	height:100%;
+}
+.pull_nav li a:hover,
+.pull_nav li.active a {
+	background: #F0F0F0;
+	text-decoration: none;
+}
+.pull_nav h3 {
+	font-size: 15px;
+	line-height: 1.25em;
+	padding: 0px 15px;
+	margin: 15px 0 5px 0;
+	text-transform: uppercase;
+	font-family: 'Gotham Light', sans-serif;
+}
+body {
+	margin-top: 100px!important;
+}
+.summary_section {
+	margin-top: 0;
+}
+div.pull-right.login {
+	height: 36px;
+	margin-top: 19px;
+}
+div.pull-right.login a,
+div.pull-right.login a:hover
+div.pull-right.login a:visited {
+	color: #f0f0f0;
+}
+
+@media (max-width: 1365px) {
+	.navbar-fixed-top {
+		position: relative;
+		z-index: 999;
+	}
+	.navbar .btn-navbar {
+		display:none;
+	}
+	a#vl_header_partner_img {
+		padding-left: 0;
+	}
+	.nav-collapse.collapse {
+		height: auto;
+		clear: none;
+		overflow: visible;
+		-webkit-transform: none;
+	}
+	.pull_nav {
+	}
+	.navbar-text.pull-right,
+	.pull_nav .mobile_main_nav {
+		display: block;
+	}
+	.nav-collapse .nav {
+		height: 0;
+		overflow: hidden;
+	}
+	body {
+		margin-top: 0px!important;
+		padding-top: 0px!important;
+	}
+}
+
+/* Sidebar Styles */
+.navigation_container, .report_v2_advertiser_selection, .report_v2_campaign_selection, .report_v2_date_selection
+{
+	background: #004465 !important;
+}
+.sidebar-nav > #products_nav_section > li > a:hover
+{
+/*        background: #016CA4 !important;*/
+}
+.sidebar-nav div.ruler
+{
+        border-bottom: 1px solid #016CA4 !important;
+}
+.navigation_container .product_child
+{
+        border-top:1px solid #004465 !important;
+        border-bottom:1px solid #004465 !important;
+}
+.navigation_container .product_child:hover,.navigation_container .product_child_clicked
+{
+		border-color:#016CA4 !important;
+}
+.navigation_container .topparentnav
+{
+        border-top:1px solid #004465 !important;
+        border-bottom:1px solid #004465 !important;
+}
+.navigation_container .topparentnav:hover,.navigation_container .topparentnavclicked
+{
+        border-color:#016CA4 !important;
+}
+.navigation_container .product_child_clicked
+{
+        background:#016CA4 !important;
+}
+ul.multiselect-container.dropdown-menu
+{
+        background:#ffffff !important;
+}
+.navigation_container .topparentnavclicked
+{
+        background: #016CA4 !important;
+}
+#nav_pill_underline
+{
+        background-color:#016CA4 !important;
+}
+#subproduct_nav_pills > li > a
+{
+        color:#006ca3 !important;
+}
+#display_creatives_table table tr td
+{
+        background-color: #f6f6f6 !important;
+}
+#subproduct_content .geography, #subproduct_content .tv_schedule {
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top-color: rgb(245, 245, 245);
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	box-sizing: border-box;
+    padding:10px;
+    margin-bottom: 50px;
+}
+.geography table.tab_table > thead,
+.geography table.tab_table > thead > tr,
+.geography table.tab_table > tbody,
+.geography table.tab_table > tbody > tr,
+.tv_schedule table.tab_table > thead,
+.tv_schedule table.tab_table > thead > tr,
+.tv_schedule table.tab_table > tbody,
+.tv_schedule table.tab_table > tbody > tr
+{
+    background-color: #ffffff !important;
+}
+.geography table.dataTable tbody tr, .tv_schedule table.dataTable tbody tr
+{
+    background-color: #ffffff !important;
+}
+a.left_nav_toggle
+{
+	background-image: url('./hamburger_menu.png') !important;
+}
+#subproduct_content #heatmap_container
+{
+	margin-bottom:30px !important;
+}
+#display_creatives_table div.main_row table.creative_table_row tr td
+{
+    background-color: #ffffff !important;
+}
+#no_data_overview_overlay h3 {
+    color: #006CA3 !important;
+}
+.report_map_inactive_polygon{
+    color: #696969 !important;
+}
+.report_map_active_polygon{
+    color: #009483 !important;
+}
+.navigation_container .support_container .support_tab_container .support_tab
+{
+    background: #004465 !important;
+}
+
+#digital_overview_table td.digital_overview_type_cell
+{
+    background-color: #3399DB !important;
+    color: white;
+}
+.digital_overview_header_row th
+{
+    background-color:#046CA4 !important;
+}

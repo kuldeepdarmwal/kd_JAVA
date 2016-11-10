@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="phpjava/JavaBridge.jar"/>
+	<classpathentry kind="lib" path="phpjava/HeliosWSClientSystem_1.16.1a/HeliosWSClientSystem.jar"/>
+	<classpathentry kind="lib" path="/var/www_vl_tt/misc_external/adtech/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

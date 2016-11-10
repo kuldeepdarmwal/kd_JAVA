@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+.select2-choice{
+  min-height: 35px;
+  max-height: 35px;
+  background-color:#0000ff;
+  overflow-y: auto;
+}
+
+.select2-chosen{
+    position:relative;
+    top:5px;
+}
+.select2-container .select2-choice{
+  font-weight:bold;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.select2-search-choice {
+    font-weight:bold;
+    vertical-align: middle;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.select2-search {
+    font-weight:bold;
+    vertical-align: middle;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.select2-search input {
+   font-weight:bold;
+   vertical-align: middle;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.select2-results {
+   font-weight:bold;
+   vertical-align: middle;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

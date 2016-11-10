@@ -1,0 +1,2 @@
+Manifest-Version: release release 1.16.1
+Class-Path: ./ ./lib/Wasp.jar ./lib/security_providers_client.jar

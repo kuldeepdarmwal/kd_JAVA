@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/* COLOR KEY
+--------------
+ORANGE 	#f7954f
+TEAL	#004251
+OLIVE	#999f38
+TEXT	#555   */
+div.fadehover {
+	position: relative;
+	}
+ 
+img.a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+        }
+ 
+img.b {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+
+.cand_pic {height:164px;height:104px;}
+.cand_title {margin-top:-1px;text-align:center;width:165px;height:64px;background-image:url(/images/pol_namebg.jpg);}
+.cand_name {font-size:15px;font-family: 'Lato', sans-serif;color:#555;font-weight:400;padding-top:4px;margin:0;display:block;}
+.polholder {width:165px;height:168px;float:left;}
+.polholder a{color:#555;text-decoration:none;}
+.polholder a:hover {color:#9c1b3e;}
+.home_banner {width:940px;height:100px;margin:auto;border-bottom:1px solid #ccc;}
+.banner_right{width:728px;padding:5px 0px 5px 5px;float:right;height:90px;}
+.banner_left{width:177px;padding:30px 0px 5px 30px;float:left;text-align:left;height:65px;}
+.politicsholder {width:960px;height:657px;position:relative;}
+.polytext {width:300px;height:600px;left:70px;top:15px;position:absolute;z-index:100000;}
+.darkbold {color:#555;}
+.list {width:275px;padding-left:20px;background:url(/images/listbg.gif);background-repeat:no-repeat;color:#777;font-family:Arial, Helvetica, sans-serif;font-size:12px;margin-top:5px;}
+.red {color:#e10000;}
+.greenarrow {color:#999f38;}
+.polyarrow {color:#8a1836;}
+.ORANGEarrow {color:#F7954F;}
+.BLUEarrow {color:#004251;}
+.designcopy {padding-top:20px;}
+.indexflags {width:960px;margin:auto;}
+.indexicons {width:960px;height:131px;margin:auto;}
+ html {overflow-y: scroll;}
+#fancybox-overlay { position: fixed !important; } 
+.righttextblue a {color:#004251;text-decoration:none;}
+.righttextolive a {color:#73782a;text-decoration:none;}
+li.redbullet {margin-left:0px;list-style-image:url(/images/redbullet.png);}
+li.bluebullet {margin-left:0px;list-style-image:url(/images/bluebullet.png);}
+li.orangebullet {margin-left:0px;list-style-image:url(/images/orangebullet.png);}
+li.greenbullet {margin-left:15px;list-style-image:url(/images/greenbullet.gif);}
+#olivelink a:hover {color:#999f38;}
+#whitelink a {color:#fff;}
+#polylink a:hover {color:#8a1836;}
+#whitelinkorange a {color:#fff;}
+#whitelinkorange a:hover {color:#f7954f;}
+#whitelink a:hover {color:#999f38;}
+#orangelink a:hover {color:#f7954f;}
+#teallink a:hover {color:#004251;}
+.topolivegrey a {color:#fff;}
+img {border:none;}
+.clear {clear:both;}
+.header {background-color:#f2f2f2;height:86px;background-image:url(/images/headerbg.png);background-position:top center;}
+.headwrap{width:960px;margin:auto;background-color:#fff;}
+body {background-color:#4d4d4d;background-image:url(/images/pagebg.png);background-repeat:repeat;background-position:top center;}
+h1 {line-height:22px;font-size:17px;font-family: 'Lato', sans-serif;color:#555;font-weight:400;padding-bottom:7px;margin:0;display:block;}
+.boldphone {line-height:22px;font-size:17px;font-family: 'Lato', sans-serif;color:#555;font-weight:700;padding:0px;margin:0;}
+html, body ,td ,th {font-family: Arial, Helvetica, sans-serif;font-size: 12px;color: #777;}
+.toporange {background-image:url(/images/bg_orangeflag.png);height:128px;}
+.topteal {background-image:url(/images/bg_tealflag.png);height:128px;}
+.topolive {background-image:url(/images/bg_oliveflag.png);height:128px;}
+.toppoly {background-image:url(/images/poly_flag.png);height:128px;}
+.toppolyblank {background-image:url(/images/poly_flagblank.png);height:128px;}
+.topolivegrey {background-image:url(/images/bg_olivegrey.png);height:128px;}
+.topolivegreymap {background-image:url(/images/bg_olivegreymap.png);height:128px;}
+.toptealgrey {background-image:url(/images/bg_tealgrey.png);height:128px;}
+.toporangegrey {background-image:url(/images/top_greyorange.png);height:128px;}
+.toplink a{color:#ccc;text-decoration:none;}
+.headerleft {width:393px;float:left;}
+.headerright {width:567px;float:right;}
+.pagetitle {text-align:center;padding-top:30px;}
+.titledark { font-size:22px;font-weight:700;font-family: 'Lato', sans-serif;color:#fff;text-transform:uppercase}
+.titlelight { font-size:22px;font-weight:300;font-family: 'Lato', sans-serif;color:#fff; text-transform:uppercase}
+.toplink {padding-top:30px;text-align:right;padding-right:77px;}
+.toplink { font-size:22px;font-weight:400;font-family: 'Lato', sans-serif;color:#ccc;}
+.maincontent {width:960px;margin:auto;}
+.contentleft {width:368px;float:left;padding-top:15px;padding-left:25px;padding-bottom:40px;}
+.contentmap {width:490px;float:right;}
+.contentright {width:480px;float:right;padding-right:67px;padding-top:15px;padding-bottom:40px;}
+.contentpol {width:500px;float:right;padding-right:67px;padding-top:15px;padding-bottom:40px;}
+.contentrighthome {width:488px;float:right;margin-right:67px;margin-top:15px;margin-bottom:40px;border:1px solid #a9a9a9;}
+.righttext {width:300px;margin:auto;line-height:18px;position:relative;}
+.graphtext {width:300px;height:500px;top:0px;left:0px;position:absolute;z-index:1000000;}
+.righttextblue {width:300px;margin:auto;line-height:18px;}
+.righttextolive {width:300px;margin:auto;line-height:18px;}
+/*      / / / / / / / / /  / / FOOTER \ \  \ \ \ \ \ \ \     */
+.footer {background:url(/images/bgfooter.gif);}
+.footerleft {width:500px;float:left;padding:45px 0px 0px 67px}
+.footerright{width:250px;float:right;padding:45px 67px 0px 0px;}
+.footer a {
+	display:block;
+	width:215px;
+	float:left;
+	font-size:14px;
+	margin: 1px 5px 0px 0px;
+	font-family: 'Lato', sans-serif;
+	color:#555; 
+	font-weight:300;
+	text-decoration:none;
+	padding-bottom:2px;
+	border-bottom:1px solid #f2f2f2;}
+.footer a:hover {
+	color:#333;}
+
+.quickemail {
+	background:#fff;
+	width:200px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	border:1px solid #ccc;
+	display:block;
+	float:left;
+	padding:5px;
+	height:22px;
+	color:#555;}
+.quickresponse {font-size:13px;display:block;padding-bottom:5px;}
+/*      / / / / / / / / /  / / OUR PRODUCT \ \  \ \ \ \ \ \ \     */
+.scrollerholder {width:480px;position:relative;}
+.scrollergraph {width:480px;height:400px;top:0;left:0;position:absolute;z-index:100000}
+.scrollerleft {width:240px;float:left;}
+.scrollerright {width:240px;float:right;}
+.scrollertitle {font-size:17px;font-family: 'Lato', sans-serif;color:#555;font-weight:700;text-align:left;text-transform:capitalize;width:210px;padding:0px 0px 5px 10px;}
+.container {width:240px;height:65px;}
+.flashholder {padding-top:30px;}
+.graph {padding-top:15px;padding-left:6px;}
+/*      / / / / / / / / /  / / OUR DESIGNS \ \  \ \ \ \ \ \ \     */
+.jfade_image {width:120px;height:120px;float:left;}
+/*      / / / / / / / / /  / / smallbusiness \ \  \ \ \ \ \ \ \     */
+.newslide {padding-top:7px;height:310px;}
+.slidebutton {padding-top:20px;}
+#blankgraph{border-top:1px solid #ccc;padding:10px 0px 10px 0px;}
+/*      / / / / / / / / /  / / COINTACT FORM \ \  \ \ \ \ \ \ \     */
+.formleft {width:240px;float:left;}
+.formright {width:240px;float:right;}
+.contform input {background-color:#fff;display:block;width:215px;border:1px solid #555;height:20px;padding:4px 4px 4px 15px; color:#555;}
+.formtext{color:#555;font-size:12px;font-weight:bold;display:block;padding:5px 0px 5px 0px}
+#contbutton {text-align:center;float:right;height:30px;width:236px;padding-top:0px;padding-right:10px;margin-top:10px;display:block;background:#f7954f;color:#fff;border:1px solid #fff;font-family: 'Lato', sans-serif;font-size:18px;}
+#contbuttonorange {float:right;height:30px;width:236px;padding-top:0px;margin-top:10px;display:block;background:#f7954f;color:#fff;border:1px solid #fff;font-family: 'Lato', sans-serif;font-size:18px;}
+.contenthome {margin:auto;}
+.contentmap {margin-right:67px;}
+.contform {padding-top:5px;}
+#contbutton:hover {background:#f57e31;} 
+#contbuttonorange:hover {background:#f17e3c;}
+input.required{background:url("/images/required.png") no-repeat 5% 60%;padding-left:15px;width:215px;color:#555;}
+#comments {width:458px;height:100px;margin-top:10px;border:1px solid #555;}
+textarea.required{background:url("/images/textarea.png") no-repeat 5% 1%;padding-left:15px;}
+.team {background:#fff;-moz-border-radius: 0px;border-radius: 0px;border-bottom:1px dotted #ccc;padding:10px;line-height:18px;margin:5px 0px 20px 0px;padding-bottom:30px;}
+.faqtext {font-family: Arial, Helvetica, sans-serif;font-size: 12px;color: #666;line-height:18px;display:block; width:450px;padding:20px 20px 20px 20px;}
+.requiredtext {float:left;width:100px;padding-top:10px;padding-left:9px;}
+.icon1 {width:354px;height:131px;float:left;}
+.icon2 {width:250px;height:131px;float:left;}
+.icon3 {width:254px;height:131px;float:left;background:url(images/icon3bg.png)}
+.datecontainer {width:113px;height:78px;background:url(images/date_bgoff.png);margin-left:60px;margin-top:26px;}
+.datecontainer2 {width:113px;height:78px;background:url(images/date_bg.png);margin-top:100px;}
+.month {color:#fff;font-size:16px;font-family: 'Lato', sans-serif;text-align:center;font-weight:500;}
+.day {font-size:55px;color:#fff;font-family: 'Lato', sans-serif;text-align:center;font-weight:900;margin-top:-3px;}
+.day2 {font-size:55px;color:#fff;font-family: 'Lato', sans-serif;text-align:center;font-weight:900;margin-top:20px;}
+.datecontainer:hover {background:url(images/date_bg.png);text-decoration:none;}
+.datecontainer a{color:#fff;text-decoration:none;}
+.day a{text-decoration:none;}
+.month a{text-decoration:none;}
+.np {diplay:block;padding-bottom:0px;}

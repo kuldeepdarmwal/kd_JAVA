@@ -1,0 +1,15 @@
+<div class="mpq_section_card card scrollspy">
+    <h4 class="card-title grey-text text-darken-1 bold">
+        <i class="material-icons component-error" *ngIf="!validationStatus">error</i> Rooftops
+        <span *ngFor="let productName of productNames; let i = index; let last = last; let first = first"
+              style="font-weight:normal;font-size:1rem;">
+		    <span *ngIf="first" style="display:inline-block; margin-left: 5%;"></span>
+		    {{productName}}<span *ngIf="!last">, </span>
+	    </span>
+    </h4>
+    <div class="card-content">
+        <input type="text" id="roof_tops" name="roof_tops" #roof
+               [propertiesObj]="rooftopsObj"
+               myPlaceComplete class="grey-text text-darken-1" length="255">
+    </div>
+</div>

@@ -1,0 +1,289 @@
+
+
+.site_pack_selection_title {
+	float:left;
+}
+
+.site_pack_selection_dropdown{
+	float:left;
+}
+
+.mt_slide_position {
+	float:right;
+}
+
+.mt_selection_position {
+	float: left;
+}
+
+.mt_site_pack_position {
+
+}
+
+#site_pack_table {
+	background-color:#fbfbfb;
+}
+
+.mt_site_pack_table {
+	margin:0px;
+	padding:0px;
+	border-style:solid;
+	border-width:0px;
+	width:100%;
+	float:left;
+	height:100%;
+}
+
+.mt_site_pack_position table {
+	border-style:solid;
+	border-width:0px;
+	margin:0px;
+	padding:0px;
+}
+
+.mt_site_pack_position table td {
+	border-style:solid;
+	border-width:0px;
+	margin:0px;
+	padding-left:10px;
+}
+
+.mt_site_pack_header {
+	color:#fbfbfb;
+	background-color:#414142;
+	font-family:BebasNeue, serif;
+	font-size:24.08px;
+	min-height:30px;
+	max-height:30px;
+	text-align:center;
+}
+
+.mt_column_headers td {
+	color:#594f4f;
+	font-size:13.6px;
+}
+
+.mt_domain_header {
+	background-color:#c3c7c5;
+}
+
+.mt_other_headers {
+	font-family: 'Oxygen', sans-serif;
+	background-color:#C0C1C2 !important; 
+}
+
+.mt_site_pack_row {
+	color:#594f4f;
+	font-size:13px;
+	font-family: 'Oxygen', sans-serif;
+	background-color:#ffffff;
+	overflow:hidden;
+}
+
+.mt_col0 {
+	color:#inherit;
+	font-family: 'Oxygen', sans-serif;
+	background-color:#EAEAEA;
+	width:25%;
+}
+
+.mt_col0 a {
+	color: inherit;
+	font-family: 'Oxygen', sans-serif;
+	text-decoration:underline;
+
+}
+
+.mt_col1 {
+	background-color:#F6F6F6;
+	width:20%;
+}
+
+.mt_col2 {
+	background-color:#F6F6F6;
+	width:35%;
+}
+
+.mt_col3 {
+	background-color:#F6F6F6;
+	width:20%;
+}
+
+.site_pack_demographics_iframe {
+	position:absolute;
+	top: 20%;
+	height:100%;
+	width: 100%;
+}
+
+.demographics_iframe {
+	position:absolute; 
+	top:120px; 
+	z-index:-1;
+}
+
+#sliderBodyContent {
+	height:100%;
+}
+
+.mt_site_pack_row:hover .mt_col0 {
+	color:#fbfbfb !important;
+	background-color: #FCBB7F !important;
+}
+
+.mt_site_pack_row:hover .mt_col1 {
+	color:#fbfbfb !important;
+	background-color: #FCBB7F !important;
+}
+
+.mt_site_pack_row:hover .mt_col2 {
+	color:#fbfbfb !important;
+	background-color: #FCBB7F !important;
+}
+
+.mt_site_pack_row:hover .mt_col3 {
+	color:#fbfbfb !important;
+	background-color: #FCBB7F !important;
+}
+
+.mt_site_pack_row:hover{
+	color:#fbfbfb !important;
+	background: #FCBB7F;
+}
+
+.MtOptionsDiv {
+	position:relative;
+}
+
+.MtDemographicOptions {
+	position:relative;
+	display:block;
+	float: left;
+	width:50%;
+	height:110px;
+}
+
+.MtChannelOptions {
+	float:left;
+	width:50%;
+	height:110px;
+}
+
+.MtReachFrequencyOptions {
+	clear:both;
+	width:50%;
+	height:30px;
+	position:relative;
+}
+
+#channel_choices {
+	width: 50%;
+	height:12px;
+}
+
+#MtChannelOptionsSelector {
+	color: black;
+	font-family:'Oxygen', sans-serif;
+	font-size: 11px;
+}
+
+#channel_choices_chzn {
+	color: black;
+	font-family:'Oxygen', sans-serif;
+	font-size: 11px;
+}
+.search_choice {
+	color: #;
+	font-family:'Oxygen', sans-serif;
+	font-size: 11px;
+}
+
+
+.chzn-container-multi .chzn-choices .search-choice {
+	background-color: #F89A42;
+	border:1px solid #ED7523;
+	border-radius:2px;
+	color: #fbfbfb;
+	font-family:'Oxygen', sans-serif;
+	font-size: 11px;
+}
+
+div#squeezeBoxExpand {
+	position:relative; 
+	padding-top:4px;
+	float:left; 
+	display:inline;
+	z-index:1000;
+}
+
+div#squeezeBoxContract {
+	position:relative; 
+	padding-top:4px;
+	float:left; 
+	display:none; 
+	z-index:1000;
+}
+
+div#local_reach span {
+	font-size:16px;
+	font-family: 'Oxygen', sans-serif;
+}
+div#channel_header span {
+	font-size:16px;
+	font-family: 'Oxygen', sans-serif;
+}
+
+.adPageDiv {
+	height:100%;
+}
+
+.adPageLinkWrapper {
+	min-width:270px; 
+	width:92%; 
+	height:120%;
+	max-width:500px;
+}
+.adPageLinkCrop {
+	min-width: 270px; 
+	width:80%; 
+	height:15%; 
+	min-height:100px; 
+	max-height:160px;
+	max-width:360px; 
+	border:1px solid #414142; 
+	border-bottom:0px solid #414142; 
+	margin-left:10%; 
+	overflow:hidden;
+}
+.adPageLinkImage {
+	width:100%; 
+	height:auto;
+}
+.adPageLinkShadow {
+	width:90%; 
+	max-width:400px; 
+	min-width: 300px; 
+	margin-left:5%;
+}
+
+.adPageInfoWrapper {
+	position:absolute;
+	top:17%;
+	width:90%;
+}
+
+.adPageInfo {
+	position:absolute;
+	top:90px;
+	line-height:120%; 
+	margin-top:0px; 
+}
+
+.adPageDivider {
+	position:absolute;
+	width:100%;
+	margin-top:41px; 
+	top:90px; 
+	border-bottom: 1px solid #cecece;
+}
+

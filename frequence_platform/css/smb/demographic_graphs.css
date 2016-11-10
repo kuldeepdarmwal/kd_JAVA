@@ -1,0 +1,67 @@
+.DemographicGroup {
+	position:absolute; 
+	top:0px;
+	left:0px;
+}
+
+.DemographicGroupTitle {
+	color: #414142;
+	font-family:BebasNeue, sans-serif;
+	font-size:18px;
+	text-align: left;
+	position:absolute; 
+	top:0px; 
+	left:0px; 
+	border:0px solid black;
+	width:220px;
+}
+
+.DemographicRowName {
+	color: #414142;
+	font-family:Oxygen, sans-serif;
+	font-size:11px;
+	text-align: right;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:64px;
+}
+
+.DemographicSparkline {
+	position:absolute;
+	top:0px;
+	left:68px;
+	width:106px;
+}
+
+.ExtraDemographicDataTitle {
+	font-family:Oxygen, sans-serif;
+	color:#414142;
+	font-size:14px;
+}
+
+.ExtraDemographicDataValue {
+	font-family:BebasNeue, sans-serif;
+	color:#414142;
+	font-size:24px;
+}
+
+.InternetAverageSubtext {
+	color: #c1c2c3;
+	font-family:Oxygen, sans-serif;
+	font-size:11px;
+	text-align: right;
+	position:absolute;
+	top:0px;
+	left:16px;
+	width:150px;
+}
+
+.InternetAverageCenterLine {
+	position:absolute; 
+	left:120px; 
+	top:0px; 
+	width:1px; 
+	height:318px; 
+	border-right:1px solid #eaeaea;
+}

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdmin"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/CustomerManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/CustomerManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:complexType name="CustomerManagementException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CustomerManagement.CustomerManagementException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="xns5:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/SalesTransactionManagement/"
+            xmlns:xns7="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xns8="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/"
+            xmlns:xns9="http://systinet.com/wsdl/de/adtech/helios/CustomerManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/CustomerManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/SalesTransactionManagement/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:element name="AttributeOperatorValueExpression_Response"
+                nillable="true" type="xns4:AttributeOperatorValueExpression"/>
+            <xsd:element name="start" nillable="true" type="xsd:long"/>
+            <xsd:element name="end" nillable="true" type="xsd:long"/>
+            <xsd:element name="boolExpr" nillable="true"
+                type="xns4:BoolExpression"/>
+            <xsd:element name="order" nillable="true" type="xns5:Collection"/>
+            <xsd:element name="ArrayOfRawPostClickNetwork_Response"
+                nillable="true" type="xns6:ArrayOfRawPostClickNetwork"/>
+            <xsd:element name="advertiserExiId" nillable="true"
+                type="xsd:string"/>
+            <xsd:element name="SecurityException" nillable="true"
+                type="xns7:SecurityException"/>
+            <xsd:element name="WSSalesTransactionAdminException" nillable="true"
+                type="xns8:WSSalesTransactionAdminException"/>
+            <xsd:element name="CustomerManagementException" nillable="true"
+                type="xns9:CustomerManagementException"/>
+            <xsd:element name="HeliosPersistenceException" nillable="true"
+                type="xns4:HeliosPersistenceException"/>
+            <xsd:element name="advertiserId" nillable="true" type="xsd:long"/>
+            <xsd:element name="long_Response" nillable="true" type="xsd:long"/>
+            <xsd:element name="rpcn" nillable="true"
+                type="xns6:RawPostClickNetwork"/>
+            <xsd:element name="RawPostClickNetwork_Response" nillable="true"
+                type="xns6:RawPostClickNetwork"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="AttributeOperatorValueExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AttributeOperatorValueExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence>
+                            <xsd:element name="attribute" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="operator" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="value" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="BoolExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.BoolExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="expressions" nillable="true"
+                        type="xns5:Vector"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.HeliosException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="errorLevel" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosPersistenceException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.HeliosPersistenceException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSSalesTransactionAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/security/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SecurityException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.security.SecurityException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType abstract="true" name="PersistenceCapable">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="javax.jdo.spi.PersistenceCapable"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence/>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/SalesTransactionManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/SalesTransactionManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/javax/jdo/spi/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/javax/jdo/spi/"/>
+            <xsd:complexType name="RawPostClickNetwork">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.SalesTransactionManagement.RawPostClickNetwork"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="xns5:PersistenceCapable">
+                        <xsd:sequence>
+                            <xsd:element name="actionType" type="xsd:byte"/>
+                            <xsd:element name="bannerId" type="xsd:int"/>
+                            <xsd:element name="beaconId" type="xsd:int"/>
+                            <xsd:element name="campaignId" type="xsd:int"/>
+                            <xsd:element name="comment" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="custom1" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="custom2" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="custom3" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="custom4" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="custom5" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="date" type="xsd:int"/>
+                            <xsd:element name="hour" type="xsd:byte"/>
+                            <xsd:element name="id" type="xsd:long"/>
+                            <xsd:element name="masterCampaign" type="xsd:int"/>
+                            <xsd:element name="minute" type="xsd:byte"/>
+                            <xsd:element name="networkPlacementId"
+                                type="xsd:short"/>
+                            <xsd:element name="numClicks" type="xsd:int"/>
+                            <xsd:element name="numViews" type="xsd:int"/>
+                            <xsd:element name="placementId" type="xsd:int"/>
+                            <xsd:element name="salesCategory" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="salesDate" type="xsd:int"/>
+                            <xsd:element name="salesId" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="salesValue" type="xsd:int"/>
+                            <xsd:element name="second" type="xsd:byte"/>
+                            <xsd:element name="status" type="xsd:byte"/>
+                            <xsd:element name="subNetworkPlacementId"
+                                type="xsd:byte"/>
+                            <xsd:element name="timeAfter" type="xsd:int"/>
+                            <xsd:element name="userId" nillable="true"
+                                type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfRawPostClickNetwork">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.SalesTransactionManagement.RawPostClickNetwork;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="RawPostClickNetwork" nillable="true"
+                        type="tns:RawPostClickNetwork"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="CustomerManagementException">
+        <part element="ns0:CustomerManagementException"
+            name="CustomerManagementException"/>
+    </message>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="HeliosPersistenceException">
+        <part element="ns0:HeliosPersistenceException"
+            name="HeliosPersistenceException"/>
+    </message>
+    <message name="SecurityException">
+        <part element="ns0:SecurityException" name="SecurityException"/>
+    </message>
+    <message name="WSSalesTransactionAdminException">
+        <part element="ns0:WSSalesTransactionAdminException"
+            name="WSSalesTransactionAdminException"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_gaove_Request_Soap"/>
+    <message name="WSSalesTransactionAdmin_gaove_Response_Soap">
+        <part element="ns0:AttributeOperatorValueExpression_Response"
+            name="response"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserExtId_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:advertiserExiId" name="advertiserExiId"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserExtId_Response_Soap">
+        <part element="ns0:ArrayOfRawPostClickNetwork_Response"
+            name="response"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserId_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:advertiserId" name="advertiserId"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserId_Response_Soap">
+        <part element="ns0:ArrayOfRawPostClickNetwork_Response"
+            name="response"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_getRawPostClickNetworkList_Response_Soap">
+        <part element="ns0:ArrayOfRawPostClickNetwork_Response"
+            name="response"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_updateRawPostClickNetwork_Request_Soap">
+        <part element="ns0:rpcn" name="rpcn"/>
+    </message>
+    <message name="WSSalesTransactionAdmin_updateRawPostClickNetwork_Response_Soap">
+        <part element="ns0:RawPostClickNetwork_Response" name="response"/>
+    </message>
+    <portType name="WSSalesTransactionAdmin">
+        <operation name="gaove">
+            <input message="tns:WSSalesTransactionAdmin_gaove_Request_Soap"/>
+            <output message="tns:WSSalesTransactionAdmin_gaove_Response_Soap"/>
+        </operation>
+        <operation name="getRawPostClickNetworkList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkList_Request_Soap"/>
+            <output
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkList_Response_Soap"/>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserExtId"
+            parameterOrder="start end order advertiserExiId">
+            <input
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserExtId_Request_Soap"/>
+            <output
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserExtId_Response_Soap"/>
+            <fault message="tns:WSSalesTransactionAdminException"
+                name="WSSalesTransactionAdminException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:CustomerManagementException"
+                name="CustomerManagementException"/>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserId"
+            parameterOrder="start end order advertiserId">
+            <input
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserId_Request_Soap"/>
+            <output
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListByAdvertiserId_Response_Soap"/>
+            <fault message="tns:WSSalesTransactionAdminException"
+                name="WSSalesTransactionAdminException"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:SecurityException" name="SecurityException"/>
+            <fault message="tns:CustomerManagementException"
+                name="CustomerManagementException"/>
+        </operation>
+        <operation name="getRawPostClickNetworkListSize"
+            parameterOrder="boolExpr">
+            <input
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListSize_Request_Soap"/>
+            <output
+            message="tns:WSSalesTransactionAdmin_getRawPostClickNetworkListSize_Response_Soap"/>
+        </operation>
+        <operation name="updateRawPostClickNetwork" parameterOrder="rpcn">
+            <input
+            message="tns:WSSalesTransactionAdmin_updateRawPostClickNetwork_Request_Soap"/>
+            <output
+            message="tns:WSSalesTransactionAdmin_updateRawPostClickNetwork_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+    </portType>
+    <binding name="WSSalesTransactionAdmin" type="tns:WSSalesTransactionAdmin">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="gaove">
+            <map:java-operation name="gaove"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#gaove?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getRawPostClickNetworkList">
+            <map:java-operation name="getRawPostClickNetworkList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserExtId">
+            <map:java-operation
+                name="getRawPostClickNetworkListByAdvertiserExtId"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs=">
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdminException"
+                    name="WSSalesTransactionAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CustomerManagement.CustomerManagementException"
+                    name="CustomerManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListByAdvertiserExtId?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="
+                style="document"/>
+            <input>
+                <soap:body parts="start end order advertiserExiId"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSSalesTransactionAdminException">
+                <soap:fault name="WSSalesTransactionAdminException"
+                    use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="CustomerManagementException">
+                <soap:fault name="CustomerManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserId">
+            <map:java-operation name="getRawPostClickNetworkListByAdvertiserId"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7">
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdminException"
+                    name="WSSalesTransactionAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CustomerManagement.CustomerManagementException"
+                    name="CustomerManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListByAdvertiserId?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7"
+                style="document"/>
+            <input>
+                <soap:body parts="start end order advertiserId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSSalesTransactionAdminException">
+                <soap:fault name="WSSalesTransactionAdminException"
+                    use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="CustomerManagementException">
+                <soap:fault name="CustomerManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getRawPostClickNetworkListSize">
+            <map:java-operation name="getRawPostClickNetworkListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="updateRawPostClickNetwork">
+            <map:java-operation name="updateRawPostClickNetwork"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7KUxkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#updateRawPostClickNetwork?KExkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7KUxkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7"
+                style="document"/>
+            <input>
+                <soap:body parts="rpcn" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <binding name="WSSalesTransactionAdmin_SOAP12"
+        type="tns:WSSalesTransactionAdmin">
+        <soap12:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="gaove">
+            <map:java-operation name="gaove"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#gaove?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getRawPostClickNetworkList">
+            <map:java-operation name="getRawPostClickNetworkList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="/>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserExtId">
+            <map:java-operation
+                name="getRawPostClickNetworkListByAdvertiserExtId"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs=">
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdminException"
+                    name="WSSalesTransactionAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CustomerManagement.CustomerManagementException"
+                    name="CustomerManagementException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListByAdvertiserExtId?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU2FsZXNUcmFuc2FjdGlvbk1hbmFnZW1lbnQvUmF3UG9zdENsaWNrTmV0d29yazs="
+                style="document"/>
+            <input>
+                <soap12:body parts="start end order advertiserExiId"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSSalesTransactionAdminException">
+                <soap12:fault name="WSSalesTransactionAdminException"
+                    use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap12:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap12:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="CustomerManagementException">
+                <soap12:fault name="CustomerManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getRawPostClickNetworkListByAdvertiserId">
+            <map:java-operation name="getRawPostClickNetworkListByAdvertiserId"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7">
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.SalesTransactionManagement.WSSalesTransactionAdminException"
+                    name="WSSalesTransactionAdminException"/>
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.security.SecurityException"
+                    name="SecurityException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CustomerManagement.CustomerManagementException"
+                    name="CustomerManagementException"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListByAdvertiserId?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7"
+                style="document"/>
+            <input>
+                <soap12:body parts="start end order advertiserId"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSSalesTransactionAdminException">
+                <soap12:fault name="WSSalesTransactionAdminException"
+                    use="literal"/>
+            </fault>
+            <fault name="HeliosPersistenceException">
+                <soap12:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="SecurityException">
+                <soap12:fault name="SecurityException" use="literal"/>
+            </fault>
+            <fault name="CustomerManagementException">
+                <soap12:fault name="CustomerManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getRawPostClickNetworkListSize">
+            <map:java-operation name="getRawPostClickNetworkListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"/>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#getRawPostClickNetworkListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap12:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="updateRawPostClickNetwork">
+            <map:java-operation name="updateRawPostClickNetwork"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7KUxkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap12:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/SalesTransactionManagement/WSSalesTransactionAdmin#updateRawPostClickNetwork?KExkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7KUxkZS9hZHRlY2gvaGVsaW9zL1NhbGVzVHJhbnNhY3Rpb25NYW5hZ2VtZW50L1Jhd1Bvc3RDbGlja05ldHdvcms7"
+                style="document"/>
+            <input>
+                <soap12:body parts="rpcn" use="literal"/>
+            </input>
+            <output>
+                <soap12:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap12:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSSalesTransactionAdmin">
+        <port binding="tns:WSSalesTransactionAdmin"
+            name="WSSalesTransactionAdmin">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSSalesTransactionAdmin/"/>
+        </port>
+        <port binding="tns:WSSalesTransactionAdmin_SOAP12"
+            name="WSSalesTransactionAdmin_SOAP12">
+            <soap12:address
+            location="http://swd-franz.adtech.de:6060/WSSalesTransactionAdmin/"/>
+        </port>
+    </service>
+</definitions>

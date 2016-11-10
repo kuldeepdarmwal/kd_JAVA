@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head> 
+    <link rel="shortcut icon" href="http://will.vantagelocaldev.com/images/favicon.png">    
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">    
+    <script type="text/javascript" src="http://will.vantagelocaldev.com/assets/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="http://will.vantagelocaldev.com/js/jquery-1.7.1.min.js"></script>     
+    <script type="text/javascript" src="http://will.vantagelocaldev.com/js/proposal_pdf.js"></script>
+    <!-- <link rel="stylesheet" type="style/css" href="http://will.vantagelocaldev.com/assets/proposal_pdf/base_template.css" />-->
+    
+    <style type="text/css">
+      @font-face {    font-family: 'Bebas Neue';  src: url('http://www.vantagelocal.com/fonts/BebasNeue-webfont.eot');
+      src: url('http://www.vantagelocal.com/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),    
+      url('http://www.vantagelocal.com/fonts/BebasNeue-webfont.woff') format('woff'),  	    
+      url('http://www.vantagelocal.com/fonts/BebasNeue-webfont.ttf') format('truetype'),	    
+      url('http://www.vantagelocal.com/fonts/BebasNeue-webfont.svg#Bebas Neue') format('svg');    
+      font-weight: normal;    font-style: normal;   }    
+      /*CSS Document*/
+      * {margin:0; padding:0;page-break-inside:auto} 
+      img{border:none;} 
+      html{width:1240px;}
+      body{position:relative; border:0px black solid; margin:0px; padding:0px; width:100%;}
+      table {     border-collapse: collapse; }
+      .head_text {position:relative; font-family: 'Bebas Neue', sans-serif;font-size:55px;color:#414142; }
+      .big_text {position:relative; font-family: 'Bebas Neue', sans-serif; font-size:72px; color:#414142;left:50px; top:-20px;}
+      .sub_text {position:relative; font-size:23px; font-family: 'Oxygen', sans-serif; color:grey;}
+      .wrapper {/*height: 1596px;*/ width: 100%;}
+      .break {     display: block;     clear: both;     page-break-after: always; } 
+      .header_icon {position:absolute;     right:0px;     height:225px;     width:225px; } 
+      .header_img {height:225px;     width:90px; } 
+      .header_class {height:225px; }
+      #p1_logo {padding-top: 700px;}
+      .px_subtext {left:43%; width:600px; } 
+      .px_index {border-collapse:separate;     position:relative;     width:600px;     left:43% } 
+      .px_th {width:2.5%;height:20px; } 
+      table tr.separator {height:70px;  } 
+      #px_th1 {background-color:#D04646; } 
+      #px_th2 {background-color:#5BCAE9; } 
+      #px_th3 {background-color:#FCBB7F; } 
+      #px_th4 {background-color:#43AA96; } 
+      #px_th5 {background-color:#C697C0; } 
+      #px_th6 {background-color:#702469; } 
+      #px_th7 {background-color:#D1B632; } 
+      #px_th8 {background-color:#4795D1; } 
+      .p2_subtext {left:43%; width:600px;}
+      .p2_uptext {top:-20px;} 
+      .p2_headtext {top:-20px;left:30px; width:400px;}
+      .p2_head_group {position:relative; left:33.75%; width: 500px;}
+      .p2_head_group img {height:75px;width:80px; position:relative; top: -0px;}
+      .p3_headsubtext {left:43%; width:600px;}
+      .p3_textgroup1 {position:relative;  left:0px;} 
+      .p3_textgroup2 {position:relative;  left:0px;} 
+      .p3_textgroup3 {position:relative; right:0px;} 
+      #p3_icontext {position:relative; right:50px;text-align:right;padding-bottom:10px;}
+      .p3_icon_images {position:relative; top:25px; width:70px;padding-left:15px;}
+      #p3_info {position:relative; width:70;}
+      #p3_infotext {position:relative; right:50px; text-align:right;} 
+      .p3_geospan {position:relative; margin-top:-50px; height:50px; background-color:#5BCAE9; text-align:right;} 
+      .p3_geospantext {font-weight: bold;  padding-right:10px;     font-family: 'Oxygen', sans-serif;     font-size:16px;     line-height:50px;     color:white; } 
+      .p3_subtext {position:relative; /*left:-70px;*/left:350px; width:800px;}
+      .p4_headtext {top:0px; left:37.5%; width:600px; }
+      .p4_lettered_text {top: 0px; left:43%; width:600px;}
+      .p4_tabbed_headtext {top:0px; left:43%; width:600px;}
+      .p4_subtext {left:43%; width:600px; } 
+      .p4_bigheadtext {         position:relative;     left:250px;     font-family: 'Bebas Neue', sans-serif;     font-size:72px;     color:#414142;     width:600px; } 
+      #p4_demoimg {     padding-top:30px;     padding-bottom:30px; } 
+      #p4_demographiclist {     margin-top:30px;    /* width:600px;     height:400px;     margin-left:0px;     text-align:right;*/ } 
+      .p4_sitetext {     position:relative;     font-family: 'Bebas Neue', sans-serif;     font-size:55px;     top:0px;     left:20px;     color:#414142;      width:660px; } 
+      #p4_placement {     position:relative;     align:center; } 
+      .p4_sitesubtext {     position:relative;     font-family: 'Oxygen', sans-serif;     color:grey;     font-size:16px; /*    left:100px;*/  } 
+      .p4_continuetext {     font-family: 'Oxygen', sans-serif;     font-size:27px;     color:grey; }
+      .p4_primary_channel {top:0px; left:43%; width:600px;}
+      .p4_secondary_channel {left:43%; width:600px; } 
+      .p4_tertiary_channel {left:43%; width:600px; } 
+      table.p4_fixed {     position:relative;     left:5%;     right:5%;     table-layout:fixed;     width:90%; } 
+      table.p4_fixed td {     overflow: hidden;     word-wrap:break-word;      } 
+      table.p4_fixed tr { } 
+      tr.p4_siterow {     height:30px;     font-family: 'Oxygen', sans-serif;     color:grey;     font-size:16px; } 
+      tr.p4_siterow2 {     height:30px;     background-color:#F6F6F6;     font-family: 'Oxygen', sans-serif;     color:grey;     font-size:16px; } 
+      table.p4_fixed th {     height:120px;     position:relative;     /*bottom:-35px;*/     white-space:nowrap; } 
+      .th_rotate {     filter: alpha (opacity=100);     opacity:1;     border:none;     background-color:transparent;     color:white;     vertical-align:middle;     text-align:left;     
+      -moz-transform: rotate(270deg);  /* FF3.5 */
+      -o-transform: rotate(270deg);  /* Opera 10.5 */     
+      -webkit-transform: rotate(270deg);  /* Saf3.1+, Chrome */     
+      filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=4.712388);  /* IE6,IE7 */
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=4.712388)"; /* IE8 */ } 
+      #p4_tablehead {     background-color:#6F7173; }
+      .p4_td {     height:15px;     text-align:center; } 
+      .p4_td2 {     height:15px;     text-align:center;   } 
+      .p4_th {     position:relative;     vertical-align:inherit;     color:white; } 
+      .head_tr {     font-family: 'Oxygen', sans-serif;     background-color:#97989A;     font-size:16px; } 
+      .p5_subtext {font-size:27px;text-align:center;} 
+      .p5_disptr {background-color:#EAEAEA; } 
+      .p5_headtext {top:0px;left:10%;width:600px; } 
+      .p5_trhead {width:20%;}
+      .p6_headtext {top:0px;     left:0px;} 
+      .p6_displaytext {     font-size:23px;     font-family: 'Oxygen', sans-serif;     color:grey; } 
+      .p6_displayhead {     position:relative;     left:15%;     right:15%;     width:70%; } 
+      .p6_conf {     position:relative;     padding-top:40px; } 
+      .p6_confhead {     position:relative;     font-family: 'Bebas Neue', sans-serif;     font-size:55px;     color:#414142;     left:7%;     width:60% } 
+      .p6_conftext {     font-size:23px;     position:relative;     font-family: 'Oxygen', sans-serif;     color:grey;     left:7%;     width:80%; } 
+      .p6_subtext {left:15%; right:15%; width:70% } 
+      .p6_vars {     position:relative;     float:right;     text-align:right; } 
+      .p7_subtext {left:43%; width:600px; } 
+      .p7_headtext {top:0px; left:43%; width:600px; } 
+      .p8_headsubtext {      font-size:23px;     position:relative;     font-family: 'Oxygen', sans-serif;     color:grey;     left:12%;     width:960px; } 
+      .p8_lefttext {width:600px;} 
+      .p8_righttext {width: 960px;}
+      .p8_headtext {    position:relative;     font-family: 'Bebas Neue', sans-serif;     font-size:55px;      color:#414142;  } 
+      .p8_textgroup1 {     position:relative;     left:240px;     top:50px;     width:1000px; } .p8_customdesign {     float:left; } 
+      .p8_textgroup2 {     position:relative;     left:20px;     top:50px;     width:540px; } .p8_richmedia {     float:right; } 
+      .p8_textgroup3 {     position:relative;     left:240px;     top:50px;     width:1000px;  } .p8_advancedplatform {     float:left; } 
+      .p8_textgroup4 {     position:relative;     left:20px;     top:50px;     width:540px; } .p8_guarantee {     float:right; } 
+      .p8_rowgroup {     position:relative;     margin-top:170px; } 
+      .p9_subtext {left:12%; width:760px; } 
+      .p9_headtext {text-align:right;     left:-10%;} 
+      .p9_righttext {text-align:right;     left:-10%;} 
+      .separator {     font-size:27px;     font-family: 'Oxygen', sans-serif;     color:grey;   }    
+    </style>
+
+    <style id="styles" type="text/css">    
+      div.editable      {      border: solid 2px Transparent;      } 
+      div.editable:hover {   border-color:black; } 
+    </style>
+    <title>Vantage Local | Proposal</title>
+    <script type="text/javascript"></script><script type="text/javascript"></script>
+  </head> 
+  <body onpageshow="event.persisted &amp;&amp; (function(){var allInstances = CKEDITOR.instances, editor, doc;for(var i in allInstances ){editor = allInstances[ i ];doc = editor.document;if (doc){doc.$.designMode = &quot;off&quot;;doc.$.designMode = &quot;on&quot;;}}})();" >
+    
+    <div id="p1_wrapper" class="editable wrapper">     
+      <img id="p1_logo" src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p3_02.gif" alt="" align="middle" width="100%">   
+    </div>  
+    
+    <div class="break"></div>     
+    
+    <div id="px_wrapper" class="editable wrapper">   
+      
+      <img src="http://will.vantagelocaldev.com/images/proposal/remote/media_proposal.png" alt="">
+      <span class="big_text">Media Proposal</span>   
+      
+      <div class="px_subtext sub_text">
+	<p>Vantage Local is an industry leader in providing businesses of any size with powerful tools and research to effectively and efficiently target the specific demographic and geographic traits that define their customers. </p>
+    <p>&nbsp; </p>
+    <p>Our online media platform places rich digital advertisements on the&nbsp;world's most recognized networks like ESPN, Facebook, Food Network, CNN, Forbes, People, and Rolling Stone. &nbsp;With stunning creative, access to local customers, and 100% client satisfaction, Vantage Local works with you every step of the way to maximize your advertising budget and fully optimize your online marketing campaign. </p>
+    <p>&nbsp; </p>
+    <p> Contact: &nbsp;&nbsp;&nbsp;Andrew Robles (408) 440-6886</p>
+      </div>
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p4_03.gif" alt="" width="100%">
+      <div class="px_advlogo">    </div>
+      <div class="sub_text">     
+	<table class="px_index" cellpadding="10">
+	  <tbody>
+	    <tr class="separator"><th class="px_th" id="px_th1"></th><td>&nbsp; 1 &nbsp;&nbsp;&nbsp;</td><td>Executive Overview</td></tr>       
+	    <tr class="separator"><th class="px_th" id="px_th2"></th><td>&nbsp; 2 </td><td>Geographic Targeting</td></tr>       
+	    <tr class="separator"><th class="px_th" id="px_th3"></th><td>&nbsp; 3 </td><td>Targeting Strategy</td></tr>
+	    <tr class="separator"><th class="px_th" id="px_th4"></th><td>&nbsp; 4 </td><td>Performance Estimates</td></tr>
+	    <tr class="separator"><th class="px_th" id="px_th5"></th><td>&nbsp; 5 </td><td>Cost Summary</td></tr>
+	    <tr class="separator"><th class="px_th" id="px_th6"></th><td>&nbsp; 6 </td><td>Reporting</td></tr>
+	    <tr class="separator"><th class="px_th" id="px_th7"></th><td>&nbsp; 7 </td><td>Creative Banner Design</td></tr>
+	    <tr class="separator"><th class="px_th" id="px_th8"></th><td>&nbsp; 8 </td><td>About Us</td></tr>
+	  </tbody>
+	</table>
+      </div> 
+    </div>
+
+    <div class="break"></div>
+
+    <div id="p2_wrapper" class="editable wrapper">   
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/exec_overview.png">
+      <span class="p2_bigtext big_text">EXECUTIVE OVERVIEW</span>   
+      
+      <div class="p2_subtext sub_text">     
+	<p>At Vantage Local, our passion for online display is fueled by our unique understanding of today's online advertising reality: we offer businesses of all sizes the ability to efficiently engage with their preferred customers through a high-impact, visual message. &nbsp;</p>
+      </div>  
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p2_03.gif" alt="" height="50px" width="100%">   
+      
+      <div class="p2_group1">
+	<div class="p2_head_group">
+	  <img src="http://will.vantagelocaldev.com/images/proposal/remote/p2_20.png" alt=""> 
+	  <span class="p2_headtext head_text">BANNER ADS</span>
+	</div>
+	<div class="p2_subtext p2_uptext sub_text"> 		Full Service Creative Design</div> 	<div class="p2_subtext p2_uptext sub_text"> 		4 IAB-Standard Animated Ad Formats</div> 	<div class="p2_subtext p2_uptext sub_text"> 		Rich, Engaging Media Features</div> 	<div class="p2_subtext p2_uptext sub_text"> 		100% Satisfaction Commitment</div> </div>
+      
+      <div class="p2_group2">
+	<div class="p2_head_group">
+	  <img src="http://will.vantagelocaldev.com/images/proposal/remote/p2_08.png" alt="">
+	  <span  class="p2_headtext head_text">MEDIA BUY</span>    
+	</div>
+	<div class="p2_subtext p2_uptext sub_text">
+	  Geographic: <span id="T_NUM_ZIPS">12 Zip Codes</span> in <span id="T_NUM_COUNTIES">2 counties</span><br>
+	  <span id="T_NUM_CONTENT_SUBJECTS">Contextual: 2 Content Subjects<br></span>
+	  <span id="T_DEMOGRAPHIC_CATEGORIES">Demographics: Age, Income, Parenting, Education<br>
+	  </span>
+	  Total Population: Approximately <span id="T_GEO_POPULATION">322,875</span> People<br>
+	  <span class="R_RETARGETING">Retargeting: <span id="T_RETARGETING">No</span></span><br>    
+	</div>
+      </div>    
+      
+      <div class="p2_group3">
+	<div class="p2_head_group">
+	  <img src="http://will.vantagelocaldev.com/images/proposal/remote/p2_12.png" alt="">
+	  <span class="p2_headtext head_text">REPORTING</span>
+	</div>
+	<div class="p2_subtext p2_uptext sub_text">
+	  24/7 Online Access<br>
+	  Verified Results<br>       
+	  Campaign Optimization<br>
+	  Analytics Integration     
+	</div>   
+      </div>    
+      
+      <div class="p2_group4">
+	<div class="p2_head_group">
+	  <img src="http://will.vantagelocaldev.com/images/proposal/remote/p2_16.png" alt="">
+	  <span class="p2_headtext head_text" width="570" height="74" alt="">PACKAGE OPTIONS</span>
+	</div>
+	<div class="p2_subtext p2_uptext sub_text"> 	
+	  <span id="T_IMPRESSION_PACKAGES">
+	    320,000 Monthly Ad Views<br>
+	    230,000 Monthly Ad Views<br>
+	  </span>       
+	</div>     
+      </div>
+      
+    </div>
+    
+    <div class="break"></div>
+    
+    <div id="p3_wrapper" class="editable wrapper">
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/geo_targeting.png" alt="">
+      <span class="p3_bigtext big_text">Geographic Targeting</span>     
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/geohead.png" alt="">   
+      
+      <div class="p3_headsubtext sub_text">Vantage Local's geographic targeting technology can reach local audiences with compelling advertisements making online display advertising possible and profitable for local advertisers.</div>   	
+
+      <img src="http://will.vantagelocaldev.com/images/proposal/ProposalTemplate_1_03.gif" alt="" width="100%">
+      
+      <span id="T_GEO_1_IMG"><img src="http://www.vldir.com/proposal/img/12997_79_2012-10-22:23-02-58.png" width="100%"></span>     
+      <div class="p3_geospan" width="100%"> 	<span class="p3_geospantext"><span id="T_GEO_1_TITLE" style="font-weight: bold">Whole</span></span></div>
+      
+      <!--<div id="p3_icon"> </div>-->
+      <!--<img id="p3_icon" src="http://will.vantagelocaldev.com/images/proposal/p3icons.png" alt="" align="right">-->
+      
+      <!---->
+      
+      <div id="p3_icontext">
+	<div class="p3_textgroup1">
+	  <div class="head_text">TARGET AREA<img class="p3_icon_images" src="http://will.vantagelocaldev.com/images/proposal/remote/globe.png" alt=""></div>
+	  <div class="sub_text p3_subtext"> 	
+	    <span id="T_NUM_ZIPS2">12 Zip Codes</span> in <span id="T_COUNTY_LIST">San Mateo and Santa Clara counties </span>
+	  </div>
+	</div>
+	
+	<div class="p3_textgroup2">       
+	  <div class="head_text">TOTAL POPULATION<img class="p3_icon_images" src="http://will.vantagelocaldev.com/images/proposal/remote/city-arrow.png" alt=""></div>
+	  <div class="sub_text p3_subtext">
+ 	    Approximately <span id="T_GEO_POPULATION2">322,875</span> People
+	  </div>
+	</div>
+      </div>
+      
+      <div class="break"></div>              <div id="p3_wrapper" class="editable wrapper">
+  <p> 	<img alt="" class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/geo_targeting.png"> <span class="p3_bigtext big_text">Geographic Targeting <span class="p4_continuetext">(continued)</span></span> <img alt="" class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/geohead.png"></p>
+  <img alt="" src="http://will.vantagelocaldev.com/images/proposal/ProposalTemplate_1_03.gif" width="100%">
+      
+      <div id="T_GEO_LINKS">
+	<img src="http://www.vldir.com/proposal/img/12997_79_2012-10-22:23-04-04.png" width="100%">
+	<div class="p3_geospan" width="100%"> 	<span class="p3_geospantext"><span id="T_GEO_1_TITLE" style="font-weight: bold">123</span></span></div>
+	<img src="http://www.vldir.com/proposal/img/12871_71_2012-10-12:17-02-40.png" width="100%">
+	<div class="p3_geospan" width="100%"> 	<span class="p3_geospantext"><span id="T_GEO_1_TITLE" style="font-weight: bold">dddd</span></span></div>
+	<img src="http://www.vldir.com/proposal/img/12871_71_2012-10-12:17-17-22.png" width="100%">
+	<div class="p3_geospan" width="100%"> 	<span class="p3_geospantext"><span id="T_GEO_1_TITLE" style="font-weight: bold">44444</span></span></div>
+      </div>
+
+      <div id="p3_infotext">
+	<img class="p3_icon_images" src="http://will.vantagelocaldev.com/images/proposal/remote/geo_info.png" alt="" align="right">
+	
+	<div class="p3_textgroup3">       
+	  <div style="top:10px;" id="p3_subhead2" class="p3_headtext head_text">INFO</div>
+	  <div class="p3_subtext sub_text"> 	
+      The geographic area targets <span id="T_NUM_ZIPS3">12 zip codes</span> in <span id="T_COUNTY_LIST2">San Mateo and Santa Clara counties</span></div>
+	  
+	</div> 
+      </div> </div>
+      <div class="break"></div> 
+    </div>  
+    
+     
+
+    <div id="p4_wrapper" class="editable wrapper">   
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/targeting_strategy.png" alt="">     
+      <span class="p4_bigtext big_text">Targeting Strategy</span>     
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/targetstrathead.png" alt="">   
+      
+      <div class="p4_subtext sub_text">
+	<p>VL's best practice recommendation takes a comprehensive approach to local audience targeting. &nbsp;</p>
+    <p>&nbsp; </p>
+    <p> Depending on your specific online marketing needs, we can deliver insights and solutions that drive your brand's message to desired audiences with increasing frequency and effectiveness.&nbsp;</p>
+      </div> 
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p2_03.gif" alt="" height="50px" width="100%">   
+
+      <div id="p4_infolist">     
+	<div id="p4_subhead1" class="R_CONTEXTUAL p4_tabbed_headtext head_text">
+	  Contextual Targeting
+	</div>
+	<div class="R_CONTEXTUAL p4_subtext sub_text">Selecting webpages with content that matches your offering</div>
+	<div id="p4_subhead2" class="p4_tabbed_headtext head_text">Demographic Targeting</div>
+	<div class="p4_subtext sub_text">Selecting websites by demographic statistics</div>
+	<div id="p4_subhead3" class="R_RETARGETING p4_tabbed_headtext head_text">Retargeting</div>
+	<div class="R_RETARGETING p4_subtext sub_text">Targeting customers that have already demonstrated an interest in your offering</div>
+      </div>   
+      <div>     
+	<img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p6_09.gif" alt="" width="100%">   
+      </div>   
+      <div class="p4_subtext sub_text"> 	&nbsp;</div> <div class="p4_subtext sub_text"> 	Vantage Local has the largest partner network of any locally targeted media buyer.</div>
+      <div class="R_CONTEXTUAL break"></div>   
+
+      <div class="R_CONTEXTUAL"> 
+	<div>
+	<img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/targeting_strategy.png" alt="">     
+	<span class="p4_bigtext big_text">Targeting Strategy <span class="p4_continuetext">(continued)</span></span>
+	<img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/targetstrathead.png" alt="">
+      </div>
+	   <div class="p4_tabbed_headtext head_text">Contextual Targeting</div>   
+      <div class="p4_subtext sub_text">Vantage Local's contextual platform searches the internet for highly relevant website content and places your ad on brand-safe webpages that match your product's message.</div>
+      <div style="padding-top:30px;padding-bottom:30px;">     
+	<img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p7_05.gif" alt="" width="100%">   
+      </div>   
+      <div id="T_CHANNEL_SUBJECTS">
+	<div>
+	  <div class="p4_bigheadtext">Subjects</div>
+	  <span class="p4_tabbed_headtext head_text">Arts &amp; Entertainment </span>
+	</div>
+	<div class="p4_subtext sub_text">
+	  Fine Art</div>
+	<div class="p4_tabbed_headtext head_text">Arts &amp; Entertainment </div>
+	<div class="p4_subtext sub_text"> Movies </div>
+      </div>
+      </div>
+      <div class="break"></div>      
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/targeting_strategy.png" alt="">        
+      <span class="p4_bigtext big_text">Targeting Strategy <span class="p4_continuetext">(continued)</span></span>        
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/targetstrathead.png" alt="">      
+      
+      <img id="p4_demoimg" src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p8_03.gif" alt="" width="100%">
+      <div class="p4_tabbed_headtext head_text">Demographic Targeting</div>      
+      <div class="p4_subtext sub_text">
+	<p>Demographic targeting identifies websites frequented by viewers of the same age, gender, parental status, education, ethnicity and income level as your customers.</p>
+    <p>&nbsp; </p>
+    <p> With the depth of advertising placements available, demographic targeting technology directs an ad to the local customers who matter most.</p>
+      </div>
+      
+      <div id="p4_demographiclist">
+	<div class="p4_tabbed_headtext head_text">Target Demographics</div> 
+	<div class="p4_subtext sub_text"> 	 
+	  <p><span id="T_DEMOGRAPHICS">
+	    Age: 25-34, 35-44, 45-54<br>
+	    Income: 0-50k, 50-100k<br>
+	    Parenting: No Kids<br>
+      Education: No College, Under Grad</span></p>
+	  <p><span><br>
+	    </span>
+	    Targeting <span id="T_DEMO_POPULATION">56,099</span> out of <span id="T_GEO_POPULATION2">322,875</span> population       </p>
+	</div>
+      </div>   
+      
+      <div class="break"></div>
+      
+      <div id="T_SITE_HEADER">
+	<img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/targeting_strategy.png" alt="">
+	<span class="p4_bigtext big_text">Targeting Strategy <span class="p4_continuetext">(continued)</span></span> 
+	<img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/targetstrathead.png" alt="">
+	<div class="p4_sitetext">Site List</div>           
+      </div>  
+      
+      <div id="T_SITE_LIST">Sitelist goes here</div><div class="p6_conf">  <div class="p6_confhead">Info</div>
+	<div class="p6_conftext">       
+	  <p>The Site List is a subset of premium placements within the selected </p>
+	  <p>verticals where your ads will be shown.  The Vantage Local </p>
+	  <p>reporting portal provides access to the complete list of publisher </p>
+	  <p>placements within your target verticals.</p>
+	</div> </div>
+	<div class="break"></div>  
+      <div class="R_RETARGETING">
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/targeting_strategy.png" alt="">
+      <span class="p4_bigtext big_text">Targeting Strategy <span class="p4_continuetext">(continued)</span>
+      </span><img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/targetstrathead.png" alt="">
+
+      
+      <div class="p4_tabbed_headtext head_text">
+	Retargeting
+      </div>      
+      <div class="p4_subtext sub_text">Vantage Local's retargeting technology nurtures online leads by keeping your message in front of customers who have clicked on your ad or visited your website.</div>  
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p4_03.gif" alt="" width="100%">
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p11_06.gif" alt="" width="100%">   
+      <br>
+      <br>
+      <div class="p4_tabbed_headtext head_text">INFO</div>
+      <div class="p4_subtext sub_text">
+	<p>In compliance with the Digital Advertising Alliance's Self- Regulatory Principles, Vantage Local provides a self optout ability for retargeted consumers. A consumer may also opt-out of the use of our retargeting ad technology by disabling cookies on their browser.</p>
+      </div> 
+    </div> 
+    </div>
+    <div class="break"></div>
+    
+    
+    <div id="p5_wrapper" class="editable wrapper">
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/performance_estimates.png" alt="">  
+      <span class="big_text">Performance Estimates</span>
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/perfesthead.png" alt="">  
+      <br><br>
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p12_02.gif" alt="" width="100%">
+		<div style="height:30px;"></div>
+      <div id="T_DISPLAY_PACKAGES">
+	<div class="p5_headtext head_text">Display Package 1 </div>
+	<div align="center">
+	  <table class="p5_subtext sub_text" cellspacing="10" width="80%">
+	    <tbody>
+	      <tr class="p5_disptr">
+		<th class="p5_trhead">MONTH</th><th class="p5_trhead">IMPRESSIONS</th><th class="p5_trhead">REACH[%]</th><th class="p5_trhead">REACH</th><th class="p5_trhead">FREQUENCY</th>
+	      </tr>
+	      <tr><td>1</td><td>320,000</td><td>59.2%</td><td>33,200</td><td>3.5</td></tr>
+	      <tr><td>2</td><td>640,000</td><td>72.3%</td><td>40,600</td><td>5.7</td></tr>
+	      <tr><td>3</td><td>960,000</td><td>77.3%</td><td>43,300</td><td>7.9</td></tr>
+	      <tr><td>4</td><td>1,280,000</td><td>79.8%</td><td>44,700</td><td>10.2</td></tr>
+	      <tr><td>5</td><td>1,600,000</td><td>81.3%</td><td>45,600</td><td>12.6</td></tr>
+	      <tr><td>6</td><td>1,920,000</td><td>82.3%</td><td>46,100</td><td>14.9</td></tr>
+	    </tbody>
+	  </table>
+	</div>
+    <p>&nbsp; </p>
+	<img src="/images/proposal/proposaltemplate_p12_09.gif" width="100%" alt="">
+    <p>&nbsp; </p>
+	<div class="p5_headtext head_text">Display Package 2 </div>
+	<div align="center">
+	  <table class="p5_subtext sub_text" cellspacing="10" width="80%"><tbody><tr class="p5_disptr"><th class="p5_trhead">MONTH</th><th class="p5_trhead">IMPRESSIONS</th><th class="p5_trhead">REACH[%]</th><th class="p5_trhead">REACH</th><th class="p5_trhead">FREQUENCY</th></tr>
+	      <tr><td>1</td><td>230,000</td><td>51.3%</td><td>28,800</td><td>2.9</td></tr>
+	      <tr><td>2</td><td>460,000</td><td>66.8%</td><td>37,500</td><td>4.4</td></tr>
+	      <tr><td>3</td><td>690,000</td><td>73.4%</td><td>41,200</td><td>6.0</td></tr>
+	      <tr><td>4</td><td>920,000</td><td>76.8%</td><td>43,100</td><td>7.6</td></tr>
+	      <tr><td>5</td><td>1,150,000</td><td>78.9%</td><td>44,300</td><td>9.3</td></tr>
+	      <tr><td>6</td><td>1,380,000</td><td>80.3%</td><td>45,000</td><td>11.0</td></tr>
+	</tbody></table></div>
+    <p>&nbsp; </p>
+	<img src="/images/proposal/proposaltemplate_p12_09.gif" width="100%" alt="">
+    <p>&nbsp; </p>
+      </div>
+    </div>  
+    <div class="break"></div>  
+    
+    <div id="p6_wrapper" class="editable wrapper">   
+
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/cost_summary.png" alt="">
+      <span class="big_text">Cost Summary</span>     
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/costhead.png" alt="">   
+      
+      <div id="T_DISPLAY_PACKAGE_COST">
+	<div class="p6_displayhead">
+	  <span class="p6_headtext head_text">
+	    320,000 Monthly Ad Views&nbsp;</span><span class="p6_displaytext">DISPLAY PACKAGE 1</span></div>
+	<div class="p6_subtext sub_text">
+	  <div>Ad Creative Design and Production:<span class="p6_vars"> $0</span></div>
+	  <div>Impressions Cost:<span class="p6_vars"> $1,802</span></div>
+	  <div>Retargeting Cost:<span class="p6_vars"> $0</span></div>
+	  <div>Monthly Cost Summary:<span class="p6_vars"> $1,802</span></div>
+	</div>
+    <p>&nbsp; </p>
+	<div class="p6_displayhead">
+	  <span class="p6_headtext head_text">
+	    230,000 Monthly Ad Views&nbsp;</span><span class="p6_displaytext">DISPLAY PACKAGE 2</span></div>
+	<div class="p6_subtext sub_text">
+	  <div>Ad Creative Design and Production:<span class="p6_vars"> $0</span></div>
+	  <div>Impressions Cost:<span class="p6_vars"> $1,617</span></div>
+	  <div>Retargeting Cost:<span class="p6_vars"> $0</span></div>
+	  <div>Monthly Cost Summary:<span class="p6_vars"> $1,617</span></div>
+	</div>
+      </div>   
+      <br><br><br><br>   
+      <div class="p6_conf">     
+	<div class="p6_confhead">Confidentiality</div>
+	<div class="p6_conftext">       
+	  Media Cost Quote valid until 
+	  <span id="T_DATE">November 13, 2012</span>
+	  <br>Information provided in this media plan is confidential.     </div>
+	<img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p13_05.gif" alt="" width="100%">
+	<div class="p6_conftext">       
+	  * Demographic website data provided by Quantcast Corporation, San Francisco, CA<br>
+	  * Circular Area Profiles (Demographic and Population data) sourced from 2012 US Census results<br>
+	  * Placements subject to availability<br>       
+	  * Website reach and frequency data sourced via a proprietary list of opt-in consumer panel       
+	  data, and other third-party market research     
+	</div>   
+    </div> </div>  
+    <div class="break"></div>
+
+    <div id="p7_wrapper" class="editable wrapper">
+      
+      <img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/reporting.png" alt="">     
+      <span class="big_text">Reporting</span>     
+      <img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/reportinghead.png" alt="">   
+      
+      <div class="p7_subtext sub_text">     
+	<p>Campaign analytics are an important part in evaluating the performance of an online strategy. We supply transparent reports which provide visibility into the ad placements by website, geography, demographic statistics, viewer engagement, and retargeting.</p>
+    <p>&nbsp; </p>
+Audience awareness builds over time. For this reason, it is important to be aware of not only the click-through-rate but also the delivery of impressions to your target audience.</div>    
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p14_03.gif" alt="" width="100%">    
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p14_04.gif" alt="" width="100%">    
+      <div class="p7_headtext head_text">24/7 Access</div>   
+      <div class="p7_subtext sub_text">     
+	Our online client portal is accessible 24/7 and allows you to track click throughs and adviews by day, placement, location, and demographic attributes. 
+      </div>   
+      <br><br>   
+      <div class="p7_headtext head_text">Support</div>
+      <div class="p7_subtext sub_text">As results are seen, Vantage Local will evaluate the strategy and make adjustments to targeting and placement.</div>  
+    </div>         
+    <div class="break"></div>
+    
+    
+    <div id="p8_wrapper" class="editable wrapper">   
+      <div>     
+	<img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/creative_banner_design.png" alt="">     
+	<span class="big_text">Creative Banner Design</span>     
+	<img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/creativehead.png" alt="">   
+      </div>    
+      <div class="p8_headsubtext">     
+	Great advertising begins with great creative design - the key ingredient in effective digital advertising. We design powerful, dynamic display ads that capture your audience's attention and communicate your brand's image.    
+      </div>   
+      <div>     
+	<img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p15_03.gif" alt="" width="100%">   
+      </div>    
+      <div class="p8_nopad">     
+	<img class="p8_customdesign" src="http://will.vantagelocaldev.com/images/proposal/remote/custom_media_graphic.png" alt="" height="245" width="500">     
+	<div class="p8_textgroup1">       
+	  <div class="p8_headtext">Custom Design</div>       
+	  <div class="p8_righttext sub_text">Our dedicated design team is committed to  	    creating eye-catching dynamic ads that capture 	    your unique brand and message. </div>     
+	</div>   
+      </div>    
+      <div class="p8_rowgroup">     
+	<img class="p8_richmedia" src="http://will.vantagelocaldev.com/images/proposal/remote/rich_media.png" alt="" height="245" width="500">     
+	<div class="p8_textgroup2">       
+	  <div class="p8_headtext head_text">Rich Media</div>       
+	  <div class="p8_lefttext sub_text">Our animated banner ads leverage modern rich 	 	    media features and ad formats such as inbanner 	    video, full screen video takeover, and user interactivity. </div>     
+	</div>   
+      </div>      
+      <div class="p8_rowgroup">     
+	<img class="p8_advancedplatform" src="http://will.vantagelocaldev.com/images/proposal/remote/advanced_platform.png" alt="" height="245" width="500">
+	<div class="p8_textgroup3">       
+	  <div class="p8_headtext head_text">Advanced Platform</div>       
+	  <div class="p8_righttext sub_text">Banner ads require more than just what meets the eye. 	 	    Our advanced platform joins art and technology to create 	 	    ads that track and optimize creative performance. </div>     
+	</div>   
+      </div>   
+      <div class="p8_rowgroup">     
+	<img class="p8_guarantee" src="http://will.vantagelocaldev.com/images/proposal/remote/guarantee.png" alt="" height="245" width="500">
+	<div class="p8_textgroup4">       
+	  <div class="p8_headtext head_text">Guarantee</div>       
+	  <div class="p8_righttext sub_text">We are committed to 100% client satisfaction with creative design.</div>     
+	</div>   
+      </div> 
+    </div> 
+    
+
+    <div class="break"></div>
+    <div id="p9_wrapper" class="editable wrapper">   
+      <div>
+	<img class="header_img" src="http://will.vantagelocaldev.com/images/proposal/remote/about_us.png" alt="">     
+	<span class="big_text">About Us</span>    
+	<img class="header_icon" src="http://will.vantagelocaldev.com/images/proposal/remote/geohead.png" alt="">   
+      </div>      
+      <div class="p9_subtext sub_text">What do you get when you cross a Madison Avenue advertising executive, a serial small business owner, and technology development guru? You're looking at it!<br />
+        <br />
+Today we are a collaborative team of professional designers, developers, writers, techno marketing enthusiasts, and entrepreneurs. We have assembled this team for the single purpose of helping our clients harness the revolutionary advantages of locally targeted display advertising.<br />
+<br />
+vantagelocal.com/ourteam.html</div>   
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p16_03.gif" alt="" width="100%">    
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p16_04.gif" alt="" width="100%">    
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p16_05.gif" alt="" width="100%">    
+      <img src="http://will.vantagelocaldev.com/images/proposal/proposaltemplate_p16_06.gif" alt="" width="100%">   
+     <div class="p9_headtext head_text"> 	Contact</div> <div class="p9_righttext sub_text">Andrew Robles</div>
+     <div class="p9_righttext sub_text">Director of Sales</div>
+     <div class="p9_righttext sub_text"> 	320 Mountain View Ave<br> 	Mountain View, CA 94041<br> 	<a href="http://www.vantagelocal.com">vantagelocal.com</a><br> 	<br>
+ 	  408.440.6886 (p)<br>
+ 	   	650.644.0522 (f)</div> </div>     </body></html>

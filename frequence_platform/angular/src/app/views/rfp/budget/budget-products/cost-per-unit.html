@@ -1,0 +1,87 @@
+<div class="col s2">
+	<div class="require_multi_location_placeholder">
+	&nbsp;
+	</div>
+	<div class="require_multi_location" *ngIf="locations.length > 1">
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col s11 offset-s1 grey-text text-darken-1 text-bold require_multi_location product_multi_location_text">
+				Multi-region Budget Allocation
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s11 offset-s1 require_multi_location">
+				<input id="budget_allocation_per_pop_{{product.id}}" class="product_budget_allocation with-gap" type="radio" value="per_pop" [(ngModel)]="product.budget_allocation"/>
+				<label [attr.for]="'budget_allocation_per_pop_'+product.id">allocate budget per population</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s11 offset-s1 require_multi_location" style="margin-top:-1rem;">
+				<input id="budget_allocation_fixed_{{product.id}}" class="product_budget_allocation with-gap" type="radio" value="fixed" [(ngModel)]="product.budget_allocation"/>
+				<label [attr.for]="'budget_allocation_fixed_'+product.id">fixed budget per region</label>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col s10">
+	<div *ngFor="let option of options; let i = index" class="col s4">
+		<div class="row">
+			<div class="input-field col s7">
+				<span class="discrete_dollar_prepend">$</span>
+				<input type="text" id="total_dollars_input_{{i}}" class="grey-text product_input input_dollars budget_slider_multiplier budget_impressions_dependent" [(ngModel)]="option.config[product.id].data.unit" mycurrency>
+				<label class="active" [attr.for]="'total_dollars_input_' + i">Total Budget <small>({{option.config[product.id].data.impressions_total() | number}} imprs)</small></label>
+			</div>
+		</div>
+		<section *ngIf="hasGeofences()">
+			<div class="row">
+				<span class="component_text grey-text">Display Component</span>
+				<div class="input-field col s4">
+					<span class="discrete_dollar_prepend">$</span>
+					<input type="text" class="grey-text input_cpm product_input" [(ngModel)]="option.config[product.id].data.cpm" (change)="cpmFloorChange($event, option.optionId, false);">
+					<label class="active">{{product.definition.options[i].cpm.label}}</label>
+				</div>
+				<div class="input-field col s7 offset-s1 addon_product_breakdown">
+					<span class="addon_line_item">
+						<span class="value">{{option.config[product.id].data.vanilla_impressions_total() | number}}</span>
+						<span class="label">Impressions</span>
+					</span>
+					<span class="addon_line_item">
+						<span class="value">{{option.config[product.id].data.vanilla_dollars_total() | currency:'USD':'$'}}</span>
+						<span class="label">Dollars</span>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<span class="component_text grey-text">Geofencing Component</span>
+				<div class="input-field col s4">
+					<span class="discrete_dollar_prepend">$</span>
+					<input type="text" class="grey-text input_cpm product_input"
+						[(ngModel)]="option.config[product.id].data.geofence_cpm" (change)="cpmFloorChange($event, option.optionId, true);">
+					<label class="active">{{product.definition.options[i].cpm.label}}</label>
+				</div>
+				<div class="input-field col s7 offset-s1 addon_product_breakdown">
+					<span class="addon_line_item">
+						<span class="value">{{option.config[product.id].data.geofence_impressions_total() | number}}</span>
+						<span class="label">Impressions</span>
+					</span>
+					<span class="addon_line_item">
+						<span class="value">{{option.config[product.id].data.geofence_dollars_total() | currency:'USD':'$'}}</span>
+						<span class="label">Dollars</span>
+					</span>
+				</div>
+			</div>
+		</section>
+		<div *ngIf="!hasGeofences()" class="row">
+			<div class="input-field col s4">
+				<span class="discrete_dollar_prepend">$</span>
+				<input type="text" class="grey-text input_cpm product_input"
+					[(ngModel)]="option.config[product.id].data.cpm" (change)="cpmFloorChange($event, option.optionId, false);">
+				<label class="active">{{product.definition.options[i].cpm.label}}</label>
+			</div>
+		</div>
+	</div>
+	<div class="row" *ngIf="product.definition.alert_text">
+		<div class="col s12 grey-text">
+			For campaigns that run fewer than 100K total impressions over 3 months, be sure to add a $100 Creative Fee
+		</div>
+	</div>
+</div>

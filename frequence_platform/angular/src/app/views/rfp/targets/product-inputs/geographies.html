@@ -1,0 +1,227 @@
+<div class="mpq_section_card card scrollspy" id="mpq_geography_info_section">
+    <h4 class="card-title grey-text text-darken-1 bold">
+        <i class="material-icons component-error" *ngIf="!validationStatus">error</i>Geographies
+        <span *ngFor="let productName of productNames; let i = index; let last = last; let first = first"
+                     style="font-weight:normal;font-size:1rem;">
+            <span *ngIf="first" style="display:inline-block; margin-left: 5%;"></span>
+            {{productName}}<span *ngIf="!last">, </span>
+        </span>
+    </h4>
+    <div class="geo_tab">
+        <div class="card-content">
+            <div style="display:none;" id="geo_error_div">
+                <span class="span12 alert alert-error" id="geo_error_text"></span>
+            </div>
+            <div class="row">
+                <div class="col s2" id="geo_select_options">
+                    <select id="mpq_geo_search_type" [(ngModel)]="selectedLocation.search_type"
+                            materialize="material_select" [materializeSelectOptions]="geographyOptions">
+                        <option *ngFor="let geographyOption of geographyOptions"
+                                [value]="geographyOption.value">{{geographyOption.name}}
+                        </option>
+                    </select>
+                </div>
+                <div id="mpq_map_search_box_content" class="col s10">
+                    <div class="search_box_pane active">
+                        <form>
+                            <div class="row">
+                                <div class="col s9" [ngClass]="{hidden: selectedLocation.search_type !== 'custom_regions'}">
+                                    <input style="width:100%" type="hidden" id="custom_regions_multiselect1" #customRegions [propertiesObj]="geographiesObj" mySelect2>
+                                </div>
+                                <div class="col s9" *ngIf="selectedLocation.search_type === 'radius'">
+                                    <div style="float:left; width:175px;">
+                                        <input type="hidden" id="region_type" value="ZIP">
+                                        <span>Zips within </span>
+                                        <div id="radius_span">
+                                            <input class="grey-text text-darken-1" type="text" id="radius" [(ngModel)]="selectedLocation.counter"/>
+                                            <span> miles of</span>
+                                        </div>
+                                    </div>
+                                    <div style="overflow:hidden">
+                                        <input class="grey-text text-darken-1" type="text" [(ngModel)]="selectedLocation.address" id="address">
+                                    </div>
+                                </div>
+                                <div class="col s9" *ngIf="selectedLocation.search_type === 'known_zips'">
+                                    <textarea id="set_zips" class="materialize-textarea grey-text text-darken-1"
+                                              (change)="formatKnownZips($event)">{{selectedLocation.ids.zcta | join}}</textarea>
+                                    <label id="set_zips_label" style="margin-top: -1.65rem; display: inline-block;" for="set_zips">Type zips here (For Example: 94303, 94100, 93456...)</label>
+                                </div>
+                                <div class="col s3">
+                                    <a id="custom_regions_multiselect_load_button" class="waves-effect waves-light btn" (click)="loadRegions()">Load Regions</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mpq_geo_map_container">
+            <div id="map_loading_image">
+                <img src="/images/mpq_v2_loader.gif" />
+            </div>
+            <div id="add_location_container">
+                <a (click)="toggleAddLocationMenu($event)" id="geo_add_location_dropdown_button" class="btn waves-effect waves-light grey lighten-2 modal-trigger tooltipped" data-position="bottom" data-tooltip-type="html" data-tooltip="Split your budget<br>by location">
+                    <i class="material-icons">&#xE5D2;</i>
+                    <span class="number_of_locations_span" *ngIf="locations.length > 1 || locations[0].ids.zcta.length > 0" style="display: inline;">{{locations.length}}</span>
+                </a>
+                <add-location [locations]="locations" [has-geofencing]="hasGeofencing" (select-location)="selectLocation($event)" (add-location)="addLocation.emit()" (remove-location)="removeLocation.emit($event)" *ngIf="showAddLocationMenu" id="geo_location_menu_container" (click)="$event.stopImmediatePropagation()" style="display:block;"></add-location>
+            </div>
+            <div id="region-links" style="width:100%;height:750px;">
+                <iframe id="iframe-map" src="/mpq/map/{{selectedLocation.page}}/{{uniqueDisplayId}}#snug" seamless="seamless" height="100%" width="100%;" overflow="hidden" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bulk_locations_upload_modal" class="modal modal-fixed-footer" style="top: 20%;">
+    <div class="modal-content" style="position: static;">
+        <h4>Bulk Upload Locations</h4>
+        <p>Locations can be bulk uploaded.</p>
+        <p>Pro tip: enter your data into a spreadsheet and copy-paste into the text box below.</p>
+        <p>Select your bulk upload method:</p>
+        <form action="#">
+            <span class="tooltipped" data-tooltip="Format: Address;Radius" data-position="top">
+                <input name="submission_type" type="radio" id="by_radius" value="radius" [(ngModel)]="selectedGeoSubmissionType" />
+                <label for="by_radius">By Radius</label>
+            </span>
+            <span class="tooltipped" data-tooltip="Format: Address;Population" data-position="top">
+                <input name="submission_type" type="radio" id="by_population" value="population" [(ngModel)]="selectedGeoSubmissionType"  />
+                <label for="by_population">By Population</label>
+            </span>
+            <span class="tooltipped" data-tooltip="Format: Address;Radius; OR Address;;Population" data-position="top">
+                <input name="submission_type" type="radio" id="by_both" value="both" [(ngModel)]="selectedGeoSubmissionType"  />
+                <label for="by_both">Both</label>
+            </span>
+            <blockquote id="radius_blockquote" *ngIf="selectedGeoSubmissionType === 'radius'">
+                Example: Location Center &#8677; Miles
+                <table class="bordered">
+                    <tbody>
+                        <tr>
+                            <td>Golden Gate Bridge</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Statue of Liberty</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>1600 Pennsylvania Avenue NW Washington, DC 20500</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </blockquote>
+            <blockquote id="population_blockquote" *ngIf="selectedGeoSubmissionType === 'population'">
+                Example: Location Center &#8677; Population
+                <table class="bordered">
+                    <tbody>
+                        <tr>
+                            <td>Golden Gate Bridge</td>
+                            <td>1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Statue of Liberty</td>
+                            <td>15,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>1600 Pennsylvania Avenue NW Washington, DC 20500</td>
+                            <td>100000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </blockquote>
+            <blockquote id="both_blockquote" *ngIf="selectedGeoSubmissionType === 'both'">
+                Example: Location Center &#8677; Miles &#8677; <span style="font-weight:normal;">OR</span> Location Center &#8677; &#8677; Population
+                <table class="bordered">
+                    <tbody>
+                        <tr>
+                            <td>Golden Gate Bridge</td>
+                            <td></td>
+                            <td>1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Statue of Liberty</td>
+                            <td>13</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1600 Pennsylvania Avenue NW Washington, DC 20500</td>
+                            <td></td>
+                            <td>100000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </blockquote>
+            <div class="input-field">
+                <textarea id="bulk_upload_input_field" style="height:125px" [(ngModel)]="bulk_location_string"></textarea>
+                <label for="bulk_upload_input_field">Paste tab-delimited locations here</label>
+            </div>
+            <span style="font-size:10px;font-weight:light;">(Tabs will be converted into semicolons)</span>
+        </form>
+        <div class="progress" style="display:none;">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <div class="modal-footer" style="position: static;">
+        <a id="upload_bulk_locations_button" (click)="uploadBulkLocations()" class="waves-effect waves-green btn-flat">Upload</a>
+        <a id="close_bulk_upload_modal_button" class="waves-effect modal-close waves-red btn-flat">Cancel</a>
+    </div>
+</div>
+
+<div *ngFor="let location of locations; let i = index;" class="modal geofencing_modal" id="add_geofencing_modal_{{i}}" style="top: 20%;">
+    <div class="modal-content" style="position: static;">
+        <h4>Geofences ({{location.user_supplied_name}})</h4>
+
+        <form action="#" class="col s12">
+            <div *ngFor="let geofence of geofences[i]; let g = index;" class="row">
+                <div class="input-field col s7">
+                    <input type="text" [(ngModel)]="geofence.address" placeholder="Enter geofence center address..." #geofenceData [propertiesObj]="geofenceObj(i,g)" myPlaceComplete/>
+                </div>
+                <div class="input-field col s2">
+                    <select id="geofence_radius" class="grey-text" [(ngModel)]="geofence.type" materialize="material_select" [materializeSelectOptions]="geofencing.dropdown_options">
+                        <option *ngFor="let dropdown_option of geofencing.dropdown_options"
+                        [value]="dropdown_option.value">{{dropdown_option.text}}</option>
+                    </select>
+                    <label for="geofence_radius">Radius</label>
+                </div>
+                <div class="col s2 grey-text">
+                    <span class="radius_text">{{geofenceRadius(geofence)}}m radius</span>
+                </div>
+                <div class="col s1">
+                    <button type="button" (click)="removeGeofence(i,g)" class="btn remove-geofence"><i data-time-icon="icon-remove" class="icon-remove icon-white"></i></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <button type="button" (click)="addGeofence(i)" class="btn primary add-geofence">+ Add Geofence</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer" style="position: static;">
+        <a (click)="saveGeofences(i)" class="waves-effect waves-green btn-flat">Save</a>
+        <a (click)="cloneGeofences(i)" class="waves-effect modal-close waves-red btn-flat">Cancel</a>
+    </div>
+</div>
+
+<div class="modal" id="geos_warn_radius_search" style="top: 20%;">
+    <div class="modal-content" style="position: static;">
+        <h4>Warning</h4>
+        <p>You have selected a large radius. This may take a long time or even crash your browser. Are you sure you want to continue?</p>
+    </div>
+    <div class="modal-footer" style="position: static;">
+        <a (click)="load_regions.emit(selectedLocation)" class="waves-effect modal-close waves-green btn-flat">Yes</a>
+        <a class="waves-effect modal-close waves-red btn-flat">No</a>
+    </div>
+</div>
+
+<div class="modal" id="geos_warn_known_zips_search" style="top: 20%;">
+    <div class="modal-content" style="position: static;">
+        <h4>Warning</h4>
+        <p>You have selected a large number of zips. This may take a long time or even crash your browser. Are you sure you want to continue?</p>
+    </div>
+    <div class="modal-footer" style="position: static;">
+        <a (click)="load_regions.emit(selectedLocation)" class="waves-effect modal-close waves-green btn-flat">Yes</a>
+        <a class="waves-effect modal-close waves-red btn-flat">No</a>
+    </div>
+</div>

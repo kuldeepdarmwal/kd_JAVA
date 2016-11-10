@@ -1,0 +1,71 @@
+<header></header>
+<breadcrumb [currentMenu]="currentMenu" (to-budget)="goToBudget()" (to-builder)="goToBuilder()"></breadcrumb>
+<div id="mpq_body_container" class="container" style="margin: 0 auto; margin-top: 27px;"
+     (window:resize)="resizeWindow()">
+
+    <product-selection
+            [display-products]="products"
+            (toggle-product)="toggleProduct($event)"></product-selection>
+
+    <tv-upload
+            *ngIf="productConfig.showTvUploadComponent"
+            [product-names]="productNamesMap.tv_upload"
+            [tv-scx-data]="tvScxData"
+            (upload-strata-file)="uploadStrataFile($event)"
+            (remove-scx-data)="removeScxData()"></tv-upload>
+    <tvzones
+            *ngIf="productConfig.showTvComponent"
+            [product-names]="productNamesMap.tvzones"
+            [tv-zones]="tvZones" (zone-added)="updateZones($event)"></tvzones>
+    <search-engine-marketing
+            *ngIf="productConfig.showSEMComponent"
+            [product-names]="productNamesMap.keywords"
+            [search-marketing]="keywords"></search-engine-marketing>
+    <geographies
+            *ngIf="productConfig.showGeoComponent"
+            [product-names]="productNamesMap.geos"
+            [locations]="locations"
+            [has-geofencing]="productConfig.showGeofencingComponent"
+            [geofencing]="geofencing_defaults"
+            (select-location)="selectLocation($event)"
+            (update-custom-regions)="updateCustomRegions($event)"
+            (load-regions)="loadRegions($event)"
+            (add-location)="addLocation()"
+            (remove-location)="removeLocation($event)"
+            (upload-bulk-locations)="uploadBulkLocations($event)"
+            (save-geofences)="saveGeofences($event)"
+            [unique-display-id]="uniqueDisplayId"></geographies>
+
+    <rooftops
+            *ngIf="productConfig.showRoofTopsComponent"
+            [product-names]="productNamesMap.rooftops"
+            [rooftops]="rooftops"
+            (update-rooftops)="updateRooftops($event)"></rooftops>
+    <interest-engine
+            *ngIf="productConfig.showAudienceComponent"
+            [product-names]="productNamesMap.audience"
+            [audience-interests]="audienceInterests"
+            (update-audience-interests)="updateAudienceInterests($event)">
+    </interest-engine>
+    <audience
+            *ngIf="productConfig.showAudienceComponent"
+            [product-names]="productNamesMap.audience"
+            [demographics]="demographics"
+            [is-political]="productConfig.showPoliticalComponent"
+            [political]="politicalData"></audience>
+
+
+    <div class="clearBoth"></div>
+    <footer (save)="saveTargets()" (back)="goBack()" (next)="next()" [isInBuilder]=false></footer>
+</div>
+
+<div class="modal" id="geos_warn_custom_regions_search" style="top: 20%;">
+    <div class="modal-content" style="position: static;">
+        <h4>Warning</h4>
+        <p>You have selected a large number of zips. This may take a long time or even crash your browser. Are you sure you want to continue?</p>
+    </div>
+    <div class="modal-footer" style="position: static;">
+        <a (click)="confirmLargeRegions.next(true)" class="waves-effect modal-close waves-green btn-flat">Yes</a>
+        <a class="waves-effect modal-close waves-red btn-flat">No</a>
+    </div>
+</div>

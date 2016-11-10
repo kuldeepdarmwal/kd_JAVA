@@ -1,0 +1,118 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+/* Custom Styles */
+body {
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	padding: 10% 15px 0 15px;
+	background-color: #e0e0e0;
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+}
+
+div.container {
+	max-width: 350px;
+	border-radius: 2px;
+	margin: 20px auto;
+	padding: 30px 20px;   
+	background-color: #fff;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, .19),
+	0 6px 6px rgba(0, 0, 0, .23);
+}
+div.container a {
+	color: #999;
+	text-decoration: none;
+	transition: color 100ms ease-in-out,opacity 100ms ease-in-out;
+}
+div.container a:hover {
+	color: #666;
+	transition: color 100ms ease-in-out,opacity 100ms ease-in-out;
+}
+
+div#logo_container {
+	text-align: center;
+}
+div#logo_container #logo {
+	max-width: 100%;
+}
+
+p.description {
+	font-size: 0.95em;
+	text-align: center;
+	line-height: 1.25em;
+}
+p.description a {
+	display: block;
+	margin-top: 20px;
+	font-size: 1.25em;
+}
+
+div#form_container {
+	width: 100%;
+	max-width: 400px;
+}
+div#form_container form {
+	margin: 20px 0;
+}
+div#form_container form .input_group {
+	position: relative;
+}
+div#form_container form label {
+	display: none;
+}
+div#form_container form input,
+div#form_container form textarea {
+	border: none;
+	border-bottom: 1px solid #aaa;
+	box-shadow: none;
+	padding: 5px 0;
+	margin: 30px 0;
+	display: block;
+	width: 100%;
+	color: #666;
+}
+div#form_container form input:focus {
+	outline: none;
+}
+div#form_container form .input_group.error input {
+	border-bottom: 2px solid #d44539;
+}
+div#form_container form .input_group.error:after {
+	position: absolute;
+	bottom: -15px;
+	color: #a94442;
+	font-size: 0.65em;
+}
+div#form_container form .input_group.username.error:after {
+	content: "Invalid Username";
+}
+div#form_container form .input_group.password.error:after {
+	content: "Invalid Password";
+}
+div#form_container form .input_group.confirm_new_password.error:after {
+	content: "Password must match";
+}
+div#form_container form input[type="submit"] {
+	border: none;
+	border-radius: 2px;
+	padding: 10px 0;
+	margin: 40px 0 0;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	background: #777;
+	color: #fff;
+	text-shadow: 0 1px 0 #666;
+}
+
+div#forgot_password a {
+	font-size: 0.85em;
+}

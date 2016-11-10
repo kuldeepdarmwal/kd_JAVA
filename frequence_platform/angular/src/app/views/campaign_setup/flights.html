@@ -1,0 +1,64 @@
+<div id="mpq_flight_info_section" class="scrollspy mpq_section_card">
+	<ul materialize="collapsible" class="collapsible popout collapsible-accordion" data-collapsible="accordion" id="flight_content_collection">
+		<li id="flight_info_section_header">
+			<div class="card-content">
+				<h4 class="card-title grey-text text-darken-1 bold">Flights&nbsp;&nbsp;<small>(Campaign : <span style="color:#0088cc;">{{campaign_flights.campaign_name}}</span>, Advertiser : <span style="color:#0088cc;">{{campaign_flights.advertiser_name}}</span> )</small></h4>
+			</div>
+		</li>
+		<li class="display_collection_item">
+			<div class="collapsible-body flights" style="display: block">
+				<div class="card-content">
+					<flights-table
+						[campaign_flights]="campaign_flights"
+						[flights]="campaign_flights.flights === undefined ? [] : campaign_flights.flights[0]"
+						[hasOwnedAndOperated]="hasOwnedAndOperated"
+						[hasOwnedAndOperatedDFP]="hasOwnedAndOperatedDFP"
+						[hasGeofencing]="hasGeofencing"
+						(delete-flight)="deleteFlight($event)"
+						(delete-all-flights)="deleteAllFlights()"
+						(edit-cpm)="editCPM($event)"
+						(edit-flight)="editFlight($event)"
+						(update-flight)="updateFlight($event)"
+						(add-flight)="addFlight($event)"
+						(reforecast-flights)="reforecastEmitter.emit($event)"></flights-table>
+				</div>
+			</div>
+	   	</li>
+	</ul>
+</div>
+
+<div id="io_confirm_overwrite_flights_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Reminder</h4>
+        <p>Doing this will reset all your custom flights changes. Are you sure this is what you would like to do?</p>
+    </div>
+    <div class="modal-footer">
+        <a id="io_single_creative_cancel" class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a (click)="confirmBuildFlights.next(true)" id="io_single_creative_save" class="waves-effect waves-green btn-flat">OK</a>
+    </div>
+</div>
+
+<div id="io_flights_flight_type_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Flight Type</h4>
+        <ul>
+        	<li><b>Broadcast</b> creates flights according to RAB's <a href="http://www.rab.com/public/reports/broadcastCalendar.cfm?section=research" target="_blank">Broadcast Calendar</a>.</li>
+        	<li><b>Monthly</b> creates flights that start and end each calendar month.</li>
+        	<li><b>In Total</b> creates one flight spanning the entire campaign length.</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-red btn-flat">OK</a>
+    </div>
+</div>
+
+<div id="io_flights_pacing_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Flight Pacing</h4>
+        <p>Pacing by Month will evenly distribute the total campaign budget between the flights. Pacing by Day distributes the total campaign budget evenly per day. So flights with more days will have more budget allocated to them.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-red btn-flat">OK</a>
+    </div>
+</div>

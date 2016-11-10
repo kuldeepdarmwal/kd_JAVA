@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {background:url(../img/page_bg.gif);}
+body{
+	width : 960px ;
+	padding : 10px ;
+	margin : 0 auto ;
+}
+
+/* Page Styling */
+.wrapper {width:960px; margin:auto;}
+.page_left {padding-top:15px;float:left;width:250px;color:#777;font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:uppercase;padding-left:10px;font-weight:bold;background:#f4f4f4;height:950px;border:2px #d6d6d6 dashed;border-right:none;}
+.page_right {float:right;width:698px;}
+.logo {width:960px;margin:auto;}
+.shadow {width:943px;margin:auto;}
+.table_holder {width:960px;margin:auto;}
+.form_holder {width:900px; margin:auto;}
+p {margin:0;padding:0;}
+strong.form-sep{color : silver ; background-color : black ; padding : 3px ;}
+
+/* Campaign Table Styling */
+#admin_table {background-color:#d6d6d6;font-size:13px;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;color:#3a4a57;}
+table#campaign-list th.ui-th-column {background-color:#3a4a57 !important;color:#fff !important;}
+#admin_table tr:hover {background-color:#d6d6d6;}
+#admin_table a:link{color:#d95b44;font-weight:bold;text-decoration:none;}
+#admin_table a:hover{color:#fff;font-weight:bold;}
+.table_title {font-family:Arial, Helvetica, sans-serif;font-size:18px;display:block;margin-bottom:10px;color:#777;text-transform:uppercase;}
+
+/* Metric styling */
+.metric td { text-align : center ; background:#ffffff ; }
+.metric th {background-color:#3a4a57;color:#fff;text-transform:uppercase;}
+.metric tr:hover {background-color:#d6d6d6;}
+
+.metric.stat-claims tbody { overflow: auto;height: 100px; overflow-x: hidden;}
+.metric.stat-shares tbody { overflow: auto;height: 100px; overflow-x: hidden;}
+
+/* make table scrollables */
+.metric-page{width : 80% ;margin : 0 auto ;}
+.scroll-cnt{
+    position: relative;   
+    border: 1px solid #999;
+    background: #aab;
+}
+.scroll-area{
+    height: 140px; 
+    overflow: auto; 
+}
+/*
+.scrollable thead tr {
+    left :0 ;
+    top :0 ;
+    position : absolute ;
+}*/
+
+/* Form Elements styling */
+.page_left input {padding-top:10px;display:block;margin:0px 7px 0px 0px;color:#777;font-family:Arial, Helvetica, sans-serif; padding:5px;border:1px solid #d6d6d6;}
+input#coupon-mail-from{width:170px !important;}
+textarea#coupon-desc,textarea#coupon-mail-msg,input#coupon-mail-from{color:#777 !important;font-family:Arial, Helvetica, sans-serif;font-size:13px;}
+input.action-check {display:inline;}
+select[name='business-name'] {font-size:11px;display:block;margin:0px 7px 0px 0px;text-transform:none;}
+#upload {width:150px;border:1px solid #d6d6d6;}
+#cnt-coupon-actions{margin:15px 0px;}
+
+
+/* Coupon list styling */
+
+#coupon-list{
+    display : block ;
+    width : 600px ;
+    height : 300px ;
+    list-style-type: none ;
+}
+
+#coupon-list .coupon-item{
+    width : 150px ;
+    height : 50px;
+    border : 1px solid grey ;
+    text-align : center ;
+    margin-bottom : 10px ;
+    background-color : white ;
+    font-family : "georgia";
+    h-align : middle ;
+    padding-top : 12px ;
+    font-size : 24px ;
+    margin-right : 20px ;
+    display : block ;
+    float : left ;
+    -moz-box-shadow : 3px 3px 3px grey ;
+    -webkit-box-shadow : 3px 3px 3px grey ;
+    box-shadow : 3px 3px 3px grey ;    
+}
+#coupon-list .coupon-item:hover {
+    background-color: black ;
+    color : white ;
+}
+ol#pagination{
+    width : 400px ;
+    display : block ;
+    clear : both ;
+}
+ol#pagination li{
+    width : 80px;
+    display : inline-block !important;
+}
+ol#pagination li:hover{
+    text-decoration : underline ;
+    color : grey ;
+    cursor : cursor ;
+}
+
+hgroup{
+	border-bottom : 2px solid green ;
+}
+
+#campaign-list{
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+ul.action-buttons{
+    list-style-type: none ;
+    margin: 0px ;
+    padding : 0px ;
+    
+}
+ul.action-buttons li{
+        display : inline ;
+        margin-right : 2px ;
+}
+ul.action-buttons li a {
+    text-decoration : none ;
+    text-transform:uppercase ;
+    color: #D95B44;
+    font-weight: bold;
+}
+ul.action-buttons li a:hover {
+    color : white ;
+}
+.ui-jqgrid tr.ui-row-ltr td{
+    padding : 5px !important;
+    
+}
+
+.ui-jqgrid-labels th{
+    background : none !important;
+}
+
+
+/* jQgrid design overrides */
+
+
+/* form validation errors */
+#form-errors,.error{
+    font-size : 10px ;
+    font-style : italic ;
+    text-transform: none ;
+    color : red ;
+}
+#form-errors{
+    list-style-type: none ;
+    margin:0px ;
+}
+.error-field{
+    border : 1px solid red !important;
+}
+
+
+
+
+

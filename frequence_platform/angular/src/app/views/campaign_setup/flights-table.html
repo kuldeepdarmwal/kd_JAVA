@@ -1,0 +1,114 @@
+<table *ngIf="flights?.length > 0" class="io_flights_table highlight">
+	<tr class="cpm">
+		<td>
+			CPM:
+			<a *ngIf="editable" (click)="saveCPMs()">Save</a>
+			<a *ngIf="editable" (click)="cancelCPMs()">Cancel</a>
+		</td>
+		<td></td>
+		<td *ngIf="hasOwnedAndOperated">
+			<label class="dollars" *ngIf="editable">$</label>
+			<input 
+				*ngIf="editable"
+				[(ngModel)]="cpms.ownedAndOperated"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable" class="input-value">{{ campaign_flights.cpms.ownedAndOperated | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td *ngIf="hasOwnedAndOperated"></td>
+		<td>
+			<label class="dollars" *ngIf="editable">$</label>
+			<input 
+				*ngIf="editable"
+				[(ngModel)]="cpms.audienceExtension"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable" class="input-value">{{ campaign_flights.cpms.audienceExtension | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td *ngIf="hasGeofencing">
+			<label class="dollars" *ngIf="editable">$</label>
+			<input 
+				*ngIf="editable"
+				[(ngModel)]="cpms.geofencing"
+				class="input-editable" 
+				type="text" />
+			<span *ngIf="!editable" class="input-value">{{ campaign_flights.cpms.geofencing | typecast:'float' | currency:'USD':true:'1.2-2' }}</span>
+		</td>
+		<td [attr.colspan]="hasOwnedAndOperated ? 2 : 1" style="text-align:right">
+			<div class="switch">
+				<label>
+					View
+				<input [(ngModel)]="editable" (change)="switchEditable()" type="checkbox">
+				<span class="lever"></span>
+					Edit
+				</label>
+			</div>
+		</td>
+	</tr>
+	<tr class="titles">
+		<td>Date Range</td>
+		<td>Total Budget</td>
+		<td *ngIf="hasOwnedAndOperated">
+			<span style="position: relative;">
+			O&amp;O <br />
+			Impressions
+			<!--<a *ngIf="hasOwnedAndOperatedDFP" class="reforecast-btn tooltipped" (click)="reforecastFlights()" materialize="tooltip" data-position="top" data-tooltip="Reforecast O&amp;O Impressions"><i class="refresh material-icons">refresh</i></a>-->
+			</span>
+		</td>
+		<td *ngIf="hasOwnedAndOperated">O&amp;O<br />Budget</td>
+		<td>{{ campaign_flights.definition.last_name }}<br />Impressions</td>
+		<td *ngIf="hasGeofencing">Geofence<br />Impressions</td>
+		<td *ngIf="hasOwnedAndOperated">Audience Ext. <br />Budget</td>
+		<td style="text-align:right"><a *ngIf="editable" (click)="deleteAllFlightsEmitter.emit()" class="delete-all-flights">Delete All</a></td>
+	</tr>
+	<tr 
+		*ngFor="let flight of flights | orderBy : ['startDate']"
+		class="single-flight" 
+		[flight]="flight" 
+		[hasOwnedAndOperated]="hasOwnedAndOperated"
+		[hasOwnedAndOperatedDFP]="hasOwnedAndOperatedDFP" 
+		[hasGeofencing]="hasGeofencing"
+		[editable]="editable"
+		(edit-flight)="editFlightEmitter.emit($event)"
+		(update-flight)="updateFlightEmitter.emit($event)"
+		(delete-flight)="deleteFlight($event)"></tr>
+	<tr class="add-flight" [style.display]="editable ? 'table-row' : 'none'">
+		<td style="width: 24%;">
+			<datepicker #startDateInput [options]="datePickerOptions" label="Start Date" (select)="setStartDate($event)" class="datepicker input-field"></datepicker>
+			<datepicker #endDateInput [options]="datePickerOptions" label="End Date" [class.disabled]="!startDate" class="datepicker input-field"></datepicker>
+		</td>
+		<td>
+			<label class="dollars" *ngIf="editable">$</label>
+			<input #totalBudgetInput type="text" class="total-budget" />
+		</td>
+		<td [attr.colspan]="1 + (hasOwnedAndOperated ? 2 : 0) + (hasGeofencing ? 1 : 0)"></td>
+		<td>
+			<a class="btn active" (click)="addFlight($event)" style="padding: 0 1rem;float:right;">Add</a>
+		</td>
+	</tr>
+	<tr class="totals">
+		<td>
+			Totals:
+		</td>
+		<td>
+			{{ flights | sum:'totalBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'ownedAndOperatedImpressions' | number_format }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'ownedAndOperatedBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td>
+			{{ flights | sum:'audienceExtensionImpressions' | number_format }}
+		</td>
+		<td *ngIf="hasGeofencing">
+			{{ flights | sum:'geofencingImpressions' | number_format }}
+		</td>
+		<td *ngIf="hasOwnedAndOperated">
+			{{ flights | sum:'audienceExtensionBudget' | currency:'USD':true:'1.2-2' }}
+		</td>
+		<td style="text-align: right;">
+		</td>
+	</tr>
+</table>

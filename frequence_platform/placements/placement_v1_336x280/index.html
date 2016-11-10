@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>placement_v1 - 336x280</title>
+    <meta name="viewport" content="width='336', height='280'" />
+    <link type="text/css" rel="stylesheet" href="http://4delite.com/styles/template.css" />
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/MySprite.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/FrameContainer.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AnimationTemplateBase.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateContainerFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/AdTemplateImageFrame.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/Timeline.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/BaseEffect.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/easing/None.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/Animation.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/MyTween.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/SlideIn.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/easing/Bounce.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/easing/Strong.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/CompositeEffect.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/Parallel.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/SlideOut.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/Show.js"></script>
+    <script type="text/javascript" src="http://4delite.com/scripts/adtemplates.2/effects/FadeIn.js"></script>
+    <script type="text/javascript">function onLoad(){
+	var t = new AnimationTemplateBase(document.body,{bannerWidth:336,bannerHeight:280,clickUrl:null,trackingUrl:null},[new AdTemplateFrame('background',{backgroundColor:0xffffffff,zIndex:-1}),new AdTemplateFrame('border',{borderColor:0xff000000,borderThickness:3,zIndex:1001}),new AdTemplateImageFrame('user_image0',{content:MySprite.loadImage("user_image0.content.jpg",336,280),zIndex:1}),new AdTemplateImageFrame('user_image1',{content:MySprite.loadImage("user_image1.content.png",336,280),imageXOffset:-68,imageYOffset:-7,zIndex:2}),new AdTemplateImageFrame('user_image2',{content:MySprite.loadImage("user_image2.content.png",280,97),imageScale:0.55,imageXOffset:98,imageYOffset:55,visibility:true,zIndex:3}),new AdTemplateImageFrame('user_image3',{content:MySprite.loadImage("user_image3.content.png",336,280),imageXOffset:35,imageYOffset:-17,zIndex:4}),new AdTemplateImageFrame('user_image4',{content:MySprite.loadImage("user_image4.content.png",280,97),imageScale:0.55,imageXOffset:-115,imageYOffset:17,zIndex:5}),new AdTemplateImageFrame('user_image5',{content:MySprite.loadImage("user_image5.content.png",304,90),imageScale:1.01,imageXOffset:-91,imageYOffset:27,topMargin:190,zIndex:6})],[new Timeline('main',{},[new SlideIn('user_effect0',{direction:"T",duration:1,easing:Bounce.easeOut,offsetPercent:100,target:'user_image1',type:'SlideIn'}),new SlideIn('user_effect1',{direction:"R",duration:1,easing:Strong.easeOut,offset:1,offsetPercent:100,target:'user_image2',type:'SlideIn'}),new Parallel('user_effect4',{duration:1,offset:2.984542,type:'Parallel'},[new SlideIn('user_effect2',{direction:"T",duration:1,easing:Bounce.easeOut,offset:3.997707,offsetPercent:100,target:'user_image3',type:'SlideIn'}),new SlideOut('user_effect3',{direction:"R",easing:Bounce.easeOut,offset:3.997707,offsetPercent:100,startOffset:100,target:'user_image2',type:'SlideOut'}),new SlideOut('user_effect5',{direction:"T",easing:Strong.easeOut,offset:3.997707,offsetPercent:100,startOffset:100,target:'user_image1',type:'SlideOut'})]),new SlideIn('user_effect6',{direction:"L",duration:1,easing:Strong.easeOut,offset:3.785518,offsetPercent:100,target:'user_image4',type:'SlideIn'}),new FadeIn('user_effect7',{direction:"T",duration:1,easing:Bounce.easeOut,offset:4.794567,target:'user_image5',type:'FadeIn'})])]);
+	t.processFrames ();
+	t.startSequence ();
+}
+</script>
+  </head>
+  <body onload="onLoad()"></body>
+</html>

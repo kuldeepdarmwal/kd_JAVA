@@ -1,0 +1,1820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.StatisticsManagement_v4.WSStatisticsAdmin_v4"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="AttributeOperatorValueExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AttributeOperatorValueExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence>
+                            <xsd:element name="attribute" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="operator" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="value" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="BoolExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.BoolExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="expressions" nillable="true"
+                        type="xns5:Vector"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="QueryOrderParameter">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.QueryOrderParameter"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="order" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="propertyName" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/StatisticsManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/StatisticsManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="CampaignStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.StatisticsManagement.CampaignStatistics"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="entityId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="goalPercentReached" nillable="true"
+                        type="xsd:float"/>
+                    <xsd:element name="intervalType" type="xsd:int"/>
+                    <xsd:element name="lastOverallUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastTodaysUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="overallClickRate" type="xsd:float"/>
+                    <xsd:element name="overallClicks" type="xsd:long"/>
+                    <xsd:element name="overallGoal" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="overallImps" type="xsd:long"/>
+                    <xsd:element name="overallTransactions" type="xsd:long"/>
+                    <xsd:element name="overallValidatedTransactions"
+                        nillable="true" type="xsd:long"/>
+                    <xsd:element name="overallViews" type="xsd:long"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="todaysClickRate" type="xsd:float"/>
+                    <xsd:element name="todaysClicks" type="xsd:long"/>
+                    <xsd:element name="todaysImps" type="xsd:long"/>
+                    <xsd:element name="todaysTransactions" type="xsd:long"/>
+                    <xsd:element name="todaysValidatedTransactions"
+                        nillable="true" type="xsd:long"/>
+                    <xsd:element name="todaysViews" type="xsd:long"/>
+                    <xsd:element name="yesterdaysClickRate" type="xsd:float"/>
+                    <xsd:element name="yesterdaysClicks" type="xsd:long"/>
+                    <xsd:element name="yesterdaysImps" type="xsd:long"/>
+                    <xsd:element name="yesterdaysTransactions" type="xsd:long"/>
+                    <xsd:element name="yesterdaysViews" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PlacementStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.StatisticsManagement.PlacementStatistics"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="intervalType" type="xsd:int"/>
+                    <xsd:element name="lastMonthsClicks" type="xsd:long"/>
+                    <xsd:element name="lastMonthsDefaults" type="xsd:long"/>
+                    <xsd:element name="lastMonthsImps" type="xsd:long"/>
+                    <xsd:element name="lastMonthsTransactions" type="xsd:long"/>
+                    <xsd:element name="lastOverallUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastTodaysUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastWeeksClicks" type="xsd:long"/>
+                    <xsd:element name="lastWeeksDefaults" type="xsd:long"/>
+                    <xsd:element name="lastWeeksImps" type="xsd:long"/>
+                    <xsd:element name="lastWeeksTransactions" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="pageId" nillable="true" type="xsd:long"/>
+                    <xsd:element name="placementId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="todaysClicks" type="xsd:long"/>
+                    <xsd:element name="todaysDefaults" type="xsd:long"/>
+                    <xsd:element name="todaysImps" type="xsd:long"/>
+                    <xsd:element name="todaysTransactions" type="xsd:long"/>
+                    <xsd:element name="websiteId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="yesterdaysClicks" type="xsd:long"/>
+                    <xsd:element name="yesterdaysDefaults" type="xsd:long"/>
+                    <xsd:element name="yesterdaysImps" type="xsd:long"/>
+                    <xsd:element name="yesterdaysTransactions" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="WebsiteStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.StatisticsManagement.WebsiteStatistics"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="intervalType" type="xsd:int"/>
+                    <xsd:element name="lastMonthsClicks" type="xsd:long"/>
+                    <xsd:element name="lastMonthsDefaults" type="xsd:long"/>
+                    <xsd:element name="lastMonthsImps" type="xsd:long"/>
+                    <xsd:element name="lastMonthsTransactions" type="xsd:long"/>
+                    <xsd:element name="lastOverallUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastTodaysUpdate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastWeeksClicks" type="xsd:long"/>
+                    <xsd:element name="lastWeeksDefaults" type="xsd:long"/>
+                    <xsd:element name="lastWeeksImps" type="xsd:long"/>
+                    <xsd:element name="lastWeeksTransactions" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="todaysClicks" type="xsd:long"/>
+                    <xsd:element name="todaysDefaults" type="xsd:long"/>
+                    <xsd:element name="todaysImps" type="xsd:long"/>
+                    <xsd:element name="todaysTransactions" type="xsd:long"/>
+                    <xsd:element name="websiteId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="yesterdaysClicks" type="xsd:long"/>
+                    <xsd:element name="yesterdaysDefaults" type="xsd:long"/>
+                    <xsd:element name="yesterdaysImps" type="xsd:long"/>
+                    <xsd:element name="yesterdaysTransactions" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfCampaignStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.StatisticsManagement.CampaignStatistics;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="CampaignStatistics" nillable="true"
+                        type="tns:CampaignStatistics"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfPlacementStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.StatisticsManagement.PlacementStatistics;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="PlacementStatistics" nillable="true"
+                        type="tns:PlacementStatistics"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfWebsiteStatistics">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.StatisticsManagement.WebsiteStatistics;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="WebsiteStatistics" nillable="true"
+                        type="tns:WebsiteStatistics"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/StatisticsManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns6="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns7="http://systinet.com/wsdl/java/lang/"
+            xmlns:xns8="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/"/>
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/StatisticsManagement/"/>
+            <xsd:element name="camId" nillable="true" type="xsd:long"/>
+            <xsd:element name="intervalType" type="xsd:int"/>
+            <xsd:element name="CampaignStatistics_Response" nillable="true"
+                type="xns4:CampaignStatistics"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+            <xsd:element name="username" nillable="true" type="xsd:string"/>
+            <xsd:element name="password" nillable="true" type="xsd:string"/>
+            <xsd:element name="plcId" nillable="true" type="xsd:long"/>
+            <xsd:element name="PlacementStatistics_Response" nillable="true"
+                type="xns4:PlacementStatistics"/>
+            <xsd:element name="webId" nillable="true" type="xsd:long"/>
+            <xsd:element name="WebsiteStatistics_Response" nillable="true"
+                type="xns4:WebsiteStatistics"/>
+            <xsd:element name="AttributeOperatorValueExpression_Response"
+                nillable="true" type="xns5:AttributeOperatorValueExpression"/>
+            <xsd:element name="startlist" nillable="true" type="xsd:long"/>
+            <xsd:element name="endlist" nillable="true" type="xsd:long"/>
+            <xsd:element name="boolExpr" nillable="true"
+                type="xns5:BoolExpression"/>
+            <xsd:element name="order" nillable="true" type="xns6:Collection"/>
+            <xsd:element name="ArrayOflong_Response" nillable="true"
+                type="xns7:ArrayOflong"/>
+            <xsd:element name="ArrayOfCampaignStatistics_Response"
+                nillable="true" type="xns4:ArrayOfCampaignStatistics"/>
+            <xsd:element name="long_Response" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOfPlacementStatistics_Response"
+                nillable="true" type="xns4:ArrayOfPlacementStatistics"/>
+            <xsd:element name="QueryOrderParameter_Response" nillable="true"
+                type="xns5:QueryOrderParameter"/>
+            <xsd:element name="start" nillable="true" type="xsd:long"/>
+            <xsd:element name="end" nillable="true" type="xsd:long"/>
+            <xsd:element name="campaignFilter" nillable="true"
+                type="xns5:BoolExpression"/>
+            <xsd:element name="ArrayOfBannerStatistic_Response" nillable="true"
+                type="xns8:ArrayOfBannerStatistic"/>
+            <xsd:element name="WSStatisticsAdminException" nillable="true"
+                type="xns8:WSStatisticsAdminException"/>
+            <xsd:element name="campId" type="xsd:int"/>
+            <xsd:element name="weId" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOfWebsiteStatistics_Response"
+                nillable="true" type="xns4:ArrayOfWebsiteStatistics"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="BannerStatistic">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.StatisticsManagement_v4.BannerStatistic"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="bannerId" type="xsd:long"/>
+                    <xsd:element name="campaignId" type="xsd:long"/>
+                    <xsd:element name="clicks" type="xsd:long"/>
+                    <xsd:element name="impressions" type="xsd:long"/>
+                    <xsd:element name="reportDate" type="xsd:int"/>
+                    <xsd:element name="views" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfBannerStatistic">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.webservices.helios.lowLevel.StatisticsManagement_v4.BannerStatistic;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="BannerStatistic" nillable="true"
+                        type="tns:BannerStatistic"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="WSStatisticsAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.StatisticsManagement_v4.WSStatisticsAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="WSStatisticsAdminException">
+        <part element="ns0:WSStatisticsAdminException"
+            name="WSStatisticsAdminException"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createCampaignStatisticsByLogin_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createCampaignStatisticsByLogin_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createCampaignStatistics_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createCampaignStatistics_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createPlacementStatisticsByLogin_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createPlacementStatisticsByLogin_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createPlacementStatistics_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createPlacementStatistics_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createWebsiteStatisticsByLogin_Request_Soap">
+        <part element="ns0:webId" name="webId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createWebsiteStatisticsByLogin_Response_Soap">
+        <part element="ns0:WebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createWebsiteStatistics_Request_Soap">
+        <part element="ns0:webId" name="webId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_createWebsiteStatistics_Response_Soap">
+        <part element="ns0:WebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getAOVE_Request_Soap"/>
+    <message name="WSStatisticsAdmin_v4_getAOVE_Response_Soap">
+        <part element="ns0:AttributeOperatorValueExpression_Response"
+            name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignIdByLogin_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignIdByLogin_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignId_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignId_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsIdListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsIdList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfCampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListSizeByLogin_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListSizeByLogin_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getCampaignStatisticsList_Response_Soap">
+        <part element="ns0:ArrayOfCampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementIdByLogin_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementIdByLogin_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementId_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementId_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsIdListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsIdList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfPlacementStatistics_Response"
+            name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListSizeByLogin_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListSizeByLogin_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getPlacementStatisticsList_Response_Soap">
+        <part element="ns0:ArrayOfPlacementStatistics_Response"
+            name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getQOP_Request_Soap"/>
+    <message name="WSStatisticsAdmin_v4_getQOP_Response_Soap">
+        <part element="ns0:QueryOrderParameter_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignFilter_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:campaignFilter" name="campaignFilter"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignFilter_Response_Soap">
+        <part element="ns0:ArrayOfBannerStatistic_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignId_Request_Soap">
+        <part element="ns0:campId" name="campId"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignId_Response_Soap">
+        <part element="ns0:ArrayOfBannerStatistic_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsByWebsiteId_Request_Soap">
+        <part element="ns0:weId" name="weId"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsByWebsiteId_Response_Soap">
+        <part element="ns0:WebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsIdListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsIdListByLogin_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsIdList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListByLogin_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListByLogin_Response_Soap">
+        <part element="ns0:ArrayOfWebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListSizeByLogin_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListSizeByLogin_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsList_Request_Soap">
+        <part element="ns0:startlist" name="startlist"/>
+        <part element="ns0:endlist" name="endlist"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_getWebsiteStatisticsList_Response_Soap">
+        <part element="ns0:ArrayOfWebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateCampaignStatisticsIntervalByLogin_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateCampaignStatisticsIntervalByLogin_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateCampaignStatisticsInterval_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateCampaignStatisticsInterval_Response_Soap">
+        <part element="ns0:CampaignStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updatePlacementStatisticsIntervalByLogin_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updatePlacementStatisticsIntervalByLogin_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updatePlacementStatisticsInterval_Request_Soap">
+        <part element="ns0:plcId" name="plcId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updatePlacementStatisticsInterval_Response_Soap">
+        <part element="ns0:PlacementStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateWebsiteStatisticsIntervalByLogin_Request_Soap">
+        <part element="ns0:weId" name="weId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+        <part element="ns0:username" name="username"/>
+        <part element="ns0:password" name="password"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateWebsiteStatisticsIntervalByLogin_Response_Soap">
+        <part element="ns0:WebsiteStatistics_Response" name="response"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateWebsiteStatisticsInterval_Request_Soap">
+        <part element="ns0:weId" name="weId"/>
+        <part element="ns0:intervalType" name="intervalType"/>
+    </message>
+    <message name="WSStatisticsAdmin_v4_updateWebsiteStatisticsInterval_Response_Soap">
+        <part element="ns0:WebsiteStatistics_Response" name="response"/>
+    </message>
+    <portType name="WSStatisticsAdmin_v4">
+        <operation name="createCampaignStatistics"
+            parameterOrder="camId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createCampaignStatistics_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createCampaignStatistics_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createCampaignStatisticsByLogin"
+            parameterOrder="camId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createCampaignStatisticsByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createCampaignStatisticsByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createPlacementStatistics"
+            parameterOrder="plcId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createPlacementStatistics_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createPlacementStatistics_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createPlacementStatisticsByLogin"
+            parameterOrder="plcId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createPlacementStatisticsByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createPlacementStatisticsByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createWebsiteStatistics"
+            parameterOrder="webId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createWebsiteStatistics_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createWebsiteStatistics_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createWebsiteStatisticsByLogin"
+            parameterOrder="webId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_createWebsiteStatisticsByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_createWebsiteStatisticsByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getAOVE" parameterOrder="">
+            <input message="tns:WSStatisticsAdmin_v4_getAOVE_Request_Soap"/>
+            <output message="tns:WSStatisticsAdmin_v4_getAOVE_Response_Soap"/>
+        </operation>
+        <operation name="getCampaignStatisticsByCampaignId"
+            parameterOrder="camId">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignId_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignId_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsByCampaignIdByLogin"
+            parameterOrder="camId username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsByCampaignIdByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsIdList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsIdList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsIdList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsIdListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsIdListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsListSize"
+            parameterOrder="boolExpr">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListSize_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListSize_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getCampaignStatisticsListSizeByLogin"
+            parameterOrder="boolExpr username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListSizeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getCampaignStatisticsListSizeByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsByPlacementId"
+            parameterOrder="plcId">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementId_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementId_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsByPlacementIdByLogin"
+            parameterOrder="plcId username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementIdByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsByPlacementIdByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsIdList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsIdList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsIdList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsIdListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsIdListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsListSize"
+            parameterOrder="boolExpr">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListSize_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListSize_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getPlacementStatisticsListSizeByLogin"
+            parameterOrder="boolExpr username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListSizeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getPlacementStatisticsListSizeByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getQOP" parameterOrder="">
+            <input message="tns:WSStatisticsAdmin_v4_getQOP_Request_Soap"/>
+            <output message="tns:WSStatisticsAdmin_v4_getQOP_Response_Soap"/>
+        </operation>
+        <operation name="getTodaysBannerStatisticsByCampaignFilter"
+            parameterOrder="start end campaignFilter order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignFilter_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignFilter_Response_Soap"/>
+            <fault message="tns:WSStatisticsAdminException"
+                name="WSStatisticsAdminException"/>
+        </operation>
+        <operation name="getTodaysBannerStatisticsByCampaignId"
+            parameterOrder="campId">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignId_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getTodaysBannerStatisticsByCampaignId_Response_Soap"/>
+        </operation>
+        <operation name="getWebsiteStatisticsByWebsiteId" parameterOrder="weId">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsByWebsiteId_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsByWebsiteId_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsIdList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsIdList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsIdList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsIdListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsIdListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsIdListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsList"
+            parameterOrder="startlist endlist boolExpr order">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsList_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsListByLogin"
+            parameterOrder="startlist endlist boolExpr order username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsListSize"
+            parameterOrder="boolExpr">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListSize_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListSize_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getWebsiteStatisticsListSizeByLogin"
+            parameterOrder="boolExpr username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListSizeByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_getWebsiteStatisticsListSizeByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updateCampaignStatisticsInterval"
+            parameterOrder="camId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updateCampaignStatisticsInterval_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updateCampaignStatisticsInterval_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updateCampaignStatisticsIntervalByLogin"
+            parameterOrder="camId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updateCampaignStatisticsIntervalByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updateCampaignStatisticsIntervalByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updatePlacementStatisticsInterval"
+            parameterOrder="plcId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updatePlacementStatisticsInterval_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updatePlacementStatisticsInterval_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updatePlacementStatisticsIntervalByLogin"
+            parameterOrder="plcId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updatePlacementStatisticsIntervalByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updatePlacementStatisticsIntervalByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updateWebsiteStatisticsInterval"
+            parameterOrder="weId intervalType">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updateWebsiteStatisticsInterval_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updateWebsiteStatisticsInterval_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updateWebsiteStatisticsIntervalByLogin"
+            parameterOrder="weId intervalType username password">
+            <input
+            message="tns:WSStatisticsAdmin_v4_updateWebsiteStatisticsIntervalByLogin_Request_Soap"/>
+            <output
+            message="tns:WSStatisticsAdmin_v4_updateWebsiteStatisticsIntervalByLogin_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+    </portType>
+    <binding name="WSStatisticsAdmin_v4" type="tns:WSStatisticsAdmin_v4">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createCampaignStatistics">
+            <map:java-operation name="createCampaignStatistics"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createCampaignStatistics?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="camId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCampaignStatisticsByLogin">
+            <map:java-operation name="createCampaignStatisticsByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createCampaignStatisticsByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="camId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createPlacementStatistics">
+            <map:java-operation name="createPlacementStatistics"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createPlacementStatistics?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="plcId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createPlacementStatisticsByLogin">
+            <map:java-operation name="createPlacementStatisticsByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createPlacementStatisticsByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="plcId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createWebsiteStatistics">
+            <map:java-operation name="createWebsiteStatistics"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createWebsiteStatistics?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="webId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createWebsiteStatisticsByLogin">
+            <map:java-operation name="createWebsiteStatisticsByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#createWebsiteStatisticsByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="webId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAOVE">
+            <map:java-operation name="getAOVE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getAOVE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getCampaignStatisticsByCampaignId">
+            <map:java-operation name="getCampaignStatisticsByCampaignId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsByCampaignId?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="camId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsByCampaignIdByLogin">
+            <map:java-operation name="getCampaignStatisticsByCampaignIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsByCampaignIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="camId username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsIdList">
+            <map:java-operation name="getCampaignStatisticsIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsIdListByLogin">
+            <map:java-operation name="getCampaignStatisticsIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsList">
+            <map:java-operation name="getCampaignStatisticsList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsListByLogin">
+            <map:java-operation name="getCampaignStatisticsListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvQ2FtcGFpZ25TdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsListSize">
+            <map:java-operation name="getCampaignStatisticsListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCampaignStatisticsListSizeByLogin">
+            <map:java-operation name="getCampaignStatisticsListSizeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getCampaignStatisticsListSizeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsByPlacementId">
+            <map:java-operation name="getPlacementStatisticsByPlacementId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsByPlacementId?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="plcId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsByPlacementIdByLogin">
+            <map:java-operation
+                name="getPlacementStatisticsByPlacementIdByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsByPlacementIdByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL1N0cmluZztMamF2YS9sYW5nL1N0cmluZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="plcId username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsIdList">
+            <map:java-operation name="getPlacementStatisticsIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsIdListByLogin">
+            <map:java-operation name="getPlacementStatisticsIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsList">
+            <map:java-operation name="getPlacementStatisticsList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsListByLogin">
+            <map:java-operation name="getPlacementStatisticsListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvUGxhY2VtZW50U3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsListSize">
+            <map:java-operation name="getPlacementStatisticsListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getPlacementStatisticsListSizeByLogin">
+            <map:java-operation name="getPlacementStatisticsListSizeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getPlacementStatisticsListSizeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getQOP">
+            <map:java-operation name="getQOP"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9RdWVyeU9yZGVyUGFyYW1ldGVyOw=="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getQOP?KClMZGUvYWR0ZWNoL2hlbGlvcy9RdWVyeU9yZGVyUGFyYW1ldGVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getTodaysBannerStatisticsByCampaignFilter">
+            <map:java-operation name="getTodaysBannerStatisticsByCampaignFilter"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvU3RhdGlzdGljc01hbmFnZW1lbnRfdjQvQmFubmVyU3RhdGlzdGljOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.StatisticsManagement_v4.WSStatisticsAdminException"
+                    name="WSStatisticsAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getTodaysBannerStatisticsByCampaignFilter?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvU3RhdGlzdGljc01hbmFnZW1lbnRfdjQvQmFubmVyU3RhdGlzdGljOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end campaignFilter order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSStatisticsAdminException">
+                <soap:fault name="WSStatisticsAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getTodaysBannerStatisticsByCampaignId">
+            <map:java-operation name="getTodaysBannerStatisticsByCampaignId"
+                signature="KEkpW0xkZS9hZHRlY2gvd2Vic2VydmljZXMvaGVsaW9zL2xvd0xldmVsL1N0YXRpc3RpY3NNYW5hZ2VtZW50X3Y0L0Jhbm5lclN0YXRpc3RpYzs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getTodaysBannerStatisticsByCampaignId?KEkpW0xkZS9hZHRlY2gvd2Vic2VydmljZXMvaGVsaW9zL2xvd0xldmVsL1N0YXRpc3RpY3NNYW5hZ2VtZW50X3Y0L0Jhbm5lclN0YXRpc3RpYzs="
+                style="document"/>
+            <input>
+                <soap:body parts="campId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getWebsiteStatisticsByWebsiteId">
+            <map:java-operation name="getWebsiteStatisticsByWebsiteId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsByWebsiteId?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="weId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsIdList">
+            <map:java-operation name="getWebsiteStatisticsIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsIdListByLogin">
+            <map:java-operation name="getWebsiteStatisticsIdListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsIdListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsList">
+            <map:java-operation name="getWebsiteStatisticsList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="startlist endlist boolExpr order"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsListByLogin">
+            <map:java-operation name="getWebsiteStatisticsListByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsListByLogin?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylbTGRlL2FkdGVjaC9oZWxpb3MvU3RhdGlzdGljc01hbmFnZW1lbnQvV2Vic2l0ZVN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body
+                    parts="startlist endlist boolExpr order username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsListSize">
+            <map:java-operation name="getWebsiteStatisticsListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getWebsiteStatisticsListSizeByLogin">
+            <map:java-operation name="getWebsiteStatisticsListSizeByLogin"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#getWebsiteStatisticsListSizeByLogin?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uO0xqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr username password" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCampaignStatisticsInterval">
+            <map:java-operation name="updateCampaignStatisticsInterval"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updateCampaignStatisticsInterval?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="camId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCampaignStatisticsIntervalByLogin">
+            <map:java-operation name="updateCampaignStatisticsIntervalByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs=">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updateCampaignStatisticsIntervalByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L0NhbXBhaWduU3RhdGlzdGljczs="
+                style="document"/>
+            <input>
+                <soap:body parts="camId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updatePlacementStatisticsInterval">
+            <map:java-operation name="updatePlacementStatisticsInterval"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updatePlacementStatisticsInterval?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="plcId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updatePlacementStatisticsIntervalByLogin">
+            <map:java-operation name="updatePlacementStatisticsIntervalByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updatePlacementStatisticsIntervalByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1BsYWNlbWVudFN0YXRpc3RpY3M7"
+                style="document"/>
+            <input>
+                <soap:body parts="plcId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateWebsiteStatisticsInterval">
+            <map:java-operation name="updateWebsiteStatisticsInterval"
+                signature="KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updateWebsiteStatisticsInterval?KExqYXZhL2xhbmcvTG9uZztJKUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="weId intervalType" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateWebsiteStatisticsIntervalByLogin">
+            <map:java-operation name="updateWebsiteStatisticsIntervalByLogin"
+                signature="KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw==">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/StatisticsManagement_v4/WSStatisticsAdmin_v4#updateWebsiteStatisticsIntervalByLogin?KExqYXZhL2xhbmcvTG9uZztJTGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9TdHJpbmc7KUxkZS9hZHRlY2gvaGVsaW9zL1N0YXRpc3RpY3NNYW5hZ2VtZW50L1dlYnNpdGVTdGF0aXN0aWNzOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="weId intervalType username password"
+                    use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSStatisticsAdmin_v4">
+        <port binding="tns:WSStatisticsAdmin_v4" name="WSStatisticsAdmin_v4">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSStatisticsAdmin_v4/"/>
+        </port>
+    </service>
+</definitions>

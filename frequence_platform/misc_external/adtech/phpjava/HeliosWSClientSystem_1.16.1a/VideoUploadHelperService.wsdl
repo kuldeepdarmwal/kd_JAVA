@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.Video.VideoUploadHelperService"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="Banner">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.Banner"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="artTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="assetTypeId" type="xsd:int"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="bitrate" nillable="true" type="xsd:int"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="codecContainer" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="createdBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="data" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="displayRegionId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="downloadUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="framerate" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="jcrTempIdentifier" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="lastModifiedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastModifiedBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maturityLevelId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="mediaTypeId" type="xsd:int"/>
+                    <xsd:element name="mimeTypeForJCR" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mimeTypeId" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalBitrate" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalData" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="originalHeight" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalVideoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalWidth" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="researchTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeCategoryId" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="videoCodec" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="videoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="videoTypeId" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="BannerData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.BannerData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="archiveDate" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="archiveStatus" type="xsd:int"/>
+                    <xsd:element name="artTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="assetTypeId" type="xsd:int"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="binaryBannerId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="bitrate" nillable="true" type="xsd:int"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="codecContainer" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="createdBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="displayRegionId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="framerate" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="lastModifiedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="lastModifiedBy" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="maturityLevelId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="mediaTypeId" type="xsd:int"/>
+                    <xsd:element name="mimeTypeId" type="xsd:int"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalBitrate" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalHeight" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalVideoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="originalWidth" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="researchTypeId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeCategoryId" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="videoCodec" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="videoLength" nillable="true"
+                        type="xsd:int"/>
+                    <xsd:element name="videoTypeId" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="BinaryBanner">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.BannerManagement.BinaryBanner"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="activeFilename" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="advertiserId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="altText" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="bannerNumber" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="changed" type="xsd:boolean"/>
+                    <xsd:element name="classId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cloneOf" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="createdAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="customSizeTypeId" type="xsd:int"/>
+                    <xsd:element name="data" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="deleted" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="description" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="extId" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="fileType" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isTemplate" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="linkUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainFileName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="originalData" nillable="true"
+                        type="xsd:base64Binary"/>
+                    <xsd:element name="pos" nillable="true" type="xsd:long"/>
+                    <xsd:element name="redirectUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="replicatedAt" nillable="true"
+                        type="xsd:dateTime"/>
+                    <xsd:element name="reportingImageUrl" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="sequenceNo" type="xsd:int"/>
+                    <xsd:element name="sizeInByte" type="xsd:int"/>
+                    <xsd:element name="sizeTypeId" type="xsd:int"/>
+                    <xsd:element name="statusId" type="xsd:int"/>
+                    <xsd:element name="styleTypeId" type="xsd:int"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="templateGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="thirdPartyTag" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="timeRangeIdList" nillable="true"
+                        type="xns5:Collection"/>
+                    <xsd:element name="typeDescription" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="useCampaignAltText" type="xsd:boolean"/>
+                    <xsd:element name="useCampaignDefaultLink"
+                        type="xsd:boolean"/>
+                    <xsd:element name="vendorId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="versionNo" type="xsd:int"/>
+                    <xsd:element name="weight" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"
+            xmlns:xns6="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/BannerManagement/"/>
+            <xsd:element name="prepareVideoUpload">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="banner" nillable="true"
+                            type="xns4:Banner"/>
+                        <xsd:element name="creativeId" nillable="true"
+                            type="xsd:long"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="VideoUploadMetaData">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.Video.VideoUploadMetaData"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="endHttpBody" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="httpBodyDataMap" nillable="true"
+                        type="xns6:Map"/>
+                    <xsd:element name="httpHeaderDataMap" nillable="true"
+                        type="xns6:Map"/>
+                    <xsd:element name="startHttpBody" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="url" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="prepareVideoUploadResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="response" nillable="true"
+                            type="tns:VideoUploadMetaData"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:complexType name="VideoUploadHelperServiceExcpetion">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.Video.VideoUploadHelperServiceExcpetion"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/"/>
+            <xsd:element name="VideoUploadHelperServiceExcpetion"
+                nillable="true" type="xns4:VideoUploadHelperServiceExcpetion"/>
+        </xsd:schema>
+    </types>
+    <message name="VideoUploadHelperServiceExcpetion">
+        <part element="ns0:VideoUploadHelperServiceExcpetion"
+            name="VideoUploadHelperServiceExcpetion"/>
+    </message>
+    <message name="VideoUploadHelperService_prepareVideoUpload_Request_Soap">
+        <part element="tns:prepareVideoUpload" name="parameters"/>
+    </message>
+    <message name="VideoUploadHelperService_prepareVideoUpload_Response_Soap">
+        <part element="tns:prepareVideoUploadResponse" name="parameters"/>
+    </message>
+    <portType name="VideoUploadHelperService">
+        <operation name="prepareVideoUpload">
+            <input
+            message="tns:VideoUploadHelperService_prepareVideoUpload_Request_Soap"/>
+            <output
+            message="tns:VideoUploadHelperService_prepareVideoUpload_Response_Soap"/>
+            <fault message="tns:VideoUploadHelperServiceExcpetion"
+                name="VideoUploadHelperServiceExcpetion"/>
+        </operation>
+    </portType>
+    <binding name="VideoUploadHelperService"
+        type="tns:VideoUploadHelperService">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="prepareVideoUpload">
+            <map:java-operation name="prepareVideoUpload"
+                parameterOrder="banner creativeId"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvVmlkZW8vVmlkZW9VcGxvYWRNZXRhRGF0YTs="
+                unwrapped="true">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.Video.VideoUploadHelperServiceExcpetion"
+                    name="VideoUploadHelperServiceExcpetion"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/Video/VideoUploadHelperService#prepareVideoUpload?KExkZS9hZHRlY2gvaGVsaW9zL0Jhbm5lck1hbmFnZW1lbnQvQmFubmVyO0xqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC93ZWJzZXJ2aWNlcy9oZWxpb3MvbG93TGV2ZWwvVmlkZW8vVmlkZW9VcGxvYWRNZXRhRGF0YTs="
+                style="document"/>
+            <input>
+                <soap:body parts="parameters" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="parameters" use="literal"/>
+            </output>
+            <fault name="VideoUploadHelperServiceExcpetion">
+                <soap:fault name="VideoUploadHelperServiceExcpetion"
+                    use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="VideoUploadHelperService">
+        <port binding="tns:VideoUploadHelperService"
+            name="VideoUploadHelperService">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/VideoUploadHelperService/"/>
+        </port>
+    </service>
+</definitions>

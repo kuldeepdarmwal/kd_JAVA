@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Back={easeIn:function(b,c,d,e,a){if(a==undefined)a=1.70158;return d*(b/=e)*b*((a+1)*b-a)+c},easeOut:function(b,c,d,e,a){if(a==undefined)a=1.70158;return d*((b=b/e-1)*b*((a+1)*b+a)+1)+c},easeInOut:function(a,c,d,e,b){if(b==undefined)b=1.70158;return(a/=e/2)<1?d/2*(a*a*(((b*=1.525)+1)*a-b))+c:d/2*((a-=2)*a*(((b*=1.525)+1)*a+b)+2)+c}}

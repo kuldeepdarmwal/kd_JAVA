@@ -1,0 +1,30 @@
+<div class="collapsible-header">
+	<div class="row">
+		<div class="col s2 targeted_image_col text-bold grey-text">
+			<div style="padding-top:1rem; line-height:20px;">
+				<span id="discount_display_text" class="product_display_text">{{discount.discountName}}</span>
+			</div>
+		</div>
+		<div class="col s10">
+			<div class="row">
+				<div *ngFor="let option of options; let i = index" class="col s4">
+					<span *ngIf="option.selected" class="product_subtotal green-text text-lighten-1">-{{option.config[discount.id].total(option.total(['discount', 'after_discount'])) | currency:'USD':'$'}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="collapsible-body">
+	<div class="row">
+		<div class="input-field col s2">
+			<input id="discount_display_input" class="display_input" type="text" [(ngModel)]="discount.discountName" attr.placeholder="{{discount.friendly_name}}"/>
+			<label style="left: 1.75rem;" for="discount_display_input" class="active">Discount name</label>
+		</div>
+		<div class="col s10">
+			<div *ngFor="let option of options" class="input-field col s4">
+				<input type="number" class="grey-text discount_input" [(ngModel)]="option.config[discount.id].discount" />%
+				<label class="active"></label>
+			</div>
+		</div>
+	</div>
+</div>

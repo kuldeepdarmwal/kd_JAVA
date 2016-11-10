@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+.header {height:100px;background:url(/images/partner_form_images/HEADER_BG.jpg)}
+img {border:nnoe;}
+body {margin:0;}
+.OJ18 {font-family: 'Lato', sans-serif;font-size:24px;color:#d95b44;display:block;font-weight:300;margin-bottom:5px;}
+.sites {display:block;width:326px;background:#f2f2f2;color:#3a4a57;font-family: 'Lato', sans-serif;font-size:18px;font-weight:400;padding:5px 0px 5px 10px;margin-bottom:5px;border:1px solid #d6d6d6;}
+.wrapper {width:960px;margin:0 auto;}
+.content {width:960px;height:650px;position:relative;}
+.one60 {
+	width:160px;
+	height:600px;
+	position:absolute;
+	z-index:100000;
+	top:0px;
+	left:25px;
+}
+.three36 {
+	width:336px;
+	height:280px;
+	position:absolute;
+	z-index:100000;
+	top:119px;
+	left:214px;
+}
+.three100 {
+	width:300px;
+	height:250px;
+	position:absolute;
+	z-index:100000;
+	top:119px;
+	right:5px;
+}
+.seven28 {
+	width:728px;
+	height:90px;
+	position:absolute;
+	z-index:100000;
+	top:0px;
+	left:214px;
+}
+.placements {
+	width:497px;
+	height:201px;
+	position:absolute;
+	top:425px;
+	left:215px;
+	z-index:50;
+}
+
+.logout-button{
+z-index:100;
+margin-top: 15px;
+margin-left: -200px;
+margin-right:50px;
+position: relative;
+float:right;
+}
+
+.header1000 {margin:0 auto;position:relative;width:auto;}

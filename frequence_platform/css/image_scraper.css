@@ -1,0 +1,137 @@
+content {
+	display: block;
+	margin: 1em;
+	max-width: 100%;
+}
+.feedback {
+	display: none;
+	color: darkgreen;
+	background-color: lightgreen;
+	border: 1px solid green;
+	border-radius: 0.5em;
+	padding: 0.5em;
+}
+.error {
+	color: darkred;
+	background-color: rgb(255,220,220);
+	border-color: red;
+}
+.results {
+	display: none;
+	padding: 1em 0 0 1em;
+}
+.found-image {
+	background-color: transparent;
+	display: inline-block;
+	height: 200px;
+	min-width: 50px;
+	margin: 0 1em 1em 0;
+	position: relative;
+	border: 1px solid gray;
+}
+.found-image.loading {
+	background-color: rgba(0,0,0,0.2);
+	border-color: transparent;
+}
+.found-image.loading:after {
+	display: block;
+	text-align: center;
+	line-height: 200px;
+	font-size: 32px;
+	color: rgba(0,0,0,0.7);
+	content: "...";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.found-image.loading img {
+	display: block;
+	margin: 100px auto;
+	transform: translateY(-50%);
+	position: absolute;
+	visibility: hidden;
+}
+.found-image img {
+	display: block;
+	margin: 100px auto;
+	transform: translateY(-50%);
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	min-width: 50px;
+	outline: 1px solid gray;
+}
+.found-image .info {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 0.2em 0.5em;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 0.8em;
+}
+.light-transparency {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUZFMTFCNzlFMTJGMTFFNEFEQ0ZENzA3N0E0NUFGQzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUZFMTFCN0FFMTJGMTFFNEFEQ0ZENzA3N0E0NUFGQzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5RkUxMUI3N0UxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5RkUxMUI3OEUxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pl6+QzEAAAAGUExURf///9LS0gAcJkUAAAAYSURBVHjaYmCAAkYoYBgggYG2HwoAAgwARRAAgSWcu5AAAAAASUVORK5CYII=);
+}
+.medium-transparency {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUZFMTFCN0RFMTJGMTFFNEFEQ0ZENzA3N0E0NUFGQzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUZFMTFCN0VFMTJGMTFFNEFEQ0ZENzA3N0E0NUFGQzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5RkUxMUI3QkUxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5RkUxMUI3Q0UxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqo9UQkAAAAGUExURXFxcaOjo2Pjl2wAAAAXSURBVHjaYmCEAgYYGCCBAbYeJgAQYABFEACBH3S9GAAAAABJRU5ErkJggg==);
+}
+.dark-transparency {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTVBMEFERDhFMTM0MTFFNEFEQ0ZENzA3N0E0NUFGQzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTVBMEFERDlFMTM0MTFFNEFEQ0ZENzA3N0E0NUFGQzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5RkUxMUI3RkUxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5RkUxMUI4MEUxMkYxMUU0QURDRkQ3MDc3QTQ1QUZDMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr/n5l4AAAAGUExURTo6OnFxcTCULpwAAAAYSURBVHjaYmCAAkYoYBgggYG2HwoAAgwARRAAgSWcu5AAAAAASUVORK5CYII=);
+}
+.transparency-option {
+	display: inline-block;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	border: 2px solid white;
+	vertical-align: middle;
+}
+.transparency-option.selected {
+	border-color: orange;
+}
+
+
+footer pre {
+	font-style: normal;
+}
+
+form.scrape_request {
+	background-color: white;
+	padding: 0.2em 0.5em;
+}
+/*
+form input {
+	font-size: inherit;
+}
+*/
+form.scrape_request label {
+	display: inline-block;
+	height: 2.6em;
+	padding: 0 0.5em;
+	background-color: lightgray;
+	border-radius: 0.3em;
+	vertical-align: middle;
+	line-height: 2.6em;
+	white-space: nowrap;
+}
+form.scrape_request input {
+	vertical-align: middle;
+	margin: 0;
+}
+form.scrape_request input[type="text"] { /* hacking neat alignment -CL */
+	position: relative;
+	top: -1px;
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 24px;
+	}
+	content {
+		margin: 0.5em;
+	}
+}

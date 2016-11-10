@@ -1,0 +1,18 @@
+<div id="mpq_product_info_section" class="mpq_section_card card scrollspy">
+	<h4 class="card-title grey-text text-darken-1">Product Selection</h4>
+	<div *ngIf="useCategories === true" id="product_section_content" class="card-content">
+		<div class="row" *ngFor="let category of categories()">
+			<div *ngFor="let product of products | productFilter: {selectable: true, category: category} | orderBy: ['display_order']"
+				 class="col s2 rfp_product_container">
+				<product [product]="product" (toggle-product)="toggleProduct.emit($event)"></product>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="!useCategories" id="product_section_content" class="card-content">
+		<div class="row">
+			<div class="col s2 rfp_product_container" *ngFor="let product of products | orderBy: ['display_order']">
+				<product [product]="product" (toggle-product)="toggleProduct.emit($event)"></product>
+			</div>
+		</div>
+	</div>
+</div>

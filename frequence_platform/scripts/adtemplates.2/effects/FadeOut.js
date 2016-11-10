@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var FadeOut=Hide.extend({setPosition:function(a){this._super(a);var b=this.easing(a,0,1,1);this.targetFrame&&this.targetFrame.setAlpha((1-b)*this.targetFrame.getTransparency())}})

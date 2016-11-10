@@ -1,0 +1,228 @@
+<div *ngIf="validation.geo" id="mpq_flight_info_section" class="scrollspy mpq_section_card">
+	<ul materialize="collapsible" class="collapsible popout collapsible-accordion" data-collapsible="accordion" id="flight_content_collection">
+		<li id="flight_info_section_header">
+			<div class="card-content">
+				<h4 class="card-title grey-text text-darken-1 bold">Flights</h4>
+			</div>
+		</li>
+		<li *ngFor="let product of products | productFilter: { selected: true }; let productId = index;" class="display_collection_item flight-product" [class.active]="product.flights.length > 0" [ngClass]="{ active: product.total_flights.length > 0 }">
+			<div class="io_flight_header collapsible-header" id="product_{{product.id}}_header">
+				<div class="row">
+	 				<div class="col s7 text-bold grey-text product-name">
+						<img class="io_product_img" [src]="product.definition.product_enabled_img">
+						<div class="description">
+							<div class="io_product_title_section">{{product.definition.last_name}}</div>
+							<div class="io_flights_description" *ngIf="product.total_flights.length > 0">
+								{{product.total_flights | flights_summary:'budget' | currency:'USD':true:'1.2-2'}} from {{product.total_flights | flights_summary:'start'}} to {{product.total_flights | flights_summary:'end'}}
+							</div>
+							<div class="io_flights_description" *ngIf="product.flights.length > 0 && product.total_flights.length === 0">{{product.flights | flights_summary:'budget' | currency:'USD':true:'1.2-2'}} from {{product.flights | flights_summary:'start'}} to {{product.flights | flights_summary:'end'}}</div>
+							<div class="io_flights_description" *ngIf="product.total_flights.length === 0 && product.flights.length === 0"> Flights not defined yet</div>
+							<span class="caret">></span>
+						</div>
+					</div>
+					<div class="col s5">
+						<div *ngIf="locations.length > 1">
+							<div class="switch">
+								<div class="row custom-tooltip">                
+								    <a class="col s custom-tooltip-link budgetLink">
+									<span class="tooltip-link">Multi Location Budget Mode</span>
+								    </a>
+								    <div class="col s custom-tooltip-body vbottom displayTooltip">
+									<div class="body">
+									    <p>For Insertion Orders with multiple locations, you can choose to automatically allocate the budget (by population or per location) or create a custom budget plan for each location.</p>
+									</div>
+								    </div>
+								</div>
+								<label>
+									Auto Allocate
+								<input [value]="product.budget_allocation === 'custom'" (change)="switchCustomAllocation($event, product.id)" type="checkbox">
+								<span class="lever"></span>
+									Custom
+								</label>
+							</div>
+						</div>
+						<div *ngIf="locations.length == 1 && product.o_o_enabled != 0 && product.o_o_dfp != 1" class="col s10">
+							<a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#io_dfp_order_ids_modal_{{productId}}_0">
+								Order IDs: 
+								{{product.orderIds[0] | join}}
+								<span *ngIf="product.orderIds[0] && product.orderIds[0].length === 0">Not Defined</span>
+							</a>
+				       </div>
+					</div>
+	 			</div>
+			</div><div class="collapsible-body flights" style="display: block;float:left; width: 100%;">
+				<div *ngIf="product.budget_allocation !== 'custom'" class="card-content">
+					<build-flights 
+						[product]="product"
+       					[option]="option"
+						[flights]="product.total_flights === undefined ? [] : product.total_flights"
+						[region-id]="'default'"
+						[is-total]="true"
+						[budget-allocation]="product.budget_allocation"
+						(build-flights)="buildFlights($event, null)"></build-flights>
+					<flights-table
+						[flights]="product.total_flights === undefined ? [] : product.total_flights"
+						[product]="product"
+						[cpms]="cpms"
+       					[option]="option"
+						[budget-allocation]="product.budget_allocation"
+						[hasOwnedAndOperated]="product.o_o_enabled == '1'"
+						[hasOwnedAndOperatedDFP]="product.o_o_dfp == '1'" 
+						[hasGeofencing]="hasGeofencing"
+						[geofencingEnabled]="product.has_geofencing"
+    					[submitAllowed]="submitAllowed"
+						(delete-flight)="deleteFlight($event, product.id)"
+						(delete-all-flights)="deleteAllFlights(product.id, null)"
+						(edit-cpm)="editCPM($event, product.id, null)"
+						(edit-flight)="editFlight($event, product.id, null)"
+						(update-flight)="updateFlight($event, product.id, null)"
+						(add-flight)="addFlight($event, product.id, null)"
+						(reforecast-flights)="reforecastEmitter.emit($event)"></flights-table>
+
+					<ul *ngIf="product.flights.length > 0 && locations.length > 1" materialize="collapsible" class="collapsible popout collapsible-accordion per-location-flights" data-collapsible="accordion">
+						<div class="divider"></div>
+						<li *ngFor="let location of locations; let i = index;">
+							<div class="collapsible-header">
+								<div class="row">
+					 				<div class="col s8 text-bold grey-text product-name">
+										<div class="description">
+											<span class="io_product_title_section">{{locations[i].user_supplied_name}}</span>
+											<span class="io_flights_description" *ngIf="product.flights.length > 0">{{product.flights[i] | flights_summary:'budget' | currency:'USD':true:'1.2-2'}} from {{product.flights[i] | flights_summary:'start'}} to {{product.flights[i] | flights_summary:'end'}}</span>
+										</div>
+									</div>
+									<div class="col s4" *ngIf="product.o_o_enabled != 0 && product.o_o_dfp != 1">
+										<a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#io_dfp_order_ids_modal_{{productId}}_{{i}}">
+											Order IDs: 
+											{{product.orderIds[i] | join}}
+											<span *ngIf="product.orderIds[0] && product.orderIds[0].length === 0">Not Defined</span>
+										</a>
+									</div>
+					 			</div>
+							</div>
+							<div class="collapsible-body">
+								<flights-table
+									[flights]="product.flights[i]"
+									[product]="product"
+									[cpms]="cpms"
+			       					[option]="option"
+									[budget-allocation]="product.budget_allocation"
+									[hasOwnedAndOperated]="product.o_o_enabled == '1'"
+									[hasOwnedAndOperatedDFP]="product.o_o_dfp == '1'" 
+									[hasGeofencing]="location.geofences.length > 0"
+									[geofencingEnabled]="product.has_geofencing"
+									[readonly]="true"
+       								[submitAllowed]="submitAllowed"
+									(delete-flight)="deleteFlight($event, product.id)"
+									(delete-all-flights)="deleteAllFlights(product.id, i)"
+									(edit-cpm)="editCPM($event, product.id, i)"
+									(update-flight)="updateFlight($event, product.id, i)"
+									(add-flight)="addFlight($event, product.id, i)"
+									(edit-flight)="editFlight($event, product.id, i)"
+									(reforecast-flights)="reforecastEmitter.emit($event)"></flights-table>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div *ngIf="product.budget_allocation === 'custom'" class="card-content">
+					<ul materialize="collapsible" class="collapsible popout collapsible-accordion per-location-flights" data-collapsible="accordion">
+						<li *ngFor="let location of locations; let i = index;">
+							<div class="collapsible-header">
+								<div class="row">
+					 				<div class="col s8 text-bold grey-text product-name">
+										<div class="description">
+											<span class="io_product_title_section">{{locations[i].user_supplied_name}}</span>
+											<span class="io_flights_description" *ngIf="product.flights.length > 0">{{product.flights[i] | flights_summary:'budget' | currency:'USD':true:'1.2-2'}} from {{product.flights[i] | flights_summary:'start'}} to {{product.flights[i] | flights_summary:'end'}}</span>
+										</div>
+									</div>
+									<div class="col s4" *ngIf="product.o_o_enabled != 0 && product.o_o_dfp != 1">
+										<a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#io_dfp_order_ids_modal_{{productId}}_{{i}}">Order IDs: {{product.orderIds[i] | join}} <span *ngIf="product.orderIds[0] && product.orderIds[0].length === 0">Not Defined</span></a>
+									</div>
+					 			</div>
+							</div>
+							<div class="collapsible-body">
+								<build-flights 
+									[product]="product"
+			       					[option]="option"
+									[budget-allocation]="product.budget_allocation"
+									[region-id]="i"
+									[flights]="product.flights[i] === undefined ? [] : product.flights[i]"
+									(build-flights)="buildFlights($event, i)"></build-flights>
+								<flights-table
+									[flights]="product.flights[i] === undefined ? [] : product.flights[i]"
+									[product]="product"
+									[cpms]="cpms"
+			       					[option]="option"
+									[budget-allocation]="product.budget_allocation"
+									[hasOwnedAndOperated]="product.o_o_enabled == '1'"
+									[hasOwnedAndOperatedDFP]="product.o_o_dfp == '1'" 
+									[hasGeofencing]="location.geofences.length > 0"
+									[geofencingEnabled]="product.has_geofencing"
+									[readonly]="false"
+        							[submitAllowed]="submitAllowed"
+									(delete-flight)="deleteFlight($event, product.id)"
+									(delete-all-flights)="deleteAllFlights(product.id, i)"
+									(edit-cpm)="editCPM($event, product.id, i)"
+									(edit-flight)="editFlight($event, product.id, i)"
+									(update-flight)="updateFlight($event, product.id, i)"
+									(add-flight)="addFlight($event, product.id, i)"
+									(reforecast-flights)="reforecastEmitter.emit($event)"></flights-table>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+	   	</li>
+	</ul>
+</div>
+
+<div id="io_confirm_overwrite_flights_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Reminder</h4>
+        <p>Doing this will reset all your custom flights changes. Are you sure this is what you would like to do?</p>
+    </div>
+    <div class="modal-footer">
+        <a id="io_single_creative_cancel" class="modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a (click)="confirmBuildFlights.next(true)" id="io_single_creative_save" class="waves-effect waves-green btn-flat">OK</a>
+    </div>
+</div>
+
+<div id="io_flights_flight_type_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Flight Type</h4>
+        <ul>
+        	<li><b>Broadcast</b> creates flights according to RAB's <a href="http://www.rab.com/public/reports/broadcastCalendar.cfm?section=research" target="_blank">Broadcast Calendar</a>.</li>
+        	<li><b>Monthly</b> creates flights that start and end each calendar month.</li>
+        	<li><b>In Total</b> creates one flight spanning the entire campaign length.</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-red btn-flat">OK</a>
+    </div>
+</div>
+
+<div id="io_flights_pacing_modal" class="modal">
+    <div class="modal-content">
+        <h4 class="col s7 grey-text text-darken-1">Flight Pacing</h4>
+        <p>Pacing by Month will evenly distribute the total campaign budget between the flights. Pacing by Day distributes the total campaign budget evenly per day. So flights with more days will have more budget allocated to them.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-red btn-flat">OK</a>
+    </div>
+</div>
+
+<div *ngFor="let product of products; let productId = index;">
+	<div *ngFor="let location of locations; let regionId = index;">
+		<div id="io_dfp_order_ids_modal_{{productId}}_{{regionId}}" class="modal">
+		    <div class="modal-content">
+		        <h4 class="col s7 grey-text text-darken-1">Order IDs</h4>
+		        <tag-input
+		        	[(ngModel)]="products[productId].orderIds[regionId]"
+		        	placeholder="Please enter your Order IDs"></tag-input>
+		    </div>
+		    <div class="modal-footer">
+		        <a (click) = "saveOAndOIds(product.id, regionId, products[productId].orderIds[regionId])" class="modal-close waves-effect waves-green btn-flat">OK</a>
+		    </div>
+		</div>
+	</div>
+</div>

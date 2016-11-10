@@ -1,0 +1,141 @@
+<header></header>
+<breadcrumb [currentMenu]="currentMenu" (to-targets)="goToTargets()" (to-builder)="goToBuilder()"></breadcrumb>
+<div id="mpq_body_container" class="container" style="margin: 0 auto; margin-top: 27px;" (window:resize)="resizeWindow()">
+    <div id="mpq_budget_info_section">
+        <div id="mpq_budget_header">
+            <div class="card-content row" style="margin-bottom: 0px;">
+                <h4 class="col s6 card-title grey-text text-darken-1">Budget</h4>
+            </div>
+            <div>
+                <a *ngIf="displayOptions.length < 3" (click)="addOption($event)" id="add_new_option_button"
+                   class="text-bold btn-floating btn-large waves-effect waves-light grey darken-1 tooltipped"
+                   data-tooltip="Add new option" style="display:block;"><i style="font-size:2rem;"
+                                                                           class="mdi-content-add"></i></a>
+                <div id="budget_option_row" class="row">
+                    <div class="col s10 offset-s2">
+                        <div class="row">
+                            <div *ngFor="let option of displayOptions; let i = index;" class="col s4">
+                                <div *ngIf="option.selected">
+                                    <input type="text" class="budget_option_title" [(ngModel)]="option.optionName">
+                                    <a (click)="removeOption(option.optionId)" *ngIf="options.length > 1"
+                                       class="proposal_option_close_button btn-flat">
+                                        <i class="grey-text text-darken-1 mdi-action-highlight-remove"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="option_collection_item" class="row" style="margin:0px;">
+                    <div class="col s2 term_col text-bold grey-text text-darken-1">
+                        <div style="padding-top:1rem;padding-left:1rem;">
+                            Term
+                        </div>
+                    </div>
+                    <div class="col s10">
+                        <div class="row">
+                            <div *ngFor="let option of displayOptions" class="col s4">
+                                <select [(ngModel)]="option.duration" materialize="material_select"
+                                        [materializeSelectOptions]="durationDropDown" class="duration_dropdown"
+                                        (ngModelChange)="durationChanged(option.optionId)">
+                                    <option *ngFor="let option of durationDropDown" [value]="option.value">{{option.name}}</option>
+                                </select>
+                                <select [(ngModel)]="option.term" materialize="material_select"
+                                        [materializeSelectOptions]="termDropDown"
+                                        class="duration_term_dropdown" [disabled]="termDropDown.length == 1">
+                                    <option *ngFor="let term of termDropDown" [value]="term.value">{{term.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul materialize="collapsible" class="collapsible popout collapsible-accordion" data-collapsible="accordion"
+            id="budget_content_collection">
+
+            <li *ngFor="let product of displayProducts | productFilter: {after_discount: false, term_based: true} | orderBy: ['display_order']"
+                [product]="product" [locations]="locations"
+                [options]="displayOptions" [has_geofencing]="has_geofencing" [userData]="userData"
+                (change-impressions-type)="changeImpressionsType($event)"
+                (network-changed)="networkChanged($event)"
+                class="display_collection_item budget-product"></li>
+
+            <li *ngIf="discountProducts.length > 0 && preDiscountDisplayProducts().length > 1"
+                class="accordion-disabled">
+                <div class="fake_collection_item">
+                    <div class="row">
+                        <div class="col s2 term_col text-bold grey-text text-darken-1">
+                            <div style="padding-top:1rem;">
+                                Subtotal
+                            </div>
+                        </div>
+                        <div class="col s10">
+                            <div class="row" style="line-height: 3rem;">
+                                <div *ngFor="let option of displayOptions; let i = index" class="col s4">
+                                    <span class="product_subtotal grey-text text-darken-1">{{option.total(['discount', 'after_discount']) | currency:'USD':'$'}}</span>
+                                    <span class="grey-text text-lighten-1 subtotal_small_text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li *ngFor="let discount of discountProducts | orderBy: ['display_order']"
+                [discount]="discount" [options]="displayOptions"
+                class="display_collection_item discount-product"></li>
+
+            <li *ngFor="let product of displayProducts | productFilter: {after_discount: true, term_based: true} | orderBy: ['display_order']"
+                [product]="product" [options]="options" class="display_collection_item budget-product"
+                [class.accordion-disabled]="product.product_type === 'tv_scx_upload'"></li>
+
+
+            <li *ngIf="discountProducts.length > 0" class="accordion-disabled">
+                <div class="fake_collection_item">
+                    <div class="row">
+                        <div class="col s2 term_col text-bold grey-text text-darken-1">
+                            <div style="padding-top:1rem;">
+                                Total {{getTermText() | titleCase}}
+                            </div>
+                        </div>
+                        <div class="col s10">
+                            <div class="row" style="line-height: 3rem;">
+                                <div *ngFor="let option of displayOptions; let i = index" class="col s4">
+                                    <span class="product_subtotal grey-text text-darken-1">{{option.total(['after_discount']) | currency:'USD':'$'}}</span>
+                                    <span class="grey-text text-lighten-1 subtotal_small_text">{{option.term}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li *ngFor="let product of displayProducts | productFilter: {after_discount: true, term_based: false} | orderBy: ['display_order']"
+                [product]="product" [options]="options" class="display_collection_item budget-product"
+                [class.accordion-disabled]="product.product_type === 'tv_scx_upload'"></li>
+
+            <li id="grand_total_collection_item">
+                <div class="fake_collection_item">
+                    <div class="row">
+                        <div class="col s2 term_col text-bold grey-text text-darken-1">
+                            <div style="padding-top:1rem;">
+                                Grand Total
+                            </div>
+                        </div>
+                        <div class="col s10">
+                            <div class="row" style="line-height: 3rem;">
+                                <div class="col s4" *ngFor="let option of displayOptions; let i = index">
+                                    <span class="product_subtotal grey-text text-darken-1">{{option.total() | currency:'USD':'$'}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer (save)="saveBudget()" (back)="goBack()" (next)="next()" [isInBuilder]=false></footer>
+</div>

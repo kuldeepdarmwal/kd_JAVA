@@ -1,0 +1,37 @@
+div#bulk_download_modal
+{
+	width:720px;
+}
+#bulk_download_modal_body
+{
+	text-align:center;
+}
+.bd_inline_block
+{
+	display:inline-block;
+}
+.bd_form_element
+{
+	float:left;
+	padding:10px;
+}
+#bulk_download_form
+{
+	margin-bottom:0px;
+}
+div.bd_form_element > div.select2-container
+{
+	width:310px;
+	text-align: left;
+}
+div.bd_form_element > input.bulk_download_datepicker
+{
+	width:296px;
+}
+#bd_ae_tooltip_div
+{
+	font-size:12px;
+	float:right;
+	margin-right: 25px;
+
+}

@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col s10 offset-s2">
+        <div class="col s4 sem_budget_item" *ngFor="let option of options; let i = index">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="grey-text product_input sem_clicks_input sem_clicks_amount
+                     keywords_clicks_dependent"  [(ngModel)]="option.config[product.id].data.cpm" mycurrency>
+                    <span class="grey-text text-darken-1">Clicks per month</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <span class="sem_dollar_prepend">$</span>
+                    <input type="text" class="grey-text product_input sem_clicks_input sem_price_amount"
+                           [(ngModel)]="option.config[product.id].data.unit" mycurrency>
+                    <span class="grey-text text-darken-1">Budget per month</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

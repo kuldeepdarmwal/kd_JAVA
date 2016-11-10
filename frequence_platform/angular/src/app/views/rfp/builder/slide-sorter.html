@@ -1,0 +1,62 @@
+<div class="pull-left filmstrip">
+    <div class="title-bar">
+        <div class="heading">
+            <div class="title">
+                <span *ngIf=enablePreview>Preview</span>
+                <span *ngIf=!enablePreview>Preview</span>
+            </div>
+        </div>
+
+        <div class="add-slide" (click)="loadLibrary.emit()" *ngIf="permissions.hasAddSlide && showAddSlides">
+            Add Slides
+        </div>
+    </div>
+    <!--Slide Sorted View-->
+    <div class="filmstrip-slides-container">
+        <div [dragula]='"first-bag"' [dragulaModel]='templates' id="slide-view" style="height: inherit;">
+            <div class="slide-panel template-panel filmstrip-thumbnail"
+                 *ngFor="let template of templates; let rowIndex = index; let last = last" data-id="slide-sorter-{{template.id}}"
+                 (click)="previewTemplate($event, template.id)">
+
+                <div class="background" *ngIf="(template.id == currentTemplateId)">      </div>
+                    <div style="position: absolute; top: 12px; right: 7.5%; color: #fff; cursor: pointer;"
+                         (click)="removeTemplate($event, template.id)" *ngIf="(templates.length != 1 && permissions.hasRemoveSlide && !template.isNotDeletable)">
+                        <div><i class="material-icons" style="transform: rotate(45deg);">add_circle</i></div>
+                    </div>
+                    <div class="filmstrip-slide">
+                        <new-page [template]="template" [proposal]="proposal" [isLibrary]="false"
+                                  (loaded)="templateLoaded($event)">
+                        </new-page>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+    .background{
+        width: 95%;
+        height: 100%;
+        background: #d4d4d4;
+        position: absolute;
+        top: 0;
+    }
+
+    .slide-panel:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #efefef;
+    }
+    .slide-panel:hover:before {
+        width: 95%;
+    }
+    .slide-panel:hover i{
+        color: #676666;
+    }
+
+</style>

@@ -1,0 +1,16 @@
+<div id="view_creative_modal" class="modal">
+    <div class="content-model">      
+        <div class="header">
+                <h5 class="card-title grey-text text-darken-1 bold">{{campainName}}</h5>
+        </div>
+        <div class="body">
+            <ul *ngFor="let item of creativeObj">
+                <li [innerHTML]="item"></li>
+            </ul>
+            <p *ngIf="creativeObjStatus == false" style="color:red; font-size: 16px;">No creative found.</p>
+        </div>
+        <div class="footer">
+            <button type="button" data-dismiss="modal" class="btn" (click)="closeModal()">Close</button>
+        </div>
+    </div>
+</div>

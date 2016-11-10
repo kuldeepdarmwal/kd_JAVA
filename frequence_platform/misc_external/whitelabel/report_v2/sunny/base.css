@@ -1,0 +1,491 @@
+*{
+	margin:0;
+	padding:0;
+	border:0px black solid;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	width:100%;
+	height:100%;
+	border:0px black solid;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+
+input, button, select, textarea, optgroup, option {
+}
+
+.full_page {
+	width:100%;
+	min-height:100%;
+}
+
+.center_page {
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+	height:100%;
+	position:relative;
+}
+
+/* broad sections */
+
+.header_section {
+	min-height:100px;
+	position:relative;
+}
+
+.controller_section {
+	height:90px;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+	background-color:#5bcae9;
+}
+
+.summary_section {
+	position:relative;
+	margin-top:20px;
+	margin-bottom:20px;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+	background-color:#eaeaea;
+	overflow:auto;
+	height:auto!important;
+}
+
+.graphs_section {
+	position:relative;
+	height:300;
+}
+
+.tables_section {
+	position:relative;
+	top:0px;
+	left:0px;
+	min-height:350px;
+}
+
+.footer_section {
+	min-height:30px;
+}
+
+/*** sub sections ***/
+
+/* header sub section */
+
+.report_v2_logo {
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:-1;
+}
+
+.report_v2_user_controls {
+	padding-top:10px;
+	padding-right:10px;
+	text-align:right;
+}
+
+/* controller sub section */
+
+.report_v2_advertiser_selection {
+	padding-left:10px;
+	padding-top:20px;
+	float:left;
+	min-width:150px;
+}
+
+.report_v2_advertiser_title {
+}
+
+#report_v2_advertiser_dropdown {
+}
+
+.target_dropdown {
+	min-width:180px;
+	height:40px;
+}
+
+#report_v2_advertiser_options {
+	min-width:280px;
+}
+
+.report_v2_campaign_selection {
+	padding-left:10px;
+	padding-top:20px;
+	float:left;
+	min-width:150px;
+}
+
+.report_v2_campaign_title {
+}
+
+#report_v2_campaign_dropdown {
+}
+
+#report_v2_campaign_options {
+	min-width:280px;
+}
+
+.report_v2_date_selection {
+	padding-right:10px;
+	padding-top:20px;
+	float:right;
+	min-width:120px;
+}
+
+.report_v2_date_title {
+}
+
+.report_v2_date_dropdown {
+}
+
+#report_v2_start_date_input {
+	min-width:4em;
+	width:6em;
+}
+
+.report_v2_datepicker_input {
+}
+
+#report_v2_end_date_input {
+	min-width:4em;
+	width:6em;
+}
+
+.select_menu_overflow {
+	max-height: 300px;
+}
+
+/* summary sub section */
+#summary_table_data {
+	position:relative;
+	/*height:74px;*/
+	width:880px;
+	float:left;
+	overflow:auto;
+	height:auto!important;
+}
+
+.summary_table {
+	position:relative;
+	width:100%;
+	/*max-height:330px;*/
+	border-collapse:collapse;
+}
+
+.summary_table td {
+	border:0px solid black;
+	padding:10px;
+}
+
+.summary_table_header {
+	width:100%;
+	vertical-align:bottom;
+}
+
+.summary_table_header td {
+	padding:5px;
+	padding-left:5px;
+	padding-right:5px;
+	vertical-align:bottom;
+	text-align:left;
+}
+
+.summary_table_row {
+	width:100%;
+	vertical-align:top;
+}
+
+.summary_table_row td {
+	padding:5px;
+	padding-left:5px;
+	padding-right:5px;
+	vertical-align:top;
+	text-align:left;
+}
+
+.summary_table_totals_column {
+	vertical-align:bottom;
+	text-align:right;
+	padding:0px;
+	background-color:#c0c1c2;
+}
+
+.summary_download_csv_button {
+	margin:4px;
+	margin-right:12px;
+	float:right;
+	width:44px;
+	height:32px;
+}
+
+/* graph sub section */
+#graph_container {
+	width:960px;
+	height:290px;
+	margin: 0 auto;
+}
+
+#no_graph_data_overlay {
+	position:absolute;
+	top:100px;
+	left:440px;
+	color:#97989a;
+}
+
+#graph_info_hover_over {
+	position:absolute;
+	top:13px;
+	left:790px;
+	z-index:1;
+	visibility:hidden;
+}
+
+/* table sub section */
+.table_controls {
+	width:100%;
+}
+
+.report_v2_table_page_controls {
+	float: right;
+	position:relative;
+	top:1.5em;
+}
+
+.page_buttons_image_size {
+	width:26px;
+	height:26px;
+}
+
+.first_page_button {
+	float:left;
+}
+
+.previous_page_button {
+	float:left;
+}
+
+#current_page_text {
+	float:left;
+	position:relative;
+	top:0.5em;
+}
+
+.next_page_button {
+	float:left;
+}
+
+.last_page_button {
+	float:left;
+}
+
+.report_v2_table_download_csv_button {
+	margin:4px;
+	margin-left:12px;
+	margin-right:12px;
+	float:right;
+	width:44px;
+	height:32px;
+
+	position:relative;
+	top:62px;
+}
+
+#table_data {
+	/*position:relative;*/
+	clear:both;
+	top:0px;
+	left:0px;
+	min-height:320px;
+}
+
+#table_data_radio {
+	float:left;
+	margin:10px;
+}
+
+.table_header_link {
+	font-weight:normal;
+	text-decoration:none;
+	color:black;
+}
+
+.active_table_column {
+	font-weight:bold;
+}
+
+.campaign_table {
+	width:100%;
+	border-collapse:collapse;
+}
+
+.campaign_table {
+	text-align:center;
+}
+
+.campaign_table_header {
+	width:100%;
+	height:30px;
+	background-color:#eaeaea;
+	border:1px solid #97989a;
+	border-left-width:0px;
+	border-right-width:0px;
+	vertical-align:bottom;
+}
+
+.campaign_table_header td {
+	padding:10px;
+}
+
+.campaign_table_row {
+	max-width:960px;
+}
+
+.campaign_table_row td {
+	padding:3px;
+	padding-left:10px;
+	padding-right:10px;
+	height:1em;
+}
+
+.campaign_table_even_row {
+	width:100%;
+	background-color:#ffffff;
+	color:#000000;
+}
+
+.campaign_table_odd_row {
+	width:100%;
+	background-color:#eaeaea;
+	color:#414142;
+}
+
+.campaign_table_column_0 {
+	min-width:10em;
+	text-align:left;
+}
+
+.campaign_table_column_1 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_2 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_3 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_4 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_5 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_6 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_7 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_8 {
+	min-width:5em;
+	width:5em;
+}
+
+.campaign_table_column_9 {
+	min-width:1em;
+}
+
+
+#no_table_data_overlay {
+	position:absolute;
+	top:200px;
+	left:440px;
+	color:#97989a;
+}
+
+
+/* footer subsection */
+.copyright_position {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding:10px;
+}
+
+#loading_image {
+	position:absolute;
+	top:470px;
+	left:430px;
+	display:none;
+}
+
+/* fonts */
+
+html {
+	font-family:'Georgia,serif';
+	font-size:1em;
+}
+
+input, button, select, textarea, optgroup, option, .target_dropdown, .report_v2_datepicker_input {
+	font-family:'Courier,sans-serif';
+}
+
+input, button, select, textarea, optgroup, option {
+	font-size:0.85em;
+}
+	
+input, button, select, textarea, optgroup, option, .target_dropdown {
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+.controller_option_title {
+	font-size:0.85em;
+}
+
+#no_graph_data_overlay {
+	font-size:2em;
+}
+
+.summary_table_header, .campaign_table_header {
+	font-weight:bold;
+	font-family:'Verdana,Geneva,sans-serif';
+	font-size:1em;
+}
+
+.campaign_table_row td {
+	font-size:0.9em;
+}
+
+#no_table_data_overlay {
+	font-size:2em;
+}
+
+.copyright_position {
+	font-size:0.8em;
+}
+
+
+

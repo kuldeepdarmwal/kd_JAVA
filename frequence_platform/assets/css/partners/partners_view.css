@@ -1,0 +1,148 @@
+#pv_header_section h3 a
+{
+	margin-top: -0.2em;
+	font-size: 20px;
+}
+#pv_header_section h3 a:hover
+{
+	text-decoration: none;
+}
+#pv_header_section
+{
+	min-height: 70px;
+}
+
+#pv_partner_new_link_button
+{
+	float: right;
+}
+
+#pv_body_container
+{
+	min-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+#pv_partners_table thead th
+{
+	text-transform: uppercase;
+	background-color: #f9f9f9;
+	color: #0088cc;
+	border-bottom-color: #ddd;
+}
+
+#pv_partners_table_length select
+{
+	width: auto;
+}
+
+#pv_partners_table .pv_action_container, #pv_partners_table .pv_creation_time_container
+{
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+#pv_partners_table .pv_elastic_column
+{
+	width: 20%;
+}
+
+#pv_partners_table .pv_custom_column
+{
+        width: 35%;
+}
+
+#pv_partners_table .pv_auto_column
+{
+	width: auto;
+}
+
+#pv_partners_table
+{
+	min-width: 1050px;
+	border-bottom-color: #ddd;
+}
+
+.pv_modal_column_container
+{
+	position: relative;
+	min-height: 35px;
+}
+
+#pv_message_box
+{
+	width: 50%;
+	left: 25%;
+	position: absolute;
+	display: none;
+}
+
+@media (max-width: 1000px)
+{
+	#pv_message_box
+	{
+		width: 500px;
+		left: 250px;
+	}
+}
+
+.tooltip-inner
+{
+	white-space: pre;
+	max-width: none;
+}
+
+div.pv_action_container a.btn, div.pv_modal_column_container button.btn
+{
+	color: grey;
+	text-decoration: none;
+}
+
+div.pv_action_container a.btn.disabled
+{
+	color: #ddd;
+	background-color: transparent;
+}
+
+div.pv_action_container a.btn:not(.disabled):hover, div.pv_modal_column_container button.btn:hover
+{
+	color: #0088cc;
+	text-decoration: none;
+}
+
+#pv_partner_new_link_button
+{
+	color: #0088cc;
+}
+
+#pv_partner_new_link_button:hover
+{
+	color: #0099ff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#pv_partners_table .pv_column_padding
+{
+	padding-left: 27px;
+	text-align: left;
+}
+
+#toast-container
+{
+        min-width: 8%;
+        right: 7%;
+        top: 10%;
+}
+
+#toast-container
+{
+        display: block;
+        position: fixed;
+        z-index: 1001;
+}

@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="32" name="description">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://secure.vantagelocal.com/images/favicon.png" rel="shortcut icon">
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+    <script src="https://secure.vantagelocal.com/assets/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="https://secure.vantagelocal.com/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="https://secure.vantagelocal.com/js/proposal_pdf.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/jquery.sparkline.js"></script>
+    <script type="text/javascript" src="/js/smb/demographic_common_code.js"></script>
+  <style>
+/*<![CDATA[*/   
+    @font-face {
+        font-family: 'Bebas Neue';
+        src: url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.eot');
+        src: url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),           
+        url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.woff') format('woff'),              
+        url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.ttf') format('truetype'),                   
+        url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.svg#Bebas Neue') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+h3 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  font-weight:400;
+  padding:0;
+  margin:0;
+  margin-top:10px;
+  padding-top:20px;
+  display:block;
+  margin-bottom:10px
+}
+
+h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  font-weight:400;
+  padding:0;
+  margin:0;
+  display:block;
+  margin-bottom:5px;
+  padding-top:0;
+  line-height:none
+}
+
+p {
+  margin:0;
+  padding:0;
+  line-height:30px;
+  text-rendering: optimizeLegibility;
+}
+
+.break {
+  display:block;
+  clear:both;
+  page-break-after:always
+}
+
+.clear {
+  clear:both
+}
+
+.wrapper {
+/*height: 1596px;*/
+  width:100%
+}
+
+@font-face {
+  font-family:'Bebas Neue';
+  src:url(https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.eot);
+  src:url(https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.eot?#iefix) format("embedded-opentype"),url(https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.woff) format("woff"),url(https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.ttf) format("truetype"),url('https://s3.amazonaws.com/brandcdn-assets/fonts/BebasNeue-webfont.svg#Bebas Neue') format("svg");
+  font-weight:400;
+  font-style:normal
+}
+
+.table_wrapper {
+  margin:auto;
+  width:100%
+}
+
+html {
+  width:1240px
+}
+
+#p1_logo {
+  padding-top:300px
+}
+
+body {
+  width:1240px;
+  margin:auto
+}
+
+table {
+  margin-top:20px;
+  font-size:18px
+}
+
+/* font-family: 'Oxygen', sans-serif; */
+body {
+  color:#414142;
+  font-family:'Oxygen',sans-serif;
+  font-size:22px;
+  font-weight:300;
+  line-height:33px
+/*   float: left;*/
+}
+
+th {
+  color:#414142;
+  font-family:'Oxygen',sans-serif;
+  font-weight:300
+/*   float: left;*/
+}
+
+td {
+  color:#414142;
+  font-family:'Oxygen',sans-serif;
+  font-weight:300;
+  line-height:33px
+/*   float: left;*/
+}
+
+    .editable.wrapper {
+        width:1240px;
+        min-height:1700px;
+        margin: 20px 0;
+        -webkit-box-sizing:border-box;
+        background: white;
+        border:none;
+    }
+
+.big_text {
+  position:relative;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:100px;
+  color:#414142
+}
+
+div.editable {
+  border:solid 2px Transparent
+}
+
+div.editable:hover {
+  border-color:#000;
+  margin-top:20px
+}
+
+.icon_holder {
+  width:136px;
+  height:136px;
+  float:left;
+  margin-top:50px;
+  margin-right:50px;
+  margin-bottom:0;
+  margin-left:62px
+}
+
+.heading_textholder {
+  width:900px;
+  float:left;
+  height:136px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:100px;
+  color:#414142;
+  padding:90px 0 0;
+  margin-top:12px
+}
+
+    #adplan_appendix .heading_textholder {
+        font-size: 75px;
+        padding-top: 45px;
+        line-height: 65px;
+        margin-bottom: 60px;
+    }
+
+.heading_wrapper {
+  margin-top:30px;
+  width:auto
+}
+
+.page-top {
+  margin-left:30%;
+  width:725px
+}
+
+.page-bottom {
+  font-size:18px;
+  width:90%;
+  margin:auto
+}
+
+.diagonal_lines {
+  padding-top:40px
+}
+
+div.tableofcontents {
+  width:600px;
+  margin-left:30%;
+  margin-top:50px
+}
+
+div.summary_lowertable {
+  width:900px;
+  margin-left:25%;
+  margin-bottom:5px;
+  margin-top:5px
+}
+
+#iab_categories {
+    float: right;
+    min-width: 800px;
+    margin: 5px 40px 5px 0;
+}
+
+#iab_categories .iab_column {
+    display: inline-block;
+    margin: 0 40px 0 10px;
+    vertical-align: top;
+}
+
+#iab_categories .p4_primary_channel {
+    font-size: 2.5em;
+    white-space: nowrap;
+}
+
+.summary_icons {
+  float:left;
+  height:46px;
+  width:46px;
+  margin-right:20px;
+  margin-top:-6px
+}
+
+.summary_text {
+  float:left;
+  height:auto;
+  width:700px;
+  margin-top:50px
+}
+
+.stragegy_text {
+  float:left;
+  height:120px;
+  width:700px
+}
+
+#T_GEO_1_IMG {
+  margin-top:300px;
+  margin-bottom:20px
+}
+
+.p3_geospan {
+    position: relative;
+    margin: -50px 0 50px 0;
+    height: 50px;
+    background-color: #5BCAE9;
+    text-align: right;
+}
+
+.p3_geospantext {
+    font-weight: bold;
+    padding-right: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 16px;
+    line-height: 50px;
+    color: white;
+    text-transform:uppercase;
+}
+
+.bottom_info {
+  background-image:url(http://www.vldir.com/proposal_images/icon_info.jpg);
+  background-repeat:no-repeat;
+  padding-left:70px;
+  margin-top:20px;
+  padding-bottom:10px
+}
+
+.icon_left {
+  float:left;
+  width:46px;
+  height:46px;
+  margin-top:5px;
+  position:relative
+}
+
+.icon_title_right {
+  float:left;
+  margin-left:20px;
+  width:634px;
+  margin-top:10px
+}
+
+.info {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  font-weight:400;
+  background-image:url(http://www.vldir.com/proposal_images/icon_info.jpg);
+  background-repeat:no-repeat;
+  padding-left:70px;
+  margin-top:20px;
+  padding-bottom:10px;
+  padding-top:10px
+}
+
+#partner_network {
+    text-align: right;
+    font-size: 22px;
+    margin: 150px 25px 0px 0px;
+}
+
+.tageting_image_holder {
+  width:1240px;
+  height:480px;
+}
+
+.list_large_icons {
+  float:left;
+  height:46px;
+  width:46px;
+  margin-right:20px;
+  position:relative;
+  margin-top:-7px
+}
+
+.list_large_text {
+  float:left;
+  width:725px;
+  font-size:22px;
+  margin-bottom:30px
+}
+
+.p4_tabbed_headtext.head_text {
+  float:left;
+  width:700px;
+  margin-bottom:5px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  font-weight:400;
+  display:block;
+  font-family:'Bebas Neue';
+  font-size:50px;
+  font-style:normal;
+  font-weight:400;
+  display:block;
+  line-height:none
+}
+
+.p4_subtext.sub_text {
+  float:left;
+  margin:0;
+  padding:0;
+  line-height:30px;
+  width:700px;
+  margin-bottom:30px
+}
+
+.p4_bigheadtext {
+  visibility:hidden;
+  color:#FFF
+}
+
+.p3_target_population {
+  float:left;
+  width:700px;
+  font-size:22px;
+  margin-bottom:30px;
+  margin-left:65px
+}
+
+.contextual_list {
+  width:1240px
+}
+
+#test td {
+  font-size:18px
+}
+
+#cost_summary_small td {
+  font-size:16px
+}
+
+.table_smalltext td {
+  font-size:18px
+}
+
+p.smalltext18px {
+  font-size:18px
+}
+
+.diagonols_wrapper {
+  width:90%;
+  margin:auto
+}
+
+.p4_fixed.td {
+  font-size:16px
+}
+
+.banner_designs_wrapper {
+  width:1140px;
+  margin:auto;
+  margin-top:40px
+}
+
+.banner_designs_float_col1 {
+  width:500px;
+  float:left;
+  margin-left:70px
+}
+
+.banner_designs_float_col2 {
+  width:500px;
+  float:left;
+  margin-left:70px
+}
+
+.banner_designs_heading img {
+  display:block;
+  margin-right:20px;
+  float:left;
+  height:46px;
+  width:46px
+}
+
+.banner_designs_text {
+  height:200px;
+  padding-left:60px;
+  overflow:visible!important
+}
+
+.banner_designs_heading {
+  height:50px
+}
+
+span.banner_designs_title {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  margin:0;
+  padding:0;
+  height:40px;
+  padding-top:10px
+}
+
+banner_designs_wrapper {
+  width:1140px;
+  margin:auto;
+  margin-top:40px
+}
+
+.banner_designs_text_page1 {
+  height:170px;
+  overflow:visible!important
+}
+
+.banner_designs_heading {
+  height:50px
+}
+
+span.banner_designs_title {
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:50px;
+  margin:0;
+  padding:0;
+  height:40px;
+  padding-top:10px
+}
+
+/*]]>*/
+#p4_subhead3 {
+  font-family:'Bebas Neue';
+  font-size:50px;
+  font-weight:400;
+  background-attachment:fixed;
+  background-image:url(http://vldir.com/proposal_images/images/images/icon_summary_reporting.png);
+  background-repeat:no-repeat;
+  background-position:left center;
+  position:relative
+}
+
+#p4_demoimg {
+  padding-top:30px;
+  padding-bottom:30px
+}
+
+#p4_demographiclist {
+  margin-top:30px
+/* width:600px;     height:400px;     margin-left:0px;     text-align:right;*/
+}
+
+.p4_sitetext {
+  position:relative;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:55px;
+  top:0;
+  left:20px;
+  color:#414142;
+  width:660px
+}
+
+#p4_placement {
+  position:relative;
+  align:center
+}
+
+.p4_sitesubtext {
+  position:relative;
+  font-family:'Oxygen',sans-serif;
+  color:grey;
+  font-size:16px
+/*    left:100px;*/
+}
+
+.p4_continuetext {
+  font-family:'Oxygen',sans-serif;
+  font-size:22px;
+  color:grey
+}
+
+table.p4_fixed {
+  position:relative;
+  left:5%;
+  right:5%;
+  table-layout:fixed;
+  width:90%
+}
+
+table.p4_fixed td {
+  overflow:hidden;
+  word-wrap:break-word
+}
+
+table.p4_fixed tr {
+}
+
+tr.p4_siterow {
+  height:30px;
+  font-family:'Oxygen',sans-serif;
+  color:grey;
+  font-size:16px
+}
+
+tr.p4_siterow2 {
+  height:30px;
+  background-color:#F6F6F6;
+  font-family:'Oxygen',sans-serif;
+  color:grey;
+  font-size:16px
+}
+
+table.p4_fixed th {
+  height:115px;
+  position:relative;
+  bottom:-15px;
+  white-space:nowrap
+}
+
+.th_rotate {
+  filter:alpha (opacity=100);
+  opacity:1;
+  border:none;
+  background-color:transparent;
+  color:#fff;
+  vertical-align:middle;
+  text-align:left;
+  -moz-transform:rotate(270deg);
+/* FF3.5 */
+  -o-transform:rotate(270deg);
+/* Opera 10.5 */
+  -webkit-transform:rotate(270deg);
+/* Saf3.1+, Chrome */
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=4.712388);
+/* IE6,IE7 */
+  -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=4.712388)
+/* IE8 */
+}
+
+#p4_tablehead {
+  background-color:#069;
+/*#6F7173;*/
+  padding-top:10px;
+  font-size:16px
+}
+
+.p4_td {
+  height:15px;
+  text-align:center;
+  font-size:16px
+}
+
+.p4_td2 {
+  height:15px;
+  text-align:center;
+  font-size:16px
+}
+
+.p4_th {
+  position:relative;
+  vertical-align:inherit;
+  color:#fff;
+  font-size:18px
+}
+
+.head_tr {
+  font-family:'Oxygen',sans-serif;
+  background-color:#97989A;
+  font-size:16px
+}
+
+.p5_headtext {
+  top:0;
+  left:10%;
+  width:600px;
+  margin-top:20px
+}
+
+.head_text {
+  position:relative;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:55px;
+  color:#414142;
+  margin-top:15px
+}
+
+.p5_subtext {
+  font-size:18px;
+  text-align:center
+}
+
+    table.p5_subtext
+    {
+        margin: 0px auto;
+    }
+
+    table.p5_subtext td {
+        line-height: 30px;
+    }
+
+.p5_disptr {
+  background-color:#EAEAEA
+}
+
+.p5_trhead {
+  width:20%;
+  font-size:18px
+}
+
+.p6_displayhead {
+  position:relative;
+  left:15%;
+  right:15%;
+  width:70%
+}
+
+.p6_headtext {
+  top:0;
+  left:0
+}
+
+.p6_displaytext {
+  font-size:0;
+  font-family:'Oxygen',sans-serif;
+  color:grey;
+  visibility:hidden
+}
+
+/*needs to be removed from prop gen*/
+.p6_subtext {
+  left:15%;
+  right:15%;
+  width:70%;
+  font-size:18px
+}
+
+.sub_text {
+  position:relative;
+  font-family:'Oxygen',sans-serif;
+  color:#414142;
+  margin-top:3px
+}
+
+.p6_vars {
+  position:relative;
+  float:right;
+  text-align:right
+}
+
+.p2_headtext {
+  width:100%
+}
+
+#p2_wrapper .tableofcontents .px_index {
+  font-size:22px
+}
+
+#p3_wrapper .summary_lowertable .summary_section .summary_icons {
+}
+
+#p3_wrapper .summary_lowertable .summary_section .summary_icons {
+  margin-top:43px
+}
+
+#p4_wrapper .summary_lowertable {
+  margin-top:25px
+}
+
+#p8_wrapper .heading_wrapper .summary_lowertable {
+  margin-top:20px
+}
+
+#p9_wrapper #T_SITE_HEADER .site_list_title {
+}
+
+#p9_wrapper #T_SITE_LIST .p4_sitesubtext .p4_fixed {
+  margin-top:0
+}
+
+.site_list_title {
+  width:90%;
+  margin-right:auto;
+  margin-left:auto
+}
+
+h6 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:46px;
+  font-weight:400;
+  margin:0
+}
+
+#p14_wrapper {
+    position: relative;
+    height:1700px;
+}
+
+.aboutaddress {
+    text-align: right;
+    margin-right: 3%;
+    position: absolute;
+    bottom:60px;
+    right:30px;
+    width: 75%;
+}
+
+.bold {
+  font-weight:700
+}
+
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .map_demos {
+        position: relative;
+        color: #333;
+        white-space: nowrap;
+        width:1120px;
+        padding: 0 60px;
+        overflow:hidden;
+    }
+    .map_demos .demos_left {
+        float:left;
+        margin-left:2px;
+        font-family: sans-serif;
+        font-size: 30px;
+        font-weight: 100;
+        line-height:1.25em;
+    }
+    .map_demos .demos_left div.demo {
+        margin-bottom: 10px;
+        color: #414142;
+    }
+    .map_demos .demos_left label {
+        display:block;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-family: 'Bebas Neue', sans-serif;
+    }
+
+    .map_demos .demo_column {
+        width:150px;
+        position: relative;
+        float:right;
+        vertical-align:top;
+        margin: 30px 0 0 60px;
+        padding: 20px 0 0 85px;
+    }
+
+    .DemographicGroup {
+        margin-bottom: 100px;
+        position:relative;
+    }
+
+    .DemographicGroupTitle {
+        color: #414142;
+        font-family:'Bebas Neue', sans-serif;
+        font-size:28px;
+        text-align: left;
+        width:220px;
+        position: absolute;
+        top: -50px;
+        left: -60px;
+    }
+
+    .DemographicGroup .figure {
+        position: relative;
+        margin: 0;
+        padding-top: 3px;
+        margin-bottom:20px;    
+    }
+
+    .DemographicRowName {
+        color: #414142;
+        font-family:Oxygen, sans-serif;
+        font-size:16px;
+        text-align: right;
+        width:95px;
+        position: absolute;
+        left: -105px;
+        top: 1px;
+        line-height:1em;
+    }
+
+    .DemographicSparkline {
+        width:106px;
+        height:8px;
+    }
+
+    .ExtraDemographicDataTitle {
+        font-family:Oxygen, sans-serif;
+        color:#414142;
+        font-size:14px;
+    }
+
+    .ExtraDemographicDataValue {
+        font-family:BebasNeue, sans-serif;
+        color:#414142;
+        font-size:24px;
+    }
+
+    .InternetAverageSubtext {
+        position: absolute;
+        color: #c1c2c3;
+        font-family:Oxygen, sans-serif;
+        font-size:11px;
+        text-align: center;
+        width: 320px;
+        left: 0px;
+        bottom: 30px;
+    }
+
+    .InternetAverageCenterLine {
+        position: absolute;
+        height:auto;
+        top:-12px;
+        bottom: -17px;
+        left: 74px;
+        width:1px; 
+        border-right:1px solid #aaa;
+    }
+  </style>
+
+  <title>
+  </title>
+</head>
+
+<body onpageshow="event.persisted &amp;&amp; (function(){var allInstances = CKEDITOR.instances, editor, doc;for(var i in allInstances ){editor = allInstances[ i ];doc = editor.document;if (doc){doc.$.designMode = &quot;off&quot;;doc.$.designMode = &quot;on&quot;;}}})();">
+  <!--TITLE PAGE -->
+
+
+  <div class="editable wrapper" id="p1_wrapper">
+    <img alt="" src="http://vldir.com/proposal_images/charter_propsal_cover3.jpg" width="1240px">
+
+    <div class="cover client_name" style="height: 25px; left: 0px; position: absolute; text-align: center; top: 900px; width: 1240px">
+      Presented to <span id="advertiser_name">Client Name</span>
+    </div>
+  </div>
+
+
+  <div class="break">
+  </div>
+  <!--PAGE ONE -->
+
+
+  <div class="editable wrapper" id="p2_wrapper">
+    <div class="heading_wrapper">
+      <div class="icon_holder"><img src="http://www.vldir.com/proposal_images/images/icon_proposal.png">
+      </div>
+
+
+      <div class="heading_textholder">
+        Media Proposal
+      </div>
+
+
+      <div class="clear">
+      </div>
+    </div>
+
+
+    <div class="page-top">
+      <p>At Charter Media, we have invested in the latest research technologies and tools to help our clients target the specific demographic, psychographic, and geographic traits that define their customers.</p>
+
+
+      <p>&nbsp;</p>
+
+
+      <p>Our online advertising platform provides the ability to advertise on the hottest internet websites and connect directly to the unique interests of your customers by co-branding with some of the world&#39;s most recognized media networks like ESPN, Facebook, Food Network, CNN, Forbes, People, and Rolling Stone.</p>
+
+
+      <p><br>
+      <br>
+      </p>
+
+
+      <div class="diagonal_lines"><img alt="" height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+      </div>
+    </div>
+
+
+    <div class="tableofcontents">
+      <table cellpadding="0" cellspacing="20" class="px_index">
+        <tbody>
+          <tr class="separator">
+            <td><img height="45" src="http://www.vldir.com/proposal_images/images/images/toc_icons_overview.png" width="45">
+            </td>
+
+            <td>Executive Overview</td>
+          </tr>
+
+
+          <tr class="separator">
+            <td><img height="46" src="http://www.vldir.com/proposal_images/images/images/toc_icons_targeting.png" width="45">
+            </td>
+
+            <td>Geographic Targeting</td>
+          </tr>
+
+
+          <tr class="separator">
+            <td><img height="45" src="http://www.vldir.com/proposal_images/images/images/toc_icons_strategy.png" width="45">
+            </td>
+
+            <td>Targeting Strategy</td>
+          </tr>
+
+
+          <tr class="separator">
+            <td><img height="45" src="http://www.vldir.com/proposal_images/images/images/toc_icons_performance.png" width="45">
+            </td>
+
+            <td>Performance Estimates</td>
+          </tr>
+
+
+          <!-- disable if show pricing is turned off -->
+          <div id="toc_cost_summary">
+            <tr class="separator">
+                <td><img height="46" src="http://www.vldir.com/proposal_images/images/images/toc_icons_cost.png" width="45"></td>
+
+                <td>Cost Summary</td>
+            </tr>
+          </div>
+
+
+
+          <tr class="separator">
+            <td><img height="45" src="http://www.vldir.com/proposal_images/images/images/toc_icons_reporting.png" width="45">
+            </td>
+
+            <td>Reporting</td>
+          </tr>
+
+
+          <tr class="separator">
+            <td><img height="46" src="http://www.vldir.com/proposal_images/images/images/toc_icons_bannerdesign.png" width="45">
+            </td>
+
+            <td>Creative Banner Design</td>
+          </tr>
+
+
+          <tr class="separator">
+            <td><img height="45" src="http://www.vldir.com/proposal_images/images/images/toc_icons_aboutus.png" width="45">
+            </td>
+
+            <td>About Us</td>
+          </tr>
+
+                    <tr class="separator media_plan">
+                        <td><img height="45" src="http://www.vldir.com/proposal_images/images/toc_icons_media_plan.png" width="45"></td>
+
+                        <td>Detailed Media Plan</td>
+                    </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="break">
+  </div>
+
+
+  <div class="editable wrapper" id="p3_wrapper">
+    <div class="heading_wrapper">
+      <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_overview.png">
+      </div>
+
+
+      <div class="heading_textholder">
+        EXEcutive OVERVIEW
+      </div>
+
+
+      <div class="clear">
+      </div>
+    </div>
+
+
+    <div class="page-top">
+      <p>Charter Media offers online display advertising that is targeted, engaging and efficient for businesses of all sizes. In partnership with you, we craft messages that speak directly to your customers&#39; desires and interests while building awareness of your product or service.</p>
+
+
+      <div class="diagonal_lines"><img height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+      </div>
+    </div>
+    <br>
+
+
+    <div class="summary_lowertable">
+      <div class="summary_section">
+        <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_richcreative.png" width="46">
+        </div>
+
+
+        <div class="summary_text">
+          <h2>rich creative design</h2>
+
+
+          <p>Full Service Creative Design</p>
+
+
+          <p>5 IAB Formats: Standard + Mobile</p>
+
+
+          <p>Animation and Rich Media Formats</p>
+
+
+          <p>100% Satisfaction Commitment</p>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="summary_section">
+        <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_mediabuy.png" width="46">
+        </div>
+
+
+        <div class="summary_text">
+          <h2>media buy</h2>
+
+
+          <p>Geographic: <span id="T_NUM_ZIPS">1 Zip Code</span> in <span id="T_NUM_COUNTIES">1 County</span></p>
+          <span id="T_NUM_CONTENT_SUBJECTS">Contextual: 6 Content Subjects</span>
+
+          <p><span id="T_DEMOGRAPHIC_CATEGORIES">Targeted Demographics: Gender, Age, Education</span>
+          </p>
+
+
+          <p>Population: Approximately <span id="T_GEO_POPULATION">37,365</span> People</p>
+
+
+          <p><span class="R_RETARGETING">Retargeting: <span id="T_RETARGETING">Included</span></span>
+          </p>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="summary_section">
+        <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_reporting.png" width="46">
+        </div>
+
+
+        <div class="summary_text">
+          <h2>reporting</h2>
+
+
+          <p>24/7 Online Access</p>
+
+
+          <p>100% Transparency and Verified Results</p>
+
+
+          <p>Campaign Optimization</p>
+
+
+          <p>Analytics Integration</p>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="summary_section">
+        <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_packageoptions.png" width="46">
+        </div>
+
+
+        <div class="summary_text">
+          <h2><span class="p2_headtext head_text" id="impressions_packages_header">package options</span>
+          </h2>
+
+
+          <div class="p2_subtext p2_uptext sub_text">
+            <p><span id="T_IMPRESSION_PACKAGES">123,400 Monthly Impressions<br></span>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="break">
+  </div>
+
+
+  <div class="editable wrapper" id="p4_wrapper">
+    <div class="heading_wrapper">
+      <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_geo.png">
+      </div>
+
+
+      <div class="heading_textholder">
+        GEOGRAPHIC TARGETING
+      </div>
+
+
+      <div class="clear">
+      </div>
+    </div>
+
+
+    <div class="page-top">
+      <p>More than ever before, advertisers can reach local audiences with compelling messages by harnessing the power of the internet.</p>
+
+
+      <div class="diagonal_lines" style="margin-bottom:20px;"><img height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+      </div>
+    </div>
+    <span id="T_GEO_1_IMG"><img src="http://www.vldir.com/proposal/img/14339_609_2013-07-21:19-55-25.png" width="100%"></span>
+
+    <div class="p3_geospan">
+      <span class="p3_geospantext" id="T_GEO_1_TITLE" style="font-weight: bold">First Picture</span>
+    </div>
+
+
+    <div style="height:25px">
+    </div>
+
+
+    <div class="summary_lowertable">
+      <div class="icon_left"><img alt="" height="44" src="http://vldir.com/proposal_images/icon_targetarea.png" width="46">
+      </div>
+
+
+      <div class="icon_title_right">
+        <h2>Target area</h2>
+
+
+        <p><span id="T_NUM_ZIPS2">1 Zip Code</span> in <span id="T_COUNTY_LIST">Sonoma County</span></p>
+      </div>
+
+
+      <div class="clear">
+      </div>
+    </div>
+
+
+    <div class="summary_lowertable">
+      <div class="icon_left"><img alt="" height="44" src="http://vldir.com/proposal_images/icon_population.png" width="46">
+      </div>
+
+
+      <div class="icon_title_right">
+        <h2>POPULATION</h2>
+
+
+        <p>Approximately <span id="T_GEO_POPULATION2">37,365</span> People</p>
+      </div>
+
+
+      <div class="clear">
+      </div>
+    </div>
+  </div>
+
+<div id="T_GEO_LINKS" style="display:none;"></div>
+    <div class="break">
+    </div>
+    <div class="editable wrapper" id="p6_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_strategy.png">
+        </div>
+        <div class="heading_textholder">
+          targeting strategy
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+      <div class="page-top" style="margin-bottom:90px;">
+        <p>The Charter Media Team can help deliver more impactful insights and solutions specific to your marketing needs than any other media organization.</p>
+        <p>&nbsp;</p>
+        With a full range of online targeting tools, your Charter Media Team works with you every step of the way to maximize your advertising budget.
+        <div class="diagonal_lines"><img height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+        </div>
+      </div>
+      <div class="summary_lowertable">
+        <div class="summary_section">
+          <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_richcreative.png" width="46">
+          </div>
+          <div class="stragegy_text">
+            <h2>contextual targeting</h2>
+            <p>Selecting webpages with content that matches your offering</p>
+          </div>
+          <div class="clear">
+          </div>
+        </div>
+        <div class="summary_section">
+          <div class="summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_mediabuy.png" width="46">
+          </div>
+          <div class="stragegy_text">
+            <h2>demographic targeting</h2>
+            <p><span class="p4_subtext sub_text">Selecting websites by demographic statistics</span>
+            </p>
+          </div>
+          <div class="clear">
+          </div>
+        </div>
+        <div class="summary_section">
+          <div class="R_RETARGETING summary_icons"><img height="46" src="http://vldir.com/proposal_images/images/images/icon_summary_reporting.png" width="46">
+          </div>
+          <div class="R_RETARGETING stragegy_text">
+            <h2>Retargeting</h2>
+            <p>Targeting customers that have already demonstrated an interest in your offering</p>
+          </div>
+          <div class="clear">
+          </div>
+        </div>
+      </div>
+      <div id="partner_network">
+        <p>OUR PARTNER NETWORK</p>
+        <img height="222" src="http://vldir.com/proposal_images/images/network_holder.jpg" width="1240">
+        <p>Charter Media has the largest partner network of any locally targeted media buyer.</p>
+      </div>
+    </div>
+
+
+    <div class="break">
+    </div>
+
+
+    <div class="editable wrapper" id="p7_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_strategy.png">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">targeting strategy</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="tageting_image_holder summary_lowertable" style="margin-top:0;">
+        <div class="list_large_section">
+          <div class="list_large_icons"><img height="46" src="http://vldir.com/proposal_images/images/icon_contextual.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>contextuAl targeting</h2>
+
+
+            <p><span class="p4_subtext sub_text">Charter Media&#39;s contextual platform searches the internet for highly relevant website content and places your ad on brand-safe webpages that match your product&#39;s message.</span>
+            </p>
+          </div>
+        </div><img class="masthead_image" src="http://vldir.com/proposal_images/images/ipad_placeholder.png">
+
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="contentual_list" id="iab_categories">
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+      <div class="break">
+      </div>
+
+
+      <div class="editable wrapper" id="p8_wrapper">
+            <div class="heading_wrapper">
+                <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_strategy.png"></div>
+
+                <div class="heading_textholder">
+                    <span class="title">targeting strategy</span>
+                </div>
+            </div>
+
+            <div><img alt="" height="577" src="http://vldir.com/proposal_images/targeting_demographic.jpg" width="1230"></div>
+
+
+        <div class="summary_lowertable">
+          <div class="list_large_section">
+            <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/images/icon_demographic.jpg" width="46">
+            </div>
+
+
+            <div class="list_large_text">
+              <h2>demographic targeting</h2>
+
+
+              <p>Demographic targeting identifies websites frequented by viewers of the same age, gender, parental status, education, ethnicity and income level as your customers.</p>
+
+
+              <p>&nbsp;</p>
+
+
+              <p>With the depth of advertising placements available, our demographic technology directs your ad to the local viewers who matter most.</p>
+            </div>
+
+
+            <div class="clear">
+            </div>
+          </div>
+
+
+          <div class="list_large_section">
+            <div class="list_large_icons"><img alt="" height="44" src="http://vldir.com/proposal_images/icon_targetarea.png" width="46">
+            </div>
+
+
+            <div class="list_large_text">
+              <h2>target demographics</h2>
+              <span id="T_DEMOGRAPHICS">Gender: Male<br>
+              Age: 35-44, 45-54, 55-64, 65+<br>
+              Income: All<br>
+              Parenting: All<br>
+              Education: Under Grad, Grad School<br></span>
+            </div>
+
+
+            <div class="p3_target_population">
+              Targeting <span id="T_DEMO_POPULATION">2,780</span> out of <span id="T_GEO_POPULATION2">37,365</span> geographic population
+            </div>
+
+
+            <div class="clear">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="break">
+      </div>
+
+
+      <div class="editable wrapper" id="p9_wrapper">
+
+       <div id="site_list"></div>
+
+        <div class="page-bottom">
+          <h2 class="info">info</h2>
+          The Site List is a subset of premium placements within the selected verticals where your ads will be shown.<br>
+          The Charter Media reporting portal provides access to the complete list of publisher placements within your target verticals.
+        </div>
+      </div>
+
+
+      <div class="break">
+      </div>
+
+
+      <div class="editable wrapper R_RETARGETING" id="p10_wrapper">
+            <div class="heading_wrapper">
+                <div class="icon_holder"><img src="http://vldir.com/proposal_images/images/icon_strategy.png"></div>
+
+                <div class="heading_textholder">
+                    <span class="title">targeting strategy</span>
+                </div>
+
+                <div class="clear"></div>
+            </div><img alt="" height="615" src="http://vldir.com/proposal_images/targeting_strategy.jpg" width="1240">
+
+            <div class="summary_lowertable">
+                <div class="list_large_section">
+                    <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/images/icon_demographic.jpg" width="46"></div>
+
+
+              <div class="list_large_text">
+                <h2>Retargeting</h2>
+
+
+                <p>Charter&#39;s retargeting technology nurtures online leads by keeping your message in front of customers who have clicked on your ad or visited your website.</p>
+              </div>
+
+
+              <div class="clear">
+              </div>
+            </div>
+
+
+            <div class="list_large_section">
+              <div class="list_large_icons"><img alt="" height="46" src="http://www.vldir.com/proposal_images/icon_info.jpg" width="46">
+              </div>
+
+
+              <div class="list_large_text">
+                <h2>info</h2>
+
+
+                <p>In compliance with the Digital Advertising Alliance&#39;s&nbsp;Self-Regulatory Principles, Charter Media provides a self opt-out ability for retargeted consumers. &nbsp;A consumer may also opt-out of the use of our retargeting ad technology by disabling cookies on their browser.</p>
+              </div>
+
+
+              <div class="clear">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="break">
+          </div>
+        </div>
+
+
+        <div class="editable wrapper" id="p11_wrapper">
+          <div class="heading_wrapper">
+            <div class="icon_holder"><img height="136" src="http://vldir.com/proposal_images/performance_icon.jpg" width="136">
+            </div>
+
+
+            <div class="heading_textholder">
+              <span class="title">performance ESTIMATES</span>
+            </div>
+
+
+            <div class="clear">
+            </div>
+          </div>
+          <img alt="" height="300" src="http://vldir.com/proposal_images/your_ad_here.jpg" width="1240">
+
+          <div id="display_packages"></div>
+        </div>
+
+
+      <div class="break">
+      </div>
+
+
+      <div class="editable wrapper" id="p12_wrapper">
+        <div class="heading_wrapper">
+          <div class="icon_holder"><img src="http://vldir.com/proposal_images/cost_summary.jpg">
+          </div>
+
+
+          <div class="heading_textholder">
+            <span class="title">cost summary</span>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+
+
+        <div id="impressions_packages"></div>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="page-bottom">
+          <h3>confidentiality</h3>
+
+
+          <p class="smalltext18px">Media Cost Quote valid until <span id="T_DATE">August 4, 2013</span>. Information provided in this media plan is confidential.</p>
+        </div>
+
+
+        <div class="diagonols_wrapper"><img alt="" height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+        </div>
+
+
+        <table align="center" border="0" cellpadding="0" cellspacing="0" id="cost_summary_small" width="90%">
+          <tr>
+            <td>* Demographic website data provided by Quantcast Corporation, San Francisco, CA</td>
+          </tr>
+
+
+          <tr>
+            <td>* Circular Area Profiles (Demographic and Population data) sourced from 2010 US Census results</td>
+          </tr>
+
+
+          <tr>
+            <td>* Placements subject to availability</td>
+          </tr>
+
+
+          <tr>
+            <td>* Website reach and frequency data sourced via a proprietary list of opt-in consumer panel data, and other third-party market research</td>
+          </tr>
+        </table>
+        <div class="break"></div>
+      </div>
+
+
+
+
+    <div class="editable wrapper" id="p13_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/reporting_icon.jpg">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">reporting</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+      <img alt="" height="530" src="http://vldir.com/proposal_images/reporting_image.jpg" width="1240">
+
+      <div style="height:50px;">
+      </div>
+
+
+      <div class="summary_lowertable">
+        <div class="list_large_section">
+          <div class="list_large_icons">
+          </div>
+
+
+          <div class="list_large_text" style="margin:10px">
+            <p>Campaign analytics are an important part in evaluating the performance of any marketing strategy. We supply transparent reports which provide visibility into your ad placements by website, geography, demographic statistics, viewer engagement, and retargeting.</p>
+
+
+            <p>&nbsp;</p>
+            Audience awareness builds over time. For this reason, it is important to be aware of not only the click-through-rate but also the delivery of impressions to your target audience.<br>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+        <img alt="" height="27" src="http://vldir.com/proposal_images/diagnols_693px.jpg" width="766">
+
+        <div class="list_large_section" style="margin-top:20px;">
+          <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/images/icon_demographic.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>24/7 access</h2>
+
+
+            <p>Our online client portal is accessible 24/7 and allows you to track ad engagements, click throughs, and adviews by day, placement, location, and demographic attributes.</p>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+
+
+        <div class="list_large_section">
+          <div class="list_large_icons"><img alt="" height="46" src="http://www.vldir.com/proposal_images/icon_info.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>support</h2>
+
+
+            <p>As results are seen, your Charter Media Team will evaluate the strategy on a daily basis and make any adjustments based on&nbsp;our expertise in optimizing campaign performance and&nbsp;your feedback.</p>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="break">
+    </div>
+
+
+    <div class="editable wrapper" id="p14_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/reporting_icon.jpg">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">reporting</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+      <img alt="" height="543" src="http://vldir.com/proposal_images/reporting_page2.jpg" width="1240">
+
+      <div class="summary_lowertable">
+        <div class="list_large_section" style="margin-top:20px;">
+          <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/icon_screenshot.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>screenshot ad verification</h2>
+
+
+            <p>The Charter Media ad verification system searches for and captures screenshot images of live banner campaigns to provide a visual record of ad delivery.</p>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+
+
+        <div class="list_large_section" style="margin-top:20px;">
+          <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/icon__engagement.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>engagement tracking</h2>
+
+
+            <p>Engagement tracking provides insight beyond the simple click rate to analyze performance by viewer interactions with ad animations and video exposures.</p>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+
+
+        <div class="list_large_section">
+          <div class="list_large_icons"><img alt="" height="46" src="http://vldir.com/proposal_images/icon_export.jpg" width="46">
+          </div>
+
+
+          <div class="list_large_text">
+            <h2>data export</h2>
+
+
+            <p>Easily export and download your reports as an Excel document.</p>
+          </div>
+
+
+          <div class="clear">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="break">
+    </div>
+
+
+    <div class="editable wrapper" id="p15_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/creative_icon.jpg">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">creative banner design</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+      <img alt="" height="408" src="http://vldir.com/proposal_images/banner_design.jpg" width="1240">
+
+      <div class="banner_designs_wrapper">
+        <div class="banner_designs_float_col1">
+          <div class="banner_designs_heading">
+            <span class="banner_designs_title">custom design</span>
+          </div>
+
+
+          <div class="banner_designs_text_page1">
+            Our dedicated design team is committed to creating eye-catching dynamic ads that capture your unique brand and message.
+          </div>
+
+
+          <div class="banner_designs_heading">
+            <span class="banner_designs_title">advanced platform</span>
+          </div>
+
+
+          <div class="banner_designs_text_page1">
+            Banner ads require more attention than just what meets the eye. Our advanced display advertising platform joins art and technology to track and optimize creative performance.
+          </div>
+        </div>
+
+
+        <div class="banner_designs_float_col2">
+          <div class="banner_designs_heading">
+            <span class="banner_designs_title">rich media</span>
+          </div>
+
+
+          <div class="banner_designs_text_page1">
+            Our animated banner ads leverage modern rich media features and ad formats such as in-banner video, full screen video takeover, and user interactivity.
+          </div>
+
+
+          <div class="banner_designs_heading">
+            <span class="banner_designs_title">guarantee</span>
+          </div>
+
+
+          <div class="banner_designs_text_page1">
+            <p>We are committed to 100% client satisfaction with creative design.</p>
+          </div>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="break">
+    </div>
+
+
+    <div class="editable wrapper" id="p14_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img src="http://vldir.com/proposal_images/creative_icon.jpg">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">creative banner design</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+      <img alt="" height="632" src="http://vldir.com/proposal_images/pink_laptop.jpg" width="1240">
+
+      <div class="banner_designs_wrapper">
+        <div class="banner_designs_float_col1">
+          <div class="banner_designs_heading">
+            <img alt="" height="46" src="http://vldir.com/proposal_images/icon_video.jpg" width="46"><span class="banner_designs_title">advanced+ video</span>
+          </div>
+
+
+          <div class="banner_designs_text">
+            In-banner video ads allow the user to experience the full spectrum of an advertiser&#39;s brand. Charter Media can add track-able video to any ad design with viewer interaction reporting.
+          </div>
+
+
+          <div class="banner_designs_heading">
+            <img alt="" height="46" src="http://vldir.com/proposal_images/icon_social.jpg" width="46"><span class="banner_designs_title">social sharing</span>
+          </div>
+
+
+          <div class="banner_designs_text">
+            The Charter Media Social Touch enables in-banner content including video to be shared with a click. Shareable content allows advertisers to integrate banner campaigns with social marketing strategies.
+          </div>
+        </div>
+
+
+        <div class="banner_designs_float_col2">
+          <div class="banner_designs_heading">
+            <img alt="" height="46" src="http://vldir.com/proposal_images/icon_smartmaps.jpg" width="46"><span class="banner_designs_title">smart maps</span>
+          </div>
+
+
+          <div class="banner_designs_text">
+            Charter Media&#39;s Smart Map Ads embed an interactive map into your banner ad to provide useful and relevant local Information.
+          </div>
+
+
+          <div class="banner_designs_heading">
+            <img alt="" height="46" src="http://vldir.com/proposal_images/icon_hd.jpg" width="46"><span class="banner_designs_title">hd ads</span>
+          </div>
+
+
+          <div class="banner_designs_text">
+            <p>Charter Media&#39;s ADVANCED+ HD permits ad designs up to 5x larger than the standard 40k limitations on most ad networks. Increase the number, size, and quality of your images to produce a truly high-impact ad.</p>
+          </div>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="break">
+    </div>
+
+
+    <div class="editable wrapper" id="p14_wrapper">
+      <div class="heading_wrapper">
+        <div class="icon_holder"><img height="136" src="http://www.vldir.com/proposal_images/images/icon_proposal.png" width="136">
+        </div>
+
+
+        <div class="heading_textholder">
+          <span class="title">about us</span>
+        </div>
+
+
+        <div class="clear">
+        </div>
+      </div>
+
+
+      <div class="page-top">
+        <p>Charter Media is the advertising sales division of Charter Communications, Inc. The company offers targeted, integrated advertising and promotional solutions through national cable networks, internet advertising, mobile marketing and events supported by marketing, research and award-winning creative services.</p>
+
+
+        <p>&nbsp;</p>
+
+
+        <p>With offices in 24 states, Charter Media covers over 3.5 million households throughout the country. From traditional commercial advertising to exciting new possibilities in interactive media, Charter Media's consultative team brings advertisers effective, efficient ways to turn our audiences into their customers.</p>
+
+
+        <p><br>
+        </p>
+
+
+        <div class="diagonal_lines"><img height="44" src="http://vldir.com/proposal_images/dinsols_600.jpg" width="600">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="diagonal_lines" style="text-align: center"><img height="53" src="http://vldir.com/proposal_images/new_charter_logo.png" width="418">
+        </div>
+      </div>
+
+
+      <div class="aboutaddress">
+        <h6>CALL US NOW</h6>
+                
+
+        <p><span id="T_REP_NAME"></span>
+        Great Lakes Division</p>
+
+
+        <p>1241 John Q Hammonds Dr, Suite 502</p>
+
+
+        <p>Madison, WI 53717</p>
+
+
+        <p>chartermedia.com<br>
+        <br>
+        608.826.1538 (p)<br>
+        608.826.1561 (f)</p>
+      </div>
+    </div>
+
+    <div id="adplan_appendix" class="media_plan"></div>
+    <script id="adplan_appendix_js" class="media_plan" type="text/javascript"></script>
+
+
+
+
+
+    <div class="banner_designs_wrapper clear">
+    </div>
+</body>
+</html>

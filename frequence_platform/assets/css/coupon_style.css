@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * Define Coupon Styles / themes 
+ *
+ */
+
+/* Coupon Style : Layout */
+.coupon_wrap { 
+    width:475px;
+    margin:auto;
+    border:3px dashed #000;
+}
+.coupon_top {
+    height:156px;
+    position:relative;
+}
+.coupon_icon {
+    width:146px;
+    height:146px;
+    top:8px;
+    left:8px;
+    position:absolute;
+}
+.coupon_title {
+    padding-top:10px;
+    position:absolute;
+    right:8px;
+    top:8px;
+    width:310px;
+    font-size:30px;
+    font-family: 'Amaranth', sans-serif;
+    text-align:center;
+    height:136px;
+    overflow:hidden ;
+ }
+.coupon_description {
+    margin:0px 8px 0px 8px;
+    font-family: 'Amaranth', sans-serif;
+    font-size:20px;
+    text-align:center;
+    padding:5px 0px;
+}
+.percent_off {
+    margin:0px 8px 0px 8px;
+    font-family: 'Amaranth', sans-serif;
+    font-size:20px;
+    text-align:center;
+    padding:5px 0px;
+    margin-top:2px;
+}
+.buttons_share,.buttons_email {
+    margin:5px 8px 20px 8px;
+}
+.buttons_left {
+    width:170px;
+    height:80px;
+    float:left;
+}
+.buttons_right {
+    width:247px;
+    height:80px;
+    float:right;
+}
+.button_title {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    margin-bottom:3px;
+}
+#email {
+    border:1px solid #d6d6d6;
+    padding:3px;
+}
+#submit {
+    border:1px solid #c08dd0;
+    padding:3px;
+    cursor:pointer;
+}
+.coupon_code {
+    font-family: 'Amaranth', sans-serif;
+    font-size:24px;
+    text-align:center;
+}
+ .error{
+     text-align: center; margin-bottom: 10px; color:#f00
+ }
+button#fb-auth,#auth-loginlink{
+     border:0px ;
+     display : block ;
+     width : 200px ;
+     height : 24px ;
+     text-indent : -9999px ;
+     background: url(../img/facebook_signin.png) no-repeat 0 0 ;
+ }
+ button#fb-auth:hover,#auth-loginlink:hover{
+     background-position: 0px -48px ;
+     cursor:pointer;
+ }
+ 
+.share_again {
+    margin-top:10px;
+}
+
+/* Coupon Style : Color Themes */
+/* Theme : Default */
+.default .coupon_title{
+    color:#ffd200;
+    background:#894a9c;
+}
+.default .coupon_description{
+    color:#fff;
+    background:#682f79;    
+}
+.default .percent_off{
+    color:#fff;
+    background:#5a236b;
+}
+.default .button_title{
+    color:#333;
+}
+.default #email{
+    font-color:894a9c; 
+}
+.default #submit{
+    color:#ffcc00;
+    background-color:#682f79;   
+}
+.default .coupon_code{
+    color:#777;
+}
+
+/* Theme : Black Jack */
+
+.black_jack .coupon_title{
+    color:#FFD200;
+    background:#000000;
+}
+.black_jack .coupon_description{
+    color:#fff;
+    background:#000000;    
+}
+.black_jack .percent_off{
+    color:#fff;
+    background:#000000;
+}
+.black_jack #submit{
+    color:#ffcc00;
+    background-color:#000000;   
+}
+.black_jack .coupon_code{
+    color:#000000;
+}
+
+/* Theme : Grey Way */
+
+.grey_way .coupon_title{
+    color:#FFD200;
+    background:#777777;
+}
+.grey_way .coupon_description{
+    color:#fff;
+    background:#777777;    
+}
+.grey_way .percent_off{
+    color:#fff;
+    background:#777777;
+}
+.grey_way #submit{
+    color:#000000;
+    background-color:#777777;   
+}
+.grey_way .coupon_code{
+    color:#777777;
+}
+
+/* Theme : Oswald */
+
+.oswald .coupon_title{
+    color:#fff;
+    background-color:#FD9308;
+}
+.oswald .coupon_description{
+    color:#fff;
+    background:#A2A9AF;    
+}
+.oswald .percent_off{
+    color:#fff;
+    background:#5A236B;
+}
+.oswald #submit{
+    color:#fff;
+    background-color:#A2A9AF;   
+}
+.oswald .coupon_code{
+    color:#000000;
+}
+
+/* Theme : Background */
+.background .coupon_title{
+    color:#ffd200;
+    background:#894a9c;
+}
+.background .coupon_description{
+    color:#fff;
+    background:#682f79;    
+}
+.background .percent_off{
+    color:#fff;
+    background:#5a236b;
+}
+.background .button_title{
+    color:#333;
+}
+.background #email{
+    font-color:894a9c; 
+}
+.background #submit{
+    color:#ffcc00;
+    background-color:#682f79;   
+}
+.background .coupon_code{
+    color:#777;
+}
+
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.5;
+    opacity:.50;
+    filter: alpha(opacity=50);
+}
+.white_content {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left:50%;
+    //right:35%;  
+    width: 515px;
+    //margin-left:auto;
+    //margin-right:auto;
+    margin-left: -275px;
+    height: auto;
+    padding: 16px;
+    //border: 1px solid black;
+    background-color: white;
+    -moz-opacity: 0.9;
+    opacity:.890;
+    filter: alpha(opacity=90);
+    z-index:1002;
+    overflow: auto;
+}
+
+/* imported from style.css */
+/*p {margin:0;padding:0;}
+.coupon_buttons {margin-top:2px;}
+.email_offer {font-family: 'Oswald', sans-serif;font-size:18px;color:#777;border:0px solid #d6d6d6;font-weight:300;padding:5px 0px 5px 0px;margin-top:2px;display:block;}
+
+.clear {clear:both;}
+.share_holder {background-color:#E5E8ED;border:0px solid #E5E8ED}
+.share_left {width:247px;float:left;height:49px;font-family: 'Oswald', sans-serif;font-size:18px;color:#777;border:0px solid #d6d6d6;font-weight:300;text-align:center;padding:0px 0px 0px 0px;margin-top:2px;padding-top:5px;}
+.share_right {width:247px;float:right;height:49px;font-family: 'Oswald', sans-serif;font-size:18px;color:#777;border:0px solid #d6d6d6;font-weight:300;text-align:center;padding:0px 0px 0px 0px;background-color:#f4f4f4;margin-top:2px;}
+.toclaim {padding:5px 0px 5px 0px;background:#8A939D;margin-top:2px;border:1px solid #89919d}
+.toclaim_left {width:242px;float:left;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#777;font-weight:300;}
+.toclaim_right {width:247px;float:right;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#777;font-weight:300;}
+#email {width:175px;border:1px #d6d6d6 solid;font-family: 'Oswald', sans-serif;font-size:18px;color:#777;font-weight:300;float:left;height:36px;margin-right:4px;}
+#go {background:#f4f4f4;font-size:15px;font-family: 'Oswald', sans-serif;border:1px solid #d6d6d6;font-color:#777;font-weight:300;display:block;padding:2px;height:40px;}
+#submit_btn {display:block;float:right;}*/

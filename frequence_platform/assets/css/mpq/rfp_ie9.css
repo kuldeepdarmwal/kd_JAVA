@@ -1,0 +1,18 @@
+#bulk_locations_upload_modal
+{
+	width: 800px;
+	height: 600px;
+	overflow-x: hidden;
+}
+
+#bulk_locations_upload_modal .modal-content
+{
+	width: inherit;
+	max-height: 600px;
+}
+
+#bulk_locations_upload_modal .modal-footer
+{
+	position: absolute;
+	width: inherit;
+}

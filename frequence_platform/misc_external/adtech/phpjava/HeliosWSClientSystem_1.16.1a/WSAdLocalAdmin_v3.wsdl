@@ -1,0 +1,2226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    name="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdmin_v3"
+    targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:map="http://systinet.com/mapping/"
+    xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/">
+    <types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/AdLocalManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/AdLocalManagement/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="AdLocalTarget">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.AdLocalTarget"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="countryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="countryName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="subGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subGroupMemberId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subGroupMemberName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="subGroupName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="zipCodes" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdLocalTargetHistory">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.AdLocalTargetHistory"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="campaignId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="countryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="countryName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="subGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subGroupMemberId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="subGroupMemberName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="subGroupName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="version" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="zipCodes" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAdLocalTarget">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.AdLocalTarget;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="AdLocalTarget" nillable="true"
+                        type="tns:AdLocalTarget"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="City">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.City"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="active" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="area_1_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="area_2_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="area_3_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="area_4_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="cityId" nillable="true" type="xsd:long"/>
+                    <xsd:element name="countryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="inhabitants" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="zip_2_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="zip_3_Id" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="zip_5_Id" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfCity">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.City;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="City"
+                        nillable="true" type="tns:City"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Continent">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.Continent"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Country">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.Country"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="continentId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="hasNoCitySubGroups" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="hasSubGroups" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CountrySubGroup">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.CountrySubGroup"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="attributeName" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="countryId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="isCityGroup" nillable="true"
+                        type="xsd:boolean"/>
+                    <xsd:element name="mainNetwork" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="subNetwork" nillable="true"
+                        type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CountrySubGroupMember">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AdLocalManagement.CountrySubGroupMember"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="countrySubGroupId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="id" nillable="true" type="xsd:long"/>
+                    <xsd:element name="name" nillable="true" type="xsd:string"/>
+                    <xsd:element name="targetId" nillable="true"
+                        type="xsd:long"/>
+                    <xsd:element name="targetType" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAdLocalTargetHistory">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.AdLocalTargetHistory;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="AdLocalTargetHistory" nillable="true"
+                        type="tns:AdLocalTargetHistory"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfContinent">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.Continent;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="Continent" nillable="true" type="tns:Continent"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfCountry">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.Country;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="Country" nillable="true" type="tns:Country"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfCountrySubGroup">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.CountrySubGroup;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="CountrySubGroup" nillable="true"
+                        type="tns:CountrySubGroup"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfCountrySubGroupMember">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="[Lde.adtech.helios.AdLocalManagement.CountrySubGroupMember;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="CountrySubGroupMember" nillable="true"
+                        type="tns:CountrySubGroupMember"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:xns4="http://systinet.com/wsdl/de/adtech/helios/AdLocalManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/"
+            xmlns:xns6="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns7="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:xns8="http://systinet.com/containers/literal/ms.net"
+            xmlns:xns9="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/java/lang/"/>
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"/>
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/"/>
+            <xsd:import
+            namespace="http://systinet.com/wsdl/de/adtech/helios/AdLocalManagement/"/>
+            <xsd:element name="alt" nillable="true" type="xns4:AdLocalTarget"/>
+            <xsd:element name="AdLocalTarget_Response" nillable="true"
+                type="xns4:AdLocalTarget"/>
+            <xsd:element name="WSAdLocalAdminException" nillable="true"
+                type="xns5:WSAdLocalAdminException"/>
+            <xsd:element name="alt_1" nillable="true"
+                type="xns4:AdLocalTargetHistory"/>
+            <xsd:element name="AdLocalTargetHistory_Response" nillable="true"
+                type="xns4:AdLocalTargetHistory"/>
+            <xsd:element name="alts" nillable="true"
+                type="xns4:ArrayOfAdLocalTarget"/>
+            <xsd:element name="campaignId" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOfAdLocalTarget_Response" nillable="true"
+                type="xns4:ArrayOfAdLocalTarget"/>
+            <xsd:element name="idoox-java-mapping.java.lang.Exception"
+                nillable="true" type="xsd:anyType"/>
+            <xsd:element name="city" nillable="true" type="xns4:City"/>
+            <xsd:element name="City_Response" nillable="true" type="xns4:City"/>
+            <xsd:element name="citys" nillable="true" type="xns4:ArrayOfCity"/>
+            <xsd:element name="ArrayOfCity_Response" nillable="true"
+                type="xns4:ArrayOfCity"/>
+            <xsd:element name="continent" nillable="true"
+                type="xns4:Continent"/>
+            <xsd:element name="Continent_Response" nillable="true"
+                type="xns4:Continent"/>
+            <xsd:element name="country" nillable="true" type="xns4:Country"/>
+            <xsd:element name="Country_Response" nillable="true"
+                type="xns4:Country"/>
+            <xsd:element name="countrySubGroup" nillable="true"
+                type="xns4:CountrySubGroup"/>
+            <xsd:element name="CountrySubGroup_Response" nillable="true"
+                type="xns4:CountrySubGroup"/>
+            <xsd:element name="countrySubGroupMember" nillable="true"
+                type="xns4:CountrySubGroupMember"/>
+            <xsd:element name="CountrySubGroupMember_Response" nillable="true"
+                type="xns4:CountrySubGroupMember"/>
+            <xsd:element name="alt_2" nillable="true"
+                type="xns4:AdLocalTargetHistory"/>
+            <xsd:element name="AttributeOperatorValueExpression_Response"
+                nillable="true" type="xns6:AttributeOperatorValueExpression"/>
+            <xsd:element name="id" nillable="true" type="xsd:long"/>
+            <xsd:element name="CampaignManagementException" nillable="true"
+                type="xns7:CampaignManagementException"/>
+            <xsd:element name="HeliosPersistenceException" nillable="true"
+                type="xns6:HeliosPersistenceException"/>
+            <xsd:element name="s" nillable="true" type="xsd:long"/>
+            <xsd:element name="e" nillable="true" type="xsd:long"/>
+            <xsd:element name="boolExpr" nillable="true"
+                type="xns6:BoolExpression"/>
+            <xsd:element name="order" nillable="true" type="xns8:Collection"/>
+            <xsd:element name="ArrayOfAdLocalTargetHistory_Response"
+                nillable="true" type="xns4:ArrayOfAdLocalTargetHistory"/>
+            <xsd:element name="camId" nillable="true" type="xsd:long"/>
+            <xsd:element name="col" nillable="true" type="xns8:Collection"/>
+            <xsd:element name="start" nillable="true" type="xsd:long"/>
+            <xsd:element name="end" nillable="true" type="xsd:long"/>
+            <xsd:element name="long_Response" nillable="true" type="xsd:long"/>
+            <xsd:element name="ArrayOflong_Response" nillable="true"
+                type="xns9:ArrayOflong"/>
+            <xsd:element name="ArrayOfContinent_Response" nillable="true"
+                type="xns4:ArrayOfContinent"/>
+            <xsd:element name="ArrayOfCountry_Response" nillable="true"
+                type="xns4:ArrayOfCountry"/>
+            <xsd:element name="ArrayOfCountrySubGroup_Response" nillable="true"
+                type="xns4:ArrayOfCountrySubGroup"/>
+            <xsd:element name="ArrayOfCountrySubGroupMember_Response"
+                nillable="true" type="xns4:ArrayOfCountrySubGroupMember"/>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/containers/literal/ms.net"
+            xmlns:map="http://systinet.com/mapping/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/containers/literal/ms.net"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="Collection">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="List">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="LinkedList">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Vector">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:List"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Set">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Collection"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Set"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeSet">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedSet"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Map">
+                <xsd:sequence>
+                    <xsd:element name="Keys" type="tns:ArrayOfAnyType"/>
+                    <xsd:element name="Values" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Hashtable">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Properties">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Hashtable"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="HashMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="SortedMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:Map"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TreeMap">
+                <xsd:complexContent mixed="false">
+                    <xsd:extension base="tns:SortedMap"/>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Iterator">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Enumeration">
+                <xsd:sequence>
+                    <xsd:element name="Data" type="tns:ArrayOfAnyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfAnyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item"
+                        nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/java/lang/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/java/lang/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="ArrayOflong">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="[Ljava.lang.Long;"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="long"
+                        nillable="true" type="xsd:long"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xns5="http://systinet.com/containers/literal/ms.net"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import
+            namespace="http://systinet.com/containers/literal/ms.net"/>
+            <xsd:complexType name="AttributeOperatorValueExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.AttributeOperatorValueExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:BoolExpression">
+                        <xsd:sequence>
+                            <xsd:element name="attribute" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="operator" nillable="true"
+                                type="xsd:string"/>
+                            <xsd:element name="value" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="BoolExpression">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.BoolExpression"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="expressions" nillable="true"
+                        type="xns5:Vector"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type name="de.adtech.helios.HeliosException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                    <xsd:element name="errorCause" type="xsd:int"/>
+                    <xsd:element name="errorLevel" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="HeliosPersistenceException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.HeliosPersistenceException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="tns:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="WSAdLocalAdminException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="message" nillable="true"
+                        type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:ns0="http://systinet.com/xsd/SchemaTypes/"
+            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+            xmlns:tns="http://systinet.com/wsdl/de/adtech/helios/CampaignManagement/"
+            xmlns:xns5="http://systinet.com/wsdl/de/adtech/helios/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://systinet.com/wsdl/de/adtech/helios/"/>
+            <xsd:complexType name="CampaignManagementException">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <map:java-type
+                        name="de.adtech.helios.CampaignManagement.CampaignManagementException"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexContent>
+                    <xsd:extension base="xns5:HeliosException">
+                        <xsd:sequence/>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="CampaignManagementException">
+        <part element="ns0:CampaignManagementException"
+            name="CampaignManagementException"/>
+    </message>
+    <message name="Exception">
+        <part element="ns0:idoox-java-mapping.java.lang.Exception"
+            name="idoox-java-mapping.java.lang.Exception"/>
+    </message>
+    <message name="HeliosPersistenceException">
+        <part element="ns0:HeliosPersistenceException"
+            name="HeliosPersistenceException"/>
+    </message>
+    <message name="WSAdLocalAdminException">
+        <part element="ns0:WSAdLocalAdminException"
+            name="WSAdLocalAdminException"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTargetHistory_Request_Soap">
+        <part element="ns0:alt_1" name="alt"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTargetHistory_Response_Soap">
+        <part element="ns0:AdLocalTargetHistory_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTargetList_Request_Soap">
+        <part element="ns0:alts" name="alts"/>
+        <part element="ns0:campaignId" name="campaignId"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTargetList_Response_Soap">
+        <part element="ns0:ArrayOfAdLocalTarget_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTarget_Request_Soap">
+        <part element="ns0:alt" name="alt"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createAdLocalTarget_Response_Soap">
+        <part element="ns0:AdLocalTarget_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCityByArray_Request_Soap">
+        <part element="ns0:citys" name="citys"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCityByArray_Response_Soap">
+        <part element="ns0:ArrayOfCity_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCity_Request_Soap">
+        <part element="ns0:city" name="city"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCity_Response_Soap">
+        <part element="ns0:City_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createContinent_Request_Soap">
+        <part element="ns0:continent" name="continent"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createContinent_Response_Soap">
+        <part element="ns0:Continent_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountrySubGroupMember_Request_Soap">
+        <part element="ns0:countrySubGroupMember" name="countrySubGroupMember"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountrySubGroupMember_Response_Soap">
+        <part element="ns0:CountrySubGroupMember_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountrySubGroup_Request_Soap">
+        <part element="ns0:countrySubGroup" name="countrySubGroup"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountrySubGroup_Response_Soap">
+        <part element="ns0:CountrySubGroup_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountry_Request_Soap">
+        <part element="ns0:country" name="country"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_createCountry_Response_Soap">
+        <part element="ns0:Country_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteAdLocalTargetHistory_Request_Soap">
+        <part element="ns0:alt_2" name="alt"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteAdLocalTargetHistory_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteAdLocalTarget_Request_Soap">
+        <part element="ns0:alt" name="alt"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteAdLocalTarget_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteCity_Request_Soap">
+        <part element="ns0:city" name="city"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteCity_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteContinent_Request_Soap">
+        <part element="ns0:continent" name="continent"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteContinent_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteCountrySubGroupMember_Request_Soap">
+        <part element="ns0:countrySubGroupMember" name="countrySubGroupMember"/>
+    </message>
+    <message
+    name="WSAdLocalAdmin_v3_deleteCountrySubGroupMember_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteCountrySubGroup_Request_Soap">
+        <part element="ns0:countrySubGroup" name="countrySubGroup"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteCountrySubGroup_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_deleteCountry_Request_Soap">
+        <part element="ns0:country" name="country"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_deleteCountry_Response_Soap"/>
+    <message name="WSAdLocalAdmin_v3_getAOVE_Request_Soap"/>
+    <message name="WSAdLocalAdmin_v3_getAOVE_Response_Soap">
+        <part element="ns0:AttributeOperatorValueExpression_Response"
+            name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetHistoryById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetHistoryById_Response_Soap">
+        <part element="ns0:AdLocalTargetHistory_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetHistoryList_Request_Soap">
+        <part element="ns0:s" name="s"/>
+        <part element="ns0:e" name="e"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetHistoryList_Response_Soap">
+        <part element="ns0:ArrayOfAdLocalTargetHistory_Response"
+            name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetListByCampaignId_Request_Soap">
+        <part element="ns0:camId" name="camId"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetListByCampaignId_Response_Soap">
+        <part element="ns0:ArrayOfAdLocalTarget_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetList_Request_Soap">
+        <part element="ns0:s" name="s"/>
+        <part element="ns0:e" name="e"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getAdLocalTargetList_Response_Soap">
+        <part element="ns0:ArrayOfAdLocalTarget_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityById_Response_Soap">
+        <part element="ns0:City_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCityList_Response_Soap">
+        <part element="ns0:ArrayOfCity_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentById_Response_Soap">
+        <part element="ns0:Continent_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getContinentList_Response_Soap">
+        <part element="ns0:ArrayOfContinent_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryById_Response_Soap">
+        <part element="ns0:Country_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountryList_Response_Soap">
+        <part element="ns0:ArrayOfCountry_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupById_Response_Soap">
+        <part element="ns0:CountrySubGroup_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupList_Response_Soap">
+        <part element="ns0:ArrayOfCountrySubGroup_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberById_Request_Soap">
+        <part element="ns0:id" name="id"/>
+        <part element="ns0:col" name="col"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberById_Response_Soap">
+        <part element="ns0:CountrySubGroupMember_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberIdList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberIdList_Response_Soap">
+        <part element="ns0:ArrayOflong_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberListSize_Request_Soap">
+        <part element="ns0:boolExpr" name="boolExpr"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberListSize_Response_Soap">
+        <part element="ns0:long_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberList_Request_Soap">
+        <part element="ns0:start" name="start"/>
+        <part element="ns0:end" name="end"/>
+        <part element="ns0:boolExpr" name="boolExpr"/>
+        <part element="ns0:order" name="order"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_getCountrySubGroupMemberList_Response_Soap">
+        <part element="ns0:ArrayOfCountrySubGroupMember_Response"
+            name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCity_Request_Soap">
+        <part element="ns0:city" name="city"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCity_Response_Soap">
+        <part element="ns0:City_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateContinent_Request_Soap">
+        <part element="ns0:continent" name="continent"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateContinent_Response_Soap">
+        <part element="ns0:Continent_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountrySubGroupMember_Request_Soap">
+        <part element="ns0:countrySubGroupMember" name="countrySubGroupMember"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountrySubGroupMember_Response_Soap">
+        <part element="ns0:CountrySubGroupMember_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountrySubGroup_Request_Soap">
+        <part element="ns0:countrySubGroup" name="countrySubGroup"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountrySubGroup_Response_Soap">
+        <part element="ns0:CountrySubGroup_Response" name="response"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountry_Request_Soap">
+        <part element="ns0:country" name="country"/>
+    </message>
+    <message name="WSAdLocalAdmin_v3_updateCountry_Response_Soap">
+        <part element="ns0:Country_Response" name="response"/>
+    </message>
+    <portType name="WSAdLocalAdmin_v3">
+        <operation name="createAdLocalTarget" parameterOrder="alt">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTarget_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTarget_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createAdLocalTargetHistory" parameterOrder="alt">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTargetHistory_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTargetHistory_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createAdLocalTargetList"
+            parameterOrder="alts campaignId">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTargetList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createAdLocalTargetList_Response_Soap"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="createCity" parameterOrder="city">
+            <input message="tns:WSAdLocalAdmin_v3_createCity_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_createCity_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createCityByArray" parameterOrder="citys">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createCityByArray_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createCityByArray_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createContinent" parameterOrder="continent">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createContinent_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createContinent_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createCountry" parameterOrder="country">
+            <input message="tns:WSAdLocalAdmin_v3_createCountry_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createCountry_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createCountrySubGroup"
+            parameterOrder="countrySubGroup">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createCountrySubGroup_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createCountrySubGroup_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="createCountrySubGroupMember"
+            parameterOrder="countrySubGroupMember">
+            <input
+            message="tns:WSAdLocalAdmin_v3_createCountrySubGroupMember_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_createCountrySubGroupMember_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteAdLocalTarget" parameterOrder="alt">
+            <input
+            message="tns:WSAdLocalAdmin_v3_deleteAdLocalTarget_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteAdLocalTarget_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteAdLocalTargetHistory" parameterOrder="alt">
+            <input
+            message="tns:WSAdLocalAdmin_v3_deleteAdLocalTargetHistory_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteAdLocalTargetHistory_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteCity" parameterOrder="city">
+            <input message="tns:WSAdLocalAdmin_v3_deleteCity_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_deleteCity_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteContinent" parameterOrder="continent">
+            <input
+            message="tns:WSAdLocalAdmin_v3_deleteContinent_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteContinent_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteCountry" parameterOrder="country">
+            <input message="tns:WSAdLocalAdmin_v3_deleteCountry_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteCountry_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteCountrySubGroup"
+            parameterOrder="countrySubGroup">
+            <input
+            message="tns:WSAdLocalAdmin_v3_deleteCountrySubGroup_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteCountrySubGroup_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="deleteCountrySubGroupMember"
+            parameterOrder="countrySubGroupMember">
+            <input
+            message="tns:WSAdLocalAdmin_v3_deleteCountrySubGroupMember_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_deleteCountrySubGroupMember_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getAOVE" parameterOrder="">
+            <input message="tns:WSAdLocalAdmin_v3_getAOVE_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_getAOVE_Response_Soap"/>
+        </operation>
+        <operation name="getAdLocalTargetHistoryById" parameterOrder="id">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetHistoryById_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetHistoryById_Response_Soap"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+            <fault message="tns:CampaignManagementException"
+                name="CampaignManagementException"/>
+        </operation>
+        <operation name="getAdLocalTargetHistoryList"
+            parameterOrder="s e boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetHistoryList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetHistoryList_Response_Soap"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+            <fault message="tns:CampaignManagementException"
+                name="CampaignManagementException"/>
+        </operation>
+        <operation name="getAdLocalTargetList"
+            parameterOrder="s e boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetList_Response_Soap"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+            <fault message="tns:CampaignManagementException"
+                name="CampaignManagementException"/>
+        </operation>
+        <operation name="getAdLocalTargetListByCampaignId"
+            parameterOrder="camId">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetListByCampaignId_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getAdLocalTargetListByCampaignId_Response_Soap"/>
+            <fault message="tns:HeliosPersistenceException"
+                name="HeliosPersistenceException"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+            <fault message="tns:CampaignManagementException"
+                name="CampaignManagementException"/>
+        </operation>
+        <operation name="getCityById" parameterOrder="id col">
+            <input message="tns:WSAdLocalAdmin_v3_getCityById_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_getCityById_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCityList" parameterOrder="start end boolExpr order">
+            <input message="tns:WSAdLocalAdmin_v3_getCityList_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_getCityList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCityListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCityListSize_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCityListSize_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getContinentById" parameterOrder="id col">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getContinentById_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getContinentById_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getContinentIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getContinentIdList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getContinentIdList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getContinentList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getContinentList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getContinentList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getContinentListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getContinentListSize_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getContinentListSize_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountryById" parameterOrder="id col">
+            <input message="tns:WSAdLocalAdmin_v3_getCountryById_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountryById_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountryIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountryIdList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountryIdList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountryList"
+            parameterOrder="start end boolExpr order">
+            <input message="tns:WSAdLocalAdmin_v3_getCountryList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountryList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountryListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountryListSize_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountryListSize_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupById" parameterOrder="id col">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupById_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupById_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupIdList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupIdList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupListSize" parameterOrder="boolExpr">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupListSize_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupListSize_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupMemberById" parameterOrder="id col">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberById_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberById_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupMemberIdList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberIdList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberIdList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupMemberList"
+            parameterOrder="start end boolExpr order">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberList_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberList_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="getCountrySubGroupMemberListSize"
+            parameterOrder="boolExpr">
+            <input
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberListSize_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_getCountrySubGroupMemberListSize_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="updateCity" parameterOrder="city">
+            <input message="tns:WSAdLocalAdmin_v3_updateCity_Request_Soap"/>
+            <output message="tns:WSAdLocalAdmin_v3_updateCity_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="updateContinent" parameterOrder="continent">
+            <input
+            message="tns:WSAdLocalAdmin_v3_updateContinent_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_updateContinent_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="updateCountry" parameterOrder="country">
+            <input message="tns:WSAdLocalAdmin_v3_updateCountry_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_updateCountry_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="updateCountrySubGroup"
+            parameterOrder="countrySubGroup">
+            <input
+            message="tns:WSAdLocalAdmin_v3_updateCountrySubGroup_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_updateCountrySubGroup_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+        <operation name="updateCountrySubGroupMember"
+            parameterOrder="countrySubGroupMember">
+            <input
+            message="tns:WSAdLocalAdmin_v3_updateCountrySubGroupMember_Request_Soap"/>
+            <output
+            message="tns:WSAdLocalAdmin_v3_updateCountrySubGroupMember_Response_Soap"/>
+            <fault message="tns:WSAdLocalAdminException"
+                name="WSAdLocalAdminException"/>
+        </operation>
+    </portType>
+    <binding name="WSAdLocalAdmin_v3" type="tns:WSAdLocalAdmin_v3">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="createAdLocalTarget">
+            <map:java-operation name="createAdLocalTarget"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createAdLocalTarget?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7"
+                style="document"/>
+            <input>
+                <soap:body parts="alt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createAdLocalTargetHistory">
+            <map:java-operation name="createAdLocalTargetHistory"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXRIaXN0b3J5OylMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9BZExvY2FsVGFyZ2V0SGlzdG9yeTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createAdLocalTargetHistory?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXRIaXN0b3J5OylMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9BZExvY2FsVGFyZ2V0SGlzdG9yeTs="
+                style="document"/>
+            <input>
+                <soap:body parts="alt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createAdLocalTargetList">
+            <map:java-operation name="createAdLocalTargetList"
+                signature="KFtMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9BZExvY2FsVGFyZ2V0O0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7">
+                <map:fault java-type="java.lang.Exception" name="Exception"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createAdLocalTargetList?KFtMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9BZExvY2FsVGFyZ2V0O0xqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7"
+                style="document"/>
+            <input>
+                <soap:body parts="alts campaignId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCity">
+            <map:java-operation name="createCity"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createCity?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="city" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCityByArray">
+            <map:java-operation name="createCityByArray"
+                signature="KFtMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9DaXR5OylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ2l0eTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createCityByArray?KFtMZGUvYWR0ZWNoL2hlbGlvcy9BZExvY2FsTWFuYWdlbWVudC9DaXR5OylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ2l0eTs="
+                style="document"/>
+            <input>
+                <soap:body parts="citys" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createContinent">
+            <map:java-operation name="createContinent"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createContinent?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="continent" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCountry">
+            <map:java-operation name="createCountry"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createCountry?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="country" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCountrySubGroup">
+            <map:java-operation name="createCountrySubGroup"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createCountrySubGroup?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroup" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createCountrySubGroupMember">
+            <map:java-operation name="createCountrySubGroupMember"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#createCountrySubGroupMember?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroupMember" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteAdLocalTarget">
+            <map:java-operation name="deleteAdLocalTarget"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7KVY=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteAdLocalTarget?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7KVY="
+                style="document"/>
+            <input>
+                <soap:body parts="alt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteAdLocalTargetHistory">
+            <map:java-operation name="deleteAdLocalTargetHistory"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXRIaXN0b3J5OylW">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteAdLocalTargetHistory?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXRIaXN0b3J5OylW"
+                style="document"/>
+            <input>
+                <soap:body parts="alt" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteCity">
+            <map:java-operation name="deleteCity"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KVY=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteCity?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KVY="
+                style="document"/>
+            <input>
+                <soap:body parts="city" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteContinent">
+            <map:java-operation name="deleteContinent"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteContinent?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="continent" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteCountry">
+            <map:java-operation name="deleteCountry"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KVY=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteCountry?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KVY="
+                style="document"/>
+            <input>
+                <soap:body parts="country" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteCountrySubGroup">
+            <map:java-operation name="deleteCountrySubGroup"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteCountrySubGroup?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroup" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteCountrySubGroupMember">
+            <map:java-operation name="deleteCountrySubGroupMember"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspVg==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#deleteCountrySubGroupMember?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspVg=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroupMember" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAOVE">
+            <map:java-operation name="getAOVE"
+                signature="KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="/>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getAOVE?KClMZGUvYWR0ZWNoL2hlbGlvcy9BdHRyaWJ1dGVPcGVyYXRvclZhbHVlRXhwcmVzc2lvbjs="
+                style="document"/>
+            <input>
+                <soap:body parts="" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAdLocalTargetHistoryById">
+            <map:java-operation name="getAdLocalTargetHistoryById"
+                signature="KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldEhpc3Rvcnk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CampaignManagement.CampaignManagementException"
+                    name="CampaignManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getAdLocalTargetHistoryById?KExqYXZhL2xhbmcvTG9uZzspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldEhpc3Rvcnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="id" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+            <fault name="CampaignManagementException">
+                <soap:fault name="CampaignManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAdLocalTargetHistoryList">
+            <map:java-operation name="getAdLocalTargetHistoryList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldEhpc3Rvcnk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CampaignManagement.CampaignManagementException"
+                    name="CampaignManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getAdLocalTargetHistoryList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldEhpc3Rvcnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="s e boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+            <fault name="CampaignManagementException">
+                <soap:fault name="CampaignManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAdLocalTargetList">
+            <map:java-operation name="getAdLocalTargetList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CampaignManagement.CampaignManagementException"
+                    name="CampaignManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getAdLocalTargetList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQWRMb2NhbFRhcmdldDs="
+                style="document"/>
+            <input>
+                <soap:body parts="s e boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+            <fault name="CampaignManagementException">
+                <soap:fault name="CampaignManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getAdLocalTargetListByCampaignId">
+            <map:java-operation name="getAdLocalTargetListByCampaignId"
+                signature="KExqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+                <map:fault
+                    java-type="de.adtech.helios.HeliosPersistenceException"
+                    name="HeliosPersistenceException"/>
+                <map:fault
+                    java-type="de.adtech.helios.CampaignManagement.CampaignManagementException"
+                    name="CampaignManagementException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getAdLocalTargetListByCampaignId?KExqYXZhL2xhbmcvTG9uZzspW0xkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0FkTG9jYWxUYXJnZXQ7"
+                style="document"/>
+            <input>
+                <soap:body parts="camId" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="HeliosPersistenceException">
+                <soap:fault name="HeliosPersistenceException" use="literal"/>
+            </fault>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+            <fault name="CampaignManagementException">
+                <soap:fault name="CampaignManagementException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCityById">
+            <map:java-operation name="getCityById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCityById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCityList">
+            <map:java-operation name="getCityList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ2l0eTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCityList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ2l0eTs="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCityListSize">
+            <map:java-operation name="getCityListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCityListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContinentById">
+            <map:java-operation name="getContinentById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getContinentById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDs="
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContinentIdList">
+            <map:java-operation name="getContinentIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getContinentIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContinentList">
+            <map:java-operation name="getContinentList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getContinentList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContinentListSize">
+            <map:java-operation name="getContinentListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getContinentListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountryById">
+            <map:java-operation name="getCountryById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountryById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountryIdList">
+            <map:java-operation name="getCountryIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountryIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountryList">
+            <map:java-operation name="getCountryList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeTs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountryList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeTs="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountryListSize">
+            <map:java-operation name="getCountryListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountryListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupById">
+            <map:java-operation name="getCountrySubGroupById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDs="
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupIdList">
+            <map:java-operation name="getCountrySubGroupIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupList">
+            <map:java-operation name="getCountrySubGroupList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupListSize">
+            <map:java-operation name="getCountrySubGroupListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupMemberById">
+            <map:java-operation name="getCountrySubGroupMemberById"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjs=">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupMemberById?KExqYXZhL2xhbmcvTG9uZztMamF2YS91dGlsL0NvbGxlY3Rpb247KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjs="
+                style="document"/>
+            <input>
+                <soap:body parts="id col" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupMemberIdList">
+            <map:java-operation name="getCountrySubGroupMemberIdList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupMemberIdList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGphdmEvbGFuZy9Mb25nOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupMemberList">
+            <map:java-operation name="getCountrySubGroupMemberList"
+                signature="KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupMemberList?KExqYXZhL2xhbmcvTG9uZztMamF2YS9sYW5nL0xvbmc7TGRlL2FkdGVjaC9oZWxpb3MvQm9vbEV4cHJlc3Npb247TGphdmEvdXRpbC9Db2xsZWN0aW9uOylbTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="start end boolExpr order" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCountrySubGroupMemberListSize">
+            <map:java-operation name="getCountrySubGroupMemberListSize"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#getCountrySubGroupMemberListSize?KExkZS9hZHRlY2gvaGVsaW9zL0Jvb2xFeHByZXNzaW9uOylMamF2YS9sYW5nL0xvbmc7"
+                style="document"/>
+            <input>
+                <soap:body parts="boolExpr" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCity">
+            <map:java-operation name="updateCity"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#updateCity?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NpdHk7"
+                style="document"/>
+            <input>
+                <soap:body parts="city" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateContinent">
+            <map:java-operation name="updateContinent"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#updateContinent?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvbnRpbmVudDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ29udGluZW50Ow=="
+                style="document"/>
+            <input>
+                <soap:body parts="continent" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCountry">
+            <map:java-operation name="updateCountry"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#updateCountry?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7KUxkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnk7"
+                style="document"/>
+            <input>
+                <soap:body parts="country" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCountrySubGroup">
+            <map:java-operation name="updateCountrySubGroup"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#updateCountrySubGroup?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cDspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroup" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateCountrySubGroupMember">
+            <map:java-operation name="updateCountrySubGroupMember"
+                signature="KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw==">
+                <map:fault
+                    java-type="de.adtech.webservices.helios.lowLevel.AdLocalManagement_v3.WSAdLocalAdminException"
+                    name="WSAdLocalAdminException"/>
+            </map:java-operation>
+            <soap:operation
+                soapAction="http://systinet.com/wsdl/de/adtech/webservices/helios/lowLevel/AdLocalManagement_v3/WSAdLocalAdmin_v3#updateCountrySubGroupMember?KExkZS9hZHRlY2gvaGVsaW9zL0FkTG9jYWxNYW5hZ2VtZW50L0NvdW50cnlTdWJHcm91cE1lbWJlcjspTGRlL2FkdGVjaC9oZWxpb3MvQWRMb2NhbE1hbmFnZW1lbnQvQ291bnRyeVN1Ykdyb3VwTWVtYmVyOw=="
+                style="document"/>
+            <input>
+                <soap:body parts="countrySubGroupMember" use="literal"/>
+            </input>
+            <output>
+                <soap:body parts="response" use="literal"/>
+            </output>
+            <fault name="WSAdLocalAdminException">
+                <soap:fault name="WSAdLocalAdminException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSAdLocalAdmin_v3">
+        <port binding="tns:WSAdLocalAdmin_v3" name="WSAdLocalAdmin_v3">
+            <soap:address
+            location="http://swd-franz.adtech.de:6060/WSAdLocalAdmin_v3/"/>
+        </port>
+    </service>
+</definitions>

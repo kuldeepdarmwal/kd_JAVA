@@ -1,0 +1,13 @@
+<div id="mpq_product_info_section" class="mpq_section_card card">
+    <h4 class="card-title grey-text text-darken-1">Products</h4>
+    <div id="product_section_content" class="card-content">
+        <div class="row">
+            <div *ngFor="let category of categories()">
+                <div *ngFor="let product of products | productFilter: {selectable: true, category: category} | orderBy: ['display_order']"
+                     class="col s2 rfp_product_container">
+                    <product [product]="product" (toggle-product)="toggleProduct.emit($event)"></product>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

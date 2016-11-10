@@ -1,0 +1,2 @@
+/* Copr. (c) 2011, 4Mads */
+var Animation=BaseEffect.extend({target:null,updateFrames:function(a){this._super(a);this.targetFrame=a[this.target]},reset:function(){this._super();this.targetFrame&&this.targetFrame.setVisible(true)}})

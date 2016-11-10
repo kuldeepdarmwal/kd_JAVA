@@ -1,0 +1,564 @@
+<bulk-download
+        [partner-id]="partnerId"
+        (partner-selected)="partnerSelected($event)"
+        (accExecutive-selected)="accExecutiveSelected($event)"
+        (build-bulkDownload)="buildBulkDownload($event)">
+</bulk-download>
+<notification></notification>
+<view-creative></view-creative>
+<view-chart></view-chart>
+<create-helpdesk-ticket></create-helpdesk-ticket>
+<view-flights-table></view-flights-table>
+<div class="campaigns-list">
+    <div class="sub-header">
+        <div class="row">
+            <div class="col s2 offset-s10 search-box">
+               <input [(ngModel)]="query" (keyup)="searchCampaignData($event)" type="text" placeholder="Search"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8">
+                <h3>Report Date: <span>{{reportDate}}</span> <a id="bulk_campaign_download"
+                                                                (click)="bulkDownloadCampaignData()"
+                                                                class="modal-trigger"><i class="icon-download"></i></a>
+                </h3>
+            </div>
+            <div class="col s4 switch campaigns-list-mode">
+                <label>Lifetime<input type="checkbox" (click)="changeMode($event)"><span class="lever"></span>Current</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col12">
+            <table class="bordered highlight centered" id="campaigns-list"
+                   [mfData]="data | find:[query,islifeTimeMode]" #mf="mfDataTable" [mfRowsOnPage]="100">
+                <thead>
+                <tr class="product-header">
+                    <th colspan="6"></th>
+                    <th *ngIf="allTimeTotal" colspan="3" class="s_gray all_time">TOTAL</th>
+                    <th *ngIf="allTimeAE && allTimeOO" colspan="3" class="all_time">AUDIENCE EXTENSION</th>
+                    <th *ngIf="allTimeOO" colspan="3" class="s_gray all_time">O&O</th>
+                    <th *ngIf="thisFlightTotal" colspan="3" class="s_gray this_flight">TOTAL</th>
+                    <th *ngIf="thisFlightAE && thisFlightOO" colspan="3" class="this_flight">AUDIENCE EXTENSION</th>
+                    <th *ngIf="thisFlightOO" colspan="3" class="s_gray this_flight">O&O</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <mfDefaultSorter by="name">Campaign</mfDefaultSorter>
+                    </th>
+                    <th class="custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="scheduleStatus">Schedule</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft" style="width: 420px;">
+                            <div class="body"  [innerHTML]="TOOLTIP.SCHEDULE.BODY"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="orderId">Order ID</mfDefaultSorter>
+                    </th>
+                    <th class="custom-tooltip all_time">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeStart">Start</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.START.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.START.BODY"></div>
+                        </div>
+                    </th>
+                    <th class="custom-tooltip all_time">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeEnd">End</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.END.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.END.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeTotal" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeCampaign.realized">Realized</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.TOTAL.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.TOTAL.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeTotal" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeCampaign.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.TOTAL.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.TOTAL.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeTotal" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeCampaign.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.TOTAL.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.TOTAL.OTI.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeAE && allTimeOO" class="all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeAudienceExtension.realized">Realized</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.AE.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.AE.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeAE && allTimeOO" class="all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeAudienceExtension.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.AE.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.AE.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeAE && allTimeOO" class="all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeAudienceExtension.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.AE.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.AE.OTI.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeOO" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeOAndO.realized">Realized</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.OO.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.OO.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeOO" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeOAndO.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.OO.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.OO.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="allTimeOO" class="s_gray all_time custom-tooltip">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="allTimeOAndO.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.ALL.OO.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.ALL.OO.OTI.BODY"></div>
+                        </div>
+                    </th>
+                    <th class="custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightStart">Start</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.START.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.START.BODY"></div>
+                        </div>
+                    </th>
+                    <th class="custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightEnd">End</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vleft">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.END.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.END.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightTotal" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightCampaign.realized">Realized</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.TOTAL.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.TOTAL.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightTotal" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightCampaign.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.TOTAL.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.TOTAL.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightTotal" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightCampaign.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.TOTAL.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.TOTAL.OTI.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightAE && thisFlightOO" class="custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightAudienceExtension.realized">Realized
+                            </mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.AE.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.AE.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightAE && thisFlightOO" class="custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightAudienceExtension.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.AE.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.AE.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightAE && thisFlightOO" class="custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightAudienceExtension.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.AE.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.AE.OTI.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightOO" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightOAndO.realized">Realized</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.OO.REALIZED.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.OO.REALIZED.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightOO" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightOAndO.budget">Budget</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.OO.BUDGET.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.OO.BUDGET.BODY"></div>
+                        </div>
+                    </th>
+                    <th *ngIf="thisFlightOO" class="s_gray custom-tooltip this_flight">
+                        <a class="custom-tooltip-link">
+                            <mfDefaultSorter by="thisFlightOAndO.oti">OTI</mfDefaultSorter>
+                        </a>
+                        <div class="custom-tooltip-body vright">
+                            <div class="header">
+                                <h6>{{TOOLTIP.FLIGHTS.OO.OTI.HEADER}}</h6>
+                            </div>
+                            <div class="body" [innerHTML]="TOOLTIP.FLIGHTS.OO.OTI.BODY"></div>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data; let i = index">
+                    <td class="first">
+                        <input id="f_{{ i }}" type="checkbox"/>
+                        <label [attr.for]="'f_' + i"></label>
+                        <a *ngIf="item.isReminder == 1" href="" (click)="addToFavorite($event, item.id, 0)"
+                           class="favorite"><i class="icon-star"></i></a>
+                        <a *ngIf="item.isReminder == 0" href="" (click)="addToFavorite($event, item.id, 1)"
+                           class="unfavorite"><i class="icon-star"></i></a>
+                    </td>
+                    <td class="c_name ">
+                        <p class="p_name">{{item.partner}}</p>
+                        <b class="a_name">{{item.advertiser}}</b>
+                        <div class="sec1">
+                            <div class="left custom-tooltip">
+                                <a class="custom-tooltip-link"><i
+                                        class="material-icons campaign-name-tooltip">warning</i></a>
+                                <div class="custom-tooltip-body vmiddle">
+                                    <div class="header">
+                                        <h6>Retargeting Alert</h6>
+                                    </div>
+                                    <div class="body">
+                                        <p>Retargeting is enabled but minimal impressions are firing. Potential problem:
+                                            small tracking tag audience. Please check advertiser page for tracking tag.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a materialize="dropdown" href='#' [attr.data-activates]="'d_' + i"><i
+                                    class="small material-icons gear-icon">settings</i></a>
+                            <ul id="d_{{ i }}" class='dropdown-content'>
+                                <li><a href="" (click)="viewChartData($event)" data-id="{{item.id}}"
+                                       data-name="{{item.advertiser}}-{{item.name}}"> <i class="icon-bar-chart"></i> Show
+                                    Charts</a></li>
+                                <li><a href="" (click)="viewSupportTicket($event)" data-id="{{item.id}}" 
+                                       data-name="{{item.name}}"> <i class="icon-ticket"></i> Create Helpdesk Ticket</a>
+                                </li>
+                                <li><a target="_blank" href="{{item.landingPageURL}}"> <i class="icon-home"></i> Go to
+                                    Landing Page</a></li>
+                                <li><a href="" (click)="viewCreativeData($event)" data-id="{{item.id}}"
+                                       data-name="{{item.name}}"> <i class="icon-picture"></i> View Creative</a></li>
+                                <li><a href="/campaign_health/download_tags/{{item.id}}"> <i class="icon-code"></i>
+                                    Advertiser Tracking Tags</a></li>
+                            </ul>
+                        </div>
+                        <p class="campaign_name">{{ item.name }}</p>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'PENDING'" class="s_status">
+                        <div (click)="viewFlightsTable(item.id)"><span class="badge new c_status s_yellow"
+                                                                       data-badge-caption="">{{item.scheduleStatus}}</span>
+                        </div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'ENDING'" class="s_status">
+                        <div (click)="viewFlightsTable(item.id)"><span class="badge new c_status s_blue"
+                                                                       data-badge-caption="">{{item.scheduleStatus}}</span>
+                        </div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'LIVE'" class="s_status">
+                        <div (click)="viewFlightsTable(item.id)"><span class="badge new c_status s_green"
+                                                                       data-badge-caption="">{{item.scheduleStatus}}</span>
+                        </div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'COMPLETED'" class="s_status"
+                        (click)="viewFlightsTable(item.id)">
+                        <div><span class="badge new c_status s_gray_dark"
+                                   data-badge-caption="">{{item.scheduleStatus}}</span></div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'LAUNCHING'" class="s_status"
+                        (click)="viewFlightsTable(item.id)">
+                        <div><span class="badge new c_status s_gray_yellow" data-badge-caption="">{{item.scheduleStatus}}</span>
+                        </div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  'PAUSED'" class="s_status" (click)="viewFlightsTable(item.id)">
+                        <div><span class="badge new c_status s_gray_light"
+                                   data-badge-caption="">{{item.scheduleStatus}}</span></div>
+                    </td>
+                    <td *ngIf="item.scheduleStatus ==  '-'" class="s_status" (click)="viewFlightsTable(item.id)">
+                        <div><span>-</span></div>
+                    </td>
+                    <td><span>{{ item.orderId }}</span></td>
+                    <td class="date all_time"><span>{{ item.allTimeStart}}</span></td>
+                    <td class="date all_time"><span>{{ item.allTimeEnd}}</span></td>
+                    <td *ngIf="allTimeTotal" class="s_gray all_time">
+                        <span *ngIf="item.allTimeCampaign.realized != 0">
+                            <span class="impression">{{ item.allTimeCampaign.realized | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{item.allTimeCampaign.realizedImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.allTimeCampaign.realized == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="allTimeTotal" class="s_gray all_time">
+                        <span *ngIf="item.allTimeCampaign.budget != 0">
+                            <span class="impression">{{ item.allTimeCampaign.budget | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{item.allTimeCampaign.budgetImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.allTimeCampaign.budget == 0">
+                            <span class="impression">-</span><span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="allTimeTotal" class="s_gray all_time oti">
+                        <span *ngIf="item.allTimeCampaign.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.allTimeCampaign.oti < 100 && item.allTimeCampaign.oti > 80">{{ item.allTimeCampaign.oti }}%</span>
+                        <span *ngIf="item.allTimeCampaign.oti <= 80 && item.allTimeCampaign.oti > 0" class="less_oti" data-badge-caption="">{{item.allTimeCampaign.oti}}%</span>
+                        <span *ngIf="item.allTimeCampaign.oti == 0">-</span>
+                    </td>
+                    <td *ngIf="allTimeAE && allTimeOO"class="all_time">
+                        <span *ngIf="item.allTimeAudienceExtension.realized != 0">
+                            <span class="impression">{{ item.allTimeAudienceExtension.realized | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{item.allTimeAudienceExtension.realizedImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.allTimeAudienceExtension.realized == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="allTimeAE && allTimeOO"class="all_time">
+                        <span *ngIf="item.allTimeAudienceExtension.budget != 0">
+                            <span class="impression">{{ item.allTimeAudienceExtension.budget | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{item.allTimeAudienceExtension.budgetImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.allTimeAudienceExtension.budget == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="allTimeAE && allTimeOO" class="all_time oti">
+                        <span *ngIf="item.allTimeAudienceExtension.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.allTimeAudienceExtension.oti < 100 && item.allTimeAudienceExtension.oti > 80">{{ item.allTimeAudienceExtension.oti }}%</span>
+                        <span *ngIf="item.allTimeAudienceExtension.oti <= 80 && item.allTimeAudienceExtension.oti > 0" class="less_oti" data-badge-caption="">{{item.allTimeAudienceExtension.oti}}%</span>
+                        <span *ngIf="item.allTimeAudienceExtension.oti == 0">-</span>
+                    </td>
+                    <td *ngIf="allTimeOO" class="s_gray all_time">
+                        <span *ngIf="item.allTimeOAndO.realized != 0">
+                            <span class="impression">{{ item.allTimeOAndO.realized | currency:'USD':'$' }}</span>{{item.allTimeOAndO.realizedImpression | number_format}}
+                        </span>
+                        <span *ngIf="item.allTimeOAndO.realized == 0"><span class="impression">-</span>-</span>
+                    </td>
+                    <td *ngIf="allTimeOO" class="s_gray all_time">
+                        <span *ngIf="item.allTimeOAndO.budget != 0">
+                            <span class="impression">{{ item.allTimeOAndO.budget | currency:'USD':'$'}}</span>{{item.allTimeOAndO.budgetImpression | number_format}}
+                        </span>
+                        <span *ngIf="item.allTimeOAndO.budget == 0"><span class="impression">-</span>-</span>
+                    </td>
+                    <td *ngIf="allTimeOO" class="s_gray all_time oti">
+                        <span *ngIf="item.allTimeOAndO.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.allTimeOAndO.oti < 100 && item.allTimeOAndO.oti > 80">{{ item.allTimeOAndO.oti }}%</span>
+                        <span *ngIf="item.allTimeOAndO.oti <= 80 && item.allTimeOAndO.oti > 0" class="less_oti" data-badge-caption="">{{item.allTimeOAndO.oti}}%</span>
+                        <span *ngIf="item.allTimeOAndO.oti == 0">-</span>
+                    </td>
+                    <td class="date this_flight"><span>{{ item.thisFlightStart}}</span></td>
+                    <td class="date this_flight"><span>{{ item.thisFlightEnd}}</span></td>
+                    <td *ngIf="thisFlightTotal" class="s_gray this_flight">
+                        <span *ngIf="item.thisFlightCampaign.realized != 0">
+                            <span class="impression">{{ item.thisFlightCampaign.realized | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{ item.thisFlightCampaign.realizedImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.thisFlightCampaign.realized == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="thisFlightTotal" class="s_gray this_flight">
+                        <span *ngIf="item.thisFlightCampaign.budget != 0">
+                            <span class="impression">{{ item.thisFlightCampaign.budget | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{ item.thisFlightCampaign.budgetImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.thisFlightCampaign.budget == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="thisFlightTotal" class="s_gray this_flight oti">
+                        <span *ngIf="item.thisFlightCampaign.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.thisFlightCampaign.oti < 100 && item.thisFlightCampaign.oti > 80">{{ item.thisFlightCampaign.oti }}%</span>
+                        <span *ngIf="item.thisFlightCampaign.oti <= 80 && item.thisFlightCampaign.oti > 0" class="less_oti" data-badge-caption="">{{item.thisFlightCampaign.oti}}%</span>
+                        <span *ngIf="item.thisFlightCampaign.oti == 0">-</span>
+                    </td>
+                    <td *ngIf="thisFlightAE && thisFlightOO" class="this_flight">
+                        <span *ngIf="item.thisFlightAudienceExtension.realized != 0">
+                            <span class="impression">{{ item.thisFlightAudienceExtension.realized | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{ item.thisFlightAudienceExtension.realizedImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.thisFlightAudienceExtension.realized == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="thisFlightAE && thisFlightOO" class="this_flight">
+                        <span *ngIf="item.thisFlightAudienceExtension.budget != 0">
+                            <span class="impression">{{ item.thisFlightAudienceExtension.budget | currency:'USD':'$'}}</span>
+                            <span *ngIf="item.isGeofencing == 1">
+                                <div class="custom-tooltip" [innerHTML]="geofenceTooltip"></div>
+                            </span>
+                            <span *ngIf="item.isGeofencing ==0">{{ item.thisFlightAudienceExtension.budgetImpression | number_format}}</span>
+                        </span>
+                        <span *ngIf="item.thisFlightAudienceExtension.budget == 0">
+                            <span class="impression">-</span>
+                            <span>-</span>
+                        </span>
+                    </td>
+                    <td *ngIf="thisFlightAE && thisFlightOO" class="this_flight oti">
+                        <span *ngIf="item.thisFlightAudienceExtension.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.thisFlightAudienceExtension.oti < 100 && item.thisFlightAudienceExtension.oti > 80">{{ item.thisFlightAudienceExtension.oti }}%</span>
+                        <span *ngIf="item.thisFlightAudienceExtension.oti <= 80 && item.thisFlightAudienceExtension.oti > 0" class="less_oti" data-badge-caption="">{{item.thisFlightAudienceExtension.oti}}%</span>
+                        <span *ngIf="item.thisFlightAudienceExtension.oti == 0">-</span>
+                    </td>
+                    <td *ngIf="thisFlightOO" class="s_gray this_flight">
+                        <span *ngIf="item.thisFlightOAndO.realized != 0">
+                            <span class="impression">{{ item.thisFlightOAndO.realized | currency:'USD':'$'}}</span>{{ item.thisFlightOAndO.realizedImpression | number_format}}
+                        </span>
+                        <span *ngIf="item.thisFlightOAndO.realized == 0"><span class="impression">-</span>-</span>
+                    </td>
+                    <td *ngIf="thisFlightOO" class="s_gray this_flight">
+                        <span *ngIf="item.thisFlightOAndO.budget != 0">
+                            <span class="impression">{{ item.thisFlightOAndO.budget | currency:'USD':'$'}}</span>{{ item.thisFlightOAndO.budgetImpression | number_format}}
+                        </span>
+                        <span *ngIf="item.thisFlightOAndO.budget == 0"><span class="impression">-</span>-</span>
+                    </td>
+                    <td *ngIf="thisFlightOO" class="s_gray this_flight oti">
+                        <span *ngIf="item.thisFlightOAndO.oti >= 100" class="badge new green c_oti" data-badge-caption="">>100%</span>
+                        <span *ngIf="item.thisFlightOAndO.oti < 100 && item.thisFlightOAndO.oti > 80">{{ item.thisFlightOAndO.oti }}%</span>
+                        <span *ngIf="item.thisFlightOAndO.oti <= 80  && item.thisFlightOAndO.oti > 0" class="less_oti" data-badge-caption="">{{item.thisFlightOAndO.oti}}%</span>
+                        <span *ngIf="item.thisFlightOAndO.oti == 0">-</span>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td [attr.colspan]= 'totalColumns'>
+                        <mfBootstrapPaginator [rowsOnPageSet]="[100,200,500]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
